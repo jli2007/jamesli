@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-lightBeige: #ede8d7;
+  --color-midBeige1: #C9C5B1;
+  --color-midBeige2: #9e9a8a;
+  --color-midBeige3: #787569;
+  --color-darkBeige1: #545249;
+  --color-darkBeige2: #33322c;
+  --color-darkBeige3: #151411;
+  --font-playfair: "Playfair Display", sans-serif;
+
+  @keyframes pulse-and-scale {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    40% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    60% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-10%) translateY(-10%);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }  
+}
+
+@layer components {
+  .border-r {
+    @apply border border-red-500;
+  }
+}
+
+.intro-container {
+  background-color: black;
+  transition: opacity 0.5s ease-out;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  pointer-events: none;
+}
+
+.wave-effect {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(52, 211, 153, 0.02) 10px,
+    rgba(52, 211, 153, 0.02) 20px
+  );
+  animation: wave 5s ease-in-out infinite;
+}
+
+.crg {
+  animation: pulse-and-scale 2s ease-out infinite;
+}
