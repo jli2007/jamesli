@@ -3,8 +3,8 @@
 
 @theme {
   --color-lightBeige: #ede8d7;
-  --color-midBeige1: #C9C5B1;
-  --color-midBeige2: #9e9a8a;
+  --color-midBeige1: #D8CFBC;
+  --color-midBeige2: #C9C5B1;
   --color-midBeige3: #787569;
   --color-darkBeige1: #545249;
   --color-darkBeige2: #33322c;
@@ -73,15 +73,15 @@
   width: 200%;
   height: 200%;
   background: repeating-linear-gradient(
-    45deg,
+    180deg,
     transparent,
     transparent 10px,
-    rgba(52, 211, 153, 0.02) 10px,
-    rgba(52, 211, 153, 0.02) 20px
+    #ede8d703 10px,
+    #D8CFBC03 20px
   );
   animation: wave 5s ease-in-out infinite;
 }
 
 .crg {
-  animation: pulse-and-scale 2s ease-out infinite;
+  animation: pulse-and-scale 3.25s ease-out infinite;
 }
