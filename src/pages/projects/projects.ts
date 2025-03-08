@@ -13,12 +13,12 @@ export const showcaseProjects: ProjectType[] = [
   {
     name: "identibear",
     url: "https://devpost.com/software/identibear-your-memory-companion",
-    desc: "dl model for dementia"
+    desc: "dl model for dementia patients"
   },
   {
     name: "weathermap",
     url: "https://weathermap.jame.li",
-    desc: "location on map & weather",
+    desc: "weather & location on world map",
   },
 ]
 
@@ -26,7 +26,7 @@ export const projects: ProjectType[] = [
   {
     name: "neo v2",
     url: "https://neoleague.dev/",
-    desc: "home & landing (coming soon) page for the neo developer league 2025",
+    desc: "home page & landing (coming soon) page for the neo developer league 2025",
   },
   {
     name: "jame.li",
@@ -40,33 +40,38 @@ export const projects: ProjectType[] = [
   },
   {
     name: "neo v1",
-    url: "https://neoleague.dev/",
+    url: "https://neodev2024.jame.li/",
     desc: "home & landing page for the neo developer league 2024",
   },
   {
     name: "mssql data grapher",
     url: "https://www.weblakes.com/",
-    desc: "queries mssql and visualizes millions of lines of data with streamlit and charting libraries (internal project at lakes software)",
+    desc: "queries mssql and visualizes millions of lines of data with streamlit and charting libraries [internal project at lakes software]",
   },
   {
     name: "weblog2sql",
     url: "https://www.weblakes.com/",
-    desc: "inserts millions of lines of .log file data into mssql with a parallel batch insert method made in c# (internal project at lakes software)",
+    desc: "inserts millions of lines of .log file data into mssql with a parallel batch insert method made in c# [internal project at lakes software]",
   },
   {
     name: "identibear",
     url: "https://devpost.com/software/identibear-your-memory-companion",
-    desc: "deep learning model to recognize faces and voices for dementia patients",
+    desc: "deep learning model to recognize faces and voices for dementia patients visualized with streamlit",
   },
   {
     name: "moodify",
     url: "https://github.com/Mausmato/Moodify",
-    desc: "facial expression to spotify playlist using machine learning model",
+    desc: "facial expression to spotify playlist using imported machine learning model and spotify api (coming soon)",
   },
   {
     name: "weathermap",
     url: "https://weathermap.jame.li",
-    desc: "visualizing weather and location on world map with mapping library and weather api",
+    desc: "visualizing weather and location on world map with leaflet.js mapping library and weather api",
+  },
+  {
+    name: "jame.li v1",
+    url: "https://jamesli.jame.li/",
+    desc: "previous portfolio website",
   },
   {
     name: "yt2mp3",

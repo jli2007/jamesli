@@ -50,7 +50,7 @@
 }
 
 *{
-  overscroll-behavior-block: none;
+  overscroll-behavior: none;
   /* overflow-x: hidden; */
 }
 
@@ -66,6 +66,7 @@
   justify-content: center;
 }
 
+/* makes animation invisible and unclickable --> removes it essentially */
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-out;
@@ -83,6 +84,21 @@
     transparent 10px,
     #ede8d703 10px,
     #D8CFBC03 20px
+  );
+  animation: wave 7s ease-in-out infinite;
+}
+
+.wave-effect2 {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 10px,
+    #ede8d70d 10px,
+    #d8cfbc0d 20px
   );
   animation: wave 7s ease-in-out infinite;
 }
