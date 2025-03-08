@@ -49,6 +49,11 @@
   }
 }
 
+*{
+  overscroll-behavior-block: none;
+  /* overflow-x: hidden; */
+}
+
 .intro-container {
   background-color: black;
   transition: opacity 0.5s ease-out;
