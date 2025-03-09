@@ -114,20 +114,12 @@
 
 /* queries */
 
+/* jam img (big)*/
+
 @media (min-width: 768px) and (max-width: 1200px) {
   .jam {
     width: 40vw;
     height: auto;
-  }
-  .connect4 {
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1100px) {
-  .description {
-    width: 30vw;
-    font-size: 0.8rem;
   }
 }
 
@@ -144,7 +136,7 @@
     width: 25vw;
     height: auto;
     top: 15vh;
-    opacity: 80%;
+    opacity: 90%;
   }
 }
 
@@ -157,10 +149,111 @@
   }
 }
 
+@media (min-width: 380px) and (max-width: 767px) {
+  .jam {
+    width: 90vw;
+    height: auto;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 767px) {
+  .jam {
+    width: 90vw;
+    height: auto;
+  }
+}
+
+@media (min-width: 1100px) and (max-height: 580px){
+  .jam{
+    width: 30vw;
+    height: auto;
+  }
+}
+
+/* description */
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .description {
+    width: 30vw;
+    font-size: 0.8rem;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 880px) {
   .description {
     width: 30vw;
     font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 778px){
+  .description{
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) and (min-height: 570px) and (max-height: 770px) {
+  .description {
+    width: 35vw;
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) and (max-height: 590px) {
+  .description {
+    width: 35vw;
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) and (min-height: 570px) and (max-height: 670px) {
+  .description {
+    width: 35vw;
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) and (max-height: 570px) {
+  .description {
+    width: 35vw;
+    font-size: 0.50rem;
+  }
+}
+
+/* jam1 */
+
+@media (min-width: 768px) and (max-height: 650px){
+  .jam1{
+    width: 28vw;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 550px){
+  .jam1{
+    width: 20vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .connect4 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1010px) {
+  .jam {
+    width: 33vw;
+    height: auto;
+    top: 15vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .sidediv{
+    font-size: 0.9rem;
+  }
+  .tauria{
+    padding-bottom: 20px;
   }
 }
 
@@ -175,26 +268,6 @@
   .h1descr{
     background-color: #ede8d780;
     border-radius: 6px;
-  }
-}
-
-@media (min-width: 768px) and (max-height: 778px){
-  .description{
-    font-size: 0.7rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 900px) and (min-height: 670px) and (max-height: 770px) {
-  .description {
-    width: 35vw;
-    font-size: 0.65rem;
-  }
-}
-
-@media (min-width: 380px) and (max-width: 767px) {
-  .jam {
-    width: 90vw;
-    height: auto;
   }
 }
 

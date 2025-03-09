@@ -103,7 +103,7 @@ export default function Home() {
                       </a>
                     </span>
                   </h1>
-                  <h1 className="md:mb-0 mb-10 md:bg-transparent rounded-md px-2">
+                  <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md px-2">
                     · prev. junior software dev @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
                       <a href="https://www.tauria.com/" target="_blank">
@@ -205,7 +205,7 @@ export default function Home() {
 
               <img
                 src={jam1}
-                className="absolute md:h-auto md:opacity-98 opacity-60 md:right-0 md:top-10 md:w-70 -right-10 bottom-0 w-95 rounded-2xl"
+                className="jam1 absolute md:h-auto md:opacity-98 opacity-60 md:right-0 md:top-10 md:w-70 -right-10 bottom-0 w-95 rounded-2xl"
                 style={{
                   WebkitMaskImage:
                     "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%)",
