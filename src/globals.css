@@ -139,6 +139,23 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 900px) {
+  .jam {
+    width: 25vw;
+    height: auto;
+    top: 15vh;
+    opacity: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 837px) {
+  .jam {
+    width: 25vw;
+    height: auto;
+    top: 15vh;
+    opacity: 50%;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 880px) {
   .description {
@@ -154,7 +171,26 @@
     top: 4px;
     bottom: auto;
   }
+
+  .h1descr{
+    background-color: #ede8d780;
+    border-radius: 6px;
+  }
 }
+
+@media (min-width: 768px) and (max-height: 778px){
+  .description{
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) and (min-height: 670px) and (max-height: 770px) {
+  .description {
+    width: 35vw;
+    font-size: 0.65rem;
+  }
+}
+
 @media (min-width: 380px) and (max-width: 767px) {
   .jam {
     width: 90vw;

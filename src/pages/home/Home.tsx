@@ -171,9 +171,9 @@ export default function Home() {
 
             {/* description section */}
             <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-7 bg-midBeige1 m-1 rounded-lg md:text-darkBeige2 text-darkBeige3">
-              <div className="description relative md:h-auto md:w-[20vw] sm:w-[75%] flex flex-col h-full md:z-0 z-6 md:text-[0.9rem] text-[1.05rem]">
+              <div className="description relative md:h-auto md:w-[20vw] sm:w-[75%] flex flex-col h-full z-6 md:text-[0.9rem] text-[1.05rem]">
                 <span className="italic">programmer | student | athlete</span>
-                <h1 className="break-normal md:mt-5 mt-10">
+                <h1 className="h1descr break-normal md:mt-5 mt-10">
                   coming from waterloo, james is a full time{" "}
                   <span className="text-darkBeige3">
                     student & problem solver.
@@ -181,7 +181,7 @@ export default function Home() {
                   in his free time, you will find him programming, playing
                   soccer, or wandering the forest.
                 </h1>
-                <h1 className="break-normal md:mt-4 mt-10">
+                <h1 className="h1descr break-normal md:mt-4 mt-10">
                   having completed{" "}
                   <span className="font-bold">two software internships </span>{" "}
                   and founded the{" "}
@@ -194,7 +194,7 @@ export default function Home() {
                     js/ts full-stack development.
                   </span>
                 </h1>
-                <h1 className="break-normal md:mt-4 mt-10">
+                <h1 className="h1descr break-normal md:mt-4 mt-10 md:pb-0 pb-10">
                   if you meet him, he'll be happy to start a liveshare and talk
                   about the latest{" "}
                   <span className="italic text-darkBeige3">central cee</span> or{" "}
@@ -288,7 +288,7 @@ export default function Home() {
                       className="cursor-pointer hover:bg-lightBeige/30 transition delay-100 duration-200 ease-in-out p-1 rounded-sm"
                       target="_blank"
                     >
-                      time machine
+                      TM
                     </a>
                   </h1>
                 </div>
