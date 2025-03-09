@@ -186,9 +186,16 @@
   }
 }
 
-@media (min-width: 768px) and (max-height: 778px){
+@media (max-height: 680px) {
+  .description {
+    width: 30vw;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 800px){
   .description{
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -220,13 +227,47 @@
   }
 }
 
+@media (min-width: 900px) and (max-width: 990px){
+  .description {
+    width: 35vw;
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 788px){
+  .description {
+    width: 35vw;
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) and (min-height: 680px){
+  .description {
+    width: 35vw;
+    font-size: 0.8rem;
+  }
+}
+
+/*  */
+
 @media (min-width: 980px) and (max-width: 1200px) and (min-height: 779px) {
   .h1descr{
     background-color: #ede8d780;
     border-radius: 6px;
     font-size: 0.8rem;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 } 
+
+@media (max-height: 800px){
+  .h1descr{
+    background-color: #ede8d780;
+    border-radius: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 
 /* jam1 */
 
@@ -271,7 +312,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 980px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .linkedin {
     right: 4px;
     left: auto;
@@ -282,6 +323,17 @@
   .h1descr{
     background-color: #ede8d780;
     border-radius: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1340px) {
+  .linkedin {
+    right: 4px;
+    left: auto;
+    top: 4px;
+    bottom: auto;
   }
 }
 
