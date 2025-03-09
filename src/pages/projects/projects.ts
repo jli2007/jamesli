@@ -46,7 +46,7 @@ export const projects: ProjectType[] = [
   {
     name: "mssql data grapher",
     url: "https://www.weblakes.com/",
-    desc: "queries mssql and visualizes millions of lines of data with streamlit and charting libraries [internal project at lakes software]",
+    desc: "queries mssql to visualize millions of lines of data with streamlit and charting libraries [internal project at lakes software]",
   },
   {
     name: "weblog2sql",
@@ -76,7 +76,7 @@ export const projects: ProjectType[] = [
   {
     name: "yt2mp3",
     url: "https://github.com/JLi2007/Youtube2MP3Project",
-    desc: "converts youtube urls to mp3 files made with nodejs and api calls",
+    desc: "converts youtube urls to mp3 files made with nodejs backend",
   },
   {
     name: "footprint",

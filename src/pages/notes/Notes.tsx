@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+
+const posts = [
+  { slug: "UW", title: "Uw accept me pls", date: "March 8, 2025" },
+];
 
 export default function Notes() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,15 +33,26 @@ export default function Notes() {
         </h1>
         <div className="wave-effect2" />
       </div>
+
       <div className="bg-black text-white font-playfair h-screen w-screen md:max-h-screen max-w-screen overflow-x-hidden">
-        <button
-          className="bg-white text-black p-5 cursor-pointer m-5 w-30 hover:bg-lightBeige hover:text-darkBeige3"
-          onClick={goBackToHome}
-        >
-          {" "}
-          back
-        </button>
-        <h1 className="p-5">notes</h1>
+        <div className="flex flex-row">
+          <button
+            className="bg-white text-black p-5 cursor-pointer m-5 w-30 hover:bg-lightBeige hover:text-darkBeige3"
+            onClick={goBackToHome}
+          >
+            {" "}
+            back
+          </button>
+          <h1 className="p-5 m-5">notes</h1>
+        </div>
+        {posts.map((post) => (
+          <div key={post.slug} className="p-5 flex flex-row">
+            <h1 className="pr-2">{post.date} - </h1>
+            <Link to={`/notes/${post.slug}`} className="underline">
+              {post.title}
+            </Link>
+          </div>
+        ))}
       </div>
     </>
   );
