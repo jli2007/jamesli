@@ -3,7 +3,30 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const posts = [
-  { slug: "UW", title: "Uw accept me pls", date: "March 8, 2025" },
+  {
+    slug: "Quotes",
+    title: "quotes with aura",
+    date: "march 8, 2025 -> present",
+    pinned: true,
+  },
+  {
+    slug: "Places",
+    title: "places of the world",
+    date: "march 8, 2025 -> present",
+    pinned: true,
+  },
+  {
+    slug: "UW",
+    title: "uw accept me 🙏",
+    date: "march 8, 2025",
+    pinned: false,
+  },
+  {
+    slug: "Ambition",
+    title: "an inherited ambition",
+    date: "march 8, 2025",
+    pinned: false,
+  },
 ];
 
 export default function Notes() {
@@ -45,14 +68,39 @@ export default function Notes() {
           </button>
           <h1 className="p-5 m-5">notes</h1>
         </div>
-        {posts.map((post) => (
-          <div key={post.slug} className="p-5 flex flex-row">
-            <h1 className="pr-2">{post.date} - </h1>
-            <Link to={`/notes/${post.slug}`} className="underline">
-              {post.title}
-            </Link>
-          </div>
-        ))}
+        <h1 className="px-5 py-1">pinned 📌</h1>
+        {posts.map((post) =>
+          post.pinned === true ? (
+            <div key={post.slug} className="p-5 flex flex-row">
+              <h1 className="pr-2">{post.date} - </h1>
+              <Link
+                to={`/notes/${post.slug}`}
+                state={{ date: post.date, title: post.title }}
+                className="underline"
+              >
+                {post.title}
+              </Link>
+            </div>
+          ) : null
+        )}
+
+        <div className="p-2 w-[30%]">
+          <hr />
+        </div>
+        {posts.map((post) =>
+          post.pinned === false ? (
+            <div key={post.slug} className="p-5 flex flex-row">
+              <h1 className="pr-2">{post.date} - </h1>
+              <Link
+                to={`/notes/${post.slug}`}
+                state={{ date: post.date, title: post.title }}
+                className="underline"
+              >
+                {post.title}
+              </Link>
+            </div>
+          ) : null
+        )}
       </div>
     </>
   );

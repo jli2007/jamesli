@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-lightBeige: #ede8d7;
@@ -105,4 +106,8 @@
 
 .crg {
   animation: pulse-and-scale 3.25s ease-out infinite;
+}
+
+.prose {
+  max-width: 100% !important;
 }

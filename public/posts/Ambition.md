@@ -1,0 +1,193 @@
+
+#### as second-generation immigrants, sometimes its easy to become spoiled by privilege and forget the sacrifices of our parents. eng4ui project.
+
+#
+
+<audio controls>
+  <source src="../audio/An-Inherited-Ambition-Podcast.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+#
+
+#### Opening (00:00)
+“Life is never made unbearable by circumstances, but only by lack of meaning and purpose” 
+Viktor Frankl, Austrian neurologist, 1946
+
+#### Introduction (00:23)
+
+Caleb: It’s interesting how we ended up on the same street, in the same neighborhood, studying for the same field. It's surreal to think that my parents grew up under the shadow of rural communism in Eastern Europe, while yours navigated the intense competition and one child policy of urban China. Two worlds that couldn’t be more different, and yet, here we are.
+
+Today I’ll be joined by James, a friend of mine since elementary school. James, you’ve been my number one lunchtime food trader. Those homemade dumplings have been stacked to the brim ever since 4th grade. 
+
+James: Greeting and salutations Caleb, the mamaliga tasted like an authentic european meal.
+
+We have bonded over being raised in immigrant families ever since we met. But I realized over the years that what unites us isn’t exactly our roots and origins, but the internal influences that are greater than ourselves. We are driven by them. 
+
+Caleb: On today’s podcast, An Inherited Ambition, we will explore the concepts of ambition and purpose. Circumstances don’t define ambition, purpose does. For second-generation immigrants like us, our drive is rooted in the sacrifices of our parents. Their struggles weren’t just stories, they were lessons in breaking boundaries, which we’ve slowly learned to inherit and redefine.
+
+James: By learning to see beyond the artificial limits of my circumstances, I discovered my purpose and how I can leverage it to fuel ambition and transform my parents’ sacrifices into something meaningful. I want to carry their legacy to the next generations.
+
+Caleb: By artificial limits, do you mean the confines we place on ourselves based on what we believe is possible for our lives given our situation and status?
+
+James: Right. Limiting the constraints I place upon myself completely changed my perspective on life.
+
+Caleb: Yeah, I totally agree. I discovered this exact concept recently too, and it’s all inspired by my parents' stories and sacrifices… OUR parents' stories and sacrifices from opposite ends of the world. 
+
+#### Part 1 (02:43)
+
+James: You know Caleb, our parents’ came from humble beginnings. Growing up and seeing that helped me understand how fortunate we were to be born and raised in Canada.
+
+Caleb: I heard stories from my parents about their childhood and what it was like for them when they were my age. I was always fascinated by their stories, since the setting they grew up in is so different that the one I live in today. 
+
+James: Right. My dad grew up in urban China. He faced intense competition in every direction he turned due to the population at the time. His performance in school determined his whole future.
+
+Caleb: For my parents, it wasn’t exams, but survival. They grew up under the communism of rural Eastern Europe, where life wasn’t about academics, but rather making ends meet.
+
+James: That’s a huge difference, but in both cases, their struggles taught them to push past limits. They never let their circumstances define their purpose in life, which was creating a better life for future generations of the bloodline.
+
+Caleb: Exactly. My dad always tells me, “You have it easy.” He’d come home from school and go straight to work in the garden. I think the communist government in Romania definitely had something to do with it.
+
+James: How do you think these political structures affected your dad?
+
+Caleb: Communism in Romania actually came from World war 2 and the USSR’s rule over most of Eastern Europe. It meant that my Dad’s family wasn’t exactly the most well-off, it was only sustainable for them to make ends meet by growing their own food and selling the excess at the nearby market. Studying, school and just academics in general was not the big focus.
+
+James: Interesting. Chinese communism was completely different. My dad put everything into his study. Well, he kinda had to. According to himself, my grandma would beat him to death if he strayed far from the class honour roll.
+As an only child due to the strict one child policy, the pressure to succeed was huge, and the only way to do that back in 20th century Chinese society was to flourish in studies. (one child policy?)
+
+James: It’s a policy created by the Chinese government to limit families to only one child. The population was growing way too rapidly. This completely altered the ambitions of children and their families. Parents now depended on one child to carry on their bloodline. Failing to succeed meant another generation living in poverty. In China, you will be labelled a failure. Your occupation was your status in society.
+
+Caleb: That’s so different … where my parents grew up In Romania, the mindset of young adults at that time was simply to continue the work of your parents so that you could support them through their old age. Especially coming from a rural town, it was uncommon to excel in school and aspire to attend a good university. 
+
+James: Don’t know if you heard of this before but the gaokao was and still is a grueling exam at the end of Chinese high school. My dad had to do well, it was his only way out.
+
+Caleb: Oh I heard about that. It's infamous because one score shaped one's entire future…
+
+James: Correct. They study their whole lives just for this one exam and the margins are tight. One of my cousins told me that “even having one more point out of an exam out of 750 can beat more than one thousand test takers in the city alone”. More than 10 million students take it every year alone! 
+
+Caleb: It’s wild to think about. How did he manage to succeed with that much pressure on his shoulders?
+James: I’m pretty confident that this was the turning point of when he fully realized his purpose. Honestly, it would be cool if we could get him to tell us firsthand. 
+
+James: Hey Dad… I just want to ask you about how taking the Gaokao helped you discover your purpose in life?
+
+James’ dad: It wasn’t easy. One thing determined everyone’s future and we all knew it. In Chinese culture, we described it as “you don’t have to outrun the bear, but you just have to outrun those next to you”.
+
+James: Why didn’t you just give up?
+
+James’ dad: Because it wasn’t an option. Everyone around me depended on me to succeed. I’m occupied right now but I can explain it more when I come home.
+
+James: Thanks dad, see you tonight for dinner.
+
+James: You see my dad’s a busy man, it's still crazy to me how he slept 4 hours a day for months leading up to the gaokao. And it only led to him being in the top 5% of gaokao takers in the province?  
+
+Caleb: Man, and I thought we had it tough in Ontario’s Grade 12 system. Every mark I lose on a math test this year feels like the end of the world. (don’t remind me of last week's calculus test). But for your dad, it was literally make or break. 
+
+Caleb: My dad’s story was different. His only way out was to think outside of what’s engraved in the minds of Romanian youth at the time. His parents saved up money his whole childhood, and in his first year of university, they gave him the choice between buying a car or a computer.
+
+James: I’m guessing he picked the computer?
+
+Caleb: You’re right, and the decision ended up shaping his entire future. He worked on and studied his computer with any time he had available, determined to learn all about them and get a head start in Romania’s developing computer science field. This decision combined with his unrelenting work ethic paid off big time, eventually leading to him immigrating to Canada with my mom.
+
+James: In both of our dad’s realities, they shared the same kind of mindset. They knew it was hard to look beyond their circumstances, but they believed that boundaries were meant to be broken.
+
+Caleb: Our parents didn't just inherit or even leave behind homes: They built new ones, flourishing in a completely different part of the world. Their ambitions led them here: Waterloo, Ontario, Canada. Two completely distinct backgrounds converging in a friendship between James and I. So what now? Their sacrifices made our lives here possible, but what do their ambitions mean to us? We’ll discuss this after a short break.
+
+#### Part 2 (09:33)
+
+Caleb: What I found interesting is that we inherited the outcome of our parents’ struggles but not the process. Our parents never sat us down and taught us how to break boundaries.
+
+James: Agreed. We had to figure out what ambition really means on our own.
+
+Caleb: We didn’t live their struggle, but we live because of it. Growing up in a stable middle class home, it was hard to even see the boundaries our parents broke. 
+
+James: Exactly. I grew up thinking I had ambition but it was only to an extent. My ambitions were limited by the boundaries I set for myself given my situation. I never had to fight for survival like my parents did and it unfortunately showed in my drive. 
+
+Caleb: They beat odds that we would never encounter. For us, we have the ability to pursue anything we want to as we have the financial and societal freedom to do so.
+
+James: But that's the trap we fall into sometimes. It’s easy to think that “if i had even more time, more money, or better opportunity, I could really achieve something.” When I literally have the world in my hands. 
+
+Caleb: It’s the small things that we take for granted the most, you’re right.
+
+James: Like school buses, according to my parents, they would have to walk 20 kilometers and fight tigers barefoot on their way to school (haha). 
+
+Caleb: Exactly, being fortunate creates excuses. I remember struggling with this throughout the beginning of high school. I was so focused on what I didn’t have but never completely saw what I could do with what I have.
+
+James: It was a big lesson for me. Ambition doesn’t wait for the perfect moment, it only starts when you find a purpose.
+
+Caleb: I first started to realize this during the Covid Pandemic. Those years, I was patiently waiting for the right time to do this, to do that. When the Covid lockdowns began, I had a blurry vision of what I wanted to do with my life and career, but my ambition… shut down, similar to the world. I think the Covid pandemic really exposed a widespread weakness of our mindsets: It's inconvenient to do things now rather than later. 
+
+James: Yeah, it’s like most of us were just waiting for quote correct unquote circumstances. Although I also had a slight understanding of what I wanted to do in the future, because everyone around me became lazy, I followed.
+
+James: When the world opened back up again, it's like everyone around me all simultaneously woke up, so again, I followed. Like you said, we’ve inherited the outcome of our parents’ struggles but this was the moment I inherited the process in a way. I realized that just following those around me wouldn’t allow me to achieve my goals and certainly wasn’t what my parents did.
+
+Caleb: That’s like a canon event for us second generation immigrants, you know like in the spiderman movies? Something that’s destined to happen no matter what.
+
+James: Exactly. It’s like being privileged also creates psychological tricks in your mind. 
+This reminds me of something we learned earlier this year in English class, remember psychoanalytic theory?
+
+Caleb: Oh yeah, I remember that. That was my first time learning about oedipal conflicts and developmental stages.
+
+James: Oh yeah, those are cool but I’m thinking about the Freudian principles.
+The ideas of reality and pleasure, do you remember?
+
+Caleb: Oh yes. I actually watched an in depth Youtube video centered around Freud a few weeks ago. It was from this channel I watch called SocialNeuro, you should check him out sometime. The principles are based on the concept of your ID and ego, which are two of the most important concepts in psychology.
+To put this in perspective, let's say you're in a high end fashion store. Your ID is your impulse. It would try to tell you to steal the clothes (Yeah I’d be out the door within seconds). But hold on, it's your ego, which is the part that keeps you in reality, it prevents you from stealing as it screams at you for breaking the law. 
+
+James: Oh, so actually my ID is telling me to leave the studio but my ego is not letting me as I have to finish this podcast with you for english class…
+
+Caleb: Connecting to the reality and pleasure principles, our id is tied to Freud’s pleasure principle, which is the idea that our desires are fulfilled immediately, but our ego, which steps in, is tied to Freud’s reality principle, which ensures that desires are met in appropriate ways.
+
+James: Connecting back to the pandemic, it was like … removed our ego in a way, our lack of ambition boosted our ID and our experience with the pleasure principle … it was like we faced a regression from the reality principle, a step back if you will.
+
+Caleb: Yeah Freudian principles are such a powerful connection to how the pandemic impacted our ambitions, it definitely shows how ambition and purpose are closely related to psychoanalytic theory more than anything. Although the pandemic shut our lives down, James and I both agree how it was our own turning point to inherit our parents’ process rather than just the outcome of their sacrifices. In the next segment, we will discuss how we will use this process to shape our own future after a short break.
+
+
+#### Part 3 (15:01)
+
+Caleb: What have you been up to since the pandemic?
+
+James: When I stopped fixating on what was holding me back, I began tackling my daily challenges in a more meaningful way. Remember that coding summit I attended?
+
+Caleb: Oh yeah, you were so pumped for that, chirping in my ear every chance you got. 
+
+James: Yeah, my fault, it was huge for me at the time . I had a few tests coming up and I decided to spend the whole weekend coding away all night. I almost didn’t do it, because I thought, “What if I fail?”. The old version of me would’ve given up.
+
+Caleb: Yeah but you didn’t, and crushed it.
+
+James:  Yeah, I decided the sacrifice was worth it when I thought about my dad and how he used to sleep around four hours a day during gaokao season. I realized that if he could push through those odds, what excuse did I have? 
+  
+Caleb: I understand. It’s like this new mindset led to meaningful achievements that your older self never would’ve imagined.
+
+James: Our parents' struggles were not just obstacles, they were a blueprint for ambition. 
+
+Caleb: A blueprint that we now have to make our own. Our purpose was never to recreate their journey or experiences. Our life is different in so many ways, our purpose is to honor.
+
+James: High school is almost one semester from being over. What's your future looking like?
+
+Caleb: I’m pretty excited. Actually my dad recently gave me a choice the other day, my parents could buy me a car or put that money towards my future university tuition. Guess what I chose.
+
+James: Surely the car, you love driving
+
+Caleb: No, the university tuition… (wow) paying homage to the choice my dad made back in Romania with the computer. 
+
+James: Incredible… seems like our drive is rooted in our parent’s sacrifices in every way. Although our past doesn’t define our ambitions, our shared purpose of carrying their torches does, shaping our futures.
+
+
+#### Conclusion (17:20)
+
+Caleb: Purpose is more nuanced than I thought. 
+To recap, we discussed how our parents’ sacrifices and breaking boundaries lead to our fortunate lives in Canada, but we only inherited the outcome, not the process.
+We discovered the process ourselves through our experiences, most notably during the pandemic, and we realized how purpose connects closely to psychoanalytic concepts.
+And finally, we shared our dreams for the future, using our parents as a blueprint for ambition that we would have to make our own through our drive. 
+
+James: For other second generation immigrants, we advise you to learn about your parents’ stories and connect with those with similar ambitions around you. Caleb and I bonded over this years ago and we are still at it now. 
+
+Caleb: Thanks mom and dad for your sacrifices. I won’t let you down. And if you’re not a second gen immigrant listening today, don’t think for a moment that your parents or background is the only place to find purpose. It might be significant for us, but everyone finds their purpose in different places; What’s important is that you identify it and use it to fuel your ambitions.
+
+James: Phew, it’s a lot to think about. We should honestly give it some time to sit. I actually brought some of the classic homemade dumplings, do you want to give it a taste like the good old days.
+
+Caleb: After all that deep talk all you thought about was food? You know what, fair enough. My ID is feeling crazy hungry right about now, but my ego says the studio has no-food-policy.
+
+James: No it's okay, it's just a canon event...
+
+
