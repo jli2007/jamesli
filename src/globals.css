@@ -4,8 +4,8 @@
 
 @theme {
   --color-lightBeige: #ede8d7;
-  --color-midBeige1: #D8CFBC;
-  --color-midBeige2: #C9C5B1;
+  --color-midBeige1: #d8cfbc;
+  --color-midBeige2: #c9c5b1;
   --color-midBeige3: #787569;
   --color-darkBeige1: #545249;
   --color-darkBeige2: #33322c;
@@ -41,7 +41,7 @@
     100% {
       transform: translateX(0) translateY(0);
     }
-  }  
+  }
 }
 
 @layer components {
@@ -50,7 +50,7 @@
   }
 }
 
-*{
+* {
   overscroll-behavior: none;
   /* overflow-x: hidden; */
 }
@@ -84,7 +84,7 @@
     transparent,
     transparent 10px,
     #ede8d703 10px,
-    #D8CFBC03 20px
+    #d8cfbc03 20px
   );
   animation: wave 7s ease-in-out infinite;
 }
@@ -110,4 +110,63 @@
 
 .prose {
   max-width: 100% !important;
+}
+
+/* queries */
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .jam {
+    width: 40vw;
+    height: auto;
+  }
+  .connect4 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .description {
+    width: 30vw;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1010px) {
+  .jam {
+    width: 33vw;
+    height: auto;
+    top: 15vh;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 880px) {
+  .description {
+    width: 30vw;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .linkedin {
+    right: 4px;
+    left: auto;
+    top: 4px;
+    bottom: auto;
+  }
+}
+@media (min-width: 380px) and (max-width: 767px) {
+  .jam {
+    width: 90vw;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 927px) {
+  .sidediv {
+    height: 90%;
+  }
+  .sidespan {
+    font-size: 1.2rem;
+  }
 }

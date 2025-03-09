@@ -5,7 +5,7 @@ import { showcaseProjects } from "../projects/projects";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaRegNoteSticky } from "react-icons/fa6"; //FaNoteSticky
 import resume from "../../assets/resume.pdf";
-import jam from "../../assets/jam.png";
+import jam from "../../assets/jam2.png";
 import jam1 from "../../assets/jam1.png";
 import write from "../../assets/write.png";
 
@@ -79,17 +79,17 @@ export default function Home() {
 
             {/* side section */}
             <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
-              <span className="italic z-10 text-xl drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)]">
+              <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)]">
                 can't rush greatness.
               </span>
-              <div className="relative text-xl h-[95%] flex items-end">
+              <div className="sidediv relative text-xl h-[95%] flex items-end">
                 <div className="flex flex-col gap-5 text-darkBeige1">
                   <h1 className="md:bg-transparent rounded-md px-2">
                     hey i'm <span className="text-darkBeige3">james.</span>
                   </h1>
                   <h1 className="md:bg-transparent rounded-md px-2">
                     · founder @{" "}
-                    <span className="underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
+                    <span className="sidespan underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
                       <a href="https://neoleague.dev/" target="_blank">
                         neodev
                       </a>
@@ -97,7 +97,7 @@ export default function Home() {
                   </h1>
                   <h1 className="md:bg-transparent rounded-md px-2" >
                     · prev. intern @{" "}
-                    <span className="underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
+                    <span className="sidespan underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
                       <a href="https://www.weblakes.com/" target="_blank">
                         lakes software
                       </a>
@@ -105,7 +105,7 @@ export default function Home() {
                   </h1>
                   <h1 className="md:mb-0 mb-10 md:bg-transparent rounded-md px-2">
                     · prev. junior software dev @{" "}
-                    <span className="underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
+                    <span className="sidespan underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
                       <a href="https://www.tauria.com/" target="_blank">
                         tauria
                       </a>
@@ -116,7 +116,7 @@ export default function Home() {
             </div>
             <img
               src={jam}
-              className="absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto md:top-auto md:w-135 w-90 right-0 top-25 md:z-5 z-0"
+              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto md:top-auto md:w-135 w-90 right-0 top-25 md:z-5 z-0"
               style={{
                 WebkitMaskImage:
                   "radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%)",
@@ -133,10 +133,10 @@ export default function Home() {
                   className="absolute inset-0 w-full h-full"
                 >
                   <h1 className="absolute italic left-5 top-2">linkedin</h1>
-                  <div className="absolute md:bottom-4 md:left-2 md:right-0 md:top-auto right-3 top-1">
+                  <div className="linkedin absolute md:bottom-4 md:left-2 md:right-0 md:top-auto right-3 top-0 bottom-auto left-auto">
                     <GrLinkedin className="md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
                   </div>
-                  <h1 className="absolute bottom-5 italic right-5 md:text-lg text-md">
+                  <h1 className="connect4 absolute bottom-5 italic right-5 md:text-lg text-md">
                     we can go connect4connect
                   </h1>
                 </a>
@@ -159,7 +159,7 @@ export default function Home() {
 
                   <img
                     src={write}
-                    className="absolute md:h-auto opacity-30 z-5 right-0 md:top-10 md:w-70 w-90 top-5 rounded-xl border-r"
+                    className="absolute md:h-auto opacity-30 z-5 right-0 md:top-10 md:w-70 w-90 top-5 rounded-xl"
                     style={{
                       WebkitMaskImage:
                         "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
@@ -170,10 +170,10 @@ export default function Home() {
             </div>
 
             {/* description section */}
-            <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-7 bg-midBeige1 m-1 rounded-lg md:text-[0.9rem] text-[1.05rem] md:text-darkBeige2 text-darkBeige3">
-              <div className="relative md:h-auto md:w-[20vw] w-[75%] flex flex-col h-full md:z-0 z-6">
+            <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-7 bg-midBeige1 m-1 rounded-lg md:text-darkBeige2 text-darkBeige3">
+              <div className="description relative md:h-auto md:w-[20vw] sm:w-[75%] flex flex-col h-full md:z-0 z-6 md:text-[0.9rem] text-[1.05rem]">
                 <span className="italic">programmer | student | athlete</span>
-                <h1 className="break-normal overflow-hidden md:w-[150] md:mt-5 mt-10">
+                <h1 className="break-normal md:mt-5 mt-10">
                   coming from waterloo, james is a full time{" "}
                   <span className="text-darkBeige3">
                     student & problem solver.
@@ -181,7 +181,7 @@ export default function Home() {
                   in his free time, you will find him programming, playing
                   soccer, or wandering the forest.
                 </h1>
-                <h1 className="break-normal overflow-hidden md:w-[150] md:mt-4 mt-10">
+                <h1 className="break-normal md:mt-4 mt-10">
                   having completed{" "}
                   <span className="font-bold">two software internships </span>{" "}
                   and founded the{" "}
@@ -194,7 +194,7 @@ export default function Home() {
                     js/ts full-stack development.
                   </span>
                 </h1>
-                <h1 className="break-normal overflow-hidden md:w-[150] md:mt-4 mt-10">
+                <h1 className="break-normal md:mt-4 mt-10">
                   if you meet him, he'll be happy to start a liveshare and talk
                   about the latest{" "}
                   <span className="italic text-darkBeige3">central cee</span> or{" "}
@@ -205,7 +205,7 @@ export default function Home() {
 
               <img
                 src={jam1}
-                className="absolute md:h-auto md:opacity-98 opacity-60 md:right-0 md:top-10 md:w-70 -right-10 bottom-0 w-95 rounded-2xl md:z-5 z-0"
+                className="absolute md:h-auto md:opacity-98 opacity-60 md:right-0 md:top-10 md:w-70 -right-10 bottom-0 w-95 rounded-2xl"
                 style={{
                   WebkitMaskImage:
                     "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%)",
