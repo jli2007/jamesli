@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Notes from "./pages/notes/Notes";
 import Project from "./pages/projects/Project";
-import PostNote from "./pages/notes/PostNote";
+import PostNote from "./pages/notes/PostNotes";
 
 export default function App() {
   return (
