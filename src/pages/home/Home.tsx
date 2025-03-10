@@ -89,7 +89,7 @@ export default function Home() {
                   </h1>
                   <h1 className="md:bg-transparent rounded-md px-2">
                     · founder @{" "}
-                    <span className="sidespan underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
+                    <span className="sidespan underline cursor-pointer text-darkBeige2">
                       <a href="https://neoleague.dev/" target="_blank">
                         neodev
                       </a>
@@ -97,7 +97,7 @@ export default function Home() {
                   </h1>
                   <h1 className="md:bg-transparent rounded-md px-2" >
                     · prev. intern @{" "}
-                    <span className="sidespan underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
+                    <span className="sidespan underline cursor-pointer text-darkBeige2">
                       <a href="https://www.weblakes.com/" target="_blank">
                         lakes software
                       </a>
@@ -105,7 +105,7 @@ export default function Home() {
                   </h1>
                   <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md px-2">
                     · prev. junior software dev @{" "}
-                    <span className="sidespan underline cursor-pointer text-darkBeige2 md:text-2xl text-xl">
+                    <span className="sidespan underline cursor-pointer text-darkBeige2">
                       <a href="https://www.tauria.com/" target="_blank">
                         tauria
                       </a>
