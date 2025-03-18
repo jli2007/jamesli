@@ -16,6 +16,12 @@ const posts = [
     pinned: true,
   },
   {
+    slug: "Futbol",
+    title: "favourite jugadors ⚽️",
+    date: "march 17, 2025",
+    pinned: false,
+  },
+  {
     slug: "UW",
     title: "uw accept me 🙏",
     date: "march 8, 2025",
@@ -76,7 +82,7 @@ export default function Notes() {
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline"
+                className="underline hover:bg-lightBeige/10 transition delay-300 duration-200 ease-in-out p-1 rounded-sm"
               >
                 {post.title}
               </Link>
@@ -84,7 +90,7 @@ export default function Notes() {
           ) : null
         )}
 
-        <div className="p-2 w-[30%]">
+        <div className="p-2 w-[40%]">
           <hr />
         </div>
         {posts.map((post) =>
@@ -94,7 +100,7 @@ export default function Notes() {
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline"
+                className="underline hover:bg-lightBeige/10 transition delay-300 duration-200 ease-in-out p-1 rounded-sm"
               >
                 {post.title}
               </Link>

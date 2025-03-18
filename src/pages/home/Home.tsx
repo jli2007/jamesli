@@ -67,7 +67,7 @@ export default function Home() {
               <div className="h-full absolute md:right-5 md:top-0 right-0 flex items-center">
                 <button
                   onClick={() => window.open(resume, "_blank")}
-                  className="px-4 p-2 cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-100 duration-200 ease-in-out"
+                  className="px-4 p-2 cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                 >
                   resume.
                 </button>
@@ -90,7 +90,7 @@ export default function Home() {
                   <h1 className="md:bg-transparent rounded-md px-2">
                     · founder @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a href="https://neoleague.dev/" target="_blank">
+                      <a href="https://neoleague.dev/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
                         neodev
                       </a>
                     </span>
@@ -98,7 +98,7 @@ export default function Home() {
                   <h1 className="md:bg-transparent rounded-md px-2" >
                     · prev. intern @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a href="https://www.weblakes.com/" target="_blank">
+                      <a href="https://www.weblakes.com/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
                         lakes software
                       </a>
                     </span>
@@ -106,7 +106,7 @@ export default function Home() {
                   <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md px-2">
                     · prev. junior software dev @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a href="https://www.tauria.com/" target="_blank">
+                      <a href="https://www.tauria.com/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
                         tauria
                       </a>
                     </span>
@@ -121,12 +121,13 @@ export default function Home() {
                 WebkitMaskImage:
                   "radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%)",
               }}
+              loading="lazy"
             />
 
             {/* linkedin and notes section */}
             <div className="row-span-1 col-span-6 w-auto md:h-auto h-60 grid grid-cols-3 gap-2 m-1">
               {/* linkedin section */}
-              <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-150 duration-150 ease-in">
+              <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
                 <a
                   href="https://www.linkedin.com/in/james-li-a81004275/"
                   target="_blank"
@@ -143,7 +144,7 @@ export default function Home() {
               </div>
 
               {/* notes section */}
-              <div className="relative py-3 px-7 rounded-lg bg-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-150 duration-150 ease-in">
+              <div className="relative py-3 px-7 rounded-lg bg-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
                 <a
                   className="absolute inset-0 w-full h-full cursor-pointer"
                   onClick={() => {
@@ -164,6 +165,7 @@ export default function Home() {
                       WebkitMaskImage:
                         "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
                     }}
+                    loading="lazy"
                   />
                 </a>
               </div>
@@ -210,6 +212,7 @@ export default function Home() {
                   WebkitMaskImage:
                     "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%)",
                 }}
+                loading="lazy"
               />
             </div>
 
@@ -224,6 +227,7 @@ export default function Home() {
                         <a
                           href={project.url || "https://jame.li/"}
                           target="_blank"
+                          className="hover:bg-lightBeige/10 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
                         >
                           {project.name}
                         </a>
@@ -233,7 +237,7 @@ export default function Home() {
                   ))}
                 </div>
                 <button
-                  className="absolute bottom-5 cursor-pointer text-lg font-bold underline hover:bg-lightBeige/5 transition delay-100 duration-200 ease-in-out p-1 rounded-sm"
+                  className="absolute bottom-5 cursor-pointer text-lg font-bold underline hover:bg-lightBeige/5 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
                   onClick={() => navigate("/projects")}
                 >
                   {" "}
@@ -243,7 +247,7 @@ export default function Home() {
             </div>
 
             {/* github logo section */}
-            <div className="relative md:col-span-3 col-span-6 row-span-4 w-auto md:h-auto h-15 py-3 px-7 m-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-100 duration-150 ease-in">
+            <div className="relative md:col-span-3 col-span-6 row-span-4 w-auto md:h-auto h-15 py-3 px-7 m-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
               <a
                 href="https://github.com/JLi2007"
                 className="w-full h-full absolute inset-0"
@@ -267,7 +271,7 @@ export default function Home() {
                   <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
                     <a
                       href="https://www.linkedin.com/in/james-li-a81004275/"
-                      className="cursor-pointer hover:bg-lightBeige/30 transition delay-100 duration-200 ease-in-out p-1 rounded-sm"
+                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
                       target="_blank"
                     >
                       linkedin
@@ -276,7 +280,7 @@ export default function Home() {
                   <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
                     <a
                       href="https://github.com/JLi2007"
-                      className="cursor-pointer hover:bg-lightBeige/30 transition delay-100 duration-200 ease-in-out p-1 rounded-sm"
+                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
                       target="_blank"
                     >
                       github
@@ -285,7 +289,7 @@ export default function Home() {
                   <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
                     <a
                       href="https://jamesli.jame.li/"
-                      className="cursor-pointer hover:bg-lightBeige/30 transition delay-100 duration-200 ease-in-out p-1 rounded-sm"
+                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
                       target="_blank"
                     >
                       TM

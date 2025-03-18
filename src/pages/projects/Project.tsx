@@ -40,11 +40,11 @@ export default function Projects() {
           <h1 className="p-5 m-5 font-bold">projects</h1>
         </div>
 
-        <div className="p-5 pb-10">
+        <div className="p-5 pb-5">
           {projects.map((project, index) => (
             <div key={index} className="mb-10">
               <h1 className="underline italic font-bold">
-                <a href={project.url} target="_blank">
+                <a href={project.url} target="_blank" className="hover:bg-lightBeige/10 transition delay-300 duration-200 ease-in-out p-1 rounded-sm">
                   {project.name}
                 </a>
               </h1>

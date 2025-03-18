@@ -36,7 +36,12 @@ export const projects: ProjectType[] = [
   {
     name: "euronodes",
     url: "https://github.com/JLi2007/EuroNodes",
-    desc: "dijkstra's algorithm with nodes on european countries made in processing",
+    desc: "dijkstra's algorithm with nodes on european countries made in processing java",
+  },
+  {
+    name: "piximatic",
+    url: "https://github.com/JLi2007/Piximatic",
+    desc: "simple photoshop with camera feature and imgur api built in processing java",
   },
   {
     name: "neo v1",
@@ -61,7 +66,7 @@ export const projects: ProjectType[] = [
   {
     name: "moodify",
     url: "https://github.com/Mausmato/Moodify",
-    desc: "facial expression to spotify playlist using imported machine learning model and spotify api (coming soon)",
+    desc: "facial expression to spotify playlist using imported machine learning model and spotify api (feature coming soon)",
   },
   {
     name: "weathermap",
