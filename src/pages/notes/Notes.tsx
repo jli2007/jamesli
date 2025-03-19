@@ -70,7 +70,7 @@ export default function Notes() {
             onClick={goBackToHome}
           >
             {" "}
-            back
+            <span className="text-sm md:text-base">back.</span>
           </button>
           <h1 className="p-5 m-5">notes</h1>
         </div>
@@ -82,7 +82,7 @@ export default function Notes() {
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline hover:bg-lightBeige/10 transition delay-300 duration-200 ease-in-out p-1 rounded-sm"
+                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out p-1 rounded-sm"
               >
                 {post.title}
               </Link>
@@ -100,7 +100,7 @@ export default function Notes() {
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline hover:bg-lightBeige/10 transition delay-300 duration-200 ease-in-out p-1 rounded-sm"
+                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out p-1 rounded-sm"
               >
                 {post.title}
               </Link>

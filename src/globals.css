@@ -163,10 +163,14 @@
   }
 }
 
-@media (min-width: 1100px) and (max-height: 580px){
+@media (min-width: 1100px) and (max-height: 660px){
   .jam{
     width: 30vw;
     height: auto;
+  }
+
+  .home{
+    height: 100vh;
   }
 }
 
@@ -280,6 +284,13 @@
 @media (min-width: 768px) and (max-height: 550px){
   .jam1{
     width: 20vw;
+  }
+}
+
+@media (min-width: 1100px) and (max-height: 660px){
+  .jam1{
+    width: 20vw;
+    height: auto;
   }
 }
 

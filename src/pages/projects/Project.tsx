@@ -20,7 +20,7 @@ export default function Projects() {
   return (
     <>
       <div
-        className={`intro-container max-w-screen max-h-screen z-10 ${
+        className={`intro-container max-w-screen max-h-screen z-10 font-playfair ${
           isLoaded ? "fade-out" : ""
         }`}
       >
@@ -44,11 +44,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div key={index} className="mb-10">
               <h1 className="underline italic font-bold">
-                <a href={project.url} target="_blank" className="hover:bg-lightBeige/10 transition delay-300 duration-200 ease-in-out p-1 rounded-sm">
+                <a href={project.url} target="_blank" className="hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out p-1 rounded-sm">
                   {project.name}
                 </a>
               </h1>
-              <h1>{project.desc}</h1>
+              <h1 className="p-1">{project.desc}</h1>
             </div>
           ))}
         </div>

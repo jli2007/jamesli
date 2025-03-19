@@ -1,4 +1,5 @@
-## personal top 10 favorite ⚽️ players of all time
+## personal top 10 favourite ⚽️ players of all time
+###### (tottenham fan since 2016)
 
 ### 10. lucas moura 🇧🇷
 #### "champions league fairy tale"

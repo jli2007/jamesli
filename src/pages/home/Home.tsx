@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative content inset-0 overflow-x-hidden">
+      <div className="relative content inset-0 overflow-x-hidden home">
         <div className="min-w-screen md:max-h-screen md:h-screen w-auto bg-black text-darkBeige2 font-playfair overflow-x-hidden md:overflow-y-hidden">
           
           {/* top section */}
@@ -137,7 +137,7 @@ export default function Home() {
                   <div className="linkedin absolute md:bottom-4 md:left-2 md:right-0 md:top-auto right-3 top-0 bottom-auto left-auto">
                     <GrLinkedin className="md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
                   </div>
-                  <h1 className="connect4 absolute bottom-5 italic right-5 md:text-lg text-md">
+                  <h1 className="connect4 absolute bottom-5 italic right-5 md:text-lg text-base">
                     we can go connect4connect
                   </h1>
                 </a>
@@ -237,7 +237,7 @@ export default function Home() {
                   ))}
                 </div>
                 <button
-                  className="absolute bottom-5 cursor-pointer text-lg font-bold underline hover:bg-lightBeige/5 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
+                  className="absolute bottom-5 cursor-pointer text-lg underline hover:bg-lightBeige/5 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
                   onClick={() => navigate("/projects")}
                 >
                   {" "}
@@ -267,7 +267,7 @@ export default function Home() {
                     f*** that, we can go follow4follow
                   </span>
                 </div>
-                <div className="justify-end flex md:flex-row flex-col w-full underline font-bold">
+                <div className="justify-end flex md:flex-row flex-col w-full underline">
                   <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
                     <a
                       href="https://www.linkedin.com/in/james-li-a81004275/"
@@ -292,7 +292,7 @@ export default function Home() {
                       className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
                       target="_blank"
                     >
-                      TM
+                      tm
                     </a>
                   </h1>
                 </div>

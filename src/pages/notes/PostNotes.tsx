@@ -25,7 +25,7 @@ const PostNote = () => {
   }, [slug]);
 
   return (
-    <div className="bg-black text-white max-w-screen min-h-screen h-auto w-full font-playfair overflow-x-hidden pr-5 pb-5">
+    <div className="bg-black text-white max-w-screen min-h-screen h-auto w-full font-playfair font-normal overflow-x-hidden pr-5 pb-5">
       <div className="flex flex-row">
         <button
           className="bg-white text-black cursor-pointer w-40 hover:bg-lightBeige hover:text-darkBeige3 m-5 p-5 mb-10"
@@ -33,14 +33,14 @@ const PostNote = () => {
             navigate("../notes");
           }}
         >
-          back to all notes.
+          <span className="text-sm md:text-base">back to all notes.</span>
         </button>
         <h1 className="p-5 m-5">
           {date} - {title}
         </h1>
       </div>
 
-      <div className="w-full pl-5 prose prose-invert">
+      <div className="w-full pl-5 prose prose-invert font-playfair">
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
           children={content}
