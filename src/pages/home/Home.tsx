@@ -125,7 +125,7 @@ export default function Home() {
             />
 
             {/* linkedin and notes section */}
-            <div className="row-span-1 col-span-6 w-auto md:h-auto h-60 grid grid-cols-3 gap-2 m-1">
+            <div className="row-span-1 col-span-6 w-auto md:h-auto h-80 grid grid-cols-3 gap-2 m-1">
               {/* linkedin section */}
               <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
                 <a
@@ -232,7 +232,7 @@ export default function Home() {
                           {project.name}
                         </a>
                       </h1>
-                      <span>{project.desc}</span>
+                      <span className="p-1">{project.desc}</span>
                     </div>
                   ))}
                 </div>

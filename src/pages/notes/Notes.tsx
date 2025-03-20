@@ -16,6 +16,12 @@ const posts = [
     pinned: true,
   },
   {
+    slug: "Neodev",
+    title: "neodev",
+    date: "march 20, 2025",
+    pinned: false,
+  },
+  {
     slug: "Futbol",
     title: "favourite jugadors ⚽️",
     date: "march 17, 2025",
@@ -77,12 +83,12 @@ export default function Notes() {
         <h1 className="px-5 py-1">pinned 📌</h1>
         {posts.map((post) =>
           post.pinned === true ? (
-            <div key={post.slug} className="p-5 flex flex-row">
-              <h1 className="pr-2">{post.date} - </h1>
+            <div key={post.slug} className="p-3 flex flex-row">
+              <h1 className="p-2">{post.date} - </h1>
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out p-1 rounded-sm"
+                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm p-2"
               >
                 {post.title}
               </Link>
@@ -95,12 +101,12 @@ export default function Notes() {
         </div>
         {posts.map((post) =>
           post.pinned === false ? (
-            <div key={post.slug} className="p-5 flex flex-row">
-              <h1 className="pr-2">{post.date} - </h1>
+            <div key={post.slug} className="p-3 flex flex-row">
+              <h1 className="p-2">{post.date} - </h1>
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out p-1 rounded-sm"
+                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm p-2"
               >
                 {post.title}
               </Link>
