@@ -51,5 +51,20 @@
 <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
 </div>
 
+<!-- 4 -->
+<div style="display: flex; width: 100vw; flex-direction: column;">
+    <div style="display: flex; align-items: center; gap: 10px; padding-bottom: 10px;">
+        <h3 style="margin: 0; line-height: 1;">4. kazamaura, aomori - japan</h3>
+        <span style="font-size: 40px; line-height: 1;">🇯🇵</span>
+    </div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!4v1742522944358!6m8!1m7!1sW75jxFiQTqRxGhaS4j29nA!2m2!1d41.47529215239408!2d141.077070760996!3f77.55!4f-2.230000000000004!5f0.7820865974627469" 
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<h4 style="margin-top: 10px; margin-bottom: 25px;">very northern tip of aomori japan, the coverage here feels reminiscent/nostalgic, of something... </h4>
+<hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
+
 # ...
 <br/>

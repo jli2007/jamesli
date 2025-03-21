@@ -17,7 +17,7 @@ const posts = [
   },
   {
     slug: "Neodev",
-    title: "neodev",
+    title: "founding neodev",
     date: "march 20, 2025",
     pinned: false,
   },
