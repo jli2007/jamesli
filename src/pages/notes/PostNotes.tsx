@@ -29,7 +29,7 @@ const PostNote = () => {
     <div className="bg-black text-white max-w-screen min-h-screen h-auto w-full font-playfair font-normal overflow-x-hidden pr-5 pb-5">
       <div className="flex flex-row">
         <button
-          className="bg-white text-black cursor-pointer w-40 hover:bg-lightBeige hover:text-darkBeige3 m-5 p-5 mb-10"
+          className="bg-white text-black cursor-pointer w-40 hover:bg-lightBeige hover:text-darkBeige3 m-5 p-5 mb-10 transition delay-150 ease-in-out"
           onClick={() => {
             navigate("../notes");
           }}

@@ -1,6 +1,6 @@
 ### google maps is incredible
 
-<h4 style="width: 90vw">i used to play geoguessr hours on end every day during the lockdown. i developed a fascination with the world around us and still wander google maps occasionally in my free time. i will add interesting locations & pictures i stumble across here [fully random], with a focus on variety and lesser-known places to the public eye. </h4>
+<h4 style="width: 90vw">i used to play geoguessr hours on end every day during the lockdown. i developed a fascination with the world around us and still wander google maps occasionally in my free time. i will add interesting locations & pictures i stumble across here [fully random], with a focus on <span style="text-decoration:underline">variety</span> and lesser-known places to the public eye. </h4>
 
 <br/>
 
@@ -20,10 +20,10 @@
             <span style="font-size: 40px; line-height: 1;">🇧🇴</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;" class="tagContainer">
-            <div style="background-color: mediumseagreen; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: mediumseagreen; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(60, 179, 113, 0.7);">
                 <span>● natural wonder</span>
             </div>
-            <div style="background-color: purple; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: orchid; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(218, 112, 214, 0.7);">
                 <span>● south america</span>
             </div>
         </div>
@@ -43,10 +43,10 @@
             <span style="font-size: 40px; line-height: 1;">🇯🇵</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
                 <span>● streetview</span>
             </div>
-            <div style="background-color: red; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: red; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.7);">
                 <span>● asia</span>
             </div>
         </div>
@@ -66,10 +66,10 @@
             <span style="font-size: 40px; line-height: 1;">🇨🇱</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="background-color: mediumseagreen; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: mediumseagreen; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(60, 179, 113, 0.7);">
                 <span>● natural wonder</span>
             </div>
-            <div style="background-color: purple; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: orchid; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(218, 112, 214, 0.7);">
                 <span>● south america</span>
             </div>
         </div>
@@ -89,10 +89,10 @@
             <span style="font-size: 40px; line-height: 1;">🇵🇹</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
                 <span>● streetview</span>
             </div>
-            <div style="background-color: darkSalmon; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: darkSalmon; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(233, 150, 122, 0.7);">
                 <span>● europe</span>
             </div>
         </div>
@@ -112,10 +112,10 @@
             <span style="font-size: 40px; line-height: 1;">🇮🇩</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
                 <span>● streetview</span>
             </div>
-            <div style="background-color: red; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: red; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.7);">
                 <span>● asia</span>
             </div>
         </div>
@@ -135,10 +135,10 @@
             <span style="font-size: 40px; line-height: 1;">🇮🇹</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
                 <span>● streetview</span>
             </div>
-            <div style="background-color: darkSalmon; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: darkSalmon; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(233, 150, 122, 0.7);">
                 <span>● europe</span>
             </div>
         </div>
@@ -158,10 +158,10 @@
             <span style="font-size: 40px; line-height: 1;">🇯🇵</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="background-color: slategray; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: slategray; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(112, 128, 144, 0.7);">
                 <span>● pathview</span>
             </div>
-            <div style="background-color: red; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px;">
+            <div style="background-color: red; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.7);">
                 <span>● asia</span>
             </div>
         </div>
@@ -169,10 +169,78 @@
     <iframe src="https://www.google.com/maps/embed?pb=!4v1742827627271!6m8!1m7!1sxHcoXrCkttf3ghEsiurhDQ!2m2!1d35.6541325889197!2d139.7568603692578!3f335.2871986116603!4f-8.794206093324746!5f0.4000000000000002" 
             style="width: 90vw; height: 75vh; border: 0;" 
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">'hamamatsuchō station'. feels eerie yet peaceful.</h4>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">'hamamatsuchō station' at dusk feels eerie yet peaceful.</h4>
     <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
 </div>
 
+<!-- 8 -->
+<div style="display: flex; width: 90vw; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 style="margin: 0; line-height: 1;">8. isparta - turkey</h3>
+            <span style="font-size: 40px; line-height: 1;">🇹🇷</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
+                <span>● streetview</span>
+            </div>
+            <div style="background-color: darkgoldenrod; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(184, 134, 11, 0.7);">
+                <span>● middle east</span>
+            </div>
+        </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1742855033062!6m8!1m7!1skg9CAEfVgaSmqyDMD2qWYQ!2m2!1d37.87869572943686!2d30.85741539789047!3f242.51!4f-1.5100000000000051!5f0.7820865974627469" 
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">located on a peninsula, this place looks magical. this road on a the lake with towering mountains in the background gives a unique feel.</h4>
+    <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
+
+<!-- 9 -->
+<div style="display: flex; width: 90vw; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 style="margin: 0; line-height: 1;">9. atlantic region - canada</h3>
+            <span style="font-size: 40px; line-height: 1;">🇨🇦</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
+                <span>● streetview</span>
+            </div>
+            <div style="background-color: coral; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(255, 127, 80, 0.7);">
+                <span>● north america</span>
+            </div>
+        </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1742857422955!6m8!1m7!1sXFJSLiGs5WHmsHx8ES9zJg!2m2!1d47.56692372548685!2d-59.1285977123117!3f79.1228721831438!4f1.6240971263550108!5f0.7820865974627469" 
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">'channel-port aux basques' on newfoundland. i always loved the look and feel of atlantic canada and to me, this location really encapsulates the authentic essence of the life here. i once went on a road trip to every province in the east except newfoundland... maybe one day.</h4>
+    <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
+
+<!-- 10 -->
+<div style="display: flex; width: 90vw; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 style="margin: 0; line-height: 1;">10. buddha carvings - china</h3>
+            <span style="font-size: 40px; line-height: 1;">🇨🇳</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background-color: midnightblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(25, 25, 112, 0.7);">
+                <span>● man-made wonder</span>
+            </div>
+            <div style="background-color: red; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.7);">
+                <span>● asia</span>
+            </div>
+        </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1742858318848!6m8!1m7!1sCAoSLEFGMVFpcFA5eGNSejRYWHhVc1VILU5Na19zSmU0czJiTXNwMXo5Q3B5TkRK!2m2!1d34.55478001768151!2d112.4707319804518!3f104.45560957978083!4f11.540139509613823!5f0.5753934370152958" 
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">located in henan province, china, are a collection of over 2,300 caves and niches carved into limestone cliffs along the yi river. the 'longmen grottoes' dates back to the northern wei dynasty (5th century)</h4>
+    <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
 
 <!-- break -->
 # ...

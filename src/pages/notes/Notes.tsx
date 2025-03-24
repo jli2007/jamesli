@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const posts = [
   {
-    slug: "Quotes",
-    title: "quotes with aura 🗣️",
+    slug: "Places",
+    title: "places of the world 📍",
     date: "march 8, 2025 -> present",
     pinned: true,
   },
   {
-    slug: "Places",
-    title: "places of the world 📍",
+    slug: "Quotes",
+    title: "quotes with aura 🗣️",
     date: "march 8, 2025 -> present",
     pinned: true,
   },
@@ -72,7 +72,7 @@ export default function Notes() {
       <div className="bg-black text-white font-playfair h-screen w-screen md:max-h-screen max-w-screen overflow-x-hidden">
         <div className="flex flex-row">
           <button
-            className="bg-white text-black p-5 cursor-pointer m-5 w-30 hover:bg-lightBeige hover:text-darkBeige3"
+            className="bg-white text-black p-5 cursor-pointer m-5 w-30 hover:bg-lightBeige hover:text-darkBeige3 transition delay-150 ease-in-out"
             onClick={goBackToHome}
           >
             {" "}
@@ -88,7 +88,7 @@ export default function Notes() {
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
+                className="underline !underline-offset-3 hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
               >
                 {post.title}
               </Link>

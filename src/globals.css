@@ -52,6 +52,7 @@
 
 * {
   overscroll-behavior: none;
+  text-underline-offset: 2px;
   /* overflow-x: hidden; */
 }
 
