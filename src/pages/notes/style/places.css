@@ -1,0 +1,6 @@
+@media (max-width: 700px){
+    .topContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}

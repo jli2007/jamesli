@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import "./style/places.css";
 
 const PostNote = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const PostNote = () => {
   const title = location.state?.title || "Note";
   const { slug } = useParams<{ slug: string }>();
   const [content, setContent] = useState("");
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch(`/posts/${slug}.md`)
@@ -18,7 +20,6 @@ const PostNote = () => {
         return res.text();
       })
       .then((data) => {
-        console.log(data);
         setContent(data);
       })
       .catch(() => setContent("# Post Not Found"));
@@ -50,8 +51,14 @@ const PostNote = () => {
                 {children}
               </a>
             ),
+            button: ({ children }) => (
+              <button onClick={() => bottomRef.current?.scrollIntoView({ behavior: "smooth" })} className="bg-white/20 cursor-pointer font-bold hover:bg-white/25 p-2 transition delay-200 duration-300 ease-in-out rounded-2xl my-5">
+                {children}
+              </button>
+            ),
           }}
         />
+        <div ref={bottomRef} />
       </div>
     </div>
   );

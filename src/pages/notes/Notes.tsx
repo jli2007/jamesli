@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 const posts = [
   {
     slug: "Quotes",
-    title: "quotes with aura",
+    title: "quotes with aura 🗣️",
     date: "march 8, 2025 -> present",
     pinned: true,
   },
   {
     slug: "Places",
-    title: "places of the world",
+    title: "places of the world 📍",
     date: "march 8, 2025 -> present",
     pinned: true,
   },
@@ -48,7 +48,7 @@ export default function Notes() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true);
-    }, 500);
+    }, 750);
   }, []);
 
   const goBackToHome = () => {
@@ -84,11 +84,11 @@ export default function Notes() {
         {posts.map((post) =>
           post.pinned === true ? (
             <div key={post.slug} className="p-3 flex flex-row">
-              <h1 className="p-2">{post.date} - </h1>
+              <h1 className="py-1 px-2 my-1">{post.date} - </h1>
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm p-2"
+                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
               >
                 {post.title}
               </Link>
@@ -102,11 +102,11 @@ export default function Notes() {
         {posts.map((post) =>
           post.pinned === false ? (
             <div key={post.slug} className="p-3 flex flex-row">
-              <h1 className="p-2">{post.date} - </h1>
+              <h1 className="py-1 px-2 my-1">{post.date} - </h1>
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
-                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm p-2"
+                className="underline hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
               >
                 {post.title}
               </Link>

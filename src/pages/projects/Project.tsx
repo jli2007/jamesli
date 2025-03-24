@@ -9,7 +9,7 @@ export default function Projects() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true);
-    }, 1000);
+    }, 750);
   }, []);
 
   const goBackToHome = () => {
@@ -44,11 +44,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div key={index} className="mb-10">
               <h1 className="underline italic font-bold">
-                <a href={project.url} target="_blank" className="hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out p-1 rounded-sm">
+                <a href={project.url} target="_blank" className="hover:bg-lightBeige/13 transition delay-250 duration-200 ease-in-out px-2 py-1 rounded-sm">
                   {project.name}
                 </a>
               </h1>
-              <h1 className="p-1">{project.desc}</h1>
+              <h1 className="px-2 py-1">{project.desc}</h1>
             </div>
           ))}
         </div>

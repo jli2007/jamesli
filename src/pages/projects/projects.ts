@@ -24,6 +24,16 @@ export const showcaseProjects: ProjectType[] = [
 
 export const projects: ProjectType[] = [
   {
+    name: "movie recommender",
+    url: "https://movie.jame/li",
+    desc: "home page & landing (coming soon) page for the neo developer league 2025",
+  },
+  {
+    name: "querify",
+    url: "https://querify.jame.li",
+    desc: "home page & landing (coming soon) page for the neo developer league 2025",
+  },
+  {
     name: "neo v2",
     url: "https://neoleague.dev/",
     desc: "home page & landing (coming soon) page for the neo developer league 2025",
