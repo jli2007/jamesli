@@ -83,8 +83,8 @@ export default function Notes() {
         <h1 className="px-5 py-1">pinned 📌</h1>
         {posts.map((post) =>
           post.pinned === true ? (
-            <div key={post.slug} className="p-3 flex flex-row">
-              <h1 className="py-1 px-2 my-1">{post.date} - </h1>
+            <div key={post.slug} className="p-3 flex md:flex-row flex-col">
+              <h1 className="py-1 px-2 my-1">{post.date} <span className="hidden md:inline">-</span></h1>
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}
@@ -101,8 +101,8 @@ export default function Notes() {
         </div>
         {posts.map((post) =>
           post.pinned === false ? (
-            <div key={post.slug} className="p-3 flex flex-row">
-              <h1 className="py-1 px-2 my-1">{post.date} - </h1>
+            <div key={post.slug} className="p-3 flex md:flex-row flex-col">
+              <h1 className="py-1 px-2 my-1">{post.date} <span className="hidden md:inline">-</span></h1>
               <Link
                 to={`/notes/${post.slug}`}
                 state={{ date: post.date, title: post.title }}

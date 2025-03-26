@@ -1,6 +1,6 @@
 ### google maps is incredible
 
-<h4 style="width: 90vw">i used to play geoguessr hours on end every day during the lockdown. i developed a fascination with the world around us and still wander google maps occasionally in my free time. i will add interesting locations & pictures i stumble across here [fully random], with a focus on <span style="text-decoration:underline">variety</span> and lesser-known places to the public eye. </h4>
+<h4 style="width: 70vw">i used to play geoguessr hours on end every day during the lockdown. i developed a fascination with the world around us and still wander google maps occasionally in my free time. i will add interesting locations & pictures i stumble across here [fully random], with a focus on <span style="text-decoration:underline">variety</span> and lesser-known places to the public eye. </h4>
 
 <br/>
 
@@ -16,7 +16,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">1. salar de uyuni - bolivia</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">1. salar de uyuni - bolivia</h3>
             <span style="font-size: 40px; line-height: 1;">🇧🇴</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;" class="tagContainer">
@@ -39,7 +39,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">2. kazamaura, aomori - japan</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">2. kazamaura, aomori - japan</h3>
             <span style="font-size: 40px; line-height: 1;">🇯🇵</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -62,7 +62,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">3. national park - chile</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">3. national park - chile</h3>
             <span style="font-size: 40px; line-height: 1;">🇨🇱</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -85,7 +85,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">4. mountainous district - portugal</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">4. mountainous district - portugal</h3>
             <span style="font-size: 40px; line-height: 1;">🇵🇹</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -108,7 +108,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">5. central java mountains - indonesia</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">5. central java mountains - indonesia</h3>
             <span style="font-size: 40px; line-height: 1;">🇮🇩</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -131,7 +131,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">6. lombardy region - italy</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">6. lombardy region - italy</h3>
             <span style="font-size: 40px; line-height: 1;">🇮🇹</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -154,7 +154,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">7. central tokyo - japan</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">7. central tokyo - japan</h3>
             <span style="font-size: 40px; line-height: 1;">🇯🇵</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -177,7 +177,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">8. isparta - turkey</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">8. isparta - turkey</h3>
             <span style="font-size: 40px; line-height: 1;">🇹🇷</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -200,14 +200,14 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">9. atlantic region - canada</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">9. atlantic region - canada</h3>
             <span style="font-size: 40px; line-height: 1;">🇨🇦</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
             <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
                 <span>● streetview</span>
             </div>
-            <div style="background-color: coral; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(255, 127, 80, 0.7);">
+            <div style="background-color: darkturquoise; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(0, 206, 209, 0.7);">
                 <span>● north america</span>
             </div>
         </div>
@@ -223,7 +223,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 style="margin: 0; line-height: 1;">10. buddha carvings - china</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">10. buddha carvings - china</h3>
             <span style="font-size: 40px; line-height: 1;">🇨🇳</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -238,7 +238,53 @@
     <iframe src="https://www.google.com/maps/embed?pb=!4v1742858318848!6m8!1m7!1sCAoSLEFGMVFpcFA5eGNSejRYWHhVc1VILU5Na19zSmU0czJiTXNwMXo5Q3B5TkRK!2m2!1d34.55478001768151!2d112.4707319804518!3f104.45560957978083!4f11.540139509613823!5f0.5753934370152958" 
             style="width: 90vw; height: 75vh; border: 0;" 
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">located in henan province, china, are a collection of over 2,300 caves and niches carved into limestone cliffs along the yi river. the 'longmen grottoes' dates back to the northern wei dynasty (5th century)</h4>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">located in henan province, china, are a collection of over 2,300 caves and niches carved into limestone cliffs along the yi river. the 'longmen grottoes' date back to the northern wei dynasty (5th century)</h4>
+    <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
+
+<!-- 11 -->
+<div style="display: flex; width: 90vw; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 class="title" style="margin: 0; line-height: 1;">11. nile delta - egypt</h3>
+            <span style="font-size: 40px; line-height: 1;">🇪🇬</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background-color: mediumvioletred; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(199, 21, 133, 0.7);">
+                <span>● photosphere</span>
+            </div>
+            <div style="background-color: coral; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(255, 127, 80, 0.7);">
+                <span>● africa</span>
+            </div>
+        </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1742948421781!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ2U2b2ZqM0FF!2m2!1d30.76987721304302!2d31.68503029551924!3f339.6000588152038!4f6.425231924943461!5f0.7820865974627469" 
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">the nile delta area is very vibrant in greenery, unlike most of egypt. found this photosphere appealing (mohamed salah grew up in this region) </h4>
+    <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
+
+<!-- 12 -->
+<div style="display: flex; width: 90vw; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 class="title" style="margin: 0; line-height: 1;">12. mendoza province - argentina</h3>
+            <span style="font-size: 40px; line-height: 1;">🇦🇷</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
+                <span>● streetview</span>
+            </div>
+            <div style="background-color: orchid; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(218, 112, 214, 0.7);">
+                <span>● south america</span>
+            </div>
+        </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1742912933029!6m8!1m7!1sAphqmEpvTJBixIC6vsAReg!2m2!1d-32.81380302943974!2d-70.05054651138909!3f92.33565409181132!4f-4.431527880299043!5f1.266124068929634"
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">under the andes, the architecture and surroundings feels evocative of rural russia. looking around, there are many crumbled buildings, how long will these remote villages last? </h4>
     <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
 </div>
 
