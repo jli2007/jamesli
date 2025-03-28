@@ -7,3 +7,9 @@
         margin-bottom: 10px !important;
     }
 }
+
+@media (min-width: 1500px){
+    .description{
+        width: 70vw;
+    }
+}

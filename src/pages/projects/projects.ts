@@ -26,12 +26,12 @@ export const projects: ProjectType[] = [
   {
     name: "movie recommender",
     url: "https://movie.jame/li",
-    desc: "home page & landing (coming soon) page for the neo developer league 2025",
+    desc: "first machine learning project - uses vector distance to find similar movies by keyword & cast & genre",
   },
   {
     name: "querify",
     url: "https://querify.jame.li",
-    desc: "home page & landing (coming soon) page for the neo developer league 2025",
+    desc: "uses resizable boxes to make writing media queries easier and stores state in mongoose",
   },
   {
     name: "neo v2",
@@ -39,7 +39,7 @@ export const projects: ProjectType[] = [
     desc: "home page & landing (coming soon) page for the neo developer league 2025",
   },
   {
-    name: "jame.li",
+    name: "jame.li v2",
     url: "https://jame.li/",
     desc: "this website",
   },

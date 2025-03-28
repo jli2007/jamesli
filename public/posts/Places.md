@@ -1,6 +1,6 @@
 ### google maps is incredible
 
-<h4 style="width: 70vw">i used to play geoguessr hours on end every day during the lockdown. i developed a fascination with the world around us and still wander google maps occasionally in my free time. i will add interesting locations & pictures i stumble across here [fully random], with a focus on <span style="text-decoration:underline">variety</span> and lesser-known places to the public eye. </h4>
+<h4 class="description" style="width: 90vw">i used to play geoguessr hours on end every day during the lockdown. i developed a fascination with the world around us and still wander google maps occasionally in my free time. i will add interesting locations & pictures i stumble across here [fully random], with a focus on <span style="text-decoration:underline">variety</span> and lesser-known places to the public eye. </h4>
 
 <br/>
 
@@ -285,6 +285,29 @@
             style="width: 90vw; height: 75vh; border: 0;" 
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">under the andes, the architecture and surroundings feels evocative of rural russia. looking around, there are many crumbled buildings, how long will these remote villages last? </h4>
+    <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
+
+<!-- 13 -->
+<div style="display: flex; width: 90vw; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 class="title" style="margin: 0; line-height: 1;">13. rural - oman</h3>
+            <span style="font-size: 40px; line-height: 1;">🇴🇲</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
+                <span>● streetview</span>
+            </div>
+            <div style="background-color: darkgoldenrod; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(184, 134, 11, 0.7);">
+                <span>● middle east</span>
+            </div>
+        </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1743133476740!6m8!1m7!1srUx5hRB66cbiVr4ucKCj5g!2m2!1d16.68122884138414!2d53.11768308197132!3f274.881901918054!4f-3.2831940072610735!5f1.349233280793559"
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">feels like we are on an island like madeira or las palmas but no, this is oman, close to its border with yemen. if you go east down the street, there are random wild mules next to a gas station, only in oman i guess?. oman was only recently added to streetview and hopefully more countries will get added in the coming years... china is a big one but thats because of restrictions, but much of africa and western asia are still missing from the database. </h4>
     <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
 </div>
 
