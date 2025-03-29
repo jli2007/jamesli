@@ -7,7 +7,7 @@
 #### "i treat every day like a monday morning, i treat every month like a january" - central cee
 
 #
-#### "everybody around us is so uninspirational" - [jeffrey zang](https://www.jeffreyzang.com/)
+#### "everybody around us is so uninspirational [lhss school library]" - [jeffrey zang](https://www.jeffreyzang.com/)
 
 #
 #### ...

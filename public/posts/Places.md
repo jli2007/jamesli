@@ -292,7 +292,7 @@
 <div style="display: flex; width: 90vw; flex-direction: column;">
     <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <h3 class="title" style="margin: 0; line-height: 1;">13. rural - oman</h3>
+            <h3 class="title" style="margin: 0; line-height: 1;">13. landscape - oman</h3>
             <span style="font-size: 40px; line-height: 1;">🇴🇲</span>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">

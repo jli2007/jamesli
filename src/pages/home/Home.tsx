@@ -5,8 +5,8 @@ import { showcaseProjects } from "../projects/projects";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaRegNoteSticky } from "react-icons/fa6"; //FaNoteSticky
 import resume from "../../assets/resume.pdf";
-import jam from "../../assets/jam2.png";
-import jam1 from "../../assets/jam1.png";
+import jam from "../../assets/jame.png";
+import jam1 from "../../assets/jame1.png";
 import write from "../../assets/write.png";
 
 export default function Home() {
