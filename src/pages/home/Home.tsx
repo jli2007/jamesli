@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <>
       <div
-        className={`intro-container max-w-screen max-h-screen z-10 ${
+        className={`intro-container max-w-screen max-h-screen z-40 ${
           isLoaded ? "fade-out" : ""
         }`}
       >
@@ -78,16 +78,16 @@ export default function Home() {
           <div className="grid grid-flow-row md:grid-flow-col grid-rows-2 gap-1 md:h-[90vh] h-auto">
 
             {/* side section */}
-            <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
+            <div className="row-span-7 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
               <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)]">
                 can't rush greatness.
               </span>
               <div className="sidediv relative text-xl h-[95%] flex items-end">
                 <div className="flex flex-col gap-5 text-darkBeige1">
-                  <h1 className="md:bg-transparent rounded-md px-2">
+                  <h1 className="md:bg-transparent rounded-md">
                     hey i'm <span className="text-darkBeige3">james.</span>
                   </h1>
-                  <h1 className="md:bg-transparent rounded-md px-2">
+                  <h1 className="md:bg-transparent rounded-md">
                     · founder @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
                       <a href="https://neoleague.dev/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
@@ -95,7 +95,7 @@ export default function Home() {
                       </a>
                     </span>
                   </h1>
-                  <h1 className="md:bg-transparent rounded-md px-2" >
+                  <h1 className="md:bg-transparent rounded-md" >
                     · prev. intern @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
                       <a href="https://www.weblakes.com/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
@@ -103,7 +103,7 @@ export default function Home() {
                       </a>
                     </span>
                   </h1>
-                  <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md px-2">
+                  <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md">
                     · prev. junior software dev @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
                       <a href="https://www.tauria.com/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
@@ -134,7 +134,7 @@ export default function Home() {
                   className="absolute inset-0 w-full h-full"
                 >
                   <h1 className="absolute italic left-5 top-2">linkedin</h1>
-                  <div className="linkedin absolute md:bottom-4 md:left-2 md:right-0 md:top-auto right-3 top-0 bottom-auto left-auto">
+                  <div className="linkedin absolute md:bottom-4 md:left-2 md:right-0 md:top-auto right-3 top-0 bottom-auto left-auto z-20">
                     <GrLinkedin className="md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
                   </div>
                   <h1 className="connect4 absolute bottom-5 italic right-5 md:text-lg text-base">

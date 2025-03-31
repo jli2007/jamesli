@@ -121,6 +121,15 @@
   .jam {
     width: 40vw;
     height: auto;
+    top: 10vh;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) {
+  .jam {
+    width: 35vw;
+    height: auto;
+    top: 20vh;
   }
 }
 
@@ -141,7 +150,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 837px) {
+@media (min-width: 768px) and (max-width: 837px) and (max-height: 575px) {
   .jam {
     width: 25vw;
     height: auto;
@@ -352,5 +361,35 @@
 @media (min-width: 768px) and (max-width: 927px) {
   .sidediv {
     height: 90%;
+  }
+}
+
+@media(min-width: 1500px){
+  .jam{
+    width: 20vw;
+    opacity: 95%;
+    margin-top: 4rem;
+  }
+
+  .sidediv{
+    font-size: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .jam1{
+    width: 20vw;
+  }
+}
+
+@media(min-width: 1500px) and (max-height: 680px){
+  .jam{
+    width: 30vw;
+    opacity: 95%;
+    margin-top: 4rem;
+  }
+  .jam1{
+    width: 15vw;
   }
 }

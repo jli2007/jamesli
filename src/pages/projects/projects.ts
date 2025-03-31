@@ -8,7 +8,7 @@ export const showcaseProjects: ProjectType[] = [
   {
     name: "neo developer league",
     url: "https://neoleague.dev/",
-    desc: "home & landing",
+    desc: "home & landing page",
   },
   {
     name: "identibear",
