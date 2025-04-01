@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { useNavigate } from "react-router";
 import LoadingBar from "react-top-loading-bar";
 import { showcaseProjects } from "../projects/projects";
@@ -59,11 +59,12 @@ export default function Home() {
 
       <div className="relative content inset-0 overflow-x-hidden home">
         <div className="min-w-screen md:max-h-screen md:h-screen w-auto bg-black text-darkBeige2 font-playfair overflow-x-hidden md:overflow-y-hidden">
-          
           {/* top section */}
           <div className="relative w-auto p-5 bg-midBeige1 rounded-lg text-darkBeige3 m-1 mt-2 flex flex-row">
             <div className="relative w-full h-full flex justify-between">
-              <h1>james siyuan li <span className="pl-1">李思远</span></h1>
+              <h1>
+                james siyuan li <span className="pl-1">李思远</span>
+              </h1>
               <div className="h-full absolute md:right-5 md:top-0 right-0 flex items-center">
                 <button
                   onClick={() => window.open(resume, "_blank")}
@@ -75,10 +76,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-flow-row md:grid-flow-col grid-rows-2 gap-1 md:h-[90vh] h-auto">
-
+          <div className="grid grid-flow-row md:grid-flow-col grid-rows-2 gap-1 h-auto md:h-[91vh] content-section">
             {/* side section */}
-            <div className="row-span-7 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
+            <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
               <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)]">
                 can't rush greatness.
               </span>
@@ -90,15 +90,23 @@ export default function Home() {
                   <h1 className="md:bg-transparent rounded-md">
                     · founder @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a href="https://neoleague.dev/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
+                      <a
+                        href="https://neoleague.dev/"
+                        target="_blank"
+                        className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
+                      >
                         neodev
                       </a>
                     </span>
                   </h1>
-                  <h1 className="md:bg-transparent rounded-md" >
+                  <h1 className="md:bg-transparent rounded-md">
                     · prev. intern @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a href="https://www.weblakes.com/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
+                      <a
+                        href="https://www.weblakes.com/"
+                        target="_blank"
+                        className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
+                      >
                         lakes software
                       </a>
                     </span>
@@ -106,7 +114,11 @@ export default function Home() {
                   <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md">
                     · prev. junior software dev @{" "}
                     <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a href="https://www.tauria.com/" target="_blank" className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
+                      <a
+                        href="https://www.tauria.com/"
+                        target="_blank"
+                        className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
+                      >
                         tauria
                       </a>
                     </span>
@@ -260,14 +272,22 @@ export default function Home() {
             </div>
 
             {/* profiles section */}
-            <div className="col-span-6 row-span-4 w-auto md:h-auto py-3 px-7 m-1 rounded-lg bg-midBeige2">
+            <div className="col-span-6 row-span-4 w-auto md:h-auto py-3 px-7 m-1 rounded-lg bg-midBeige2 bottom-section">
               <div className="flex w-full items-center md:flex-row flex-col">
                 <div className="flex w-full md:justify-start justify-center">
                   <span className="italic">
                     f*** that, we can go follow4follow
                   </span>
                 </div>
-                <div className="justify-end flex md:flex-row flex-col w-full underline">
+                <div className="justify-end flex md:flex-row flex-col w-full underline !underline-offset-4">
+                  <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
+                    <a
+                      href="mailto:hello@jame.li"
+                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
+                    >
+                      hello@jame.li
+                    </a>
+                  </h1>
                   <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
                     <a
                       href="https://www.linkedin.com/in/james-li-a81004275/"
@@ -284,15 +304,6 @@ export default function Home() {
                       target="_blank"
                     >
                       github
-                    </a>
-                  </h1>
-                  <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
-                    <a
-                      href="https://jamesli.jame.li/"
-                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
-                      target="_blank"
-                    >
-                      tm
                     </a>
                   </h1>
                 </div>

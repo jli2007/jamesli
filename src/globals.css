@@ -113,7 +113,8 @@
   max-width: 100% !important;
 }
 
-/* queries */
+/* queries 😭 the formatting for the website requires this much queries to be responsive,
+ but tbh this just goes to show how badly i did my col and row span layout */
 
 /* jam img (big)*/
 
@@ -164,6 +165,9 @@
     width: 90vw;
     height: auto;
   }
+  .bottom-section{
+    margin-bottom: 2vh;
+  }
 }
 
 @media (min-width: 380px) and (max-width: 767px) {
@@ -207,7 +211,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-height: 800px){
+@media (min-width: 768px) and (max-height: 850px){
   .description{
     font-size: 0.75rem;
   }
@@ -274,7 +278,7 @@
   }
 } 
 
-@media (max-height: 800px){
+@media (max-height: 850px){
   .h1descr{
     background-color: #ede8d780;
     border-radius: 6px;
@@ -366,9 +370,9 @@
 
 @media(min-width: 1500px){
   .jam{
-    width: 20vw;
-    opacity: 95%;
-    margin-top: 4rem;
+    width: 12vw;
+    opacity: 90%;
+    margin-top: 7rem;
   }
 
   .sidediv{
@@ -386,10 +390,30 @@
 @media(min-width: 1500px) and (max-height: 680px){
   .jam{
     width: 30vw;
-    opacity: 95%;
+    opacity: 50%;
     margin-top: 4rem;
   }
   .jam1{
     width: 15vw;
+  }
+}
+
+/* the issue with bottom margin */
+
+@media(max-height: 800px) and (min-width: 768px) {
+  .content-section{
+    height: 90vh;
+  }
+}
+
+@media(max-height: 750px) and (min-width: 768px){
+  .content-section{
+    height: 89vh;
+  }
+}
+
+@media(max-height: 660px) and (min-width: 768px){
+  .content-section{
+    height: 88vh;
   }
 }

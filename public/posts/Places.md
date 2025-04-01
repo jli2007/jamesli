@@ -311,6 +311,29 @@
     <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
 </div>
 
+<!-- 14 -->
+<div style="display: flex; width: 90vw; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px;" class="topContainer">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 class="title" style="margin: 0; line-height: 1;">14. countryside - northern ireland</h3>
+            <span style="font-size: 40px; line-height: 1;">🇯🇪</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background-color: dodgerblue; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.7);">
+                <span>● streetview</span>
+            </div>
+            <div style="background-color: darkSalmon; color: white; padding: 2px 15px; border-radius: 15px; font-size: 12px; box-shadow: 0px 4px 8px rgba(233, 150, 122, 0.7);">
+                <span>● europe</span>
+            </div>
+        </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!4v1743475847277!6m8!1m7!1sTUy4KqkqKifRfPc2sm2OOg!2m2!1d55.14582671661194!2d-8.210794748937468!3f332.02567193437505!4f-3.9580072929426677!5f0.7820865974627469"
+            style="width: 90vw; height: 75vh; border: 0;" 
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h4 style="margin-top: 10px; margin-bottom: 25px; width: 90vw;">facing the grand north atlantic ocean, the rugged land meets sea at the northern tip of northern ireland. i wonder what daily life looks like here. </h4>
+    <hr style="margin: 0; padding:0; margin-bottom: 12px;"/>
+</div>
+
 <!-- break -->
 # ...
 
