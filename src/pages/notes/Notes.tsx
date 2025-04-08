@@ -4,37 +4,37 @@ import { Link } from "react-router-dom";
 
 const posts = [
   {
-    slug: "Places",
+    slug: "places",
     title: "places of the world 📍",
     date: "march 8, 2025 -> present",
     pinned: true,
   },
   {
-    slug: "Quotes",
-    title: "quotes with aura 🗣️",
+    slug: "quotes",
+    title: "inspirational people 👥 & quotes 🗣️",
     date: "march 8, 2025 -> present",
     pinned: true,
   },
   {
-    slug: "Neodev",
+    slug: "neodev",
     title: "founding neodev",
     date: "march 20, 2025",
     pinned: false,
   },
   {
-    slug: "Futbol",
+    slug: "futbol",
     title: "favourite jugadors ⚽️",
     date: "march 17, 2025",
     pinned: false,
   },
   {
-    slug: "UW",
+    slug: "uw",
     title: "uw accept me 🙏",
     date: "march 8, 2025",
     pinned: false,
   },
   {
-    slug: "Ambition",
+    slug: "ambition",
     title: "an inherited ambition",
     date: "march 8, 2025",
     pinned: false,

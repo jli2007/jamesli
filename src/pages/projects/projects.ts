@@ -76,7 +76,7 @@ export const projects: ProjectType[] = [
   {
     name: "moodify",
     url: "https://github.com/Mausmato/Moodify",
-    desc: "facial expression to spotify playlist using open source machine learning model (spotify api feature coming soon...? this project just does not want to build for some reason)",
+    desc: "facial expression to spotify playlist using open source machine learning model (spotify api feature coming soon...?)",
   },
   {
     name: "weathermap",

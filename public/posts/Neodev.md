@@ -1,17 +1,17 @@
 ## founding neodev
 
-#### neodev was founded in may 2024 following some fellow buddies and i identified some glaring issues in a typical hackathon experience.
+#### neodev was founded in may 2024 after some fellow buddies and i identified some glaring issues in a typical hackathon experience.
 ##### 1. they lacked enthusiasm and energy.
 ##### 2. the small team sizes didn't reflect industry standards.
 ##### 3. beginners didn't feel sufficiently welcomed.
 
-#### we then founded the neo developer league. our small team held weekly meetings in a concealed room in a uw science building for months. we planned an event experience like no other and pitched it to the world, gaining support from the wrdsb, convictional ai, and den 1880 in the heart of uptown waterloo.
+<h4> we then founded the neo developer league. our small team held weekly meetings in a random concealed room in a <span style="text-decoration:underline">uw science building</span> for months. we planned an event experience like no other and pitched it to the world, gaining support from the <span style="font-style:italic">wrdsb, convictional ai,</span> and <span style="font-style:italic">den 1880</span> in the heart of uptown waterloo. </h4>
 
-</br>
+#
 
 <h3 style="text-decoration: underline;">neodev wrdsb summit</h3>
 
-<h4> October 26, 2024, I ran the Neo Developer League, welcoming 100+ developers from more than 10 schools with <strong style="font-weight: bold;">$11k+</strong> in funding. The event was a success and built a strong foundation for more exciting events to come. </h4>
+<h4> october 26, 2024, i ran the neo developer league v1 in waterloo, welcoming 100+ developers from more than 10 schools with <strong style="font-weight: bold;">$11k+</strong> in funding. the event was a success and built a strong foundation for more exciting events to come. </h4>
 
 
 <br/> 
