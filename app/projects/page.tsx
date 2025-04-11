@@ -1,10 +1,10 @@
+"use client"
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { redirect } from 'next/navigation'
 import { projects } from "./projects";
 
 export default function Projects() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,7 +14,7 @@ export default function Projects() {
 
   const goBackToHome = () => {
     sessionStorage.setItem("fromPage", "true");
-    navigate("/home");
+    redirect('/');
   };
 
   return (
