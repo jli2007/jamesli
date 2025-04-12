@@ -5,28 +5,30 @@ import { NextResponse } from "next/server";
 export async function GET(req: any) {
     await connectDB();
     const { searchParams } = new URL(req.url);
-    const likes = searchParams.get("likes");
+    const place = searchParams.get("place");
   
-    if (!likes)
-      return NextResponse.json({ error: "Missing likes" }, { status: 400 });
+    if (!place)
+      return NextResponse.json({ error: "Missing place" }, { status: 400 });
   
-    const userPlaces = await Places.findOne({ likes });
+    const userPlaces = await Places.findOne({ place });
     return NextResponse.json(userPlaces);
 }
 
 export async function POST(req: any) {
     await connectDB();
-    const { place, likes } = await req.json();
-  
-    if (!place || !likes) {
-      return NextResponse.json({ error: "Invalid data" }, { status: 400 });
+    const { place, action } = await req.json();
+
+    if (!place || !action) {
+        return NextResponse.json({ error: "Invalid data" }, { status: 400 });
     }
-  
+
+    const updateOperation = action === "like" ? { $inc: { likes: 1 } } : { $inc: { likes: -1 } };
+
     const savedPlace = await Places.findOneAndUpdate(
       { place },
-      { $set: { likes } },
-      { new: true, upsert: true }
+      updateOperation,
+      { new: true, upsert: true, setDefaultsOnInsert: true }
     );
-  
+
     return NextResponse.json(savedPlace, { status: 201 });
-  }
+}

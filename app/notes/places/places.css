@@ -2,9 +2,16 @@
     .topContainer{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     .title{
         margin-bottom: 10px !important;
+    }
+    .allContainer{
+        width: 100%;
+    }
+    .iframe{
+        width: 100%;
     }
 }
 

@@ -82,8 +82,8 @@ export default function Home() {
               <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
                 can&apos;t rush greatness.
               </span>
-              <div className="sidediv relative text-xl h-[95%] flex items-end">
-                <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2">
+              <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
+                <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
                   <h1 className="rounded-md">
                     hey i&apos;m <span className="text-darkBeige3">james.</span>
                   </h1>
@@ -128,7 +128,7 @@ export default function Home() {
             </div>
             <Image
               src={jam}
-              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto md:top-auto md:w-135 w-90 right-0 top-25 md:z-[5] z-0"
+              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto md:top-25 md:w-135 w-90 right-0 top-22.5 md:z-[5] z-0"
               style={{
                 WebkitMaskImage:
                   "radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%)",
