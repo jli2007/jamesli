@@ -61,7 +61,7 @@ import PlaceLikes from "../places/Likes.tsx";
             <span>{tag.text}</span>
           </div>)
         })}
-          {/* <PlaceLikes/> */}
+          <PlaceLikes slug={place.title}/>
         </div>
       </div>
       <iframe
@@ -70,6 +70,7 @@ import PlaceLikes from "../places/Likes.tsx";
         allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        allow="accelerometer; gyroscope;"
       ></iframe>
       <h4 className="mt-[10px] mb-[25px] w-[90vw]">
         {place.description}

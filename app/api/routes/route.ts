@@ -9,6 +9,12 @@ export async function GET(req: any) {
   
     if (!place)
       return NextResponse.json({ error: "Missing place" }, { status: 400 });
+
+    let userPlace = await Places.findOne({ place });
+
+    if (!userPlace) {
+      userPlace = await Places.create({ place, likes: 0 });
+    }
   
     const userPlaces = await Places.findOne({ place });
     return NextResponse.json(userPlaces);

@@ -4,7 +4,7 @@ interface PlaceLikesProps {
   slug: string;
 }
 
-export const PlaceLikes = ({ slug }: PlaceLikesProps) => {
+const PlaceLikes = ({ slug }: PlaceLikesProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
 
@@ -14,13 +14,13 @@ export const PlaceLikes = ({ slug }: PlaceLikesProps) => {
       .then((data) => setLikes(data.likes));
   }, [slug]);
 
-  useEffect(()=>{
-    if(localStorage.getItem("liked") == "true"){
+  useEffect(() => {
+    if (localStorage.getItem(`liked-${slug}`) === "true") {
       setIsLiked(true);
-    }else{
+    } else {
       setIsLiked(false);
     }
-  })
+  }, []);
 
   const handleLike = async () => {
     await fetch(`/api/routes`, {
@@ -32,12 +32,14 @@ export const PlaceLikes = ({ slug }: PlaceLikesProps) => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => setLikes(data.likes))
-      .then(()=> localStorage.setItem("liked", "true"));
+      .then((data) => setLikes(data.likes));
+
+    setIsLiked(true);
+    localStorage.setItem(`liked-${slug}`, "true");
   };
 
-  const handleUnlike = () => {
-    fetch(`/api/routes`, {
+  const handleUnlike = async () => {
+    await fetch(`/api/routes`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -46,8 +48,10 @@ export const PlaceLikes = ({ slug }: PlaceLikesProps) => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => setLikes(data.likes))
-      .then(()=> localStorage.setItem("liked", "false"));
+      .then((data) => setLikes(data.likes));
+
+    setIsLiked(false);
+    localStorage.setItem(`liked-${slug}`, "false");
   };
 
   return (
@@ -59,13 +63,30 @@ export const PlaceLikes = ({ slug }: PlaceLikesProps) => {
           } else {
             handleUnlike();
           }
-          setIsLiked(!isLiked);
         }}
+        className="cursor-pointer"
       >
-        ❤️
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill={isLiked ? "#e11d48" : "none"}
+          stroke="#e11d48"
+          className={`w-6 h-6 transition-transform duration-300 ${
+            isLiked ? "scale-125" : "scale-100"
+          }`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 21C12 21 3 13.61 3 8.5C3 5.5 5.5 3 8.5 3C10.5 3 12 4.5 12 4.5C12 4.5 13.5 3 15.5 3C18.5 3 21 5.5 21 8.5C21 13.61 12 21 12 21Z"
+          />
+        </svg>
       </button>
 
       <span>{likes}</span>
     </div>
   );
-}
+};
+
+export default PlaceLikes;

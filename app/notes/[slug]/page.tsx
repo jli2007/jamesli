@@ -36,9 +36,9 @@ export default function NotePage({
     const loadMDX = async () => {
       try {
         console.log(slug);
-        // Dynamically import the MDX file using the slug
+        // Dynamically import the MDX file using slug
         const module = await import(`../mdx/${slug}.mdx`);
-        setPost(() => module.default); // Set the loaded component
+        setPost(() => module.default)
       } catch (error) {
         console.error("Error loading the MDX file", error);
         notFound();
