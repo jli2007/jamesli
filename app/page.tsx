@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import LinkSlider from "./components/Link";
 import Link from "next/link";
 import LoadingBar from "react-top-loading-bar";
 import { showcaseProjects } from "./projects/projects";
@@ -89,38 +90,26 @@ export default function Home() {
                   </h1>
                   <h1 className="md:bg-transparent rounded-md">
                     · founder @{" "}
-                    <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a
-                        href="https://neoleague.dev/"
-                        target="_blank"
-                        className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
-                      >
+                    <span className="sidespan cursor-pointer text-darkBeige2 relative">
+                      <LinkSlider href="https://neoleague.dev/" mode="dark">
                         neodev
-                      </a>
+                      </LinkSlider>
                     </span>
                   </h1>
                   <h1 className="md:bg-transparent rounded-md">
                     · prev. intern @{" "}
-                    <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a
-                        href="https://www.weblakes.com/"
-                        target="_blank"
-                        className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
-                      >
+                    <span className="sidespan cursor-pointer text-darkBeige2 relative">
+                      <LinkSlider href="https://www.weblakes.com/" mode="dark">
                         lakes software
-                      </a>
+                      </LinkSlider>
                     </span>
                   </h1>
                   <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md">
                     · prev. junior software dev @{" "}
-                    <span className="sidespan underline cursor-pointer text-darkBeige2">
-                      <a
-                        href="https://www.tauria.com/"
-                        target="_blank"
-                        className="hover:bg-midBeige2/40 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
-                      >
+                    <span className="sidespan cursor-pointer text-darkBeige2 relative">
+                      <LinkSlider href="https://www.tauria.com/" mode="dark">
                         tauria
-                      </a>
+                      </LinkSlider>
                     </span>
                   </h1>
                 </div>
@@ -158,24 +147,27 @@ export default function Home() {
 
               {/* notes section */}
               <div className="relative py-3 px-7 rounded-lg bg-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
-                <Link href="/notes" className="absolute inset-0 w-full h-full cursor-pointer">
-                    <h1 className="absolute italic text-lg left-5 top-2">
-                      notes
-                    </h1>
-                    <div className="absolute md:bottom-4 md:left-2 md:right-auto right-2 bottom-0">
-                      <FaRegNoteSticky className="md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
-                    </div>
+                <Link
+                  href="/notes"
+                  className="absolute inset-0 w-full h-full cursor-pointer"
+                >
+                  <h1 className="absolute italic text-lg left-5 top-2">
+                    notes
+                  </h1>
+                  <div className="absolute md:bottom-4 md:left-2 md:right-auto right-2 bottom-0">
+                    <FaRegNoteSticky className="md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
+                  </div>
 
-                    <Image
-                      src={write}
-                      className="absolute md:h-auto opacity-30 z-5 right-0 md:top-10 md:w-70 w-90 top-5 rounded-xl"
-                      style={{
-                        WebkitMaskImage:
-                          "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
-                      }}
-                      loading="lazy"
-                      alt="jame"
-                    />
+                  <Image
+                    src={write}
+                    className="absolute md:h-auto opacity-30 z-5 right-0 md:top-10 md:w-70 w-90 top-5 rounded-xl"
+                    style={{
+                      WebkitMaskImage:
+                        "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
+                    }}
+                    loading="lazy"
+                    alt="jame"
+                  />
                 </Link>
               </div>
             </div>
@@ -233,25 +225,27 @@ export default function Home() {
                 <div className="flex flex-col justify-center overflow-hidden h-[90%]">
                   {showcaseProjects.map((project: any, index: any) => (
                     <div key={index} className="mb-15">
-                      <h1 className="underline cursor-pointer">
-                        <a
+                      <h1 className="cursor-pointer">
+                        <LinkSlider
                           href={project.url || "https://jame.li/"}
-                          target="_blank"
-                          className="hover:bg-lightBeige/10 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
+                          mode="light"
+                          className={`relative`}
                         >
                           {project.name}
-                        </a>
+                        </LinkSlider>
                       </h1>
-                      <span className="p-1">{project.desc}</span>
+                      <span className="my-3">{project.desc}</span>
                     </div>
                   ))}
                 </div>
-                <Link href="/projects">
-                  <button className="absolute bottom-5 cursor-pointer text-lg underline hover:bg-lightBeige/5 transition delay-200 duration-200 ease-in-out p-1 rounded-sm">
-                    {" "}
-                    view all projects{" "}
-                  </button>
-                </Link>
+                <LinkSlider
+                  href="/projects"
+                  isNextLink={true}
+                  mode="light"
+                  className={`relative text-lg`}
+                >
+                  view all projects
+                </LinkSlider>
               </div>
             </div>
 
@@ -277,31 +271,23 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="justify-end flex md:flex-row flex-col w-full underline !underline-offset-4">
-                  <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
-                    <a
-                      href="mailto:hello@jame.li"
-                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
-                    >
+                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center relative">
+                    <LinkSlider href="mailto:hello@jame.li" mode="dark">
                       hello@jame.li
-                    </a>
+                    </LinkSlider>
                   </h1>
-                  <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
-                    <a
+                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center relative">
+                    <LinkSlider
                       href="https://www.linkedin.com/in/james-li-a81004275/"
-                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
-                      target="_blank"
+                      mode="dark"
                     >
                       linkedin
-                    </a>
+                    </LinkSlider>
                   </h1>
-                  <h1 className="px-3 md:py-0 py-2 flex md:justify-start justify-center">
-                    <a
-                      href="https://github.com/JLi2007"
-                      className="cursor-pointer hover:bg-lightBeige/20 transition delay-200 duration-200 ease-in-out p-1 rounded-sm"
-                      target="_blank"
-                    >
+                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center relative">
+                    <LinkSlider href="https://github.com/JLi2007" mode="dark">
                       github
-                    </a>
+                    </LinkSlider>
                   </h1>
                 </div>
               </div>

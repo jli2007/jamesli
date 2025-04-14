@@ -349,7 +349,6 @@
 @media (min-width: 768px) and (max-width: 972px) {
   .sidediv{
     font-size: 0.9rem;
-    border: 2px solid red;
   }
   .tauria{
     padding-bottom: 20px;
