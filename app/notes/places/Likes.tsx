@@ -7,6 +7,7 @@ interface PlaceLikesProps {
 const PlaceLikes = ({ slug }: PlaceLikesProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch(`/api/routes?place=${slug}`)
@@ -23,6 +24,8 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
   }, []);
 
   const handleLike = async () => {
+    if (loading) return;
+    setLoading(true);
     await fetch(`/api/routes`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -36,9 +39,12 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
 
     setIsLiked(true);
     localStorage.setItem(`liked-${slug}`, "true");
+    setLoading(false);
   };
 
   const handleUnlike = async () => {
+    if (loading) return;
+    setLoading(true);
     await fetch(`/api/routes`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -52,6 +58,7 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
 
     setIsLiked(false);
     localStorage.setItem(`liked-${slug}`, "false");
+    setLoading(false);
   };
 
   return (
@@ -65,6 +72,7 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
           }
         }}
         className="cursor-pointer"
+        disabled={loading} 
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

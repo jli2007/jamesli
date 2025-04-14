@@ -175,4 +175,16 @@ export const places: PlacesType[] = [
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1743475847277!6m8!1m7!1sTUy4KqkqKifRfPc2sm2OOg!2m2!1d55.14582671661194!2d-8.210794748937468!3f332.02567193437505!4f-3.9580072929426677!5f0.7820865974627469",
   },
+  {
+    title: "inner mongolia - china",
+    flag: "🇨🇳",
+    description:
+      "endless waves of green stretch beneath vast blue skies line inner mongolia’s rolling grasslands (region named 'inner mongolia' but still located in china). my homie andy duong's dream destination. ",
+    tags: [
+      { color: "mediumvioletred", text: "● photosphere" },
+      { color: "red", text: "● asia" },
+    ],
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1744658192221!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ3FuOGlsWlE.!2m2!1d49.66488812384653!2d120.0746440619686!3f95.52286779856084!4f-10.129033421545387!5f0.7820865974627469",
+  },
 ];

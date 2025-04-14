@@ -1,5 +1,5 @@
 import connectDB from "../mongoose/connect";
-import Places from "../mongoose/places";
+import Places from "../mongoose/schema";
 import { NextResponse } from "next/server";
 
 export async function GET(req: any) {
@@ -15,9 +15,8 @@ export async function GET(req: any) {
     if (!userPlace) {
       userPlace = await Places.create({ place, likes: 0 });
     }
-  
-    const userPlaces = await Places.findOne({ place });
-    return NextResponse.json(userPlaces);
+
+    return NextResponse.json(userPlace);
 }
 
 export async function POST(req: any) {
