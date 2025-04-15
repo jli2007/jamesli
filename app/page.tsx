@@ -128,29 +128,29 @@ export default function Home() {
               </span>
               <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
                 <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
-                  <h1 className="rounded-md">
-                    hey i&apos;m <span className="text-darkBeige3">james.</span>
+                  <h1 className="rounded-md sideh1 flex">
+                    hey i&apos;m <span className="text-darkBeige3 ml-1">james.</span>
                   </h1>
-                  <h1 className="md:bg-transparent rounded-md">
+                  <h1 className="md:bg-transparent rounded-md sideh1">
                     · founder @{" "}
-                    <span className="sidespan cursor-pointer text-darkBeige2 relative">
-                      <LinkSlider href="https://neoleague.dev/" mode="dark">
+                    <span className="cursor-pointer text-darkBeige2">
+                      <LinkSlider href="https://neoleague.dev/" mode="dark" className="ml-1 relative">
                         neodev
                       </LinkSlider>
                     </span>
                   </h1>
-                  <h1 className="md:bg-transparent rounded-md">
+                  <h1 className="md:bg-transparent rounded-md sideh1">
                     · prev. intern @{" "}
-                    <span className="sidespan cursor-pointer text-darkBeige2 relative">
-                      <LinkSlider href="https://www.weblakes.com/" mode="dark">
+                    <span className="cursor-pointer text-darkBeige2">
+                      <LinkSlider href="https://www.weblakes.com/" mode="dark" className="ml-1 relative">
                         lakes software
                       </LinkSlider>
                     </span>
                   </h1>
-                  <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md">
+                  <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md sideh1">
                     · prev. junior software dev @{" "}
-                    <span className="sidespan cursor-pointer text-darkBeige2 relative">
-                      <LinkSlider href="https://www.tauria.com/" mode="dark">
+                    <span className="cursor-pointer text-darkBeige2">
+                      <LinkSlider href="https://www.tauria.com/" mode="dark" className="ml-1 relative">
                         tauria
                       </LinkSlider>
                     </span>

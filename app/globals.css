@@ -164,50 +164,6 @@
 /* queries 😭 the formatting for the website requires this much queries to be responsive,
  but tbh this just goes to show how badly i did my col and row span layout */
 
-/* jam img (big)*/
-
-/* @media (min-width: 768px) and (max-width: 1200px) {
-  .jam {
-    width: 35vw;
-    height: auto;
-    top: 10vh;
-  }
-}
-
-@media (min-width: 1100px) and (max-width: 1400px) {
-  .jam {
-    width: 35vw;
-    height: auto;
-    top: 20vh;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1010px) {
-  .jam {
-    width: 33vw;
-    height: auto;
-    top: 15vh;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 900px) {
-  .jam {
-    width: 25vw;
-    height: auto;
-    top: 15vh;
-    opacity: 90%;
-  }
-} */
-
-/* @media (min-width: 768px) and (max-width: 837px) and (max-height: 575px) {
-  .jam {
-    width: 25vw;
-    height: auto;
-    top: 15vh;
-    opacity: 50%;
-  }
-} */
-
 @media (min-width: 815px) and (max-width: 990px) {
   .jam {
     width: 30vw;
@@ -249,20 +205,13 @@
   }
 }
 
-@media (max-height: 680px) {
-  .description {
-    width: 30vw;
-    font-size: 0.75rem;
-  }
-}
-
 @media (min-width: 768px) and (max-height: 850px) {
   .description {
     font-size: 0.75rem;
   }
 }
 
-@media (min-width: 768px) and (max-width: 900px) and (min-height: 570px) and (max-height: 770px) {
+@media (min-width: 768px) and (max-width: 900px) and (min-height: 570px) and (max-height: 810px) {
   .description {
     width: 35vw;
     font-size: 0.65rem;
@@ -283,7 +232,7 @@
   }
 }
 
-@media (min-width: 800px) and (max-width: 1200px) and (max-height: 570px) {
+@media (min-width: 768px) and (max-width: 990px) and (max-height: 570px) {
   .description {
     width: 35vw;
     font-size: 0.5rem;
@@ -297,17 +246,37 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 788px) {
-  .description {
-    width: 35vw;
-    font-size: 0.7rem;
+@media (min-width: 1100px) and (max-width: 1188px) and (max-height: 880px)  {
+  .description{
+    width: 40vw;
   }
 }
 
-@media (min-width: 1100px) and (max-width: 1400px) and (min-height: 680px) {
+@media (min-width: 1188px) and (max-width: 1400px) {
+  .description {
+    width: 25vw;
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 1188px) and (max-width: 1400px) and (min-height: 625px){
+  .description {
+    width: 25vw;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1188px) and (max-width: 1400px) and (min-height: 680px) {
   .description {
     width: 35vw;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1400px) and (min-height: 779px) {
+  .description {
+    width: 20vw;
+    font-size: 0.9rem;
   }
 }
 
@@ -317,6 +286,7 @@
     font-size: 0.8rem;
   }
 }
+
 
 /*  */
 
@@ -386,14 +356,11 @@
   .sidediv {
     font-size: 0.9rem;
   }
-  .tauria {
-    padding-bottom: 20px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 972px) {
-  .sidediv {
-    font-size: 0.9rem;
+  .sideh1{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
   .tauria {
     padding-bottom: 20px;
@@ -427,7 +394,7 @@
 
 @media (min-width: 768px) and (max-width: 927px) {
   .sidediv {
-    height: 90%;
+    height: 80%;
   }
 }
 
