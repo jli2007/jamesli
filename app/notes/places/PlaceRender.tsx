@@ -1,19 +1,15 @@
 import { useRef, useEffect, useState } from "react";
 import PlaceLikes from "./Likes";
 
-export default function InteractivePlace({ place }: { place: any }) {
+export default function RenderPlace({ place }: { place: any }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          setHasBeenVisible(true);
-        } else if (hasBeenVisible) {
-          setVisible(false);
         }
       },
       {
@@ -23,7 +19,7 @@ export default function InteractivePlace({ place }: { place: any }) {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [hasBeenVisible]);
+  }, []);
 
   return (
     <div ref={ref} className="flex flex-col w-[90vw] allContainer">
@@ -65,7 +61,7 @@ export default function InteractivePlace({ place }: { place: any }) {
         </div>
       </div>
 
-      {visible || hasBeenVisible ? (
+      {visible ? (
         <iframe
           src={place.iframeSrc}
           className="w-[90vw] h-[75vh] border-0 iframe"

@@ -1,9 +1,10 @@
 import { places } from "../places/places.ts";
 import InteractivePlace from "../places/PlaceRender.tsx";
+import SortedPlaces from "../places/SortedPlaces.tsx";
 
 <h3> google maps is incredible </h3>
 
-<h4 className="description w-[90vw]">
+<h4 className="description-places w-[90vw]">
   i used to play geoguessr hours on end every day during the lockdown. i
   developed a fascination with the world around us and still wander google maps
   occasionally in my free time. i will add interesting locations & pictures i
@@ -24,13 +25,15 @@ import InteractivePlace from "../places/PlaceRender.tsx";
   want to add a location? send an email to{" "}
   <span className="underline">hello@jame.li</span>
 </h4>
-<hr />
 
- <div>
+<hr />  
+<SortedPlaces/>
+<br />
+{/* <div>
   {places.map((place, index) => (
     <InteractivePlace key={index} place={place} />
   ))}
-</div>
+</div> */}
 
 {/* break */}
 <ScrollButtonBottom>⬆ scroll to top</ScrollButtonBottom>

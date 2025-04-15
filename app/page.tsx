@@ -5,6 +5,7 @@ import LinkSlider from "./components/Link";
 import Link from "next/link";
 import LoadingBar from "react-top-loading-bar";
 import { showcaseProjects } from "./projects/projects";
+// import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaRegNoteSticky } from "react-icons/fa6"; //FaNoteSticky
 import jam from "./assets/jame.png";
@@ -14,11 +15,13 @@ import write from "./assets/write.png";
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [isMac, setIsMac] = useState(false);
 
+  // loading bar
   useEffect(() => {
     const isReturningFromPage = sessionStorage.getItem("fromPage");
 
-    // If returning from Notes, skip loading animation
+    // If returning from notes/projects, skip loading animation
     if (isReturningFromPage) {
       setIsLoaded(true);
       sessionStorage.removeItem("fromPage");
@@ -39,6 +42,25 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, []);
+
+  // useEffect(() => {
+  //   const isMac =
+  //     navigator.platform.toLowerCase().includes("mac") ||
+  //     navigator.userAgent.toLowerCase().includes("mac");
+  //   setIsMac(isMac);
+
+  //   const handlePaletteOpened = () => {
+  //     console.log("Palette opened!");
+  //   };
+
+  //   window.addEventListener("command-palette-opened", handlePaletteOpened);
+  //   return () =>
+  //     window.removeEventListener("command-palette-opened", handlePaletteOpened);
+  // }, []);
+
+  // const openCommandPalette = () => {
+  //   window.dispatchEvent(new CustomEvent("open-command-palette"));
+  // };
 
   return (
     <>
@@ -66,13 +88,29 @@ export default function Home() {
               <h1>
                 james siyuan li <span className="pl-1">李思远</span>
               </h1>
-              <div className="h-full absolute md:right-5 md:top-0 right-0 flex items-center">
+              <div className="h-full absolute md:right-0 md:top-0 right-0 flex items-center gap-1">
                 <button
                   onClick={() => window.open("/resume.pdf", "_blank")}
                   className="px-4 p-2 cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                 >
                   resume.
                 </button>
+                {/* {!isMobile && (
+                  <button
+                    onClick={openCommandPalette}
+                    className="px-4 p-2.5 hidden sm:flex cursor-pointer items-center gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
+                  >
+                    <span className={`flex items-center`}>
+                      <kbd className="px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-700 font-mono">
+                        {isMac ? "⌘" : "ctrl"}
+                      </kbd>
+                      <span>+</span>
+                    </span>
+                    <kbd className="px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-700 font-mono">
+                      K
+                    </kbd>
+                  </button>
+                )} */}
               </div>
             </div>
           </div>

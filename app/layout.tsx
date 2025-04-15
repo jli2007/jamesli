@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+// import CommandPalette from "./components/Cmd";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,10 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={"font-playfair"}
-      >
-        {children}
+      <link rel="icon" href="/jsl.png" />
+      <body className={"font-playfair"}>
+        <div>{children}</div>
+        {/* <CommandPalette /> */}
       </body>
     </html>
   );
