@@ -5,7 +5,7 @@ import RenderPlace from "./PlaceRender";
 
 const SortButton = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [sortState, setSortState] = useState("Least Recent First");
+  const [sortState, setSortState] = useState("Least Recent First"); //defaults to least recent first
   const [sortedPlaces, setSortedPlaces] = useState(places);
 
   useEffect(() => {
@@ -39,6 +39,7 @@ const SortButton = () => {
         break;
     }
 
+    // map the Schema Place back into the mappable ts place
     const mappedPlaces = data
       .map((dbPlace: any) => places.find((p) => p.title === dbPlace.place))
       .filter(Boolean);

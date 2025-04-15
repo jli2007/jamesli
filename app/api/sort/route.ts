@@ -18,7 +18,7 @@ export async function GET(req: any) {
   } else if (sortType === "Least Recent First") {
     sortOptions = { createdAt: 1 };
   } else {
-    sortOptions = { createdAt: -1 };
+    sortOptions = { createdAt: -1 }; //default to latest at the bottom, oldest at the top
   }
 
   const places = await Places.find({}).sort(sortOptions);

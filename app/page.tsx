@@ -4,8 +4,9 @@ import Image from "next/image";
 import LinkSlider from "./components/Link";
 import Link from "next/link";
 import LoadingBar from "react-top-loading-bar";
+import useModifierKey from "./components/ModifierKey";
 import { showcaseProjects } from "./projects/projects";
-// import { isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaRegNoteSticky } from "react-icons/fa6"; //FaNoteSticky
 import jam from "./assets/jame.png";
@@ -16,6 +17,7 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isMac, setIsMac] = useState(false);
+  const isModifierPressed = useModifierKey(); //for opacity of button
 
   // loading bar
   useEffect(() => {
@@ -43,24 +45,24 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // useEffect(() => {
-  //   const isMac =
-  //     navigator.platform.toLowerCase().includes("mac") ||
-  //     navigator.userAgent.toLowerCase().includes("mac");
-  //   setIsMac(isMac);
+  useEffect(() => {
+    const isMac =
+      navigator.platform.toLowerCase().includes("mac") ||
+      navigator.userAgent.toLowerCase().includes("mac");
+    setIsMac(isMac);
 
-  //   const handlePaletteOpened = () => {
-  //     console.log("Palette opened!");
-  //   };
+    const handlePaletteOpened = () => {
+      console.log("Palette opened!");
+    };
 
-  //   window.addEventListener("command-palette-opened", handlePaletteOpened);
-  //   return () =>
-  //     window.removeEventListener("command-palette-opened", handlePaletteOpened);
-  // }, []);
+    window.addEventListener("command-palette-opened", handlePaletteOpened);
+    return () =>
+      window.removeEventListener("command-palette-opened", handlePaletteOpened);
+  }, []);
 
-  // const openCommandPalette = () => {
-  //   window.dispatchEvent(new CustomEvent("open-command-palette"));
-  // };
+  const openCommandPalette = () => {
+    window.dispatchEvent(new CustomEvent("open-command-palette"));
+  };
 
   return (
     <>
@@ -76,7 +78,7 @@ export default function Home() {
           onLoaderFinished={() => setProgress(0)}
         />
         <div className="relative flex justify-center items-center">
-          <h1 className="text-white text-xl crg my-3">can't rush greatness.</h1>
+          <h1 className="text-white text-md crg my-3">can't rush greatness.</h1>
         </div>
       </div>
 
@@ -88,34 +90,37 @@ export default function Home() {
               <h1>
                 james siyuan li <span className="pl-1">李思远</span>
               </h1>
-              <div className="h-full absolute md:right-0 md:top-0 right-0 flex items-center gap-1">
+              <div className="h-full absolute md:top-0 right-0 flex items-center gap-1">
                 <button
                   onClick={() => window.open("/resume.pdf", "_blank")}
-                  className="px-4 p-2 cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
+                  className="px-4 p-2 flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                 >
-                  resume.
+                 resume.
                 </button>
-                {/* {!isMobile && (
+                {!isMobile && (
                   <button
                     onClick={openCommandPalette}
-                    className="px-4 p-2.5 hidden sm:flex cursor-pointer items-center gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
+                    className="px-4 p-2 hidden sm:flex cursor-pointer items-center gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                   >
-                    <span className={`flex items-center`}>
-                      <kbd className="px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-700 font-mono">
-                        {isMac ? "⌘" : "ctrl"}
-                      </kbd>
-                      <span>+</span>
-                    </span>
-                    <kbd className="px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-700 font-mono">
+                    <kbd
+                      className={`px-1.5 py-1 rounded bg-darkBeige2/25 text-midBeige flex ${
+                        isModifierPressed ? "opacity-40" : "opacity-100"
+                      }`}
+                    >
+                      {isMac ? "⌘" : "ctrl"}
+                    </kbd>
+
+                    <span>+</span>
+                    <kbd className="px-1.5 py-1 rounded bg-darkBeige2/25 text-midBeige">
                       K
                     </kbd>
                   </button>
-                )} */}
+                )}
               </div>
             </div>
           </div>
 
-          <div className="grid grid-flow-row md:grid-flow-col grid-rows-2 gap-1 h-auto md:h-[91vh] content-section">
+          <div className="grid grid-flow-row md:grid-flow-col grid-rows-2 h-auto md:h-[91vh] content-section">
             {/* side section */}
             <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
               <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
@@ -155,7 +160,7 @@ export default function Home() {
             </div>
             <Image
               src={jam}
-              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto md:top-25 md:w-135 w-90 right-0 top-22.5 md:z-[5] z-0"
+              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto md:top-30 w-[90vw] md:w-[35vw] right-0 top-22.5 md:z-[5] z-0"
               style={{
                 WebkitMaskImage:
                   "radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%)",
