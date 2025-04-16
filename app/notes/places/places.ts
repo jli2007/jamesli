@@ -13,7 +13,7 @@ export const places: PlacesType[] = [
     description:
       "biggest salt flat in the world that can be seen from space. always found it eye-catching, mesmerizing.",
     tags: [
-      { color: "mediumseagreen", text: "● natural wonder" },
+      { color: "mediumseagreen", text: "● world wonder" },
       { color: "orchid", text: "● south america" },
     ],
     iframeSrc:
@@ -49,7 +49,7 @@ export const places: PlacesType[] = [
     description:
       "'parque natural san carlos de apoquindo': mountain range right next to the borders of santiago, chile's capital. that sudden change from dry desert and snowy mountains is wild.",
     tags: [
-      { color: "mediumseagreen", text: "● natural wonder" },
+      { color: "mediumseagreen", text: "● world wonder" },
       { color: "orchid", text: "● south america" },
     ],
     iframeSrc:
@@ -157,7 +157,7 @@ export const places: PlacesType[] = [
     description:
       "located in henan province, china, are a collection of over 2,300 caves and niches carved into limestone cliffs along the yi river. the 'longmen grottoes' date back to the northern wei dynasty (5th century)",
     tags: [
-      { color: "midnightblue", text: "● man made wonder" },
+      { color: "mediumseagreen", text: "● world wonder" },
       { color: "red", text: "● asia" },
     ],
     iframeSrc:
@@ -186,5 +186,17 @@ export const places: PlacesType[] = [
     ],
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1744658192221!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ3FuOGlsWlE.!2m2!1d49.66488812384653!2d120.0746440619686!3f95.52286779856084!4f-10.129033421545387!5f0.7820865974627469",
+  },
+  {
+    title: "dunes meet greenery - brazil",
+    flag: "🇧🇷",
+    description:
+      "close to lençóis maranhenses national park (breathtaking place, search it up), this beach sees a transition between the grand atlantic, sand dunes, and the amazon rainforest.",
+    tags: [
+      { color: "midnightblue", text: "● arial view" },
+      { color: "orchid", text: "● south america" },
+    ],
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1744814480892!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFJscUc5UVE.!2m2!1d-2.578522678205233!2d-42.69688418605917!3f324.5536485468245!4f-14.512665193840817!5f0.6201268665768949",
   },
 ];

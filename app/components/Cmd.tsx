@@ -14,6 +14,7 @@ import {
   IoLogoInstagram,
   IoSearchOutline,
   IoLogoLinkedin,
+  IoHomeOutline,
 } from "react-icons/io5";
 import { GoRepo } from "react-icons/go";
 
@@ -105,6 +106,11 @@ export default function CommandPalette() {
       e.preventDefault();
 
       switch (e.code) {
+        case "Digit0":
+        case "Numpad0":
+          openNextLink(() => router.push("/"));
+          break;
+
         case "Digit1":
         case "Numpad1":
           openNextLink(() => router.push("/projects"));
@@ -192,7 +198,11 @@ export default function CommandPalette() {
       {showDialog && (
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-black/50 animate-fade-in z-40" />
-          <Dialog.Content className={`fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-[500px] p-3 z-50 ${open ? "animate-slide-down" : "animate-slide-up"}`}>
+          <Dialog.Content
+            className={`fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-[500px] p-3 z-50 ${
+              open ? "animate-slide-down" : "animate-slide-up"
+            }`}
+          >
             <Dialog.Title></Dialog.Title>
             <Command
               className="w-full rounded-xl border-2 border-darkBeige1/90 bg-stone-900 shadow-2xl overflow-hidden"
@@ -236,6 +246,15 @@ export default function CommandPalette() {
                   className="px-2 text-lightBeige"
                 >
                   <Command.Item
+                    value="home"
+                    onSelect={() => openNextLink(() => router.push("/"))}
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                  >
+                    <IoHomeOutline className="h-4 w-4" />
+                    <span className="flex-1">home</span>
+                    <Shortcut>0</Shortcut>
+                  </Command.Item>
+                  <Command.Item
                     value="projects"
                     onSelect={() =>
                       openNextLink(() => router.push("/projects"))
@@ -272,7 +291,7 @@ export default function CommandPalette() {
 
                 <Command.Group heading="links" className="px-2 text-lightBeige">
                   <Command.Item
-                    value="linkedin"
+                    value="linkedin_profile"
                     onSelect={() =>
                       openLink(() =>
                         window.open(
@@ -288,7 +307,7 @@ export default function CommandPalette() {
                     <Shortcut>4</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="github"
+                    value="github_profile"
                     onSelect={() =>
                       openLink(() =>
                         window.open("https://github.com/JLi2007/", "_blank")
@@ -325,7 +344,7 @@ export default function CommandPalette() {
                     <Shortcut>7</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="instagram"
+                    value="instagram_profile"
                     onSelect={() =>
                       openLink(() =>
                         window.open(
@@ -341,7 +360,7 @@ export default function CommandPalette() {
                     <Shortcut>8</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="website_repo"
+                    value="website_repository"
                     onSelect={() =>
                       openLink(() =>
                         window.open(

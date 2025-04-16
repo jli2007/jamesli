@@ -160,7 +160,7 @@ export default function Home() {
             </div>
             <Image
               src={jam}
-              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto md:top-30 w-[90vw] md:w-[35vw] right-0 top-22.5 md:z-[5] z-0"
+              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto top-30 w-[90vw] md:w-[35vw] right-0 md:z-[5] z-0"
               style={{
                 WebkitMaskImage:
                   "radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%)",
@@ -209,7 +209,7 @@ export default function Home() {
                         "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
                     }}
                     loading="lazy"
-                    alt="jame"
+                    alt="man writing facts"
                   />
                 </Link>
               </div>
@@ -262,7 +262,7 @@ export default function Home() {
             </div>
 
             {/* projects section */}
-            <div className="relative md:col-span-3 row-span-2 col-span-6 max-w-screen md:h-auto h-120 py-3 px-7 m-1 rounded-lg bg-darkBeige1 text-lightBeige md:order-2">
+            <div className="projects relative md:col-span-3 row-span-2 col-span-6 max-w-screen md:h-auto h-120 py-3 px-7 m-1 rounded-lg bg-darkBeige1 text-lightBeige md:order-2">
               <div className="relative w-full h-full">
                 <h1 className="italic">projects</h1>
                 <div className="flex flex-col justify-center overflow-hidden h-[90%]">
@@ -314,21 +314,19 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="justify-end flex md:flex-row flex-col w-full underline !underline-offset-4">
-                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center relative">
-                    <LinkSlider href="mailto:hello@jame.li" mode="dark">
+                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
+                    <LinkSlider href="mailto:hello@jame.li" mode="dark" className="relative">
                       hello@jame.li
                     </LinkSlider>
                   </h1>
-                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center relative">
+                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
                     <LinkSlider
-                      href="https://www.linkedin.com/in/james-li-a81004275/"
-                      mode="dark"
-                    >
+                      href="https://www.linkedin.com/in/james-li-a81004275/" mode="dark" className="relative">
                       linkedin
                     </LinkSlider>
                   </h1>
-                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center relative">
-                    <LinkSlider href="https://github.com/JLi2007" mode="dark">
+                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
+                    <LinkSlider href="https://github.com/JLi2007" mode="dark" className="relative">
                       github
                     </LinkSlider>
                   </h1>

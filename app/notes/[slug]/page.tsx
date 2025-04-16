@@ -3,6 +3,8 @@ import { useEffect, useState, useRef, use } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
+import { isMobile } from "react-device-detect";
+import useModifierKey from "@/app/components/ModifierKey";
 import "../places/places.css";
 
 export default function NotePage({
@@ -23,6 +25,8 @@ export default function NotePage({
   const { slug } = use(params);
   const bottomRef = useRef<HTMLDivElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
+  const [isMac, setIsMac] = useState(false);
+  const isModifierPressed = useModifierKey();
 
   useEffect(() => {
     const date = sessionStorage.getItem("postDate");
@@ -38,7 +42,7 @@ export default function NotePage({
         console.log(slug);
         // Dynamically import the MDX file using slug
         const module = await import(`../mdx/${slug}.mdx`);
-        setPost(() => module.default)
+        setPost(() => module.default);
       } catch (error) {
         console.error("Error loading the MDX file", error);
         notFound();
@@ -47,6 +51,26 @@ export default function NotePage({
 
     loadMDX();
   }, [slug]);
+
+  // set up cmd palette
+  useEffect(() => {
+    const isMac =
+      navigator.platform.toLowerCase().includes("mac") ||
+      navigator.userAgent.toLowerCase().includes("mac");
+    setIsMac(isMac);
+
+    const handlePaletteOpened = () => {
+      console.log("Palette opened!");
+    };
+
+    window.addEventListener("command-palette-opened", handlePaletteOpened);
+    return () =>
+      window.removeEventListener("command-palette-opened", handlePaletteOpened);
+  }, []);
+
+  const openCommandPalette = () => {
+    window.dispatchEvent(new CustomEvent("open-command-palette"));
+  };
 
   const components = {
     a: ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -66,9 +90,7 @@ export default function NotePage({
     ),
     ScrollButtonBottom: ({ children }: { children: React.ReactNode }) => (
       <button
-        onClick={() =>
-          topRef.current?.scrollIntoView({ behavior: "smooth" })
-        }
+        onClick={() => topRef.current?.scrollIntoView({ behavior: "smooth" })}
         className="bg-white/20 cursor-pointer font-bold hover:bg-white/25 p-2 transition delay-200 duration-300 ease-in-out rounded-2xl my-5"
       >
         {children}
@@ -92,12 +114,33 @@ export default function NotePage({
         <h1 className="p-5 m-5">
           {info.date} - {info.title}
         </h1>
+        {!isMobile && (
+          <button
+            onClick={openCommandPalette}
+            className="px-4 p-2 absolute cursor-pointer right-5 top-5 gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
+          >
+            <div className="flex w-full h-full items-center justify-center">
+              <kbd
+                className={`px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige flex ${
+                  isModifierPressed ? "opacity-40" : "opacity-100"
+                }`}
+              >
+                {isMac ? "⌘" : "ctrl"}
+              </kbd>
+
+              <span>+</span>
+              <kbd className="px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige">
+                K
+              </kbd>
+            </div>
+          </button>
+        )}
       </div>
 
       <div className="w-full pl-5 prose prose-invert font-playfair">
         <div ref={topRef} />
         <MDXProvider components={components}>
-          <Post/>
+          <Post />
         </MDXProvider>
         <div ref={bottomRef} />
       </div>

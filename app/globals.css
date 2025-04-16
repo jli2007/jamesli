@@ -318,7 +318,7 @@
   }
 }
 
-@media (max-height: 850px) {
+@media (max-width: 768px) {
   .h1descr {
     background-color: #ede8d780;
     border-radius: 6px;
@@ -435,6 +435,12 @@
   }
   .jam1 {
     width: 15vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding-bottom: 5vh;
   }
 }
 
