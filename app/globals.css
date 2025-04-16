@@ -12,6 +12,7 @@
   --color-darkBeige3: #151411;
   --animate-fade-in: fade-in 0.2s ease;
   --animate-slide-down: slide-down 0.4s ease;
+  --animate-slide-up: slide-up 0.5s ease;
   --font-playfair: "Playfair Display", sans-serif;
 
   @keyframes pulse-and-scale {
@@ -53,6 +54,17 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-75%);
     }
   }
 
@@ -174,6 +186,12 @@
   .jam {
     width: 25vw;
     top: 20vh;
+  }
+}
+
+@media (min-width: 1200px){
+  .jam {
+    left: 0;
   }
 }
 

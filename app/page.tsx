@@ -103,7 +103,7 @@ export default function Home() {
                     className="px-4 p-2 hidden sm:flex cursor-pointer items-center gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                   >
                     <kbd
-                      className={`px-1.5 py-1 rounded bg-darkBeige2/25 text-midBeige flex ${
+                      className={`px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige flex ${
                         isModifierPressed ? "opacity-40" : "opacity-100"
                       }`}
                     >
@@ -111,7 +111,7 @@ export default function Home() {
                     </kbd>
 
                     <span>+</span>
-                    <kbd className="px-1.5 py-1 rounded bg-darkBeige2/25 text-midBeige">
+                    <kbd className="px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige">
                       K
                     </kbd>
                   </button>
@@ -128,7 +128,7 @@ export default function Home() {
               </span>
               <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
                 <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
-                  <h1 className="rounded-md sideh1 flex">
+                  <h1 className="rounded-md sideh1">
                     hey i&apos;m <span className="text-darkBeige3 ml-1">james.</span>
                   </h1>
                   <h1 className="md:bg-transparent rounded-md sideh1">
