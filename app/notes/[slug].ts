@@ -1,4 +1,4 @@
-// COMMENT: Required only if you use fetch(`/api/notes/${slug}`)
+// handles fetch(`/api/notes/${slug}`) by joining the correct directory to the request
 import fs from "fs";
 import path from "path";
 import type { NextApiRequest, NextApiResponse } from "next";

@@ -276,9 +276,17 @@ export default function CommandPalette() {
                   </Command.Item>
                   <Command.Item
                     value="places"
-                    onSelect={() =>
-                      openNextLink(() => router.push("/notes/places"))
-                    }
+                    onSelect={() => {
+                      sessionStorage.setItem(
+                        "postDate",
+                        "march 8, 2025 -> present"
+                      );
+                      sessionStorage.setItem(
+                        "postTitle",
+                        "places of the world 📍"
+                      );
+                      openNextLink(() => router.push("/notes/places"));
+                    }}
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
                     <MdOutlinePlace className="h-4 w-4" />
