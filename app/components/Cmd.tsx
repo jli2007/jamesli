@@ -340,7 +340,7 @@ export default function CommandPalette() {
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
                     <MdAlternateEmail className="h-4 w-4" />
-                    <span className="flex-1">email</span>
+                    <span className="flex-1">sendto: hello@jame.li</span>
                     <Shortcut>7</Shortcut>
                   </Command.Item>
                   <Command.Item

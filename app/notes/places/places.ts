@@ -188,7 +188,7 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1744658192221!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ3FuOGlsWlE.!2m2!1d49.66488812384653!2d120.0746440619686!3f95.52286779856084!4f-10.129033421545387!5f0.7820865974627469",
   },
   {
-    title: "dunes meet greenery - brazil",
+    title: "dunes meet jungle - brazil",
     flag: "🇧🇷",
     description:
       "close to lençóis maranhenses national park (breathtaking place, search it up), this beach sees a transition between the grand atlantic, sand dunes, and the amazon rainforest.",
@@ -198,5 +198,29 @@ export const places: PlacesType[] = [
     ],
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1744814480892!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFJscUc5UVE.!2m2!1d-2.578522678205233!2d-42.69688418605917!3f324.5536485468245!4f-14.512665193840817!5f0.6201268665768949",
+  },
+  {
+    title: "chiang mai - thailand",
+    flag: "🇹🇭",
+    description:
+      "in mountainous northern thailand, chiang mai still retains vestiges of walls and moats from its old history. this specific weather in the coverage makes the scene look incredibly authentic, its perfect.",
+    tags: [
+      { color: "dodgerblue", text: "● streetview" },
+      { color: "red", text: "● asia" },
+    ],
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1745097782096!6m8!1m7!1scsZiydNLb1uJ4vMYjFv0lQ!2m2!1d18.79584133909257!2d98.98222465108611!3f103.99!4f0!5f0.7820865974627469",
+  },
+  {
+    title: "zanzibar - tanzania",
+    flag: "🇹🇿",
+    description:
+      "off the coast of tanizania sits the zanzibar archipelago. definitely on the top of my bucket list for african destinations.",
+    tags: [
+      { color: "mediumvioletred", text: "● photosphere" },
+      { color: "coral", text: "● africa" },
+    ],
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1745098661006!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRGM4OGJUTnc.!2m2!1d-6.16107032373727!2d39.19103746834339!3f7.343517582197867!4f-4.495950859082058!5f0.7820865974627469",
   },
 ];

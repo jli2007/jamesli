@@ -16,6 +16,10 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
   }, [slug]);
 
   useEffect(() => {
+    if (!localStorage.getItem(`liked-${slug}`)) {
+      localStorage.setItem(`liked-${slug}`, "false");
+    }
+
     if (localStorage.getItem(`liked-${slug}`) === "true") {
       setIsLiked(true);
     } else {

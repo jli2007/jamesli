@@ -24,9 +24,9 @@ export const showcaseProjects: ProjectType[] = [
 
 export const projects: ProjectType[] = [
   {
-    name: "movie recommender",
+    name: "ML movie recommender",
     url: "https://movie.jame/li",
-    desc: "first machine learning project - uses vector distance to find similar movies by keyword & cast & genre",
+    desc: 'machine learning "project" - uses vector distance to find similar movies by keyword & cast & genre',
   },
   {
     name: "querify",

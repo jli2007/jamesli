@@ -7,11 +7,7 @@ import { isMobile } from "react-device-detect";
 import useModifierKey from "@/app/components/ModifierKey";
 import "../places/places.css";
 
-export default function NotePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default function NotePage({ params }: { params: Promise<{ slug: string }> }) {
   const [info, setInfo] = useState<{
     date: string | null;
     title: string | null;
@@ -19,7 +15,6 @@ export default function NotePage({
     date: null,
     title: null,
   });
-
   const [Post, setPost] = useState<React.ComponentType | null>(null);
   const router = useRouter();
   const { slug } = use(params);
@@ -31,7 +26,7 @@ export default function NotePage({
   useEffect(() => {
     const date = sessionStorage.getItem("postDate");
     const title = sessionStorage.getItem("postTitle");
-    console.log(date, title);
+    console.log("date:", date, "title:", title);
     setInfo({
       date: date,
       title: title,
@@ -39,7 +34,6 @@ export default function NotePage({
 
     const loadMDX = async () => {
       try {
-        console.log(slug);
         // Dynamically import the MDX file using slug
         const module = await import(`../mdx/${slug}.mdx`);
         setPost(() => module.default);
@@ -117,7 +111,7 @@ export default function NotePage({
         {!isMobile && (
           <button
             onClick={openCommandPalette}
-            className="px-4 p-2 absolute cursor-pointer right-5 top-5 gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
+            className="px-4 p-2 absolute cursor-pointer right-5 top-5 gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige2/75 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
           >
             <div className="flex w-full h-full items-center justify-center">
               <kbd

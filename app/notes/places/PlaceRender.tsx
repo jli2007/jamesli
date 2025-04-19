@@ -8,15 +8,15 @@ export default function RenderPlace({ place }: { place: any }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
+        const isVisible = entry.isIntersecting;
+        setVisible(isVisible);
       },
       {
-        rootMargin: "1000px", //controls when iframes start loading
-        threshold: 0.05, //controls how much the iframe is visible for the callback to trigger
+        rootMargin: "1000px", //controls how close the screen scroll is for the iframe to start loading
+        threshold: 0.05,  //controls how much the iframe has to be visible for the callback to trigger
       }
     );
+  
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
@@ -60,7 +60,6 @@ export default function RenderPlace({ place }: { place: any }) {
           <PlaceLikes slug={place.title} />
         </div>
       </div>
-
       {visible ? (
         <iframe
           src={place.iframeSrc}
