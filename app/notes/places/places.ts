@@ -223,4 +223,16 @@ export const places: PlacesType[] = [
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1745098661006!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRGM4OGJUTnc.!2m2!1d-6.16107032373727!2d39.19103746834339!3f7.343517582197867!4f-4.495950859082058!5f0.7820865974627469",
   },
+  {
+    title: "nordland - norway",
+    flag: "🇳🇴",
+    description:
+      "located in the lofoten archipelago in northern norway, scenery like this is quite common. a lonely house by the water shore with undoubtedly a huge story.",
+    tags: [
+      { color: "dodgerblue", text: "● streetview" },
+      { color: "darkSalmon", text: "● europe" },
+    ],
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1745600583146!6m8!1m7!1sb2mJc18CZleiDQfUv191kQ!2m2!1d68.09929960799552!2d13.32172761220568!3f165.4204374853023!4f-3.513416305264144!5f0.7820865974627469",
+  },
 ];
