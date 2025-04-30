@@ -247,7 +247,9 @@ export default function CommandPalette() {
                 >
                   <Command.Item
                     value="home"
-                    onSelect={() => openNextLink(() => router.push("/"))}
+                    onSelect={() => {
+                      setTimeout(() => openNextLink(() => router.push("/projects")), 0);
+                    }}
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
                     <IoHomeOutline className="h-4 w-4" />

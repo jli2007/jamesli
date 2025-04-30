@@ -161,11 +161,11 @@ export default function Home() {
             <Image
               src={jam}
               className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto top-30 w-[90vw] md:w-[35vw] right-0 md:z-[5] z-0"
+              priority={true}
               style={{
                 WebkitMaskImage:
                   "radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%)",
               }}
-              loading="lazy"
               alt="jame"
             />
 

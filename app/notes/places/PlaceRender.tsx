@@ -35,13 +35,14 @@ export default function RenderPlace({ place }: { place: any }) {
               orchid: "rgba(218,112,214,0.7)",
               dodgerblue: "rgba(30,144,255,0.7)",
               red: "rgba(255,0,0,0.7)",
-              darkSalmon: "rgba(233,150,122,0.7)",
+              darksalmon: "rgba(233,150,122,0.7)",
               slategray: "rgba(112,128,144,0.7)",
               darkgoldenrod: "rgba(184,134,11,0.7)",
               darkturquoise: "rgba(0,206,209,0.7)",
               midnightblue: "rgba(25,25,112,0.7)",
               mediumvioletred: "rgba(199,21,133,0.7)",
               coral: "rgba(255,127,80,0.7)",
+              paleturquoise: "rgba(175,238,238,0.5)",
             };
             const shadowColor = shadowMap[tag.color] || "rgba(0,0,0,0.3)";
             return (

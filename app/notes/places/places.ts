@@ -38,7 +38,7 @@ export const places: PlacesType[] = [
       "houses deeply nestled in the mountainside in rural portugal. zoom in and pan around, these rural european regions are so authentic. imagine stumbling across these villages on a hike or something and having a feast with the locals... idk.",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
-      { color: "darkSalmon", text: "● europe" },
+      { color: "darksalmon", text: "● europe" },
     ],
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1742416120061!6m8!1m7!1sHJJ20QRfuTeYGRRTn_lukw!2m2!1d41.27517404103741!2d-7.859529744857597!3f183.22189633540813!4f5.8944974875990965!5f0.8154479948595579",
@@ -98,7 +98,7 @@ export const places: PlacesType[] = [
       "northern rural italy looks surreal. the vineyards, streams, mountains... would love to visit someday.",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
-      { color: "darkSalmon", text: "● europe" },
+      { color: "darksalmon", text: "● europe" },
     ],
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1742759633339!6m8!1m7!1sNZ1sUpeRrfNjlbeR7fY0Sg!2m2!1d46.14604014416388!2d9.628630177222927!3f274.0867859348681!4f-8.940109054264724!5f0.5213058698309339",
@@ -170,7 +170,7 @@ export const places: PlacesType[] = [
       "facing the grand north atlantic ocean, the rugged land meets sea at the northern tip of northern ireland. i wonder what daily life looks like here.",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
-      { color: "darkSalmon", text: "● europe" },
+      { color: "darksalmon", text: "● europe" },
     ],
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1743475847277!6m8!1m7!1sTUy4KqkqKifRfPc2sm2OOg!2m2!1d55.14582671661194!2d-8.210794748937468!3f332.02567193437505!4f-3.9580072929426677!5f0.7820865974627469",
@@ -227,12 +227,24 @@ export const places: PlacesType[] = [
     title: "nordland - norway",
     flag: "🇳🇴",
     description:
-      "located in the lofoten archipelago in northern norway, scenery like this is quite common. a lonely house by the water shore with undoubtedly a huge story.",
+      "located in the lofoten archipelago in northern norway, scenery like this is quite common. a lonely house by the shore with undoubtedly a historical story.",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
-      { color: "darkSalmon", text: "● europe" },
+      { color: "darksalmon", text: "● europe" },
     ],
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1745600583146!6m8!1m7!1sb2mJc18CZleiDQfUv191kQ!2m2!1d68.09929960799552!2d13.32172761220568!3f165.4204374853023!4f-3.513416305264144!5f0.7820865974627469",
+  },
+  {
+    title: "bora-bora - french polynesia",
+    flag: "🇵🇫",
+    description:
+      "",
+    tags: [
+      { color: "mediumvioletred", text: "● photosphere" },
+      { color: "paleturquoise", text: "● oceania" },
+    ],
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1745977273706!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzRtc21CNGdF!2m2!1d-16.50185001792146!2d-151.7325809894041!3f323.41637738164417!4f0.2859992518925196!5f0.4000000000000002",
   },
 ];
