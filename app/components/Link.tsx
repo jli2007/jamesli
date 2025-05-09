@@ -41,7 +41,7 @@ export default function LinkSlider({
       before:z-[2]
       hover:before:opacity-100
       hover:text-[#151411]
-      hover:before:[animation:underline_3s_ease-in-out_infinite]
+      hover:before:[animation:underline_2s_ease-in-out_infinite]
     `
     }
     ${
@@ -65,7 +65,7 @@ export default function LinkSlider({
       before:z-[2]
       hover:before:opacity-100
       hover:text-[#ede8d7]
-      hover:before:[animation:underline_3s_ease-in-out_infinite]
+      hover:before:[animation:underline_2s_ease-in-out_infinite]
     `
     }
     ${className}

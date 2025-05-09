@@ -19,6 +19,18 @@ const posts = [
     pinned: true,
   },
   {
+    slug: "footy",
+    title: "highlights ⚽️",
+    date: "may 8, 2025 -> present",
+    pinned: true,
+  },
+  {
+    slug: "uw2",
+    title: "uw accepted me 🙏",
+    date: "may 8, 2025",
+    pinned: false,
+  },
+  {
     slug: "neodev",
     title: "founding neodev",
     date: "march 20, 2025",

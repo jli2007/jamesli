@@ -24,7 +24,12 @@ export const showcaseProjects: ProjectType[] = [
 
 export const projects: ProjectType[] = [
   {
-    name: "ML movie recommender",
+    name: "ml spam detection",
+    url: "https://spam.jame/li",
+    desc: 'machine learning "project" - uses the scikit learn library to classify spam messages',
+  },
+  {
+    name: "ml movie recommender",
     url: "https://movie.jame/li",
     desc: 'machine learning "project" - uses vector distance to find similar movies by keyword & cast & genre',
   },
