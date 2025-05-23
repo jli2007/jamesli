@@ -95,7 +95,7 @@ export default function Home() {
                   onClick={() => window.open("/resume.pdf", "_blank")}
                   className="px-4 p-2 flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                 >
-                 resume.
+                  resume.
                 </button>
                 {!isMobile && (
                   <button
@@ -124,17 +124,22 @@ export default function Home() {
             {/* side section */}
             <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
               <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
-                can&apos;t rush greatness.
+                incoming CS'30 @ UWaterloo
               </span>
               <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
                 <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
                   <h1 className="rounded-md sideh1">
-                    hey i&apos;m <span className="text-darkBeige3 ml-1">james.</span>
+                    hey i&apos;m{" "}
+                    <span className="text-darkBeige3 ml-1">james.</span>
                   </h1>
                   <h1 className="md:bg-transparent rounded-md sideh1">
                     · founder @{" "}
                     <span className="cursor-pointer text-darkBeige2">
-                      <LinkSlider href="https://neoleague.dev/" mode="dark" className="ml-1 relative">
+                      <LinkSlider
+                        href="https://neoleague.dev/"
+                        mode="dark"
+                        className="ml-1 relative"
+                      >
                         neodev
                       </LinkSlider>
                     </span>
@@ -142,7 +147,11 @@ export default function Home() {
                   <h1 className="md:bg-transparent rounded-md sideh1">
                     · prev. intern @{" "}
                     <span className="cursor-pointer text-darkBeige2">
-                      <LinkSlider href="https://www.weblakes.com/" mode="dark" className="ml-1 relative">
+                      <LinkSlider
+                        href="https://www.weblakes.com/"
+                        mode="dark"
+                        className="ml-1 relative"
+                      >
                         lakes software
                       </LinkSlider>
                     </span>
@@ -150,7 +159,11 @@ export default function Home() {
                   <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md sideh1">
                     · prev. junior software dev @{" "}
                     <span className="cursor-pointer text-darkBeige2">
-                      <LinkSlider href="https://www.tauria.com/" mode="dark" className="ml-1 relative">
+                      <LinkSlider
+                        href="https://www.tauria.com/"
+                        mode="dark"
+                        className="ml-1 relative"
+                      >
                         tauria
                       </LinkSlider>
                     </span>
@@ -220,9 +233,9 @@ export default function Home() {
               <div className="description relative md:h-auto md:w-[20vw] sm:w-[75%] flex flex-col h-full z-6 md:text-[0.9rem] text-[1.05rem]">
                 <span className="italic">programmer | student | athlete</span>
                 <h1 className="h1descr break-normal md:mt-3 mt-8 pb-2">
-                  coming from waterloo, james is a full time{" "}
+                  coming from waterloo, james developed an unwavering{" "}
                   <span className="text-darkBeige3">
-                    student & problem solver.
+                    addiction for winning.
                   </span>{" "}
                   in his free time, you will find him programming, playing
                   soccer, or wandering the forest.
@@ -315,18 +328,29 @@ export default function Home() {
                 </div>
                 <div className="justify-end flex md:flex-row flex-col w-full underline !underline-offset-4">
                   <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
-                    <LinkSlider href="mailto:hello@jame.li" mode="dark" className="relative">
+                    <LinkSlider
+                      href="mailto:hello@jame.li"
+                      mode="dark"
+                      className="relative"
+                    >
                       hello@jame.li
                     </LinkSlider>
                   </h1>
                   <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
                     <LinkSlider
-                      href="https://www.linkedin.com/in/james-li-a81004275/" mode="dark" className="relative">
+                      href="https://www.linkedin.com/in/james-li-a81004275/"
+                      mode="dark"
+                      className="relative"
+                    >
                       linkedin
                     </LinkSlider>
                   </h1>
                   <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
-                    <LinkSlider href="https://github.com/JLi2007" mode="dark" className="relative">
+                    <LinkSlider
+                      href="https://github.com/JLi2007"
+                      mode="dark"
+                      className="relative"
+                    >
                       github
                     </LinkSlider>
                   </h1>

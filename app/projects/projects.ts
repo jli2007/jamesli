@@ -23,6 +23,11 @@ export const showcaseProjects: ProjectType[] = [
 ]
 
 export const projects: ProjectType[] = [
+    {
+    name: "guideline",
+    url: "https://guidelinee.tech",
+    desc: 'augmented reality — uses advanced algorithms and opencv to overlay electrical components on breadboard [2nd overall @ jamhacks 9]',
+  },
   {
     name: "ml spam detection",
     url: "https://spam.jame/li",
@@ -60,7 +65,7 @@ export const projects: ProjectType[] = [
   },
   {
     name: "neo v1",
-    url: "https://neodev2024.jame.li/",
+    url: "https://neo2024.jame.li/",
     desc: "home & landing page for the neo developer league 2024",
   },
   {
@@ -101,6 +106,6 @@ export const projects: ProjectType[] = [
   {
     name: "footprint",
     url: "https://github.com/Mausmato/Footprint",
-    desc: "helping to reduce carbon footprint with forms and recommendations built with streamlit",
+    desc: "helping to reduce carbon footprint with forms and recommendations built with streamlit ['best use of streamlit' @ rythmhacks]",
   },
 ];

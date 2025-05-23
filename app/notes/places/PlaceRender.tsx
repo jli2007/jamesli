@@ -73,7 +73,6 @@ export default function RenderPlace({ place }: { place: any }) {
       ) : (
         <div className="w-[90vw] h-[75vh] bg-black/5 rounded-md" />
       )}
-
       <h4 className="mt-[10px] mb-[25px] w-[90vw]">{place.description}</h4>
       <hr className="m-0 p-0 mb-[12px]" />
     </div>

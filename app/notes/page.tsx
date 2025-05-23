@@ -24,6 +24,12 @@ const posts = [
     date: "may 8, 2025 -> present",
     pinned: true,
   },
+    {
+    slug: "jamhacks",
+    title: "jamhacks — only the beginning 🥈",
+    date: "may 22, 2025",
+    pinned: false,
+  },
   {
     slug: "uw2",
     title: "uw accepted me 🙏",
