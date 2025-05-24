@@ -293,7 +293,7 @@ export default function CommandPalette() {
                   >
                     <MdOutlinePlace className="h-4 w-4" />
                     <span className="flex-1">
-                      perplexing places [via notes]
+                      perplexing places
                     </span>
                     <Shortcut>3</Shortcut>
                   </Command.Item>
@@ -313,7 +313,7 @@ export default function CommandPalette() {
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
                     <IoLogoLinkedin className="h-4 w-4" />
-                    <span className="flex-1">linkedIn profile</span>
+                    <span className="flex-1">linkedin</span>
                     <Shortcut>4</Shortcut>
                   </Command.Item>
                   <Command.Item
@@ -326,7 +326,7 @@ export default function CommandPalette() {
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
                     <FiGithub className="h-4 w-4" />
-                    <span className="flex-1">github profile</span>
+                    <span className="flex-1">github</span>
                     <Shortcut>5</Shortcut>
                   </Command.Item>
                   <Command.Item
@@ -350,7 +350,7 @@ export default function CommandPalette() {
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
                     <MdAlternateEmail className="h-4 w-4" />
-                    <span className="flex-1">sendto: hello@jame.li</span>
+                    <span className="flex-1">hello@jame.li</span>
                     <Shortcut>7</Shortcut>
                   </Command.Item>
                   <Command.Item
@@ -366,7 +366,7 @@ export default function CommandPalette() {
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
                     <IoLogoInstagram className="h-4 w-4" />
-                    <span className="flex-1">instagram profile</span>
+                    <span className="flex-1">instagram</span>
                     <Shortcut>8</Shortcut>
                   </Command.Item>
                   <Command.Item

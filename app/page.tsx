@@ -11,6 +11,8 @@ import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaRegNoteSticky } from "react-icons/fa6"; //FaNoteSticky
 import jam from "./assets/jame.png";
 import jam1 from "./assets/jame1.png";
+import jam2 from "./assets/jame3.jpg";
+import jam3 from "./assets/jame2.jpg";
 import write from "./assets/write.png";
 
 export default function Home() {
@@ -157,7 +159,7 @@ export default function Home() {
                     </span>
                   </h1>
                   <h1 className="tauria md:mb-0 mb-10 md:bg-transparent rounded-md sideh1">
-                    · prev. junior software dev @{" "}
+                    · prev. software dev @{" "}
                     <span className="cursor-pointer text-darkBeige2">
                       <LinkSlider
                         href="https://www.tauria.com/"
@@ -172,12 +174,12 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src={jam}
-              className="jam absolute md:h-auto opacity-98 rounded-xl md:-left-5 md:right-auto top-30 w-[90vw] md:w-[35vw] right-0 md:z-[5] z-0"
+              src={jam3}
+              className="jam3 absolute md:h-auto opacity-92.5 rounded-xl md:-left-5 md:right-auto top-30 w-full md:w-[34vw] right-0 md:z-[5] z-0"
               priority={true}
               style={{
                 WebkitMaskImage:
-                  "radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%)",
+                  "radial-gradient(circle, rgba(0,0,0,0.975) 30%, rgba(0,0,0,0.04) 75%)",
               }}
               alt="jame"
             />
@@ -229,29 +231,32 @@ export default function Home() {
             </div>
 
             {/* description section */}
-            <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-7 bg-midBeige1 m-1 rounded-lg md:text-darkBeige2 text-darkBeige3">
+            <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-6 bg-midBeige1 m-1 rounded-lg md:text-darkBeige2 text-darkBeige3">
               <div className="description relative md:h-auto md:w-[20vw] sm:w-[75%] flex flex-col h-full z-6 md:text-[0.9rem] text-[1.05rem]">
-                <span className="italic">programmer | student | athlete</span>
+                <span className="italic">can't rush greatness.</span>
                 <h1 className="h1descr break-normal md:mt-3 mt-8 pb-2">
-                  coming from waterloo, james developed an unwavering{" "}
-                  <span className="text-darkBeige3">
-                    addiction for winning.
+                  coming from{" "}
+                  <span className="text-darkBeige3 font-bold">waterloo, </span>
+                  james developed an unwavering addiction for {""}
+                  <span className="text-darkBeige3 font-bold">
+                    chasing dreams.
                   </span>{" "}
-                  in his free time, you will find him programming, playing
-                  soccer, or wandering the forest.
+                  in his free time, he can be found coding, playing soccer, or
+                  wandering the forest.
                 </h1>
                 <h1 className="h1descr break-normal md:mt-2 mt-8 pb-2">
                   having completed{" "}
-                  <span className="font-bold">two software internships </span>{" "}
-                  and founded the{" "}
-                  <span className="font-bold italic text-darkBeige3">
-                    neo developer league
-                  </span>
-                  , james immerses himself in all aspects of tech, with a
-                  primary focus on{" "}
                   <span className="font-bold text-darkBeige3">
-                    js/ts full-stack development.
-                  </span>
+                    two software internships
+                  </span>{" "}
+                  and raised{" "}
+                  <span className="font-bold text-darkBeige3">$11k</span> for
+                  the <span className="font-bold text-darkBeige3">neodev league</span> in high school, james pursues an
+                  audacious vision to leave a{" "}
+                  <span className="font-bold text-darkBeige3">
+                    meaningful impact
+                  </span>{" "}
+                  wherever he goes.
                 </h1>
                 <h1 className="h1descr break-normal md:mt-2 mt-8 md:pb-0 mb-8 pb-2">
                   if you meet him, he&apos;ll be happy to start a liveshare and
@@ -272,6 +277,18 @@ export default function Home() {
                 loading="lazy"
                 alt="jame"
               />
+
+              {/* STUSSY VERSION OF IMAGE
+              <Image
+                src={jam2}
+                className="jam1 absolute md:h-auto md:opacity-98 opacity-60 md:right-0 md:top-0 md:w-70 -right-10 bottom-0 w-95 rounded-2xl"
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(circle, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0) 65%)",
+                }}
+                loading="lazy"
+                alt="jame"
+              /> */}
             </div>
 
             {/* projects section */}
@@ -303,6 +320,18 @@ export default function Home() {
                   view all projects
                 </LinkSlider>
               </div>
+
+              {/* STUSSY VERSION OF IMAGE */}
+              {/* <Image
+                src={jam2}
+                className="jam2 absolute md:h-auto md:opacity-60 opacity-50 md:right-[-50] md:bottom-[-50] md:w-70 bottom-0 w-70"
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 60%)",
+                }}
+                loading="lazy"
+                alt="jame"
+              /> */}
             </div>
 
             {/* github logo section */}
@@ -326,7 +355,7 @@ export default function Home() {
                     f*** that, we can go follow4follow
                   </span>
                 </div>
-                <div className="justify-end flex md:flex-row flex-col w-full underline !underline-offset-4">
+                <div className="justify-end flex md:flex-row flex-col w-full">
                   <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
                     <LinkSlider
                       href="mailto:hello@jame.li"

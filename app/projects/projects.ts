@@ -11,9 +11,9 @@ export const showcaseProjects: ProjectType[] = [
     desc: "home & landing page",
   },
   {
-    name: "identibear",
-    url: "https://devpost.com/software/identibear-your-memory-companion",
-    desc: "dl model for dementia patients"
+    name: "guideline",
+    url: "https://dorahacks.io/buidl/26350/",
+    desc: "augmented reality breadboarding guide"
   },
   {
     name: "weathermap",
@@ -25,7 +25,7 @@ export const showcaseProjects: ProjectType[] = [
 export const projects: ProjectType[] = [
     {
     name: "guideline",
-    url: "https://guidelinee.tech",
+    url: "https://github.com/JLi2007/guideline",
     desc: 'augmented reality — uses advanced algorithms and opencv to overlay electrical components on breadboard [2nd overall @ jamhacks 9]',
   },
   {
@@ -86,7 +86,7 @@ export const projects: ProjectType[] = [
   {
     name: "moodify",
     url: "https://github.com/Mausmato/Moodify",
-    desc: "facial expression to spotify playlist using open source machine learning model (spotify api feature coming soon...?)",
+    desc: "facial expression to spotify playlist using open source machine learning model",
   },
   {
     name: "weathermap",
@@ -106,6 +106,6 @@ export const projects: ProjectType[] = [
   {
     name: "footprint",
     url: "https://github.com/Mausmato/Footprint",
-    desc: "helping to reduce carbon footprint with forms and recommendations built with streamlit ['best use of streamlit' @ rythmhacks]",
+    desc: "helping to reduce carbon footprint with forms and recommendations built with streamlit ['best use of streamlit' @ rythmhacks 2023]",
   },
 ];
