@@ -90,7 +90,7 @@ export default function Projects() {
         <div className="p-5 pb-5">
           {projects.map((project, index) => (
             <div key={index} className="mb-5">
-              <h1 className="underline italic font-bold">
+              <h1 className="underline decoration-white/50 italic font-bold">
                 <a
                   href={project.url}
                   target="_blank"

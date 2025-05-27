@@ -4,63 +4,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { isMobile } from "react-device-detect";
 import useModifierKey from "../components/ModifierKey";
-
-const posts = [
-  {
-    slug: "places",
-    title: "places of the world 📍",
-    date: "march 8, 2025 -> present",
-    pinned: true,
-  },
-  {
-    slug: "quotes",
-    title: "inspirational people 👥 & quotes 🗣️",
-    date: "march 8, 2025 -> present",
-    pinned: true,
-  },
-  {
-    slug: "footy",
-    title: "highlights ⚽️",
-    date: "may 8, 2025 -> present",
-    pinned: true,
-  },
-    {
-    slug: "jamhacks",
-    title: "jamhacks — only the beginning 🥈",
-    date: "may 22, 2025",
-    pinned: false,
-  },
-  {
-    slug: "uw2",
-    title: "uw accepted me 🙏",
-    date: "may 8, 2025",
-    pinned: false,
-  },
-  {
-    slug: "neodev",
-    title: "founding neodev",
-    date: "march 20, 2025",
-    pinned: false,
-  },
-  {
-    slug: "futbol",
-    title: "favourite jugadors ⚽️",
-    date: "march 17, 2025",
-    pinned: false,
-  },
-  {
-    slug: "uw",
-    title: "uw accept me 🙏",
-    date: "march 8, 2025",
-    pinned: false,
-  },
-  {
-    slug: "ambition",
-    title: "an inherited ambition",
-    date: "march 8, 2025",
-    pinned: false,
-  },
-];
+import { posts } from "./posts";
 
 export default function Notes() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -143,7 +87,7 @@ export default function Notes() {
             </button>
           )}
         </div>
-        <h1 className="px-5 py-1 flex justify-center md:justify-start md:text-lg text-2xl md:no-underline underline">
+        <h1 className="px-5 py-1 flex justify-center md:justify-start md:text-lg text-2xl md:no-underline underline decoration-white/75">
           pinned 📌
         </h1>
         {posts.map((post) =>
@@ -163,7 +107,7 @@ export default function Notes() {
                   sessionStorage.setItem("postDate", post.date);
                   sessionStorage.setItem("postTitle", post.title);
                 }}
-                className="underline !underline-offset-3 hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
+                className="underline decoration-white/50 !underline-offset-3 hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
               >
                 {post.title}
               </Link>
@@ -191,7 +135,7 @@ export default function Notes() {
                   sessionStorage.setItem("postDate", post.date);
                   sessionStorage.setItem("postTitle", post.title);
                 }}
-                className="underline !underline-offset-3 hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
+                className="underline decoration-white/50 !underline-offset-3 hover:bg-lightBeige/10 transition delay-250 duration-200 ease-in-out rounded-sm py-1 px-2 my-1"
               >
                 {post.title}
               </Link>
