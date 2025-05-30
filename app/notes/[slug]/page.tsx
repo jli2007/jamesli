@@ -7,7 +7,11 @@ import { isMobile } from "react-device-detect";
 import useModifierKey from "@/app/components/ModifierKey";
 import "../places/places.css";
 
-export default function NotePage({ params }: { params: Promise<{ slug: string }> }) {
+export default function NotePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const [info, setInfo] = useState<{
     date: string | null;
     title: string | null;
@@ -27,10 +31,21 @@ export default function NotePage({ params }: { params: Promise<{ slug: string }>
     const date = sessionStorage.getItem("postDate");
     const title = sessionStorage.getItem("postTitle");
     console.log("date:", date, "title:", title);
+
     setInfo({
       date: date,
       title: title,
     });
+
+    if (date === null && title === null) {
+      const title = slug;
+      const date = "jame.li note";
+
+      setInfo({
+        date: date,
+        title: title,
+      });
+    }
 
     const loadMDX = async () => {
       try {

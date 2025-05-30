@@ -219,7 +219,7 @@ export default function CommandPalette() {
               <div className="px-5 py-6 border-b border-stone-700 flex items-center gap-3">
                 <img src="/jsl.png" alt="jsl" className="w-7 rounded-sm" />
                 <div className="flex-1">
-                  <h2 className="font-medium text-midBeige1">cmd palette</h2>
+                  <h2 className="font-medium text-midBeige1">quick access</h2>
                   <p className="text-xs text-midBeige2/90">
                     use <kbd className="px-1">esc</kbd> or click outside to
                     close

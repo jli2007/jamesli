@@ -94,7 +94,8 @@ export default function Home() {
               </h1>
               <div className="h-full absolute md:top-0 right-0 flex items-center gap-1">
                 <button
-                  onClick={() => window.open("/resume.pdf", "_blank")}
+                  // resume hosted by website if not on mobile, hosted by google drive if on mobile: subject to change. 
+                  onClick={() => {!isMobile ? window.open("/resume.pdf", "_blank") : window.open("https://drive.google.com/file/d/13UPOvcXB72uWh1_ymGHv0MtbvxG1-dq2/view?usp=sharing", "_blank")}}
                   className="px-4 p-2 flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                 >
                   resume.
