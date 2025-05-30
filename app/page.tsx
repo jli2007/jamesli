@@ -189,12 +189,12 @@ export default function Home() {
               {/* linkedin section */}
               <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
                 <a
-                  href="https://www.linkedin.com/in/james-li-a81004275/"
+                  href="https://www.linkedin.com/in/james-siyuan-li/"
                   target="_blank"
                   className="absolute inset-0 w-full h-full"
                 >
                   <h1 className="absolute italic left-5 top-2">linkedin</h1>
-                  <div className="linkedin absolute md:bottom-4 md:left-2 md:right-0 md:top-auto right-1 top-1 bottom-auto left-auto z-20">
+                  <div className="linkedin absolute md:bottom-4 md:left-2 md:right-0 md:top-auto right-1 top-0 bottom-auto left-auto z-20">
                     <GrLinkedin className="md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
                   </div>
                   <h1 className="connect4 absolute bottom-5 italic right-5 md:text-lg text-base">
@@ -218,7 +218,7 @@ export default function Home() {
 
                   <Image
                     src={write}
-                    className="absolute md:h-auto opacity-30 z-5 right-0 md:top-10 md:w-70 w-90 top-5 rounded-xl"
+                    className="absolute md:h-auto opacity-30 z-5 right-0 top-10 md:w-70 w-90 rounded-xl"
                     style={{
                       WebkitMaskImage:
                         "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
@@ -367,7 +367,7 @@ export default function Home() {
                   </h1>
                   <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
                     <LinkSlider
-                      href="https://www.linkedin.com/in/james-li-a81004275/"
+                      href="https://www.linkedin.com/in/james-siyuan-li/"
                       mode="dark"
                       className="relative"
                     >

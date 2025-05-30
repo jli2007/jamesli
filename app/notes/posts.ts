@@ -21,8 +21,8 @@ export const posts: Post[] = [
   {
     slug: "footy",
     title: "highlights ⚽️",
-    date: "may 8, 2025 -> present",
-    pinned: true,
+    date: "may 27, 2025",
+    pinned: false,
   },
   {
     slug: "jamhacks",

@@ -129,7 +129,7 @@ export default function CommandPalette() {
         case "Numpad4":
           openLink(() =>
             window.open(
-              "https://www.linkedin.com/in/james-li-a81004275/",
+              "https://www.linkedin.com/in/james-siyuan-li/",
               "_blank"
             )
           );
@@ -305,7 +305,7 @@ export default function CommandPalette() {
                     onSelect={() =>
                       openLink(() =>
                         window.open(
-                          "https://www.linkedin.com/in/james-li-a81004275/",
+                          "https://www.linkedin.com/in/james-siyuan-li/",
                           "_blank"
                         )
                       )
