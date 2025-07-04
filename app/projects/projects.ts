@@ -30,17 +30,17 @@ export const projects: ProjectType[] = [
   },
   {
     name: "ml spam detection",
-    url: "https://spam.jame/li",
+    url: "https://github.com/jli2007/Spam-Classifier",
     desc: 'machine learning "project" - uses the scikit learn library to classify spam messages',
   },
   {
     name: "ml movie recommender",
-    url: "https://movie.jame/li",
+    url: "https://github.com/jli2007/Movie-Recommender",
     desc: 'machine learning "project" - uses vector distance to find similar movies by keyword & cast & genre',
   },
   {
     name: "querify",
-    url: "https://querify.jame.li",
+    url: "https://github.com/jli2007/Querify",
     desc: "uses resizable boxes to make writing media queries easier and stores state in mongoose",
   },
   {
@@ -86,11 +86,11 @@ export const projects: ProjectType[] = [
   {
     name: "moodify",
     url: "https://github.com/Mausmato/Moodify",
-    desc: "facial expression to spotify playlist using open source machine learning model",
+    desc: "facial expression to spotify playlist using an open source machine learning model",
   },
   {
     name: "weathermap",
-    url: "https://weathermap.jame.li",
+    url: "https://github.com/jli2007/Weathermap",
     desc: "visualizing weather and location on world map with leaflet.js mapping library and weather api",
   },
   {

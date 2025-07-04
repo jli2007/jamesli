@@ -173,10 +173,10 @@
   max-width: 100% !important;
 }
 
-/* queries 😭 the formatting for the website requires this much queries to be responsive,
- but tbh this just goes to show how badly i did my col and row span layout (can't go back now lol) */
+/* queries ☠️ the formatting for the website requires hella queries to be responsive
+ L col span layout */
 
- /* jam & jam3 start */
+ /* jam & jam2 start */
 
 /* @media (min-width: 815px) and (max-width: 990px) {
   .jam {
@@ -205,47 +205,53 @@
   }
 } */
 @media (min-width: 1249px) and (max-width: 1499px) {
-  .jam3 {
+  .jam2 {
     width: 36vw;
   }
 }
 @media (min-width: 1188px) and (max-width: 1249px) {
-  .jam3 {
+  .jam2 {
     width: 32vw;
   }
 }
 @media (min-width: 1100px) and (max-width: 1187px) {
-  .jam3 {
+  .jam2 {
     width: 26vw;
     top: 15vh;
   }
 }
 @media (min-width: 991px) and (max-width: 1099px) {
-  .jam3 {
+  .jam2 {
     width: 33vw;
     top: 15vh;
   }
 }
 @media (min-width: 991px) and (max-width: 1099px) and (max-height: 671px) {
-  .jam3 {
+  .jam2 {
     width: 28vw;
     top: 15vh;
   }
 }
 @media (min-width: 815px) and (max-width: 990px) {
-  .jam3 {
+  .jam2 {
     width: 26vw;
     top: 20vh;
   }
 }
 @media (min-width: 768px) and (max-width: 815px) {
-  .jam3 {
+  .jam2 {
     width: 24vw;
     top: 25vh;
   }
 }
 
- /* jam & jam3 end */
+ @media (min-width: 1100px) and (max-width: 1188px) and (min-height: 880px) {
+  .jam2 {
+    width: 38vw;
+  }
+}
+
+ /* jam & jam2 end */
 
 /* other start */
 
@@ -413,7 +419,7 @@
   /* .jam {
     width: 30vw;
   } */
-  .jam3 {
+  .jam2 {
     width: 30vw;
   }
   .jam1 {

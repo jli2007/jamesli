@@ -9,10 +9,8 @@ import { showcaseProjects } from "./projects/projects";
 import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaRegNoteSticky } from "react-icons/fa6"; //FaNoteSticky
-import jam from "./assets/jame.png";
 import jam1 from "./assets/jame1.png";
-import jam2 from "./assets/jame3.jpg";
-import jam3 from "./assets/jame2.jpg";
+import jam2 from "./assets/jame2.jpg";
 import write from "./assets/write.png";
 
 export default function Home() {
@@ -175,8 +173,8 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src={jam3}
-              className="jam3 absolute md:h-auto opacity-92.5 rounded-xl md:-left-5 md:right-auto top-30 w-full md:w-[34vw] right-0 md:z-[5] z-0"
+              src={jam2}
+              className="jam2 absolute md:h-auto opacity-92.5 rounded-xl md:-left-5 md:right-auto top-30 w-full md:w-[34vw] right-0 md:z-[5] z-0"
               priority={true}
               style={{
                 WebkitMaskImage:
