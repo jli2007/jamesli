@@ -80,7 +80,7 @@ export default function Projects() {
 
                 <span>+</span>
                 <kbd className="px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige">
-                  K
+                  k
                 </kbd>
               </div>
             </button>

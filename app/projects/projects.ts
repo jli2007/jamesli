@@ -6,9 +6,9 @@ export type ProjectType = {
 
 export const showcaseProjects: ProjectType[] = [
   {
-    name: "neo developer league",
-    url: "https://neoleague.dev/",
-    desc: "home & landing page",
+    name: "chroma",
+    url: "https://devpost.com/software/chroma-lf4x3a",
+    desc: "css styling for photoshop",
   },
   {
     name: "guideline",
@@ -16,9 +16,9 @@ export const showcaseProjects: ProjectType[] = [
     desc: "augmented reality breadboarding guide"
   },
   {
-    name: "weathermap",
-    url: "https://weathermap.jame.li",
-    desc: "weather & location on world map",
+    name: "neo developer league",
+    url: "https://neoleague.dev/",
+    desc: "home & landing page",
   },
 ]
 

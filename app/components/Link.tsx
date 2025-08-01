@@ -1,4 +1,3 @@
-// stolen from martin sit
 "use client";
 
 import NextLink from "next/link";
@@ -26,14 +25,14 @@ export default function LinkSlider({
       `
       after:absolute
       after:left-0
-      after:bottom-[-1]
+      after:bottom-[-2]
       after:h-[2px]
       after:w-full
       after:bg-[#787569]
       after:z-[1]
       before:absolute
       before:left-0
-      before:bottom-[-1]
+      before:bottom-[-2]
       before:h-[2px]
       before:w-full
       before:bg-[#151411]

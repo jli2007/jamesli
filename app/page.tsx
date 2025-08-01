@@ -92,8 +92,15 @@ export default function Home() {
               </h1>
               <div className="h-full absolute md:top-0 right-0 flex items-center gap-1">
                 <button
-                  // resume hosted by website if not on mobile, hosted by google drive if on mobile: subject to change. 
-                  onClick={() => {!isMobile ? window.open("/resume.pdf", "_blank") : window.open("https://drive.google.com/file/d/13UPOvcXB72uWh1_ymGHv0MtbvxG1-dq2/view?usp=sharing", "_blank")}}
+                  // resume hosted by website if not on mobile, hosted by google drive if on mobile: subject to change.
+                  onClick={() => {
+                    !isMobile
+                      ? window.open("/resume.pdf", "_blank")
+                      : window.open(
+                          "https://drive.google.com/file/d/13UPOvcXB72uWh1_ymGHv0MtbvxG1-dq2/view?usp=sharing",
+                          "_blank"
+                        );
+                  }}
                   className="px-4 p-2 flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                 >
                   resume.
@@ -113,7 +120,7 @@ export default function Home() {
 
                     <span>+</span>
                     <kbd className="px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige">
-                      K
+                      k
                     </kbd>
                   </button>
                 )}
@@ -134,14 +141,14 @@ export default function Home() {
                     <span className="text-darkBeige3 ml-1">james.</span>
                   </h1>
                   <h1 className="md:bg-transparent rounded-md sideh1">
-                    · founder @{" "}
+                    · cooking @{" "}
                     <span className="cursor-pointer text-darkBeige2">
                       <LinkSlider
-                        href="https://neoleague.dev/"
+                        href="https://phutureai.com"
                         mode="dark"
                         className="ml-1 relative"
                       >
-                        neodev
+                        phuture
                       </LinkSlider>
                     </span>
                   </h1>
@@ -236,26 +243,19 @@ export default function Home() {
                 <h1 className="h1descr break-normal md:mt-3 mt-8 pb-2">
                   coming from{" "}
                   <span className="text-darkBeige3 font-bold">waterloo, </span>
-                  james developed an unwavering addiction for {""}
-                  <span className="text-darkBeige3 font-bold">
-                    chasing dreams.
-                  </span>{" "}
-                  in his free time, he can be found coding, playing soccer, or
-                  wandering the forest.
+                  james is currently building{" "}
+                  <span className="text-darkBeige3 font-bold">phuture</span>
+                  —pokemon go for wildlife. in his free time, he can be found
+                  coding, playing soccer, or wandering the forest.
                 </h1>
                 <h1 className="h1descr break-normal md:mt-2 mt-8 pb-2">
                   having completed{" "}
                   <span className="font-bold text-darkBeige3">
-                    two software internships
+                    2 software internships
                   </span>{" "}
-                  and raised{" "}
-                  <span className="font-bold text-darkBeige3">$11k</span> for
-                  the <span className="font-bold text-darkBeige3">neodev league</span> in high school, james pursues an
-                  audacious vision to leave a{" "}
-                  <span className="font-bold text-darkBeige3">
-                    meaningful impact
-                  </span>{" "}
-                  wherever he goes.
+                  in high school, james mainly focuses on{" "}
+                  <span className="text-darkBeige3 font-bold">full-stack</span>{" "}
+                  development with js/ts. <span className="italic text-darkBeige3">patience is a virtue.</span>
                 </h1>
                 <h1 className="h1descr break-normal md:mt-2 mt-8 md:pb-0 mb-8 pb-2">
                   if you meet him, he&apos;ll be happy to start a liveshare and
@@ -276,18 +276,6 @@ export default function Home() {
                 loading="lazy"
                 alt="jame"
               />
-
-              {/* STUSSY VERSION OF IMAGE
-              <Image
-                src={jam2}
-                className="jam1 absolute md:h-auto md:opacity-98 opacity-60 md:right-0 md:top-0 md:w-70 -right-10 bottom-0 w-95 rounded-2xl"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(circle, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0) 65%)",
-                }}
-                loading="lazy"
-                alt="jame"
-              /> */}
             </div>
 
             {/* projects section */}
@@ -299,7 +287,7 @@ export default function Home() {
                     <div key={index} className="mb-15">
                       <h1 className="cursor-pointer">
                         <LinkSlider
-                          href={project.url || "https://jame.li/"}
+                          href={project.url}
                           mode="light"
                           className={`relative`}
                         >
@@ -319,18 +307,6 @@ export default function Home() {
                   view all projects
                 </LinkSlider>
               </div>
-
-              {/* STUSSY VERSION OF IMAGE */}
-              {/* <Image
-                src={jam2}
-                className="jam2 absolute md:h-auto md:opacity-60 opacity-50 md:right-[-50] md:bottom-[-50] md:w-70 bottom-0 w-70"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 60%)",
-                }}
-                loading="lazy"
-                alt="jame"
-              /> */}
             </div>
 
             {/* github logo section */}

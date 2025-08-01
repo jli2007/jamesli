@@ -19,6 +19,18 @@ export const posts: Post[] = [
     pinned: true,
   },
   {
+    slug: "aifs",
+    title: "*collection of uw aifs*",
+    date: "aug 1, 2025",
+    pinned: false,
+  },
+  {
+    slug: "ht6ix",
+    title: "hack the 6ix 🤷🏻‍♂️",
+    date: "jul 20, 2025",
+    pinned: false,
+  },
+  {
     slug: "footy",
     title: "highlights ⚽️",
     date: "may 27, 2025",
@@ -34,12 +46,6 @@ export const posts: Post[] = [
     slug: "uw2",
     title: "uw accepted me 🙏",
     date: "may 8, 2025",
-    pinned: false,
-  },
-  {
-    slug: "neodev",
-    title: "founding neodev",
-    date: "march 20, 2025",
     pinned: false,
   },
   {
