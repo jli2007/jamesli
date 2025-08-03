@@ -1,2 +1,1 @@
-# portfolio.
-### [james siyuan li](https://jame.li/)
+can't rush greatness.

@@ -13,20 +13,30 @@ export const showcaseProjects: ProjectType[] = [
   {
     name: "guideline",
     url: "https://dorahacks.io/buidl/26350/",
-    desc: "augmented reality breadboarding guide"
+    desc: "augmented reality breadboarding guide",
   },
   {
     name: "neo developer league",
     url: "https://neoleague.dev/",
     desc: "home & landing page",
   },
-]
+];
 
 export const projects: ProjectType[] = [
-    {
+  {
+    name: "phuture",
+    url: "https://phutureai.com",
+    desc: "currently building (alpha testing open): pokemon-go for wildlife — collect plants and animals to your database",
+  },
+  {
+    name: "chroma",
+    url: "https://devpost.com/software/chroma-lf4x3a",
+    desc: "css styling for photoshop — adobe plugin that allows the user to adjust layers in css syntax i.e ' .layer1 { hue: 67 } '",
+  },
+  {
     name: "guideline",
     url: "https://github.com/JLi2007/guideline",
-    desc: 'augmented reality — uses advanced algorithms and opencv to overlay electrical components on breadboard [2nd overall @ jamhacks 9]',
+    desc: "augmented reality — uses advanced algorithms and opencv to overlay electrical components on breadboard [2nd overall @ jamhacks 9]",
   },
   {
     name: "ml spam detection",

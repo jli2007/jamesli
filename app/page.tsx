@@ -11,6 +11,8 @@ import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaRegNoteSticky } from "react-icons/fa6"; //FaNoteSticky
 import jam1 from "./assets/jame1.png";
 import jam2 from "./assets/jame2.jpg";
+import jam4 from "./assets/jame4.jpg";
+import jam6 from "./assets/jame5.jpg";
 import write from "./assets/write.png";
 
 export default function Home() {
@@ -132,12 +134,12 @@ export default function Home() {
             {/* side section */}
             <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
               <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
-                incoming CS'30 @ UWaterloo
+                UWaterloo CS'30.
               </span>
               <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
                 <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
                   <h1 className="rounded-md sideh1">
-                    hey i&apos;m{" "}
+                    hey i&apos;m
                     <span className="text-darkBeige3 ml-1">james.</span>
                   </h1>
                   <h1 className="md:bg-transparent rounded-md sideh1">
@@ -180,12 +182,12 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src={jam2}
-              className="jam2 absolute md:h-auto opacity-92.5 rounded-xl md:-left-5 md:right-auto top-30 w-full md:w-[34vw] right-0 md:z-[5] z-0"
+              src={jam6}
+              className="jam2 absolute md:h-auto opacity-99 rounded-xl md:-left-5 md:right-auto top-30 w-full md:w-[34vw] right-0 md:z-[5] z-0"
               priority={true}
               style={{
                 WebkitMaskImage:
-                  "radial-gradient(circle, rgba(0,0,0,0.975) 30%, rgba(0,0,0,0.04) 75%)",
+                  "radial-gradient(circle, rgba(0,0,0,0.975) 30%, rgba(0,0,0,0.03) 75%)",
               }}
               alt="jame"
             />
@@ -239,14 +241,14 @@ export default function Home() {
             {/* description section */}
             <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-6 bg-midBeige1 m-1 rounded-lg md:text-darkBeige2 text-darkBeige3">
               <div className="description relative md:h-auto md:w-[20vw] sm:w-[75%] flex flex-col h-full z-6 md:text-[0.9rem] text-[1.05rem]">
-                <span className="italic">can't rush greatness.</span>
+                <span className="italic">patience is a virtue.</span>
                 <h1 className="h1descr break-normal md:mt-3 mt-8 pb-2">
                   coming from{" "}
                   <span className="text-darkBeige3 font-bold">waterloo, </span>
                   james is currently building{" "}
                   <span className="text-darkBeige3 font-bold">phuture</span>
                   —pokemon go for wildlife. in his free time, he can be found
-                  coding, playing soccer, or wandering the forest.
+                  coding, playing fútbol, or wandering the forest.
                 </h1>
                 <h1 className="h1descr break-normal md:mt-2 mt-8 pb-2">
                   having completed{" "}
@@ -254,20 +256,20 @@ export default function Home() {
                     2 software internships
                   </span>{" "}
                   in high school, james mainly focuses on{" "}
-                  <span className="text-darkBeige3 font-bold">full-stack</span>{" "}
-                  development with js/ts. <span className="italic text-darkBeige3">patience is a virtue.</span>
+                  <span className="italic text-darkBeige3">full-stack</span>{" "}
+                  development with js/ts (mern stack). <span className="text-darkBeige3 font-bold">can't rush greatness.</span>
                 </h1>
                 <h1 className="h1descr break-normal md:mt-2 mt-8 md:pb-0 mb-8 pb-2">
-                  if you meet him, he&apos;ll be happy to start a liveshare and
+                  if you meet him, he&apos;ll be happy to watch a premier league fixture and
                   talk about the latest{" "}
-                  <span className="italic text-darkBeige3">central cee</span> or{" "}
+                  <span className="italic text-darkBeige3">central cee</span> /{" "}
                   <span className="italic text-darkBeige3">jj lin</span> album
                   drop.
                 </h1>
               </div>
 
               <Image
-                src={jam1}
+                src={jam4}
                 className="jam1 absolute md:h-auto md:opacity-98 opacity-60 md:right-0 md:top-10 md:w-70 -right-10 bottom-0 w-95 rounded-2xl"
                 style={{
                   WebkitMaskImage:
