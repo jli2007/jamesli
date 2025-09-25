@@ -88,14 +88,14 @@ export default function Home() {
       </div>
 
       <div className="relative content inset-0 overflow-x-hidden home">
-        <div className="min-w-screen md:max-h-screen md:h-screen w-auto bg-black text-darkBeige2 font-playfair overflow-x-hidden md:overflow-y-hidden pb-5 md:pb-0">
+        <div className="min-w-screen md:max-h-screen md:h-screen w-auto bg-black text-darkBeige2 font-playfair overflow-x-hidden md:overflow-y-hidden pb-3 md:pb-0">
           {/* top section */}
           <div className="relative w-auto p-5 bg-midBeige1 rounded-lg text-darkBeige3 m-1 mt-2 flex flex-row">
             <div className="relative w-full h-full flex justify-between">
               <h1>
                 <span className="font-thin">james siyuan li </span>{" "}
-                <span className="pl-1 font-light">李思远</span> — ai &
-                full-stack engineer
+                <span className="pl-1 font-light">李思远</span> — <span className="font-bold">ai &
+                full-stack engineer</span>
               </h1>
               <div className="h-full absolute md:top-0 right-0 flex items-center gap-1">
                 <button
@@ -104,7 +104,7 @@ export default function Home() {
                     !isMobile
                       ? window.open("/resume.pdf", "_blank")
                       : window.open(
-                          "https://drive.google.com/file/d/13UPOvcXB72uWh1_ymGHv0MtbvxG1-dq2/view?usp=sharing",
+                          "https://drive.google.com/file/d/1ZpNuk2kwnueVtROxHqggduO7TWFPgZHy/view?usp=sharing",
                           "_blank"
                         );
                   }}

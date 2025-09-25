@@ -250,6 +250,11 @@
     width: 38vw;
   }
 }
+ @media (min-width: 1400px) and (min-height: 780px) and (max-height: 850px){
+  .jam2 {
+    width: 35vw;
+  }
+}
 
  /* jam & jam2 end */
 
