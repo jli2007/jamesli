@@ -18,16 +18,16 @@ export const posts: Post[] = [
     date: "march 8, 2025 -> present",
     pinned: true,
   },
+    {
+    slug: "uw-reflection",
+    title: "thoughts on uw cs 1 month in",
+    date: "sep 24 2025",
+    pinned: false,
+  },
   {
     slug: "aifs",
     title: "*collection of uw aifs*",
     date: "aug 1, 2025",
-    pinned: false,
-  },
-  {
-    slug: "ht6ix",
-    title: "hack the 6ix 🤷🏻‍♂️",
-    date: "jul 20, 2025",
     pinned: false,
   },
   {
@@ -40,12 +40,6 @@ export const posts: Post[] = [
     slug: "jamhacks",
     title: "jamhacks 🥈",
     date: "may 22, 2025",
-    pinned: false,
-  },
-  {
-    slug: "uw2",
-    title: "uw accepted me 🙏",
-    date: "may 8, 2025",
     pinned: false,
   },
   {

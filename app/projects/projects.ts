@@ -6,14 +6,14 @@ export type ProjectType = {
 
 export const showcaseProjects: ProjectType[] = [
   {
-    name: "chroma",
-    url: "https://devpost.com/software/chroma-lf4x3a",
-    desc: "css styling for photoshop",
+    name: "trivialguessr",
+    url: "https://www.trivialguessr.com/",
+    desc: "geoguessr📍 for trivia💡                          ",
   },
   {
-    name: "guideline",
-    url: "https://dorahacks.io/buidl/26350/",
-    desc: "augmented reality breadboarding guide",
+    name: "chroma",
+    url: "https://devpost.com/software/chroma-lf4x3a",
+    desc: "css styling for photoshop.",
   },
   {
     name: "neo developer league",
@@ -27,6 +27,11 @@ export const projects: ProjectType[] = [
     name: "phuture",
     url: "https://phutureai.com",
     desc: "currently building (alpha testing open): pokemon-go for wildlife — collect plants and animals to your database",
+  },
+  {
+    name: "trivialguessr",
+    url: "https://www.trivialguessr.com/",
+    desc: 'geoguessr for trivia — questions about our world, "knowledge of little importance"',
   },
   {
     name: "chroma",
@@ -71,7 +76,7 @@ export const projects: ProjectType[] = [
   {
     name: "piximatic",
     url: "https://github.com/JLi2007/Piximatic",
-    desc: "simple photoshop with camera feature and imgur api built in processing java",
+    desc: "simple photoshop built in processing java",
   },
   {
     name: "neo v1",
@@ -79,14 +84,9 @@ export const projects: ProjectType[] = [
     desc: "home & landing page for the neo developer league 2024",
   },
   {
-    name: "mssql data grapher",
-    url: "https://www.weblakes.com/",
-    desc: "queries mssql to visualize millions of lines of data with streamlit and charting libraries [internal project at lakes software]",
-  },
-  {
     name: "weblog2sql",
     url: "https://www.weblakes.com/",
-    desc: "inserts millions of lines of .log file data into mssql with a parallel batch insert method made in c# [internal project at lakes software]",
+    desc: "multi-language data processing and visualization tool (multi-threaded + works with 1M+ .log file lines) [internal project at lakes software]",
   },
   {
     name: "identibear",
@@ -94,24 +94,9 @@ export const projects: ProjectType[] = [
     desc: "deep learning model to recognize faces and voices for dementia patients visualized with streamlit",
   },
   {
-    name: "moodify",
-    url: "https://github.com/Mausmato/Moodify",
-    desc: "facial expression to spotify playlist using an open source machine learning model",
-  },
-  {
     name: "weathermap",
     url: "https://github.com/jli2007/Weathermap",
     desc: "visualizing weather and location on world map with leaflet.js mapping library and weather api",
-  },
-  {
-    name: "jame.li v1",
-    url: "https://jamesli.jame.li/",
-    desc: "previous portfolio website",
-  },
-  {
-    name: "yt2mp3",
-    url: "https://github.com/JLi2007/Youtube2MP3Project",
-    desc: "converts youtube urls to mp3 files made with nodejs backend",
   },
   {
     name: "footprint",

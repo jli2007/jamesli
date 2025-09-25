@@ -14,6 +14,7 @@ import jam2 from "./assets/jame2.jpg";
 import jam4 from "./assets/jame4.jpg";
 import jam6 from "./assets/jame5.jpg";
 import write from "./assets/write.png";
+import uw from "./assets/uw.png";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -80,17 +81,21 @@ export default function Home() {
           onLoaderFinished={() => setProgress(0)}
         />
         <div className="relative flex justify-center items-center">
-          <h1 className="text-white text-md crg my-3">can't rush greatness.</h1>
+          <h1 className="text-white text-md crg my-3">
+            product of the environment.
+          </h1>
         </div>
       </div>
 
       <div className="relative content inset-0 overflow-x-hidden home">
-        <div className="min-w-screen md:max-h-screen md:h-screen w-auto bg-black text-darkBeige2 font-playfair overflow-x-hidden md:overflow-y-hidden">
+        <div className="min-w-screen md:max-h-screen md:h-screen w-auto bg-black text-darkBeige2 font-playfair overflow-x-hidden md:overflow-y-hidden pb-5 md:pb-0">
           {/* top section */}
           <div className="relative w-auto p-5 bg-midBeige1 rounded-lg text-darkBeige3 m-1 mt-2 flex flex-row">
             <div className="relative w-full h-full flex justify-between">
               <h1>
-                james siyuan li <span className="pl-1">李思远</span>
+                <span className="font-thin">james siyuan li </span>{" "}
+                <span className="pl-1 font-light">李思远</span> — ai &
+                full-stack engineer
               </h1>
               <div className="h-full absolute md:top-0 right-0 flex items-center gap-1">
                 <button
@@ -103,7 +108,7 @@ export default function Home() {
                           "_blank"
                         );
                   }}
-                  className="px-4 p-2 flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
+                  className="px-4 p-2 hidden md:flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                 >
                   resume.
                 </button>
@@ -130,12 +135,28 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-flow-row md:grid-flow-col grid-rows-2 h-auto md:h-[91vh] content-section">
+          <div className="grid grid-flow-row md:grid-flow-col grid-rows-2 h-auto md:h-[91vh] content-section space-y-1 md:space-y-0">
             {/* side section */}
-            <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 rounded-lg">
-              <span className="italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
-                UWaterloo CS'30.
-              </span>
+            <div className="row-span-6 md:col-span-5 col-span-6 w-auto md:h-auto h-175 py-3 md:px-7 px-3 bg-midBeige1 m-1 mb-3 md:mb-1 rounded-lg">
+              <div className="flex items-center justify-between w-full">
+                <span className="flex items-center gap-2 italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
+                  <Image src={uw} width={35} height={35} alt="uw-logo"></Image>{" "}
+                  uwaterloo cs'30.
+                </span>
+                <button
+                  onClick={() => {
+                    !isMobile
+                      ? window.open("/resume.pdf", "_blank")
+                      : window.open(
+                          "https://drive.google.com/file/d/13UPOvcXB72uWh1_ymGHv0MtbvxG1-dq2/view?usp=sharing",
+                          "_blank"
+                        );
+                  }}
+                  className="px-4 py-3 md:hidden flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out text-sm"
+                >
+                  resume.
+                </button>
+              </div>
               <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
                 <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
                   <h1 className="rounded-md sideh1">
@@ -187,13 +208,13 @@ export default function Home() {
               priority={true}
               style={{
                 WebkitMaskImage:
-                  "radial-gradient(circle, rgba(0,0,0,0.975) 30%, rgba(0,0,0,0.03) 75%)",
+                  "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.03) 76%)",
               }}
               alt="jame"
             />
 
             {/* linkedin and notes section */}
-            <div className="row-span-1 col-span-6 w-auto md:h-auto h-80 grid grid-cols-3 gap-2 m-1">
+            <div className="row-span-1 col-span-6 w-auto md:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-3 md:mb-1">
               {/* linkedin section */}
               <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
                 <a
@@ -206,7 +227,7 @@ export default function Home() {
                     <GrLinkedin className="md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
                   </div>
                   <h1 className="connect4 absolute bottom-5 italic right-5 md:text-lg text-base">
-                    we can go connect4connect
+                    patience is a virtue
                   </h1>
                 </a>
               </div>
@@ -239,9 +260,11 @@ export default function Home() {
             </div>
 
             {/* description section */}
-            <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-6 bg-midBeige1 m-1 rounded-lg md:text-darkBeige2 text-darkBeige3">
+            <div className="relative col-span-6 row-span-1 w-auto md:h-auto py-3 px-6 bg-midBeige1 m-1 mb-3 md:mb-1 rounded-lg md:text-darkBeige2 text-darkBeige3">
               <div className="description relative md:h-auto md:w-[20vw] sm:w-[75%] flex flex-col h-full z-6 md:text-[0.9rem] text-[1.05rem]">
-                <span className="italic">patience is a virtue.</span>
+                <span className="italic font-bold">
+                  product of the environment.
+                </span>
                 <h1 className="h1descr break-normal md:mt-3 mt-8 pb-2">
                   coming from{" "}
                   <span className="text-darkBeige3 font-bold">waterloo, </span>
@@ -257,11 +280,14 @@ export default function Home() {
                   </span>{" "}
                   in high school, james mainly focuses on{" "}
                   <span className="italic text-darkBeige3">full-stack</span>{" "}
-                  development with js/ts (mern stack). <span className="text-darkBeige3 font-bold">can't rush greatness.</span>
+                  development with js/ts (mern stack).{" "}
+                  <span className="text-darkBeige3 font-bold">
+                    can't rush greatness.
+                  </span>
                 </h1>
                 <h1 className="h1descr break-normal md:mt-2 mt-8 md:pb-0 mb-8 pb-2">
-                  if you meet him, he&apos;ll be happy to watch a premier league fixture and
-                  talk about the latest{" "}
+                  if you meet him, he&apos;ll be happy to watch a premier league
+                  fixture and talk about the latest{" "}
                   <span className="italic text-darkBeige3">central cee</span> /{" "}
                   <span className="italic text-darkBeige3">jj lin</span> album
                   drop.
@@ -281,7 +307,7 @@ export default function Home() {
             </div>
 
             {/* projects section */}
-            <div className="projects relative md:col-span-3 row-span-2 col-span-6 max-w-screen md:h-auto h-120 py-3 px-7 m-1 rounded-lg bg-darkBeige1 text-lightBeige md:order-2">
+            <div className="projects relative md:col-span-3 row-span-2 col-span-6 max-w-screen md:h-auto h-120 py-3 px-7 m-1 mb-3 md:mb-1 rounded-lg bg-darkBeige1 text-lightBeige md:order-2">
               <div className="relative w-full h-full">
                 <h1 className="italic">projects</h1>
                 <div className="flex flex-col justify-center overflow-hidden h-[90%]">
@@ -296,7 +322,9 @@ export default function Home() {
                           {project.name}
                         </LinkSlider>
                       </h1>
-                      <span className="my-3">{project.desc}</span>
+                      <span className="my-3 whitespace-pre">
+                        {project.desc}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -312,7 +340,7 @@ export default function Home() {
             </div>
 
             {/* github logo section */}
-            <div className="relative md:col-span-3 col-span-6 row-span-4 w-auto md:h-auto h-15 py-3 px-7 m-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
+            <div className="relative md:col-span-3 col-span-6 row-span-4 w-auto md:h-auto h-15 py-3 px-7 m-1 mb-3 md:mb-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
               <a
                 href="https://github.com/JLi2007"
                 className="w-full h-full absolute inset-0"
@@ -329,7 +357,7 @@ export default function Home() {
               <div className="flex w-full items-center md:flex-row flex-col">
                 <div className="follow4 flex w-full md:justify-start justify-center">
                   <span className="italic">
-                    f*** that, we can go follow4follow
+                    based in waterloo; lets connect
                   </span>
                 </div>
                 <div className="justify-end flex md:flex-row flex-col w-full">
@@ -358,6 +386,15 @@ export default function Home() {
                       className="relative"
                     >
                       github
+                    </LinkSlider>
+                  </h1>
+                  <h1 className="mx-3 md:my-0 my-2 flex md:justify-start justify-center">
+                    <LinkSlider
+                      href="https://github.com/JLi2007"
+                      mode="dark"
+                      className="relative"
+                    >
+                      x/twitter
                     </LinkSlider>
                   </h1>
                 </div>

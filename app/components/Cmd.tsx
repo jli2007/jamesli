@@ -5,7 +5,7 @@ import { Command } from "cmdk";
 import { useRouter } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
 import { isMobile } from "react-device-detect";
-import { MdOutlinePlace, MdAlternateEmail } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 import { TfiWrite } from "react-icons/tfi";
 import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { FiGithub } from "react-icons/fi";
@@ -16,6 +16,7 @@ import {
   IoLogoLinkedin,
   IoHomeOutline,
 } from "react-icons/io5";
+import { FaXTwitter } from "react-icons/fa6";
 import { GoRepo } from "react-icons/go";
 
 export default function CommandPalette() {
@@ -219,7 +220,9 @@ export default function CommandPalette() {
               <div className="px-5 py-6 border-b border-stone-700 flex items-center gap-3">
                 <img src="/jsl.png" alt="jsl" className="w-7 rounded-sm" />
                 <div className="flex-1">
-                  <h2 className="font-medium text-midBeige1">navigation panel</h2>
+                  <h2 className="font-medium text-midBeige1">
+                    navigation
+                  </h2>
                   <p className="text-xs text-midBeige2/90">
                     use <kbd className="px-1">esc</kbd> or click outside to
                     close
@@ -248,7 +251,10 @@ export default function CommandPalette() {
                   <Command.Item
                     value="home"
                     onSelect={() => {
-                      setTimeout(() => openNextLink(() => router.push("/projects")), 0);
+                      setTimeout(
+                        () => openNextLink(() => router.push("/projects")),
+                        0
+                      );
                     }}
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
                   >
@@ -276,27 +282,6 @@ export default function CommandPalette() {
                     <span className="flex-1">notes</span>
                     <Shortcut>2</Shortcut>
                   </Command.Item>
-                  <Command.Item
-                    value="places"
-                    onSelect={() => {
-                      sessionStorage.setItem(
-                        "postDate",
-                        "march 8, 2025 -> present"
-                      );
-                      sessionStorage.setItem(
-                        "postTitle",
-                        "places of the world 📍"
-                      );
-                      openNextLink(() => router.push("/notes/places"));
-                    }}
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
-                  >
-                    <MdOutlinePlace className="h-4 w-4" />
-                    <span className="flex-1">
-                      perplexing places
-                    </span>
-                    <Shortcut>3</Shortcut>
-                  </Command.Item>
                 </Command.Group>
 
                 <Command.Group heading="links" className="px-2 text-lightBeige">
@@ -314,7 +299,7 @@ export default function CommandPalette() {
                   >
                     <IoLogoLinkedin className="h-4 w-4" />
                     <span className="flex-1">linkedin</span>
-                    <Shortcut>4</Shortcut>
+                    <Shortcut>3</Shortcut>
                   </Command.Item>
                   <Command.Item
                     value="github_profile"
@@ -327,7 +312,7 @@ export default function CommandPalette() {
                   >
                     <FiGithub className="h-4 w-4" />
                     <span className="flex-1">github</span>
-                    <Shortcut>5</Shortcut>
+                    <Shortcut>4</Shortcut>
                   </Command.Item>
                   <Command.Item
                     value="resume"
@@ -338,7 +323,36 @@ export default function CommandPalette() {
                   >
                     <GrNotes className="h-4 w-4" />
                     <span className="flex-1">resume</span>
+                    <Shortcut>5</Shortcut>
+                  </Command.Item>
+                  <Command.Item
+                    value="x"
+                    onSelect={() =>
+                      openLink(() =>
+                        window.open("https://x.com/james_siyuan_li", "_blank")
+                      )
+                    }
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                  >
+                    <FaXTwitter className="h-4 w-4" />
+                    <span className="flex-1">x</span>
                     <Shortcut>6</Shortcut>
+                  </Command.Item>
+                  <Command.Item
+                    value="instagram_profile"
+                    onSelect={() =>
+                      openLink(() =>
+                        window.open(
+                          "https://www.instagram.com/jamesdialedin",
+                          "_blank"
+                        )
+                      )
+                    }
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                  >
+                    <IoLogoInstagram className="h-4 w-4" />
+                    <span className="flex-1">instagram</span>
+                    <Shortcut>7</Shortcut>
                   </Command.Item>
                   <Command.Item
                     value="email"
@@ -351,22 +365,6 @@ export default function CommandPalette() {
                   >
                     <MdAlternateEmail className="h-4 w-4" />
                     <span className="flex-1">hello@jame.li</span>
-                    <Shortcut>7</Shortcut>
-                  </Command.Item>
-                  <Command.Item
-                    value="instagram_profile"
-                    onSelect={() =>
-                      openLink(() =>
-                        window.open(
-                          "https://www.instagram.com/_james_li/",
-                          "_blank"
-                        )
-                      )
-                    }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
-                  >
-                    <IoLogoInstagram className="h-4 w-4" />
-                    <span className="flex-1">instagram</span>
                     <Shortcut>8</Shortcut>
                   </Command.Item>
                   <Command.Item
