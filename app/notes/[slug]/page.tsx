@@ -118,9 +118,9 @@ export default function NotePage({
             router.push("/notes");
           }}
         >
-          <span className="text-sm md:text-base">back to all notes.</span>
+          <span className="text-sm md:text-base">back.</span>
         </button>
-        <h1 className="p-5 m-5">
+        <h1 className="p-4 m-1">
           {info.date} - {info.title}
         </h1>
         {!isMobile && (

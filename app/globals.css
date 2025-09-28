@@ -220,31 +220,12 @@
     top: 15vh;
   }
 }
-@media (min-width: 991px) and (max-width: 1099px) {
-  .jam2 {
-    width: 33vw;
-    top: 15vh;
-  }
-}
 @media (min-width: 991px) and (max-width: 1099px) and (max-height: 671px) {
   .jam2 {
     width: 28vw;
     top: 15vh;
   }
 }
-@media (min-width: 815px) and (max-width: 990px) {
-  .jam2 {
-    width: 26vw;
-    top: 20vh;
-  }
-}
-@media (min-width: 768px) and (max-width: 815px) {
-  .jam2 {
-    width: 24vw;
-    top: 25vh;
-  }
-}
-
  @media (min-width: 1100px) and (max-width: 1188px) and (min-height: 880px) {
   .jam2 {
     width: 38vw;
@@ -386,8 +367,7 @@
   .h1descr {
     background-color: #ede8d780;
     border-radius: 6px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 6px;
   }
 }
 
@@ -451,9 +431,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 972px) {
-  .sidediv {
-    font-size: 0.9rem;
-  }
   .sideh1{
     flex-direction: column;
     align-items: center;
@@ -472,13 +449,6 @@
     left: auto;
     top: 4px;
     bottom: auto;
-  }
-
-  .h1descr {
-    background-color: #ede8d780;
-    border-radius: 6px;
-    padding-left: 5px;
-    padding-right: 5px;
   }
 }
 
@@ -513,9 +483,15 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .projects {
     padding-bottom: 5vh;
+  }
+}
+
+@media (max-width: 400px) {
+  .top-text {
+    font-size: 0.8rem;
   }
 }
 
@@ -523,25 +499,25 @@
 
 /* the issue with bottom margin */
 
-@media (max-height: 800px) and (min-width: 768px) {
+@media (max-height: 800px) and (min-width: 1023px) {
   .content-section {
     height: 90vh;
   }
 }
 
-@media (max-height: 750px) and (min-width: 768px) {
+@media (max-height: 750px) and (min-width: 1023px) {
   .content-section {
     height: 89vh;
   }
 }
 
-@media (max-height: 660px) and (min-width: 768px) {
+@media (max-height: 660px) and (min-width: 1023px) {
   .content-section {
     height: 88vh;
   }
 }
 
-@media (max-height: 615px) and (min-width: 768px) {
+@media (max-height: 615px) and (min-width: 1023px) {
   .content-section {
     height: 87vh;
   }
@@ -553,14 +529,10 @@
     height: 94vh;
   }
 }
-@media (min-height: 1100px) and (max-width: 850px) {
-  .content-section {
-    height: 93vh;
-  }
-}
-@media (min-height: 1000px) and (max-width: 800px) {
-  .content-section {
-    height: 92vh;
-  }
-}
 
+/* what in the hardcode */
+@media (min-height: 1200px) and (max-width: 1023px) {
+  .content-section {
+    height: auto;
+  }
+}
