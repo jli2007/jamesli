@@ -104,7 +104,7 @@ export default function Home() {
                     !isMobile
                       ? window.open("/resume.pdf", "_blank")
                       : window.open(
-                          "https://drive.google.com/file/d/1ZpNuk2kwnueVtROxHqggduO7TWFPgZHy/view?usp=sharing",
+                          "https://drive.google.com/file/d/1VFZx6a4QeXauRvWwrvlCkDzCdOrIRbWI/view?usp=sharing",
                           "_blank"
                         );
                   }}
@@ -148,7 +148,7 @@ export default function Home() {
                     !isMobile
                       ? window.open("/resume.pdf", "_blank")
                       : window.open(
-                          "https://drive.google.com/file/d/13UPOvcXB72uWh1_ymGHv0MtbvxG1-dq2/view?usp=sharing",
+                          "https://drive.google.com/file/d/1VFZx6a4QeXauRvWwrvlCkDzCdOrIRbWI/view?usp=sharing",
                           "_blank"
                         );
                   }}
