@@ -10,7 +10,7 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`/api/routes?place=${slug}`)
+    fetch(`/api/places?place=${slug}`)
       .then((res) => res.json())
       .then((data) => setLikes(data.likes));
   }, [slug]);
@@ -30,7 +30,7 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
   const handleLike = async () => {
     if (loading) return;
     setLoading(true);
-    await fetch(`/api/routes`, {
+    await fetch(`/api/places`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -49,7 +49,7 @@ const PlaceLikes = ({ slug }: PlaceLikesProps) => {
   const handleUnlike = async () => {
     if (loading) return;
     setLoading(true);
-    await fetch(`/api/routes`, {
+    await fetch(`/api/places`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

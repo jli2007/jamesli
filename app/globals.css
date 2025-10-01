@@ -173,73 +173,7 @@
   max-width: 100% !important;
 }
 
-/* queries ☠️ the formatting for the website requires hella queries to be responsive
- L col span layout */
-
- /* jam & jam2 start */
-
-/* @media (min-width: 815px) and (max-width: 990px) {
-  .jam {
-    width: 30vw;
-    top: 17.5vh;
-  }
-}
-@media (min-width: 768px) and (max-width: 815px) {
-  .jam {
-    width: 25vw;
-    top: 20vh;
-  }
-}
-
-@media (min-width: 1200px){
-  .jam {
-    left: 0;
-  }
-} */
-
-/* @media (min-width: 768px) and (max-width: 1010px) and (max-height: 715px) {
-  .jam {
-    width: 29vw;
-    height: auto;
-    top: 20vh;
-  }
-} */
-@media (min-width: 1249px) and (max-width: 1499px) {
-  .jam2 {
-    width: 35.5vw;
-  }
-}
-@media (min-width: 1188px) and (max-width: 1249px) {
-  .jam2 {
-    width: 32vw;
-  }
-}
-@media (min-width: 1100px) and (max-width: 1187px) {
-  .jam2 {
-    width: 26vw;
-    top: 15vh;
-  }
-}
-@media (min-width: 991px) and (max-width: 1099px) and (max-height: 671px) {
-  .jam2 {
-    width: 28vw;
-    top: 15vh;
-  }
-}
- @media (min-width: 1100px) and (max-width: 1188px) and (min-height: 880px) {
-  .jam2 {
-    width: 38vw;
-  }
-}
- @media (min-width: 1400px) and (min-height: 780px) and (max-height: 850px){
-  .jam2 {
-    width: 35vw;
-  }
-}
-
- /* jam & jam2 end */
-
-/* other start */
+/* queries */
 
 @media (min-width: 300px) and (max-width: 767px) {
   .bottom-section {
@@ -253,169 +187,6 @@
   }
 }
 
-/* other end */
-
-/* description start */
-
-@media (min-width: 768px) and (max-width: 1100px) {
-  .description {
-    width: 30vw;
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 880px) {
-  .description {
-    width: 30vw;
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-width: 768px) and (max-height: 850px) {
-  .description {
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 900px) and (min-height: 570px) and (max-height: 810px) {
-  .description {
-    width: 35vw;
-    font-size: 0.65rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) and (max-height: 590px) {
-  .description {
-    width: 35vw;
-    font-size: 0.6rem;
-  }
-}
-
-@media (min-width: 900px) and (max-width: 1200px) and (min-height: 570px) and (max-height: 670px) {
-  .description {
-    width: 35vw;
-    font-size: 0.65rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 990px) and (max-height: 570px) {
-  .description {
-    width: 35vw;
-    font-size: 0.5rem;
-  }
-}
-
-@media (min-width: 900px) and (max-width: 990px) {
-  .description {
-    width: 35vw;
-    font-size: 0.7rem;
-  }
-}
-
-@media (min-width: 1100px) and (max-width: 1188px) and (max-height: 880px)  {
-  .description{
-    width: 40vw;
-  }
-}
-
-@media (min-width: 1188px) and (max-width: 1400px) {
-  .description {
-    width: 25vw;
-    font-size: 0.65rem;
-  }
-}
-
-@media (min-width: 1188px) and (max-width: 1400px) and (min-height: 625px){
-  .description {
-    width: 25vw;
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-width: 1188px) and (max-width: 1400px) and (min-height: 680px) {
-  .description {
-    width: 35vw;
-    font-size: 0.9rem;
-  }
-}
-
-@media (min-width: 1250px) and (max-width: 1400px) and (min-height: 779px) {
-  .description {
-    width: 20vw;
-    font-size: 0.9rem;
-  }
-}
-
-@media (min-width: 1400px) and (max-width: 1500px) and (min-height: 680px) and (max-height: 715px) {
-  .description {
-    width: 23vw;
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 980px) and (max-width: 1401px) and (min-height: 779px) {
-  .h1descr {
-    background-color: #ede8d780;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
-
-@media (max-width: 768px) {
-  .h1descr {
-    background-color: #ede8d780;
-    border-radius: 6px;
-    padding: 6px;
-  }
-}
-
-/* description end */
-
-/* jam1 start */
-
-@media (min-width: 768px) and (max-height: 650px) {
-  .jam1 {
-    width: 28vw;
-  }
-}
-
-@media (min-width: 768px) and (max-height: 550px) {
-  .jam1 {
-    width: 20vw;
-  }
-}
-
-@media (min-width: 1100px) and (max-height: 660px) {
-  .jam1 {
-    width: 20vw;
-    height: auto;
-  }
-}
-
-@media (min-width: 1500px) {
-  .jam1 {
-    width: 20vw;
-  }
-}
-
-@media (min-width: 1500px) and (max-height: 780px) {
-  /* .jam {
-    width: 30vw;
-  } */
-  .jam2 {
-    width: 30vw;
-  }
-  .jam1 {
-    width: 17.5vw;
-  }
-}
-
-/* jam1 end */
-
-/* other start */
-
 @media (min-width: 768px) and (max-width: 1200px) {
   .connect4,
   .follow4 {
@@ -427,19 +198,6 @@
   .connect4,
   .follow4 {
     font-size: 0.85rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 972px) {
-  .sideh1{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-  }
-  .tauria {
-    padding-bottom: 20px;
   }
 }
 
@@ -473,16 +231,6 @@
   }
 }
 
-@media (min-width: 1500px) {
-  .sidediv {
-    font-size: 1rem;
-    padding-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-}
-
 @media (max-width: 1023px) {
   .projects {
     padding-bottom: 5vh;
@@ -495,29 +243,43 @@
   }
 }
 
-/* other end */
+@media (max-height: 850px) and (min-width: 1023px){
+  .description{
+    width: 30vw;
+  }
+}
+
+@media (max-height: 750px) and (min-width: 1023px){
+  .description{
+    font-size: 0.7rem;
+  }
+  .logos {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 /* the issue with bottom margin */
 
-@media (max-height: 800px) and (min-width: 1023px) {
+@media (max-height: 800px) and (min-width: 1024px) {
   .content-section {
     height: 90vh;
   }
 }
 
-@media (max-height: 750px) and (min-width: 1023px) {
+@media (max-height: 750px) and (min-width: 1024px) {
   .content-section {
     height: 89vh;
   }
 }
 
-@media (max-height: 660px) and (min-width: 1023px) {
+@media (max-height: 660px) and (min-width: 1024px) {
   .content-section {
     height: 88vh;
   }
 }
 
-@media (max-height: 615px) and (min-width: 1023px) {
+@media (max-height: 615px) and (min-width: 1024px) {
   .content-section {
     height: 87vh;
   }

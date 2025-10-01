@@ -1,5 +1,5 @@
-import connectDB from "../mongoose/connect";
-import Places from "../mongoose/schema";
+import connectDB from "../../../lib/mongoose/connect";
+import Places from "../../../lib/mongoose/schema";
 import { NextResponse } from "next/server";
 
 export async function GET(req: any) {

@@ -8,7 +8,7 @@ export const showcaseProjects: ProjectType[] = [
   {
     name: "trivialguessr",
     url: "https://www.trivialguessr.com/",
-    desc: "geoguessr📍 for trivia💡                          ",
+    desc: "geoguessr📍 for trivia💡                         ",
   },
   {
     name: "chroma",

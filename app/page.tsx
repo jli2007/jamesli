@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import LinkSlider from "./components/Link";
@@ -8,19 +9,35 @@ import useModifierKey from "./components/ModifierKey";
 import { showcaseProjects } from "./projects/projects";
 import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
-import { FaGithub, FaRegNoteSticky } from "react-icons/fa6";
+import {
+  FaGithub,
+  FaRegNoteSticky,
+  FaInstagram,
+  FaTwitter,
+  FaSpotify,
+} from "react-icons/fa6";
 import jam1 from "./assets/jame1.png";
 import jam2 from "./assets/jame2.jpg";
 import jam4 from "./assets/jame4.jpg";
-import jam6 from "./assets/jame5.jpg";
+import jam3 from "./assets/jame3.jpg";
 import write from "./assets/write.png";
 import uw from "./assets/uw.png";
+
+// for spotify
+type Track = {
+  id: string;
+  name: string;
+  album?: { images?: { url: string }[] };
+  artists?: { name: string }[];
+  external_urls?: { spotify: string };
+};
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isMac, setIsMac] = useState(false);
-  const isModifierPressed = useModifierKey(); //for opacity of button
+  const isModifierPressed = useModifierKey(); // for opacity of button
+  const [tracks, setTracks] = useState<Track[]>([]); // spotify tracks
 
   // loading bar
   useEffect(() => {
@@ -46,6 +63,13 @@ export default function Home() {
     }, 300);
 
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/spotify")
+      .then((res) => res.json())
+      .then((json) => setTracks(json.tracks || []))
+      .catch((err) => console.error(err));
   }, []);
 
   useEffect(() => {
@@ -81,7 +105,7 @@ export default function Home() {
           onLoaderFinished={() => setProgress(0)}
         />
         <div className="relative flex justify-center items-center">
-          <h1 className="text-white text-lg crg my-3">
+          <h1 className="text-white lg:text-lg md:text-md text-sm crg my-3">
             product of the environment.
           </h1>
         </div>
@@ -94,8 +118,8 @@ export default function Home() {
             <div className="relative w-full h-full flex justify-between">
               <h1 className="top-text">
                 <span className="font-thin">james siyuan li </span>{" "}
-                <span className="pl-1 font-light">李思远</span> — <span className="font-bold">ai &
-                full-stack engineer</span>
+                <span className="pl-1 font-light">李思远</span> —{" "}
+                <span className="font-bold">ai & full-stack engineer</span>
               </h1>
               <div className="h-full absolute lg:top-0 right-0 flex items-center gap-1">
                 <button
@@ -137,7 +161,7 @@ export default function Home() {
 
           <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0">
             {/* side section */}
-            <div className="row-span-6 lg:col-span-5 col-span-6 w-auto lg:h-auto h-175 py-3 lg:px-7 px-3 bg-midBeige1 m-1 mb-2 lg:mb-1 rounded-lg">
+            <div className="relative row-span-6 lg:col-span-5 col-span-6 w-auto lg:h-auto h-175 py-3 lg:px-7 px-3 bg-midBeige1 m-1 mb-2 lg:mb-1 rounded-lg">
               <div className="flex items-center justify-between w-full">
                 <span className="flex items-center gap-2 italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
                   <Image src={uw} width={35} height={35} alt="uw-logo"></Image>{" "}
@@ -152,7 +176,7 @@ export default function Home() {
                           "_blank"
                         );
                   }}
-                  className="px-4 py-3 lg:hidden flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-lg hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out text-sm"
+                  className="absolute right-4 top-3 px-5 py-3 lg:hidden flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-lg hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out text-sm"
                 >
                   resume.
                 </button>
@@ -201,17 +225,17 @@ export default function Home() {
                   </h1>
                 </div>
               </div>
+              <Image
+                src={jam3}
+                className="jam2 absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:w-[34vw] right-0 lg:z-[5] z-0"
+                priority={true}
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.01) 75%)",
+                }}
+                alt="jame"
+              />
             </div>
-            <Image
-              src={jam6}
-              className="jam2 absolute lg:h-auto opacity-99 rounded-xl lg:-left-5 lg:right-auto top-30 w-full lg:w-[34vw] right-0 lg:z-[5] z-0"
-              priority={true}
-              style={{
-                WebkitMaskImage:
-                  "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.03) 76%)",
-              }}
-              alt="jame"
-            />
 
             {/* linkedin and notes section */}
             <div className="row-span-1 col-span-6 w-auto lg:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-2 lg:mb-1">
@@ -227,7 +251,7 @@ export default function Home() {
                     <GrLinkedin className="lg:w-[4vw] lg:h-[4vh] w-[6vw] h-[6vh]" />
                   </div>
                   <h1 className="connect4 absolute bottom-5 italic right-5 lg:text-lg text-base">
-                    patience is a virtue
+                    can't rush greatness
                   </h1>
                 </a>
               </div>
@@ -247,7 +271,7 @@ export default function Home() {
 
                   <Image
                     src={write}
-                    className="absolute lg:h-auto opacity-30 z-5 right-0 top-10 lg:w-70 w-90 rounded-xl"
+                    className="absolute md:h-[90%] lg:h-auto opacity-30 z-5 right-0 top-10 w-auto rounded-xl"
                     style={{
                       WebkitMaskImage:
                         "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
@@ -261,45 +285,82 @@ export default function Home() {
 
             {/* description section */}
             <div className="relative col-span-6 row-span-1 w-auto lg:h-auto py-3 px-6 bg-midBeige1 m-1 mb-2 lg:mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
-              <div className="description relative lg:h-auto lg:w-[20vw] sm:w-[75%] flex flex-col h-full z-6 lg:text-[0.9rem] text-[1rem]">
+              <div className="description relative h-auto lg:w-[25vw] w-[75%] flex flex-col z-10 text-[0.9rem]">
                 <span className="italic font-bold">
                   product of the environment.
                 </span>
-                <h1 className="h1descr break-normal lg:mt-3 mt-8 pb-2">
-                  coming from{" "}
-                  <span className="text-darkBeige3 font-bold">waterloo, </span>
-                  james is currently building{" "}
-                  <span className="text-darkBeige3 font-bold">phuture</span>
-                  —pokemon go for wildlife. in his free time, he can be found
-                  coding, playing fútbol, or wandering the forest.
+                <h1 className="h1descr break-normal lg:mt-5 mt-8 lg:pb-0 pb-2 p-1">
+                  i'm currently building{" "}
+                  <span className="text-darkBeige3 font-bold">phuture</span>,
+                  pokémon-go for wildlife. in my free time i code, play fútbol
+                  ⚽︎, and wander the forest.
                 </h1>
-                <h1 className="h1descr break-normal lg:mt-2 mt-8 pb-2">
-                  having completed{" "}
-                  <span className="font-bold text-darkBeige3">
-                    2 software internships
-                  </span>{" "}
-                  in high school, james mainly focuses on{" "}
-                  <span className="italic text-darkBeige3">full-stack</span>{" "}
-                  development with js/ts (mern stack).{" "}
-                  <span className="text-darkBeige3 font-bold">
-                    can't rush greatness.
-                  </span>
+
+                <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
+                  i build cool software and post on social media:
                 </h1>
-                <h1 className="h1descr break-normal lg:mt-2 mt-8 lg:pb-0 mb-8 pb-2">
-                  if you meet him, he&apos;ll be happy to watch a premier league
-                  fixture and talk about the latest{" "}
-                  <span className="italic text-darkBeige3">central cee</span> /{" "}
-                  <span className="italic text-darkBeige3">jj lin</span> album
-                  drop.
+                <div className="flex gap-3 lg:mb-0">
+                  <a
+                    href={"https://www.instagram.com/jamesdialedin/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
+                  >
+                    <FaInstagram size={18} aria-hidden />
+                  </a>
+                  <a
+                    href={"https://x.com/james_siyuan_li"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
+                  >
+                    <FaTwitter size={18} aria-hidden />
+                  </a>
+                </div>
+
+                <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
+                  tuff songs:
                 </h1>
+              </div>
+
+              <div className="description relative h-auto w-auto text-[0.9rem] lg:mb-0 mb-8 flex lg:flex-row flex-col gap-3">
+                {tracks.map((t) => (
+                  <a
+                    key={t.id}
+                    href={t.external_urls?.spotify || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 w-[60%] lg:w-[30%] inline-flex items-center gap-2 z-10 h-10 px-1 md:px-2 lg:px-3 rounded-lg shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90 backdrop-blur-lg"
+                  >
+                    <div className="w-7 h-7 relative flex-shrink-0">
+                      {t.album?.images && t.album.images[0] ? (
+                        <Image
+                          src={t.album.images[0].url}
+                          alt={t.name}
+                          fill
+                          className="rounded object-cover"
+                        />
+                      ) : (
+                        <div className="w-7 h-7 bg-lightBeige rounded flex items-center justify-center">
+                          <FaSpotify className="text-midBeige2" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="w-full flex justify-center overflow-hidden">
+                      <span className="text-xs font-medium truncate whitespace-nowrap">
+                        {t.name.toLowerCase()}
+                      </span>
+                    </div>
+                  </a>
+                ))}
               </div>
 
               <Image
                 src={jam4}
-                className="jam1 absolute lg:h-auto lg:opacity-98 opacity-60 lg:right-0 lg:top-10 lg:w-70 -right-10 bottom-0 w-95 rounded-2xl"
+                className="jam1 absolute lg:h-auto lg:w-70 w-95 lg:right-0 lg:top-10 -right-10 bottom-0 rounded-2xl lg:opacity-95 opacity-55"
                 style={{
                   WebkitMaskImage:
-                    "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%)",
+                    "radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)",
                 }}
                 loading="lazy"
                 alt="jame"
@@ -362,13 +423,7 @@ export default function Home() {
                 </div>
                 <div className="justify-end flex lg:flex-row flex-col w-full">
                   <h1 className="mx-3 lg:my-0 my-2 flex lg:justify-start justify-center">
-                    <LinkSlider
-                      href="mailto:hello@jame.li"
-                      mode="dark"
-                      className="relative"
-                    >
-                      hello@jame.li
-                    </LinkSlider>
+                    hello@jame.li
                   </h1>
                   <h1 className="mx-3 lg:my-0 my-2 flex lg:justify-start justify-center">
                     <LinkSlider
@@ -386,15 +441,6 @@ export default function Home() {
                       className="relative"
                     >
                       github
-                    </LinkSlider>
-                  </h1>
-                  <h1 className="mx-3 lg:my-0 my-2 flex lg:justify-start justify-center">
-                    <LinkSlider
-                      href="https://github.com/JLi2007"
-                      mode="dark"
-                      className="relative"
-                    >
-                      x/twitter
                     </LinkSlider>
                   </h1>
                 </div>

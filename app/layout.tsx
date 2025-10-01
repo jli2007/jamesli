@@ -4,8 +4,41 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "jame.li",
-  description: "portfolio.",
+  title: "james li",
+  description: "james li — computer science at the university of waterloo",
+  keywords: [
+    "james li",
+    "james li uw",
+    "james li cs",
+    "james li portfolio",
+    "james li university of waterloo",
+    "uw cs portfolio",
+  ],
+
+  openGraph: {
+    title: "james li",
+    description: "james li's portfolio, computer science at the university of waterloo",
+    url: "https://jame.li",
+    siteName: "james li portfolio",
+    images: [
+      {
+        url: "https://jame.li/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "james li — uw cs Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "james li",
+    description: "james li's portfolio, computer science at the university of waterloo",
+    images: ["https://jame.li/banner.png"],
+    creator: "@james_siyuan_li",
+  },
 };
 
 export default function RootLayout({

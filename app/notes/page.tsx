@@ -58,7 +58,7 @@ export default function Notes() {
       <div className="bg-black text-white font-playfair h-screen w-screen md:max-h-screen max-w-screen overflow-x-hidden">
         <div className="flex flex-row">
           <button
-            className="bg-white text-black p-5 cursor-pointer m-5 w-30 hover:bg-lightBeige hover:text-darkBeige3 transition delay-150 ease-in-out"
+            className="bg-white text-black cursor-pointer m-5 w-30 hover:bg-lightBeige hover:text-darkBeige3 transition delay-150 ease-in-out"
             onClick={goBackToHome}
           >
             {" "}
