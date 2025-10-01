@@ -1,9 +1,5 @@
+// next.config.mjs
 import createMDX from "@next/mdx";
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-};
 
 const withMDX = createMDX({
   options: {
@@ -11,9 +7,11 @@ const withMDX = createMDX({
   },
 });
 
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
-    domains: ["i.scdn.co"],
+    domains: ["i.scdn.co"], 
   },
 };
 
