@@ -259,6 +259,15 @@
   }
 }
 
+@media (max-height: 675px) and (min-width: 1023px){
+  .description{
+    font-size: 0.6rem;
+  }
+  .h1descr{
+    margin-top: 1vh !important;
+  }
+}
+
 /* the issue with bottom margin */
 
 @media (max-height: 800px) and (min-width: 1024px) {

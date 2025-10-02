@@ -1,15 +1,12 @@
-// inspired by Martin Sit's CMD component : https://martinsit.ca/
 "use client";
 import { useEffect, useState } from "react";
 import { Command } from "cmdk";
 import { useRouter } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
 import { isMobile } from "react-device-detect";
-import { MdAlternateEmail } from "react-icons/md";
 import { TfiWrite } from "react-icons/tfi";
 import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { FiGithub } from "react-icons/fi";
-import { GrNotes } from "react-icons/gr";
 import {
   IoLogoInstagram,
   IoSearchOutline,
@@ -141,20 +138,12 @@ export default function CommandPalette() {
           break;
         case "Digit6":
         case "Numpad6":
-          openLink(() => window.open("/resume.pdf", "_blank"));
+          openLink(() =>
+            window.open("https://www.instagram.com/jamesdialedin/", "_blank")
+          );
           break;
         case "Digit7":
         case "Numpad7":
-          openLink(() => window.open("mailto:hello@jame.li", "_blank"));
-          break;
-        case "Digit8":
-        case "Numpad8":
-          openLink(() =>
-            window.open("https://www.instagram.com/_james_li/", "_blank")
-          );
-          break;
-        case "Digit9":
-        case "Numpad9":
           openLink(() =>
             window.open("https://github.com/JLi2007/JamesLi", "_blank")
           );
@@ -206,7 +195,7 @@ export default function CommandPalette() {
           >
             <Dialog.Title></Dialog.Title>
             <Command
-              className="w-full rounded-xl border-2 border-darkBeige1/90 bg-stone-900 shadow-2xl overflow-hidden"
+              className="w-full rounded-xl border-2 border-darkBeige1/90 bg-darkBeige3/60 shadow-2xl overflow-hidden backdrop-blur-2xl"
               loop={true}
               shouldFilter={true}
               onClick={(e) => {
@@ -221,7 +210,7 @@ export default function CommandPalette() {
                 <img src="/jsl.png" alt="jsl" className="w-7 rounded-sm" />
                 <div className="flex-1">
                   <h2 className="font-medium text-midBeige1">
-                    navigation
+                    hello@jame.li
                   </h2>
                   <p className="text-xs text-midBeige2/90">
                     use <kbd className="px-1">esc</kbd> or click outside to
@@ -245,38 +234,38 @@ export default function CommandPalette() {
                 </Command.Empty>
 
                 <Command.Group
-                  heading="pinned"
+                  heading="pages"
                   className="px-2 text-lightBeige"
                 >
                   <Command.Item
-                    value="home"
+                    value="home jame page"
                     onSelect={() => {
                       setTimeout(
                         () => openNextLink(() => router.push("/projects")),
                         0
                       );
                     }}
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <IoHomeOutline className="h-4 w-4" />
                     <span className="flex-1">home</span>
                     <Shortcut>0</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="projects"
+                    value="projects page"
                     onSelect={() =>
                       openNextLink(() => router.push("/projects"))
                     }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <LiaProjectDiagramSolid className="h-4 w-4" />
                     <span className="flex-1">projects</span>
                     <Shortcut>1</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="notes"
+                    value="notes writing page highlights uw aif places quotes people"
                     onSelect={() => openNextLink(() => router.push("/notes"))}
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <TfiWrite className="h-4 w-4" />
                     <span className="flex-1">notes</span>
@@ -286,7 +275,7 @@ export default function CommandPalette() {
 
                 <Command.Group heading="links" className="px-2 text-lightBeige">
                   <Command.Item
-                    value="linkedin_profile"
+                    value="linkedin profile socials james"
                     onSelect={() =>
                       openLink(() =>
                         window.open(
@@ -295,51 +284,40 @@ export default function CommandPalette() {
                         )
                       )
                     }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <IoLogoLinkedin className="h-4 w-4" />
                     <span className="flex-1">linkedin</span>
                     <Shortcut>3</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="github_profile"
+                    value="github git profile james"
                     onSelect={() =>
                       openLink(() =>
-                        window.open("https://github.com/JLi2007/", "_blank")
+                        window.open("https://github.com/jli2007/", "_blank")
                       )
                     }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <FiGithub className="h-4 w-4" />
                     <span className="flex-1">github</span>
                     <Shortcut>4</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="resume"
-                    onSelect={() =>
-                      openLink(() => window.open("/resume.pdf", "_blank"))
-                    }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
-                  >
-                    <GrNotes className="h-4 w-4" />
-                    <span className="flex-1">resume</span>
-                    <Shortcut>5</Shortcut>
-                  </Command.Item>
-                  <Command.Item
-                    value="x"
+                    value="x twitter profile socials james"
                     onSelect={() =>
                       openLink(() =>
                         window.open("https://x.com/james_siyuan_li", "_blank")
                       )
                     }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <FaXTwitter className="h-4 w-4" />
                     <span className="flex-1">x</span>
-                    <Shortcut>6</Shortcut>
+                    <Shortcut>5</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="instagram_profile"
+                    value="ig instagram profile socials james"
                     onSelect={() =>
                       openLink(() =>
                         window.open(
@@ -348,27 +326,14 @@ export default function CommandPalette() {
                         )
                       )
                     }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <IoLogoInstagram className="h-4 w-4" />
                     <span className="flex-1">instagram</span>
-                    <Shortcut>7</Shortcut>
+                    <Shortcut>6</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="email"
-                    onSelect={() =>
-                      openLink(() =>
-                        window.open("mailto:hello@jame.li", "_blank")
-                      )
-                    }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
-                  >
-                    <MdAlternateEmail className="h-4 w-4" />
-                    <span className="flex-1">hello@jame.li</span>
-                    <Shortcut>8</Shortcut>
-                  </Command.Item>
-                  <Command.Item
-                    value="website_repository"
+                    value="website repository github jame repo"
                     onSelect={() =>
                       openLink(() =>
                         window.open(
@@ -377,11 +342,11 @@ export default function CommandPalette() {
                         )
                       )
                     }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-stone-800 cursor-pointer data-[selected=true]:bg-stone-800"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
                     <GoRepo className="h-4 w-4" />
                     <span className="flex-1">website repository</span>
-                    <Shortcut>9</Shortcut>
+                    <Shortcut>7</Shortcut>
                   </Command.Item>
                 </Command.Group>
               </Command.List>

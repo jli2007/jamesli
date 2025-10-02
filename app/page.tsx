@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import LinkSlider from "./components/Link";
@@ -13,9 +12,10 @@ import {
   FaGithub,
   FaRegNoteSticky,
   FaInstagram,
-  FaTwitter,
+  FaXTwitter,
   FaSpotify,
 } from "react-icons/fa6";
+import { MdShuffle } from "react-icons/md";
 import jam1 from "./assets/jame1.png";
 import jam2 from "./assets/jame2.jpg";
 import jam4 from "./assets/jame4.jpg";
@@ -38,6 +38,7 @@ export default function Home() {
   const [isMac, setIsMac] = useState(false);
   const isModifierPressed = useModifierKey(); // for opacity of button
   const [tracks, setTracks] = useState<Track[]>([]); // spotify tracks
+  const [lastClick, setLastClick] = useState(0);
 
   // loading bar
   useEffect(() => {
@@ -65,11 +66,19 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const fetchTracks = () => {
+  const now = Date.now();
+  if (now - lastClick < 1000) return;
+  setLastClick(now);
+
+  fetch("/api/spotify")
+    .then((res) => res.json())
+    .then((json) => setTracks(json.tracks || []))
+    .catch((err) => console.error(err));
+};
+
   useEffect(() => {
-    fetch("/api/spotify")
-      .then((res) => res.json())
-      .then((json) => setTracks(json.tracks || []))
-      .catch((err) => console.error(err));
+    fetchTracks();
   }, []);
 
   useEffect(() => {
@@ -122,20 +131,6 @@ export default function Home() {
                 <span className="font-bold">ai & full-stack engineer</span>
               </h1>
               <div className="h-full absolute lg:top-0 right-0 flex items-center gap-1">
-                <button
-                  // resume hosted by website if not on mobile, hosted by google drive if on mobile: subject to change.
-                  onClick={() => {
-                    !isMobile
-                      ? window.open("/resume.pdf", "_blank")
-                      : window.open(
-                          "https://drive.google.com/file/d/1VFZx6a4QeXauRvWwrvlCkDzCdOrIRbWI/view?usp=sharing",
-                          "_blank"
-                        );
-                  }}
-                  className="px-4 p-2 hidden lg:flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-lg hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
-                >
-                  resume.
-                </button>
                 {!isMobile && (
                   <button
                     onClick={openCommandPalette}
@@ -167,19 +162,6 @@ export default function Home() {
                   <Image src={uw} width={35} height={35} alt="uw-logo"></Image>{" "}
                   uwaterloo cs'30.
                 </span>
-                <button
-                  onClick={() => {
-                    !isMobile
-                      ? window.open("/resume.pdf", "_blank")
-                      : window.open(
-                          "https://drive.google.com/file/d/1VFZx6a4QeXauRvWwrvlCkDzCdOrIRbWI/view?usp=sharing",
-                          "_blank"
-                        );
-                  }}
-                  className="absolute right-4 top-3 px-5 py-3 lg:hidden flex items-center cursor-pointer bg-darkBeige2 text-midBeige1 rounded-lg hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out text-sm"
-                >
-                  resume.
-                </button>
               </div>
               <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
                 <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
@@ -227,7 +209,7 @@ export default function Home() {
               </div>
               <Image
                 src={jam3}
-                className="jam2 absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:w-[34vw] right-0 lg:z-[5] z-0"
+                className="jam2 absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 lg:w-[34vw] right-0 lg:z-[5] z-0"
                 priority={true}
                 style={{
                   WebkitMaskImage:
@@ -257,7 +239,7 @@ export default function Home() {
               </div>
 
               {/* notes section */}
-              <div className="relative py-3 px-7 rounded-lg bg-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
+              <div className="relative py-3 px-7 rounded-lg bg-midBeige1 hover:border-lightBeige border-2 border-transparent transition delay-200 duration-150 ease-in">
                 <Link
                   href="/notes"
                   className="absolute inset-0 w-full h-full cursor-pointer"
@@ -314,23 +296,31 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
                   >
-                    <FaTwitter size={18} aria-hidden />
+                    <FaXTwitter size={18} aria-hidden />
                   </a>
                 </div>
 
                 <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
-                  tuff songs:
+                  <div className="flex items-center">
+                    tuff music:
+                    <button
+                      onClick={fetchTracks}
+                      className="cursor-pointer px-1 rounded-full transition"
+                    >
+                      <MdShuffle size={20} style={{ marginRight: 8 }} />
+                    </button>
+                  </div>
                 </h1>
               </div>
 
-              <div className="description relative h-auto w-auto text-[0.9rem] lg:mb-0 mb-8 flex lg:flex-row flex-col gap-3">
+              <div className="description relative h-auto w-[80vw] lg:w-[30vw] max-w-[100%] text-[0.9rem] lg:mb-0 mb-8 flex lg:flex-row flex-col gap-3">
                 {tracks.map((t) => (
                   <a
                     key={t.id}
                     href={t.external_urls?.spotify || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-shrink-0 w-[60%] lg:w-[30%] inline-flex items-center gap-2 z-10 h-10 px-1 md:px-2 lg:px-3 rounded-lg shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90 backdrop-blur-lg"
+                    className="lg:w-1/3 w-2/3 flex items-center gap-2 z-10 h-10 px-1 md:px-2 lg:px-3 rounded-lg shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90 backdrop-blur-lg"
                   >
                     <div className="w-7 h-7 relative flex-shrink-0">
                       {t.album?.images && t.album.images[0] ? (
@@ -346,8 +336,8 @@ export default function Home() {
                         </div>
                       )}
                     </div>
-                    <div className="w-full flex justify-center overflow-hidden">
-                      <span className="text-xs font-medium truncate whitespace-nowrap">
+                    <div className="flex-1 min-w-0 flex items-center justify-center overflow-hidden">
+                      <span className="text-xs font-medium truncate block">
                         {t.name.toLowerCase()}
                       </span>
                     </div>
@@ -395,7 +385,7 @@ export default function Home() {
                   mode="light"
                   className={`relative text-lg`}
                 >
-                  view all projects
+                  view more
                 </LinkSlider>
               </div>
             </div>

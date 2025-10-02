@@ -67,7 +67,7 @@ export default function Projects() {
           {!isMobile && (
             <button
               onClick={openCommandPalette}
-              className="px-4 p-2 absolute cursor-pointer right-5 top-5 gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-md hover:bg-darkBeige2/75 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
+              className="px-6 p-3 absolute cursor-pointer right-5 top-5 gap-1 text-xs bg-darkBeige1/75 text-midBeige1 rounded-md hover:bg-darkBeige2/75 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
             >
               <div className="flex w-full h-full items-center justify-center">
                 <kbd

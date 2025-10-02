@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: "james li — computer science at the university of waterloo",
   keywords: [
     "james li",
+    "james uw cs",
     "james li uw",
-    "james li cs",
     "james li portfolio",
     "james li university of waterloo",
     "uw cs portfolio",
