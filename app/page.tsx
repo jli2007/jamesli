@@ -224,7 +224,7 @@ export default function Home() {
               {/* linkedin section */}
               <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
                 <a
-                  href="https://www.linkedin.com/in/james-siyuan-li/"
+                  href="https://www.linkedin.com/in/jamessli/"
                   target="_blank"
                   className="absolute inset-0 w-full h-full"
                 >
@@ -291,7 +291,7 @@ export default function Home() {
                     <FaInstagram size={18} aria-hidden />
                   </a>
                   <a
-                    href={"https://x.com/james_siyuan_li"}
+                    href={"https://x.com/_jamesli"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
@@ -417,7 +417,7 @@ export default function Home() {
                   </h1>
                   <h1 className="mx-3 lg:my-0 my-2 flex lg:justify-start justify-center">
                     <LinkSlider
-                      href="https://www.linkedin.com/in/james-siyuan-li/"
+                      href="https://www.linkedin.com/in/jamessli/"
                       mode="dark"
                       className="relative"
                     >

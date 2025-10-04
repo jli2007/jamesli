@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "james li",
     description: "james li's portfolio, computer science at the university of waterloo",
     images: ["https://jame.li/banner.png"],
-    creator: "@james_siyuan_li",
+    creator: "@_jamesli",
   },
 };
 

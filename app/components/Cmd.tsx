@@ -121,20 +121,25 @@ export default function CommandPalette() {
 
         case "Digit3":
         case "Numpad3":
-          openNextLink(() => router.push("/notes/places"));
+          openLink(() =>
+            window.open(
+              "https://www.linkedin.com/in/jamessli/",
+              "_blank"
+            )
+          );
           break;
         case "Digit4":
         case "Numpad4":
           openLink(() =>
             window.open(
-              "https://www.linkedin.com/in/james-siyuan-li/",
+              "https://github.com/jli2007",
               "_blank"
             )
           );
           break;
         case "Digit5":
         case "Numpad5":
-          openLink(() => window.open("https://github.com/JLi2007", "_blank"));
+          openLink(() => window.open("https://x.com/_jamesli", "_blank"));
           break;
         case "Digit6":
         case "Numpad6":
@@ -279,7 +284,7 @@ export default function CommandPalette() {
                     onSelect={() =>
                       openLink(() =>
                         window.open(
-                          "https://www.linkedin.com/in/james-siyuan-li/",
+                          "https://www.linkedin.com/in/jamessli/",
                           "_blank"
                         )
                       )
@@ -307,7 +312,7 @@ export default function CommandPalette() {
                     value="x twitter profile socials james"
                     onSelect={() =>
                       openLink(() =>
-                        window.open("https://x.com/james_siyuan_li", "_blank")
+                        window.open("https://x.com/_jamesli", "_blank")
                       )
                     }
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
