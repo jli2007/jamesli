@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
 import { isMobile } from "react-device-detect";
 import useModifierKey from "@/app/components/ModifierKey";
-import "../places/places.css";
+import "../../[slug]/places/places.css";
 
 export default function NotePage({
   params,
@@ -111,16 +111,16 @@ export default function NotePage({
 
   return (
     <div className="bg-black text-white max-w-screen min-h-screen h-auto w-full font-playfair font-normal overflow-x-hidden pr-5 pb-5">
-      <div className="flex flex-row">
-        <button
-          className="bg-white text-black cursor-pointer w-40 hover:bg-lightBeige hover:text-darkBeige3 m-5 p-5 transition delay-150 ease-in-out"
+        <div className="flex flex-row">
+          <button
+            className="bg-white text-black cursor-pointer m-5 w-30 hover:bg-lightBeige hover:text-darkBeige3 transition delay-150 ease-in-out"
           onClick={() => {
             router.push("/notes");
           }}
         >
           <span className="text-sm md:text-base">back.</span>
         </button>
-        <h1 className="p-4 m-1">
+        <h1 className="p-5 m-5">
           {info.date} - {info.title}
         </h1>
         {!isMobile && (

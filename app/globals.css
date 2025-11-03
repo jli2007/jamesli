@@ -3,13 +3,13 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-lightBeige: #ede8d7;
-  --color-midBeige1: #d8cfbc;
-  --color-midBeige2: #c9c5b1;
-  --color-midBeige3: #787569;
-  --color-darkBeige1: #545249;
-  --color-darkBeige2: #33322c;
-  --color-darkBeige3: #151411;
+  --color-lightBeige: #f8f6ee;
+  --color-midBeige1: #ded5c2;
+  --color-midBeige2: #cec9b5;
+  --color-midBeige3: #838074;
+  --color-darkBeige1: #5d5a51;
+  --color-darkBeige2: #3d3b35;
+  --color-darkBeige3: #201f1a;
   --animate-fade-in: fade-in 0.2s ease;
   --animate-slide-down: slide-down 0.4s ease;
   --animate-slide-up: slide-up 0.5s ease;
@@ -128,7 +128,6 @@
   justify-content: center;
 }
 
-/* makes animation invisible and unclickable --> removes it essentially */
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-out;
@@ -173,9 +172,7 @@
   max-width: 100% !important;
 }
 
-/* queries */
-
-@media (min-width: 300px) and (max-width: 767px) {
+/* @media (min-width: 300px) and (max-width: 767px) {
   .bottom-section {
     margin-bottom: 1vh;
   }
@@ -188,15 +185,13 @@
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-  .connect4,
-  .follow4 {
+  .connect4{
     font-size: 0.8rem;
   }
 }
 
 @media (min-width: 1100px) and (max-width: 1200px) {
-  .connect4,
-  .follow4 {
+  .connect4{
     font-size: 0.85rem;
   }
 }
@@ -268,8 +263,6 @@
   }
 }
 
-/* the issue with bottom margin */
-
 @media (max-height: 800px) and (min-width: 1024px) {
   .content-section {
     height: 90vh;
@@ -294,16 +287,14 @@
   }
 }
 
-/* ipod/ipad/zfold/etc */
 @media (min-height: 1200px) and (max-width: 1100px) {
   .content-section {
     height: 94vh;
   }
 }
 
-/* what in the hardcode */
 @media (min-height: 1200px) and (max-width: 1023px) {
   .content-section {
     height: auto;
   }
-}
+} */

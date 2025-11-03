@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Sidebar from "./components/Sidebar";
 import CommandPalette from "./components/Cmd";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
@@ -23,7 +24,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "james li",
-    description: "portfolio of james li — computer science at the university of waterloo.",
+    description:
+      "portfolio of james li — computer science at the university of waterloo.",
     url: "https://jame.li",
     siteName: "jame.li",
     images: [{ url: "https://jame.li/banner.png", width: 1200, height: 630 }],
@@ -32,7 +34,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "james li",
-    description: "portfolio of james li — computer science at the university of waterloo.",
+    description:
+      "portfolio of james li — computer science at the university of waterloo.",
     images: ["https://jame.li/banner.png"],
   },
   icons: {
@@ -47,18 +50,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
         <link rel="canonical" href="https://jame.li" />
       </head>
-
-      <body className={"font-playfair"}>
-        <div>{children}</div>
-        <CommandPalette />
+      <body className="font-playfair bg-black text-darkBeige2">
+        <div className="flex w-full lg:flex-row flex-col min-h-screen">
+          <div className="lg:w-2/3 w-full transition-all duration-300">
+            {children}
+            <CommandPalette />
+          </div>
+          <div className="lg:w-1/3 w-full lg:h-screen h-auto lg:overflow-auto overflow-visible lg:border-l">
+            <Sidebar />
+          </div>
+        </div>
         <GoogleAnalytics gaId="G-T54T8RQLW5" />
       </body>
     </html>
