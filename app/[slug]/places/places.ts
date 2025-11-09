@@ -1,4 +1,4 @@
-interface PlacesType {
+export interface PlacesType {
   title: string;
   flag: string;
   description: string;
@@ -11,7 +11,7 @@ export const places: PlacesType[] = [
     title: "salar de uyuni - bolivia",
     flag: "🇧🇴",
     description:
-      "biggest salt flat in the world that can be seen from space. always found it eye-catching, mesmerizing.",
+      "biggest salt flat in the world — can be seen from space. always found it eye-catching, mesmerizing",
     tags: [
       { color: "mediumseagreen", text: "● world wonder" },
       { color: "orchid", text: "● south america" },
@@ -23,7 +23,7 @@ export const places: PlacesType[] = [
     title: "kazamaura, aomori - japan",
     flag: "🇯🇵",
     description:
-      "very northern tip of aomori japan, the coverage here with this picture quality and surroundings feels reminiscent/nostalgic, of something...",
+      "very northern tip of aomori japan — the coverage makes me feel reminiscent of something. unsure of what it is",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "red", text: "● asia" },
@@ -32,22 +32,21 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1742522944358!6m8!1m7!1sW75jxFiQTqRxGhaS4j29nA!2m2!1d41.47529215239408!2d141.077070760996!3f77.55!4f-2.230000000000004!5f0.7820865974627469",
   },
   {
-    title: "mountainous district - portugal",
+    title: "rural villages - portugal",
     flag: "🇵🇹",
-    description:
-      "houses deeply nestled in the mountainside in rural portugal. zoom in and pan around, these rural european regions are so authentic. imagine stumbling across these villages on a hike or something and having a feast with the locals... idk.",
+    description: "village deeply nestled in the mountainside — rural portugal",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darksalmon", text: "● europe" },
     ],
     iframeSrc:
-      "https://www.google.com/maps/embed?pb=!4v1742416120061!6m8!1m7!1sHJJ20QRfuTeYGRRTn_lukw!2m2!1d41.27517404103741!2d-7.859529744857597!3f183.22189633540813!4f5.8944974875990965!5f0.8154479948595579",
+      "https://www.google.com/maps/embed?pb=!4v1762650615963!6m8!1m7!1sHJJ20QRfuTeYGRRTn_lukw!2m2!1d41.27517404103741!2d-7.859529744857597!3f189.07310866651062!4f1.5698353631427437!5f1.5057023596679304",
   },
   {
     title: "national park - chile",
     flag: "🇨🇱",
     description:
-      "'parque natural san carlos de apoquindo': mountain range right next to the borders of santiago, chile's capital. that sudden change from dry desert and snowy mountains is wild.",
+      "a sudden transition between desert & andes — 'parque natural san carlos de apoquindo'",
     tags: [
       { color: "mediumseagreen", text: "● world wonder" },
       { color: "orchid", text: "● south america" },
@@ -58,8 +57,7 @@ export const places: PlacesType[] = [
   {
     title: "isparta - turkey",
     flag: "🇹🇷",
-    description:
-      "located on a peninsula, this place looks magical. this road on a the lake with towering mountains in the background gives a unique feel.",
+    description: "narrow road on a lake — rural turkey",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darkgoldenrod", text: "● middle east" },
@@ -71,7 +69,7 @@ export const places: PlacesType[] = [
     title: "central java mountains - indonesia",
     flag: "🇮🇩",
     description:
-      "'mount merbabu national park' surrounding area look incredibly authentic (although most of rural indonesia probably looks like this). wandering around makes you realize how different life is on the other side of the world.",
+      "authentic rural indonesia — 'mount merbabu national park'",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "red", text: "● asia" },
@@ -82,8 +80,7 @@ export const places: PlacesType[] = [
   {
     title: "atlantic region - canada",
     flag: "🇨🇦",
-    description:
-      "'channel-port aux basques' on newfoundland. i always loved the look and feel of atlantic canada and to me, this location really encapsulates the authentic essence of the life here. i once went on a road trip to every province in the east except newfoundland... maybe one day.",
+    description: "'channel-port aux basques' — newfoundland",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darkturquoise", text: "● north america" },
@@ -95,7 +92,7 @@ export const places: PlacesType[] = [
     title: "lombardy region - italy",
     flag: "🇮🇹",
     description:
-      "northern rural italy looks surreal. the vineyards, streams, mountains... would love to visit someday.",
+      "the vineyards, streams, mountains — rural italy is surreal",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darksalmon", text: "● europe" },
@@ -106,8 +103,7 @@ export const places: PlacesType[] = [
   {
     title: "central tokyo - japan",
     flag: "🇯🇵",
-    description:
-      "'hamamatsuchō station' at dusk feels eerie yet peaceful.",
+    description: "eerie yet peaceful — 'hamamatsuchō station' at dusk",
     tags: [
       { color: "slategray", text: "● pathview" },
       { color: "red", text: "● asia" },
@@ -119,7 +115,7 @@ export const places: PlacesType[] = [
     title: "mendoza province - argentina",
     flag: "🇦🇷",
     description:
-      "under the andes, the architecture and surroundings feels evocative of rural russia. looking around, there are many crumbled buildings, how long will these remote villages last?",
+      "under the andes — the architecture and surroundings feels evocative of rural russia. how long will these remote villages last?",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "orchid", text: "● south america" },
@@ -131,7 +127,7 @@ export const places: PlacesType[] = [
     title: "nile delta - egypt",
     flag: "🇪🇬",
     description:
-      "the nile delta area is very vibrant in greenery, unlike most of egypt. found this photosphere appealing (mohamed salah grew up in this region)",
+      "the nile delta area — vibrant in greenery, unlike most of egypt. mohamed salah grew up in this region",
     tags: [
       { color: "mediumvioletred", text: "● photosphere" },
       { color: "coral", text: "● africa" },
@@ -143,7 +139,7 @@ export const places: PlacesType[] = [
     title: "landscape - oman",
     flag: "🇴🇲",
     description:
-      "feels like we are on an island like madeira or las palmas but no, this is oman, close to its border with yemen. if you go east down the street, there are random wild mules next to a gas station, only in oman i guess?. oman was only recently added to streetview and hopefully more countries will get added in the coming years... china is a big one but thats because of restrictions, but much of africa and western asia are still missing from the database.",
+      "feels like we are on an island like madeira or las palmas — but no, this is oman",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darkgoldenrod", text: "● middle east" },
@@ -155,7 +151,7 @@ export const places: PlacesType[] = [
     title: "buddha carvings - china",
     flag: "🇨🇳",
     description:
-      "located in henan province, china, are a collection of over 2,300 caves and niches carved into limestone cliffs along the yi river. the 'longmen grottoes' date back to the northern wei dynasty (5th century)",
+      "henan province — 'longmen grottoes' along the yi river date back to the 5th century",
     tags: [
       { color: "mediumseagreen", text: "● world wonder" },
       { color: "red", text: "● asia" },
@@ -167,7 +163,7 @@ export const places: PlacesType[] = [
     title: "countryside - northern ireland",
     flag: "🇯🇪",
     description:
-      "facing the grand north atlantic ocean, the rugged land meets sea at the northern tip of northern ireland. i wonder what daily life looks like here.",
+      "northern tip of northern ireland — facing the north atlantic",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darksalmon", text: "● europe" },
@@ -179,7 +175,7 @@ export const places: PlacesType[] = [
     title: "inner mongolia - china",
     flag: "🇨🇳",
     description:
-      "endless waves of green stretch beneath vast blue skies line inner mongolia’s rolling grasslands (region named 'inner mongolia' but still located in china). my homie andy duong's dream destination. ",
+      "rolling grasslands & hella horses beneath vast blue skies — inner mongolia (top of my bucket list)",
     tags: [
       { color: "mediumvioletred", text: "● photosphere" },
       { color: "red", text: "● asia" },
@@ -191,7 +187,7 @@ export const places: PlacesType[] = [
     title: "dunes meet jungle - brazil",
     flag: "🇧🇷",
     description:
-      "close to lençóis maranhenses national park (breathtaking place, search it up), this beach sees a transition between the grand atlantic, sand dunes, and the amazon rainforest.",
+      "a clash between the grand atlantic, sand dunes, and the amazon rainforest — lençóis maranhenses national park",
     tags: [
       { color: "midnightblue", text: "● arial view" },
       { color: "orchid", text: "● south america" },
@@ -203,7 +199,7 @@ export const places: PlacesType[] = [
     title: "chiang mai - thailand",
     flag: "🇹🇭",
     description:
-      "in mountainous northern thailand, chiang mai still retains vestiges of walls and moats from its old history. this specific weather in the coverage makes the scene look incredibly authentic, its perfect.",
+      "historic thailand district — this coverage specifically makes life look authentic",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "red", text: "● asia" },
@@ -215,7 +211,7 @@ export const places: PlacesType[] = [
     title: "zanzibar - tanzania",
     flag: "🇹🇿",
     description:
-      "off the coast of tanizania sits the zanzibar archipelago. definitely on the top of my bucket list for african destinations.",
+      "hotel in zanzibar — an island off the coast of mainland tanzania",
     tags: [
       { color: "mediumvioletred", text: "● photosphere" },
       { color: "coral", text: "● africa" },
@@ -227,7 +223,7 @@ export const places: PlacesType[] = [
     title: "nordland - norway",
     flag: "🇳🇴",
     description:
-      "located in the lofoten archipelago in northern norway, scenery like this is quite common. a lonely house by the shore with undoubtedly a historical story.",
+      "a lonely house by the shore—located in the lofoten archipelago in northern norway",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darksalmon", text: "● europe" },
@@ -238,8 +234,7 @@ export const places: PlacesType[] = [
   {
     title: "bora-bora - french polynesia",
     flag: "🇵🇫",
-    description:
-      "",
+    description: "viewpoint — oceania",
     tags: [
       { color: "mediumvioletred", text: "● photosphere" },
       { color: "paleturquoise", text: "● oceania" },

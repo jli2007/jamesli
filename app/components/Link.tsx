@@ -30,6 +30,7 @@ export default function LinkSlider({
       after:w-full
       after:bg-[#787569]
       after:z-[1]
+      after:opacity-90 
       before:absolute
       before:left-0
       before:bottom-[-2]
@@ -54,6 +55,7 @@ export default function LinkSlider({
       after:w-full
       after:bg-[#c9c5b1]
       after:z-[1]
+      after:opacity-70
       before:absolute
       before:left-0
       before:bottom-[-2]
@@ -64,7 +66,7 @@ export default function LinkSlider({
       before:z-[2]
       hover:before:opacity-100
       hover:text-[#ede8d7]
-      hover:before:[animation:underline_1.5s_ease-in-out_infinite]
+      hover:before:[animation:underline_2s_ease-in-out_infinite]
     `
     }
     ${className}

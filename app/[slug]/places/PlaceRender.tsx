@@ -22,7 +22,7 @@ export default function RenderPlace({ place }: { place: any }) {
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col w-[90vw] allContainer">
+    <div ref={ref} className="flex flex-col allContainer">
       <div className="flex justify-between items-baseline pb-[10px] topContainer">
         <div className="flex items-center m-0 gap-[10px]">
           <h3 className="title !m-0 leading-none">{place.title}</h3>
@@ -42,7 +42,7 @@ export default function RenderPlace({ place }: { place: any }) {
               midnightblue: "rgba(25,25,112,0.7)",
               mediumvioletred: "rgba(199,21,133,0.7)",
               coral: "rgba(255,127,80,0.7)",
-              paleturquoise: "rgba(175,238,238,0.5)",
+              paleturquoise: "rgba(70,160,160,0.8)",
             };
             const shadowColor = shadowMap[tag.color] || "rgba(0,0,0,0.3)";
             return (
@@ -64,17 +64,17 @@ export default function RenderPlace({ place }: { place: any }) {
       {visible ? (
         <iframe
           src={place.iframeSrc}
-          className="w-[90vw] h-[75vh] border-0 iframe"
+          className="h-[50vh] border-0 iframe"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           allow="accelerometer; gyroscope;"
         ></iframe>
       ) : (
-        <div className="w-[90vw] h-[75vh] bg-black/5 rounded-md" />
+        <div className="h-[50vh] bg-black/5 rounded-md" />
       )}
-      <h4 className="mt-[10px] mb-[25px] w-[90vw]">{place.description}</h4>
-      <hr className="m-0 p-0 mb-[12px]" />
+      <h4 className="mt-[10px] mb-[25px]">{place.description}</h4>
+      <hr className="m-0 p-0 mb-[5px] opacity-50" />
     </div>
   );
 }

@@ -4,6 +4,7 @@
 
 @theme {
   --color-lightBeige: #f8f6ee;
+  --color-lighterBeige: #f8f6eecc;
   --color-midBeige1: #ded5c2;
   --color-midBeige2: #cec9b5;
   --color-midBeige3: #838074;
@@ -89,11 +90,9 @@
   text-underline-offset: 2px;
   /* overflow-x: hidden; */
 }
-
 @layer base {
-  /* For Webkit browsers (Chrome, Safari) */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
     height: 10px;
   }
 
@@ -102,19 +101,15 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #44403c;
+    background: #6c6b68;
+    border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #57534e;
-  }
-
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #44403c #292524;
+    background: #807f7b;
   }
 }
+
 
 .intro-container {
   background-color: black;
@@ -170,6 +165,21 @@
 
 .prose {
   max-width: 100% !important;
+}
+
+.shiny-green-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #06c506;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  box-shadow: 0 0 5px rgba(0, 170, 0, 0.8),
+              inset 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
 /* @media (min-width: 300px) and (max-width: 767px) {
