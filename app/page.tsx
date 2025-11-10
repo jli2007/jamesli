@@ -2,26 +2,16 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import LinkSlider from "./components/Link";
-import Link from "next/link";
 import LoadingBar from "react-top-loading-bar";
 import useModifierKey from "./components/ModifierKey";
-import { showcaseProjects } from "./projects/projects";
 import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
-import {
-  FaGithub,
-  FaRegNoteSticky,
-  FaInstagram,
-  FaXTwitter,
-  FaSpotify,
-} from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaXTwitter, FaSpotify } from "react-icons/fa6";
 import { MdShuffle } from "react-icons/md";
-import jam1 from "./assets/jame1.png";
-import jam2 from "./assets/jame2.jpg";
-import jam4 from "./assets/jame4.jpg";
-import jam3 from "./assets/jame3.jpg";
-import write from "./assets/write.png";
+import jam1 from "./assets/jame4.jpg";
+import jam2 from "./assets/jame3.jpg";
 import uw from "./assets/uw.png";
+import { useIntroStore } from "./store/zustand";
 
 // for spotify
 type Track = {
@@ -33,53 +23,67 @@ type Track = {
 };
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const { hasPlayed, setHasPlayed } = useIntroStore();
+  const initialHasPlayed =
+    typeof window !== "undefined" &&
+    Boolean(useIntroStore.getState?.().hasPlayed);
+  const [isLoaded, setIsLoaded] = useState<boolean>(initialHasPlayed);
   const [progress, setProgress] = useState(0);
   const [isMac, setIsMac] = useState(false);
   const isModifierPressed = useModifierKey(); // for opacity of button
   const [tracks, setTracks] = useState<Track[]>([]); // spotify tracks
+  const [recent, setRecent] = useState<Track>();
   const [lastClick, setLastClick] = useState(0);
 
   // loading bar
   useEffect(() => {
-    const isReturningFromPage = sessionStorage.getItem("fromPage");
-
-    // If returning from notes/projects, skip loading animation
-    if (isReturningFromPage) {
+    if (hasPlayed) {
       setIsLoaded(true);
-      sessionStorage.removeItem("fromPage");
       return;
     }
 
-    let currentProgress = 10;
+    setHasPlayed();
 
+    let currentProgress = 10;
     const interval = setInterval(() => {
       if (currentProgress < 100) {
-        currentProgress += 15;
+        currentProgress += 20;
         setProgress(currentProgress);
       } else {
         clearInterval(interval);
         setIsLoaded(true);
       }
-    }, 300);
-
-    return () => clearInterval(interval);
+    }, 200);
   }, []);
-
-  const fetchTracks = () => {
-  const now = Date.now();
-  if (now - lastClick < 1000) return;
-  setLastClick(now);
-
-  fetch("/api/spotify")
-    .then((res) => res.json())
-    .then((json) => setTracks(json.tracks || []))
-    .catch((err) => console.error(err));
-};
 
   useEffect(() => {
     fetchTracks();
+    fetchRecent();
   }, []);
+
+  const fetchTracks = async () => {
+    const now = Date.now();
+    if (now - lastClick < 1000) return;
+    setLastClick(now);
+
+    try {
+      const res = await fetch("/api/spotify");
+      const json = await res.json();
+      setTracks(json.tracks || []);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const fetchRecent = async () => {
+    try {
+      const res = await fetch("/api/last-listened");
+      const json = await res.json();
+      setRecent(json);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
     const isMac =
@@ -103,8 +107,8 @@ export default function Home() {
   return (
     <>
       <div
-        className={`intro-container max-w-screen max-h-screen z-40 ${
-          isLoaded ? "fade-out" : ""
+        className={`intro-container max-w-screen max-h-screen z-40 transition-opacity duration-700 ${
+          isLoaded ? "opacity-0 pointer-events-none fade-out" : "opacity-100"
         }`}
       >
         <div className="wave-effect" />
@@ -121,318 +125,295 @@ export default function Home() {
       </div>
 
       <div className="relative content inset-0 overflow-x-hidden home">
-        <div className="min-w-screen lg:max-h-screen lg:h-screen w-auto bg-black text-darkBeige2 font-playfair overflow-x-hidden lg:overflow-y-hidden pb-2 lg:pb-0">
-          {/* top section */}
-          <div className="relative w-auto p-5 bg-midBeige1 rounded-lg text-darkBeige3 m-1 mt-2 flex flex-row">
-            <div className="relative w-full h-full flex justify-between">
-              <h1 className="top-text">
-                <span className="font-thin">james siyuan li </span>{" "}
-                <span className="pl-1 font-light">李思远</span> —{" "}
-                <span className="font-bold">ai & full-stack engineer</span>
-              </h1>
-              <div className="h-full absolute lg:top-0 right-0 flex items-center gap-1">
-                {!isMobile && (
-                  <button
-                    onClick={openCommandPalette}
-                    className="px-4 p-2 hidden sm:flex cursor-pointer items-center gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-lg hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
-                  >
-                    <kbd
-                      className={`px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige flex ${
-                        isModifierPressed ? "opacity-40" : "opacity-100"
-                      }`}
-                    >
-                      {isMac ? "⌘" : "ctrl"}
-                    </kbd>
-
-                    <span>+</span>
-                    <kbd className="px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige">
-                      k
-                    </kbd>
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0">
+        <div className="min-w-screen lg:max-h-screen lg:h-screen w-auto text-darkBeige2 font-playfair overflow-x-hidden lg:overflow-y-hidden pb-1 lg:pb-0">
+          <div className="flex lg:flex-row flex-col w-full">
             {/* side section */}
-            <div className="relative row-span-6 lg:col-span-5 col-span-6 w-auto lg:h-auto h-175 py-3 lg:px-7 px-3 bg-midBeige1 m-1 mb-2 lg:mb-1 rounded-lg">
-              <div className="flex items-center justify-between w-full">
-                <span className="flex items-center gap-2 italic z-10 text-xl text-darkBeige3 drop-shadow-[2px_2px_3px_rgba(0,0,0,0.5)] bg-midBeige1/10">
-                  <Image src={uw} width={35} height={35} alt="uw-logo"></Image>{" "}
-                  uwaterloo cs'30.
-                </span>
-              </div>
-              <div className="sidediv relative text-xl h-[95%] flex items-end w-full">
-                <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/50 z-10 p-2 w-full">
-                  <h1 className="rounded-lg sideh1">
-                    hey i&apos;m
-                    <span className="text-darkBeige3 ml-1">james.</span>
-                  </h1>
-                  <h1 className="lg:bg-transparent rounded-lg sideh1">
-                    · cooking @{" "}
-                    <span className="cursor-pointer text-darkBeige2">
-                      <LinkSlider
-                        href="https://phutureai.com"
-                        mode="dark"
-                        className="ml-1 relative"
-                      >
-                        phuture
-                      </LinkSlider>
+            <div className="lg:w-2/3 w-full ml-0 flex flex-col">
+              {/* top section */}
+              <div className="relative flex flex-row bg-midBeige1 rounded-lg text-darkBeige3 mt-2 mx-2 lg:mx-1 m-1 md:p-5 p-3">
+                <div className="relative w-full h-full flex lg:justify-between justify-center">
+                  <h1>
+                    <span className="font-thin md:text-base text-sm">
+                      james siyuan li
                     </span>
+                    <span className="pl-1 font-light">李思远</span>
                   </h1>
-                  <h1 className="lg:bg-transparent rounded-lg sideh1">
-                    · prev. intern @{" "}
-                    <span className="cursor-pointer text-darkBeige2">
-                      <LinkSlider
-                        href="https://www.weblakes.com/"
-                        mode="dark"
-                        className="ml-1 relative"
+                  <div className="h-full absolute lg:top-0 right-0 flex items-center gap-1">
+                    {!isMobile && (
+                      <button
+                        onClick={openCommandPalette}
+                        className="px-4 p-2 hidden sm:flex cursor-pointer items-center gap-1 text-xs bg-darkBeige2 text-midBeige1 rounded-lg hover:bg-darkBeige1 hover:text-lightBeige transition delay-200 duration-200 ease-in-out"
                       >
-                        lakes software
-                      </LinkSlider>
-                    </span>
-                  </h1>
-                  <h1 className="tauria lg:mb-0 mb-10 lg:bg-transparent rounded-lg sideh1">
-                    · prev. software dev @{" "}
-                    <span className="cursor-pointer text-darkBeige2">
-                      <LinkSlider
-                        href="https://www.tauria.com/"
-                        mode="dark"
-                        className="ml-1 relative"
-                      >
-                        tauria
-                      </LinkSlider>
-                    </span>
-                  </h1>
+                        <kbd
+                          className={`px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige flex ${
+                            isModifierPressed ? "opacity-40" : "opacity-100"
+                          }`}
+                        >
+                          {isMac ? "⌘" : "ctrl"}
+                        </kbd>
+
+                        <span>+</span>
+                        <kbd className="px-1.5 py-1 rounded bg-darkBeige2/10 text-midBeige">
+                          k
+                        </kbd>
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
-              <Image
-                src={jam3}
-                className="jam2 absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 lg:w-[34vw] right-0 lg:z-[5] z-0"
-                priority={true}
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.01) 75%)",
-                }}
-                alt="jame"
-              />
-            </div>
 
-            {/* linkedin and notes section */}
-            <div className="row-span-1 col-span-6 w-auto lg:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-2 lg:mb-1">
-              {/* linkedin section */}
-              <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
-                <a
-                  href="https://www.linkedin.com/in/jamessli/"
-                  target="_blank"
-                  className="absolute inset-0 w-full h-full"
-                >
-                  <h1 className="absolute italic left-5 top-2">linkedin</h1>
-                  <div className="linkedin absolute lg:bottom-4 lg:left-2 lg:right-0 lg:top-auto right-1 top-0 bottom-auto left-auto z-20">
-                    <GrLinkedin className="lg:w-[4vw] lg:h-[4vh] w-[6vw] h-[6vh]" />
+              <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0 lg:px-0 px-1">
+                {/* side section */}
+                <div className="relative row-span-6 lg:col-span-10 col-span-6 w-auto lg:h-auto md:h-200 h-120 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
+                  <div className="sidediv relative lg:text-xl md:text-2xl text-md h-[95%] flex items-end w-full z-10 whitespace-nowrap">
+                    <span className="font-bold absolute top-0 left-0">
+                      <span className="flex items-center justify-center gap-2 text-darkBeige3">
+                        cs
+                        <Image src={uw} width={25} height={25} alt="uw-logo" />
+                        uwaterloo
+                      </span>
+                    </span>
+                    <div className="flex flex-col gap-3 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-sm">
+                      <h1 className="lg:bg-transparent rounded-lg sideh1 pl-6 [-text-indent:1.5rem]">
+                        <span className="flex items-center justify-start gap-2 text-darkBeige3">
+                          previously:
+                        </span>
+                      </h1>
+
+                      <h1 className="lg:bg-transparent rounded-lg sideh1 pl-6 [-text-indent:1.5rem]">
+                        <span className="flex items-center justify-start gap-2 text-darkBeige3">
+                          <span>•</span>
+                          software dev @
+                          <span className="cursor-pointer text-darkBeige2">
+                            <LinkSlider
+                              href="https://www.weblakes.com/"
+                              mode="dark"
+                              className="ml-1 relative"
+                            >
+                              lakes software
+                            </LinkSlider>
+                          </span>
+                        </span>
+                      </h1>
+
+                      <h1 className="tauria lg:mb-0 mb-5 lg:bg-transparent rounded-lg sideh1 pl-6 [-text-indent:1.5rem]">
+                        <span className="flex items-center justify-start gap-2 text-darkBeige3">
+                          <span>•</span>
+                          engineering @
+                          <span className="cursor-pointer text-darkBeige2">
+                            <LinkSlider
+                              href="https://www.tauria.com/"
+                              mode="dark"
+                              className="ml-1 relative"
+                            >
+                              tauria
+                            </LinkSlider>
+                          </span>
+                        </span>
+                      </h1>
+                    </div>
                   </div>
-                  <h1 className="connect4 absolute bottom-5 italic right-5 lg:text-lg text-base">
-                    can't rush greatness
-                  </h1>
-                </a>
-              </div>
+                  <Image
+                    src={jam2}
+                    className="jam2 absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-[5] z-0"
+                    priority={true}
+                    style={{
+                      WebkitMaskImage:
+                        "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.01) 75%)",
+                    }}
+                    alt="jame"
+                  />
+                </div>
 
-              {/* notes section */}
-              <div className="relative py-3 px-7 rounded-lg bg-midBeige1 hover:border-lightBeige border-2 border-transparent transition delay-200 duration-150 ease-in">
-                <Link
-                  href="/notes"
-                  className="absolute inset-0 w-full h-full cursor-pointer"
-                >
-                  <h1 className="absolute italic text-lg left-5 top-2">
-                    notes
-                  </h1>
-                  <div className="absolute lg:bottom-4 lg:left-2 lg:right-auto right-2 bottom-0">
-                    <FaRegNoteSticky className="lg:w-[4vw] lg:h-[4vh] w-[6vw] h-[6vh]" />
+                {/* linkedin and socials section */}
+                <div className="row-span-1 lg:col-span-3 col-span-6 w-auto lg:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-1">
+                  {/* linkedin section */}
+                  <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
+                    <a
+                      href="https://www.linkedin.com/in/jamessli/"
+                      target="_blank"
+                      className="absolute inset-0 w-full h-full"
+                    >
+                      <h1 className="absolute italic left-5 top-2 lg:text-base md:text-lg text-sm">
+                        linkedin
+                      </h1>
+                      <div className="absolute lg:bottom-4 lg:left-2 lg:right-0 lg:top-auto right-1 top-0 bottom-auto left-auto z-20">
+                        <GrLinkedin className="lg:w-[4vw] lg:h-[4vh] md:w-[5vw] md:h-[5vh] w-[6vw] h-[6vh]" />
+                      </div>
+                      <h1 className="absolute bottom-5 italic right-5 lg:text-base md:text-lg text-sm">
+                        can't rush greatness
+                      </h1>
+                    </a>
+                  </div>
+
+                  {/* socials section */}
+                  <div className="relative py-3 px-7 rounded-lg bg-midBeige2 border-2 border-transparent transition delay-200 duration-150 ease-in flex flex-col items-center justify-center lg:gap-4 md:gap-2">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
+                    <a
+                      href="https://www.linkedin.com/in/jamessli/"
+                      target="_blank"
+                      className="z-10 hover:opacity-50 opacity-70 transition"
+                    >
+                      <GrLinkedin className="lg:w-[1.75vw] lg:h-[1.75vw] md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
+                    </a>
+                    <a
+                      href="https://github.com/jli2007"
+                      target="_blank"
+                      className="z-10 hover:opacity-50 opacity-70 transition"
+                    >
+                      <FaGithub className="lg:w-[1.75vw] lg:h-[1.75vw] md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
+                    </a>
+                    <a
+                      href="https://x.com/_jamesli"
+                      target="_blank"
+                      className="z-10 hover:opacity-50 opacity-70 transition"
+                    >
+                      <FaXTwitter className="lg:w-[1.75vw] lg:h-[1.75vw] md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/jamesdialedin/"
+                      target="_blank"
+                      className="z-10 hover:opacity-50 opacity-70 transition"
+                    >
+                      <FaInstagram className="lg:w-[1.75vw] lg:h-[1.75vw] md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* description section */}
+                <div className="relative lg:col-span-3 col-span-6 row-span-1 w-auto lg:h-auto py-3 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
+                  <div className="description relative h-auto lg:w-[25vw] w-full flex flex-col z-10 lg:text-sm md:text-lg text-xs">
+                    <span className="italic font-bold">
+                      product of the environment.
+                    </span>
+                    <h1 className="h1descr break-normal lg:mt-5 mt-8 lg:pb-0 pb-2 p-1">
+                      i'm currently blueprinting intelligent systems.
+                    </h1>
+
+                    <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
+                      i build cool software and post on social media:
+                    </h1>
+                    <div className="flex gap-3 lg:mb-0">
+                      <a
+                        href={"https://www.instagram.com/jamesdialedin/"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
+                      >
+                        <FaInstagram size={18} aria-hidden />
+                      </a>
+                      <a
+                        href={"https://x.com/_jamesli"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
+                      >
+                        <FaXTwitter size={18} aria-hidden />
+                      </a>
+                    </div>
+
+                    <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
+                      <div className="flex items-center">
+                        tuff music:
+                        <button
+                          onClick={fetchTracks}
+                          className="cursor-pointer px-1 rounded-full transition"
+                        >
+                          <MdShuffle size={20} style={{ marginRight: 8 }} />
+                        </button>
+                      </div>
+                    </h1>
+                  </div>
+
+                  <div className="description relative h-auto lg:w-[30vw] md:w-[75%] w-[80vw] max-w-[100%] lg:text-xs md:text-md text-xs lg:mb-0 mb-8 flex lg:flex-row flex-col gap-3">
+                    {tracks.map((t) => (
+                      <a
+                        key={t.id}
+                        href={t.external_urls?.spotify || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="lg:w-1/3 w-2/3 flex items-center gap-2 z-10 h-10 px-1 md:px-2 lg:px-3 rounded-lg shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90 backdrop-blur-lg"
+                      >
+                        <div className="w-7 h-7 relative flex-shrink-0">
+                          {t.album?.images && t.album.images[0] ? (
+                            <Image
+                              src={t.album.images[0].url}
+                              alt={t.name}
+                              fill
+                              sizes="28px"
+                              className="rounded object-cover"
+                            />
+                          ) : (
+                            <div className="w-7 h-7 bg-lightBeige rounded flex items-center justify-center">
+                              <FaSpotify className="text-midBeige2" />
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0 flex items-center justify-center overflow-hidden">
+                          <span className="font-medium truncate block">
+                            {t.name.toLowerCase()}
+                          </span>
+                        </div>
+                      </a>
+                    ))}
                   </div>
 
                   <Image
-                    src={write}
-                    className="absolute md:h-[90%] lg:h-auto opacity-30 z-5 right-0 top-10 w-auto rounded-xl"
+                    src={jam1}
+                    className="jam1 absolute lg:h-auto lg:w-70 w-95 lg:right-0 lg:top-10 -right-10 bottom-0 rounded-2xl lg:opacity-95 opacity-55"
                     style={{
                       WebkitMaskImage:
-                        "radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%)",
+                        "radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)",
                     }}
                     loading="lazy"
-                    alt="man writing facts"
+                    alt="jame"
                   />
-                </Link>
-              </div>
-            </div>
+                </div>
 
-            {/* description section */}
-            <div className="relative col-span-6 row-span-1 w-auto lg:h-auto py-3 px-6 bg-midBeige1 m-1 mb-2 lg:mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
-              <div className="description relative h-auto lg:w-[25vw] w-[75%] flex flex-col z-10 text-[0.9rem]">
-                <span className="italic font-bold">
-                  product of the environment.
-                </span>
-                <h1 className="h1descr break-normal lg:mt-5 mt-8 lg:pb-0 pb-2 p-1">
-                  i'm currently building{" "}
-                  <span className="text-darkBeige3 font-bold">phuture</span>,
-                  pokémon-go for wildlife. in my free time i code, play fútbol
-                  ⚽︎, and wander the forest.
-                </h1>
-
-                <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
-                  i build cool software and post on social media:
-                </h1>
-                <div className="flex gap-3 lg:mb-0">
+                {/* github logo section */}
+                <div className="relative lg:col-span-1 col-span-6 row-span-4 w-auto lg:h-auto lg:py-3 md:py-7 py-5 px-7 m-1 mb-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
                   <a
-                    href={"https://www.instagram.com/jamesdialedin/"}
+                    href="https://github.com/JLi2007"
+                    className="w-full h-full absolute inset-0"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
                   >
-                    <FaInstagram size={18} aria-hidden />
-                  </a>
-                  <a
-                    href={"https://x.com/_jamesli"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
-                  >
-                    <FaXTwitter size={18} aria-hidden />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <FaGithub className="w-auto h-[50%]" />
+                    </div>
                   </a>
                 </div>
 
-                <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
-                  <div className="flex items-center">
-                    tuff music:
-                    <button
-                      onClick={fetchTracks}
-                      className="cursor-pointer px-1 rounded-full transition"
+                {/* last listened to section */}
+                <div className="lg:col-span-2 col-span-6 row-span-3 w-auto lg:h-auto lg:py-2 md:py-7 py-4 px-5 m-1 rounded-lg bg-midBeige2 bottom-section">
+                  <div className="flex items-center justify-center flex-wrap gap-2 lg:text-sm md:text-lg text-xs w-full">
+                    <span>i last listened to</span>
+                    <a
+                      href={recent?.external_urls?.spotify || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 z-10 px-2 py-1 rounded-lg shadow-sm ring-1 ring-midBeige3 hover:shadow-lg transition opacity-90 backdrop-blur-lg"
                     >
-                      <MdShuffle size={20} style={{ marginRight: 8 }} />
-                    </button>
+                      <div className="w-7 h-7 relative flex-shrink-0">
+                        {recent?.album?.images?.[0] ? (
+                          <Image
+                            src={recent.album.images[0].url}
+                            alt={recent.name}
+                            fill
+                            sizes="28px"
+                            className="rounded object-cover"
+                          />
+                        ) : (
+                          <div className="w-7 h-7 bg-lightBeige rounded flex items-center justify-center">
+                            <FaSpotify className="text-midBeige2" />
+                          </div>
+                        )}
+                      </div>
+                      <span className="text-xs font-medium truncate max-w-[10rem]">
+                        {recent?.name?.toLowerCase()}
+                      </span>
+                    </a>
                   </div>
-                </h1>
-              </div>
-
-              <div className="description relative h-auto w-[80vw] lg:w-[30vw] max-w-[100%] text-[0.9rem] lg:mb-0 mb-8 flex lg:flex-row flex-col gap-3">
-                {tracks.map((t) => (
-                  <a
-                    key={t.id}
-                    href={t.external_urls?.spotify || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="lg:w-1/3 w-2/3 flex items-center gap-2 z-10 h-10 px-1 md:px-2 lg:px-3 rounded-lg shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90 backdrop-blur-lg"
-                  >
-                    <div className="w-7 h-7 relative flex-shrink-0">
-                      {t.album?.images && t.album.images[0] ? (
-                        <Image
-                          src={t.album.images[0].url}
-                          alt={t.name}
-                          fill
-                          className="rounded object-cover"
-                        />
-                      ) : (
-                        <div className="w-7 h-7 bg-lightBeige rounded flex items-center justify-center">
-                          <FaSpotify className="text-midBeige2" />
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex-1 min-w-0 flex items-center justify-center overflow-hidden">
-                      <span className="text-xs font-medium truncate block">
-                        {t.name.toLowerCase()}
-                      </span>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              <Image
-                src={jam4}
-                className="jam1 absolute lg:h-auto lg:w-70 w-95 lg:right-0 lg:top-10 -right-10 bottom-0 rounded-2xl lg:opacity-95 opacity-55"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)",
-                }}
-                loading="lazy"
-                alt="jame"
-              />
-            </div>
-
-            {/* projects section */}
-            <div className="projects relative lg:col-span-3 row-span-2 col-span-6 max-w-screen lg:h-auto h-120 py-3 px-7 m-1 mb-2 lg:mb-1 rounded-lg bg-darkBeige1 text-lightBeige lg:order-2">
-              <div className="relative w-full h-full">
-                <h1 className="italic">projects</h1>
-                <div className="flex flex-col justify-center overflow-hidden h-[90%]">
-                  {showcaseProjects.map((project: any, index: any) => (
-                    <div key={index} className="mb-15">
-                      <h1 className="cursor-pointer">
-                        <LinkSlider
-                          href={project.url}
-                          mode="light"
-                          className={`relative`}
-                        >
-                          {project.name}
-                        </LinkSlider>
-                      </h1>
-                      <span className="my-3 whitespace-pre">
-                        {project.desc}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <LinkSlider
-                  href="/projects"
-                  isNextLink={true}
-                  mode="light"
-                  className={`relative text-lg`}
-                >
-                  view more
-                </LinkSlider>
-              </div>
-            </div>
-
-            {/* github logo section */}
-            <div className="relative lg:col-span-3 col-span-6 row-span-4 w-auto lg:h-auto h-15 py-3 px-7 m-1 mb-2 lg:mb-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
-              <a
-                href="https://github.com/JLi2007"
-                className="w-full h-full absolute inset-0"
-                target="_blank"
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <FaGithub className="w-auto h-[50%]" />
-                </div>
-              </a>
-            </div>
-
-            {/* profiles section */}
-            <div className="col-span-6 row-span-4 w-auto lg:h-auto py-3 px-7 m-1 rounded-lg bg-midBeige2 bottom-section">
-              <div className="flex w-full items-center lg:flex-row flex-col">
-                <div className="follow4 flex w-full lg:justify-start justify-center">
-                  <span className="italic">
-                    based in waterloo; lets connect
-                  </span>
-                </div>
-                <div className="justify-end flex lg:flex-row flex-col w-full">
-                  <h1 className="mx-3 lg:my-0 my-2 flex lg:justify-start justify-center">
-                    hello@jame.li
-                  </h1>
-                  <h1 className="mx-3 lg:my-0 my-2 flex lg:justify-start justify-center">
-                    <LinkSlider
-                      href="https://www.linkedin.com/in/jamessli/"
-                      mode="dark"
-                      className="relative"
-                    >
-                      linkedin
-                    </LinkSlider>
-                  </h1>
-                  <h1 className="mx-3 lg:my-0 my-2 flex lg:justify-start justify-center">
-                    <LinkSlider
-                      href="https://github.com/JLi2007"
-                      mode="dark"
-                      className="relative"
-                    >
-                      github
-                    </LinkSlider>
-                  </h1>
                 </div>
               </div>
             </div>

@@ -3,13 +3,14 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-lightBeige: #ede8d7;
-  --color-midBeige1: #d8cfbc;
-  --color-midBeige2: #c9c5b1;
-  --color-midBeige3: #787569;
-  --color-darkBeige1: #545249;
-  --color-darkBeige2: #33322c;
-  --color-darkBeige3: #151411;
+  --color-lightBeige: #f8f6ee;
+  --color-lighterBeige: #f8f6eecc;
+  --color-midBeige1: #ded5c2;
+  --color-midBeige2: #cec9b5;
+  --color-midBeige3: #838074;
+  --color-darkBeige1: #5d5a51;
+  --color-darkBeige2: #3d3b35;
+  --color-darkBeige3: #201f1a;
   --animate-fade-in: fade-in 0.2s ease;
   --animate-slide-down: slide-down 0.4s ease;
   --animate-slide-up: slide-up 0.5s ease;
@@ -89,11 +90,9 @@
   text-underline-offset: 2px;
   /* overflow-x: hidden; */
 }
-
 @layer base {
-  /* For Webkit browsers (Chrome, Safari) */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
     height: 10px;
   }
 
@@ -102,19 +101,15 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #44403c;
+    background: #6c6b68;
+    border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #57534e;
-  }
-
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #44403c #292524;
+    background: #807f7b;
   }
 }
+
 
 .intro-container {
   background-color: black;
@@ -128,7 +123,6 @@
   justify-content: center;
 }
 
-/* makes animation invisible and unclickable --> removes it essentially */
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-out;
@@ -165,6 +159,36 @@
   animation: wave 7s ease-in-out infinite;
 }
 
+.shiny-green-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #06c506;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  box-shadow:
+    0 0 8px rgba(0, 255, 0, 0.8),
+    inset 0 0 3px rgba(255, 255, 255, 0.5);
+  animation: pulse 3.5s infinite ease-in-out; 
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 8px rgba(0, 255, 0, 0.8),
+      inset 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 14px rgba(0, 255, 0, 1),
+      inset 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+}
+
 .crg {
   animation: pulse-and-scale 3.25s ease-out infinite;
 }
@@ -173,102 +197,64 @@
   max-width: 100% !important;
 }
 
-/* queries */
-
-@media (min-width: 300px) and (max-width: 767px) {
-  .bottom-section {
-    margin-bottom: 1vh;
-  }
-}
-
-@media (min-width: 1100px) and (max-height: 660px) {
-  .home {
-    height: 100vh;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .connect4,
-  .follow4 {
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 1100px) and (max-width: 1200px) {
-  .connect4,
-  .follow4 {
-    font-size: 0.85rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .linkedin {
-    right: 4px;
-    left: auto;
-    top: 4px;
-    bottom: auto;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1340px) {
-  .linkedin {
-    right: 4px;
-    left: auto;
-    top: 4px;
-    bottom: auto;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 927px) {
-  .sidediv {
-    height: 80%;
-  }
-}
-
-@media (min-width: 928px) and (max-width: 1190px) {
-  .sidediv {
-    height: 90%;
-  }
-}
-
-@media (max-width: 1023px) {
-  .projects {
-    padding-bottom: 5vh;
-  }
-}
-
-@media (max-width: 400px) {
-  .top-text {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-height: 850px) and (min-width: 1023px){
+@media (max-height: 660px) {
   .description{
-    width: 30vw;
-  }
-}
-
-@media (max-height: 750px) and (min-width: 1023px){
-  .description{
+    white-space: nowrap;
     font-size: 0.7rem;
   }
-  .logos {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
 
-@media (max-height: 675px) and (min-width: 1023px){
-  .description{
-    font-size: 0.6rem;
-  }
   .h1descr{
-    margin-top: 1vh !important;
+    margin-top: 15px;
+  }
+
+  .jam2{
+    opacity: 90;
   }
 }
 
-/* the issue with bottom margin */
+@media (max-height: 600px) {
+  .description{
+    white-space: nowrap;
+    font-size: 0.7rem;
+  }
+
+  .h1descr{
+    margin-top: 10px;
+  }
+
+  .logos{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .jam2{
+    opacity: 90;
+  }
+}
+
+@media (min-width:768px) and (max-width: 1180px){
+  .description{
+    white-space: nowrap;
+    font-size: 0.7rem;
+  }
+
+  .h1descr{
+    margin-top: 10px;
+  }
+
+  .logos{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .jam2{
+    opacity: 90;
+  }
+}
 
 @media (max-height: 800px) and (min-width: 1024px) {
   .content-section {
@@ -294,14 +280,12 @@
   }
 }
 
-/* ipod/ipad/zfold/etc */
 @media (min-height: 1200px) and (max-width: 1100px) {
   .content-section {
     height: 94vh;
   }
 }
 
-/* what in the hardcode */
 @media (min-height: 1200px) and (max-width: 1023px) {
   .content-section {
     height: auto;
