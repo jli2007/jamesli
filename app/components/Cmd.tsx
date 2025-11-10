@@ -108,49 +108,30 @@ export default function CommandPalette() {
         case "Numpad0":
           openNextLink(() => router.push("/"));
           break;
-
         case "Digit1":
         case "Numpad1":
-          openNextLink(() => router.push("/projects"));
+          openLink(() =>
+            window.open("https://www.linkedin.com/in/jamessli/", "_blank")
+          );
           break;
-
         case "Digit2":
         case "Numpad2":
-          openNextLink(() => router.push("/notes"));
+          openLink(() => window.open("https://github.com/jli2007", "_blank"));
           break;
-
         case "Digit3":
         case "Numpad3":
-          openLink(() =>
-            window.open(
-              "https://www.linkedin.com/in/jamessli/",
-              "_blank"
-            )
-          );
+          openLink(() => window.open("https://x.com/_jamesli", "_blank"));
           break;
         case "Digit4":
         case "Numpad4":
           openLink(() =>
-            window.open(
-              "https://github.com/jli2007",
-              "_blank"
-            )
+            window.open("https://www.instagram.com/jamesdialedin/", "_blank")
           );
           break;
         case "Digit5":
         case "Numpad5":
-          openLink(() => window.open("https://x.com/_jamesli", "_blank"));
-          break;
-        case "Digit6":
-        case "Numpad6":
           openLink(() =>
-            window.open("https://www.instagram.com/jamesdialedin/", "_blank")
-          );
-          break;
-        case "Digit7":
-        case "Numpad7":
-          openLink(() =>
-            window.open("https://github.com/JLi2007/JamesLi", "_blank")
+            window.open("https://github.com/jli2007/jamesli", "_blank")
           );
           break;
       }
@@ -176,7 +157,7 @@ export default function CommandPalette() {
     <div className="flex text-xs items-center gap-1 ml-auto text-midBeige3">
       <kbd
         className={`px-1.5 py-0.5 rounded bg-stone-800 text-midBeige2/90 ${
-          isShiftKeyPressed ? "opacity-40" : "opacity-100"
+          isShiftKeyPressed ? "opacity-60" : "opacity-100"
         }`}
       >
         shift
@@ -214,9 +195,7 @@ export default function CommandPalette() {
               <div className="px-5 py-6 border-b border-stone-700 flex items-center gap-3">
                 <img src="/jsl.png" alt="jsl" className="w-7 rounded-sm" />
                 <div className="flex-1">
-                  <h2 className="font-medium text-midBeige1">
-                    hello@jame.li
-                  </h2>
+                  <h2 className="font-medium text-midBeige1">hello@jame.li</h2>
                   <p className="text-xs text-midBeige2/90">
                     use <kbd className="px-1">esc</kbd> or click outside to
                     close
@@ -238,10 +217,7 @@ export default function CommandPalette() {
                   no results found.
                 </Command.Empty>
 
-                <Command.Group
-                  heading="pages"
-                  className="px-2 text-lightBeige"
-                >
+                <Command.Group heading="links" className="px-2 text-lightBeige">
                   <Command.Item
                     value="home jame page"
                     onSelect={() => {
@@ -256,29 +232,7 @@ export default function CommandPalette() {
                     <span className="flex-1">home</span>
                     <Shortcut>0</Shortcut>
                   </Command.Item>
-                  <Command.Item
-                    value="projects page"
-                    onSelect={() =>
-                      openNextLink(() => router.push("/projects"))
-                    }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
-                  >
-                    <LiaProjectDiagramSolid className="h-4 w-4" />
-                    <span className="flex-1">projects</span>
-                    <Shortcut>1</Shortcut>
-                  </Command.Item>
-                  <Command.Item
-                    value="notes writing page highlights uw aif places quotes people"
-                    onSelect={() => openNextLink(() => router.push("/notes"))}
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
-                  >
-                    <TfiWrite className="h-4 w-4" />
-                    <span className="flex-1">notes</span>
-                    <Shortcut>2</Shortcut>
-                  </Command.Item>
-                </Command.Group>
 
-                <Command.Group heading="links" className="px-2 text-lightBeige">
                   <Command.Item
                     value="linkedin profile socials james"
                     onSelect={() =>
@@ -293,7 +247,7 @@ export default function CommandPalette() {
                   >
                     <IoLogoLinkedin className="h-4 w-4" />
                     <span className="flex-1">linkedin</span>
-                    <Shortcut>3</Shortcut>
+                    <Shortcut>1</Shortcut>
                   </Command.Item>
                   <Command.Item
                     value="github git profile james"
@@ -306,7 +260,7 @@ export default function CommandPalette() {
                   >
                     <FiGithub className="h-4 w-4" />
                     <span className="flex-1">github</span>
-                    <Shortcut>4</Shortcut>
+                    <Shortcut>2</Shortcut>
                   </Command.Item>
                   <Command.Item
                     value="x twitter profile socials james"
@@ -319,7 +273,7 @@ export default function CommandPalette() {
                   >
                     <FaXTwitter className="h-4 w-4" />
                     <span className="flex-1">x</span>
-                    <Shortcut>5</Shortcut>
+                    <Shortcut>3</Shortcut>
                   </Command.Item>
                   <Command.Item
                     value="ig instagram profile socials james"
@@ -335,7 +289,7 @@ export default function CommandPalette() {
                   >
                     <IoLogoInstagram className="h-4 w-4" />
                     <span className="flex-1">instagram</span>
-                    <Shortcut>6</Shortcut>
+                    <Shortcut>4</Shortcut>
                   </Command.Item>
                   <Command.Item
                     value="website repository github jame repo"
@@ -351,7 +305,7 @@ export default function CommandPalette() {
                   >
                     <GoRepo className="h-4 w-4" />
                     <span className="flex-1">website repository</span>
-                    <Shortcut>7</Shortcut>
+                    <Shortcut>5</Shortcut>
                   </Command.Item>
                 </Command.Group>
               </Command.List>

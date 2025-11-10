@@ -17,8 +17,6 @@
     "@types/mdx": "^2.0.13",
     "cmdk": "^1.1.1",
     "lucide-react": "^0.488.0",
-    "mongodb": "^6.15.0",
-    "mongoose": "^8.13.2",
     "next": "15.2.5",
     "next-mdx-remote": "^5.0.0",
     "postcss": "^8.5.3",

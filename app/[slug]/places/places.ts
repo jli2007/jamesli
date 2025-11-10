@@ -78,9 +78,9 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1742758685212!6m8!1m7!1sSFZ5N2424LCoxj8hXfBcuw!2m2!1d-7.444186447597207!2d110.4061534971233!3f257.4570876447927!4f-15.21999632734854!5f0.7820865974627469",
   },
   {
-    title: "atlantic region - canada",
+    title: "atlantic - canada",
     flag: "🇨🇦",
-    description: "'channel-port aux basques' — newfoundland",
+    description: "newfoundland — 'channel-port aux basques'",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darkturquoise", text: "● north america" },
@@ -92,7 +92,7 @@ export const places: PlacesType[] = [
     title: "lombardy region - italy",
     flag: "🇮🇹",
     description:
-      "the vineyards, streams, mountains — rural italy is surreal",
+      "the vineyards, streams, mountains — italian countryside",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darksalmon", text: "● europe" },
@@ -115,7 +115,7 @@ export const places: PlacesType[] = [
     title: "mendoza province - argentina",
     flag: "🇦🇷",
     description:
-      "under the andes — the architecture and surroundings feels evocative of rural russia. how long will these remote villages last?",
+      "under the andes — how long will these remote villages last?",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "orchid", text: "● south america" },
@@ -136,7 +136,7 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1742948421781!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ2U2b2ZqM0FF!2m2!1d30.76987721304302!2d31.68503029551924!3f339.6000588152038!4f6.425231924943461!5f0.7820865974627469",
   },
   {
-    title: "landscape - oman",
+    title: "countryside - oman",
     flag: "🇴🇲",
     description:
       "feels like we are on an island like madeira or las palmas — but no, this is oman",
@@ -184,7 +184,7 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1744658192221!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ3FuOGlsWlE.!2m2!1d49.66488812384653!2d120.0746440619686!3f95.52286779856084!4f-10.129033421545387!5f0.7820865974627469",
   },
   {
-    title: "dunes meet jungle - brazil",
+    title: "dunes & jungle - brazil",
     flag: "🇧🇷",
     description:
       "a clash between the grand atlantic, sand dunes, and the amazon rainforest — lençóis maranhenses national park",
@@ -199,7 +199,7 @@ export const places: PlacesType[] = [
     title: "chiang mai - thailand",
     flag: "🇹🇭",
     description:
-      "historic thailand district — this coverage specifically makes life look authentic",
+      "historic thailand district — northern thailand",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "red", text: "● asia" },
@@ -211,7 +211,7 @@ export const places: PlacesType[] = [
     title: "zanzibar - tanzania",
     flag: "🇹🇿",
     description:
-      "hotel in zanzibar — an island off the coast of mainland tanzania",
+      "hotel in zanzibar — island off the coast of mainland tanzania",
     tags: [
       { color: "mediumvioletred", text: "● photosphere" },
       { color: "coral", text: "● africa" },
@@ -223,7 +223,7 @@ export const places: PlacesType[] = [
     title: "nordland - norway",
     flag: "🇳🇴",
     description:
-      "a lonely house by the shore—located in the lofoten archipelago in northern norway",
+      "a lonely house by the shore — lofoten archipelago in northern norway",
     tags: [
       { color: "dodgerblue", text: "● streetview" },
       { color: "darksalmon", text: "● europe" },
@@ -237,7 +237,7 @@ export const places: PlacesType[] = [
     description: "viewpoint — oceania",
     tags: [
       { color: "mediumvioletred", text: "● photosphere" },
-      { color: "paleturquoise", text: "● oceania" },
+      { color: "powderblue", text: "● oceania" },
     ],
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1745977273706!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzRtc21CNGdF!2m2!1d-16.50185001792146!2d-151.7325809894041!3f323.41637738164417!4f0.2859992518925196!5f0.4000000000000002",

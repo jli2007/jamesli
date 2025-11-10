@@ -77,7 +77,7 @@ export default function SlugPage({
       </button>
       <div className="w-full flex items-center justify-center">
         <article
-          className="prose mt-6 text-lighterBeige w-[75%] text-sm"
+          className="prose mt-6 text-lighterBeige lg:w-[75%] w-[90%] md:text-sm text-xs"
           style={{
             ["--tw-prose-body" as any]: "rgb(var(--color-lighterBeige))",
             ["--tw-prose-headings" as any]: "rgb(var(--color-lighterBeige))",
@@ -89,6 +89,7 @@ export default function SlugPage({
             <Post />
           </MDXProvider>
           <div ref={bottomRef} />
+          <hr className="m-0 p-0 mb-[5px] opacity-20" />
         </article>
       </div>
     </div>

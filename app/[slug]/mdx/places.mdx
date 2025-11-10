@@ -1,30 +1,31 @@
 import { places } from "../places/places.ts";
 import InteractivePlace from "../places/PlaceRender.tsx";
-import SortedPlaces from "../places/SortedPlaces.tsx";
 
-<h3> "the world around us" </h3>
+<div className="flex flex-col">
+  <h3> the world around us </h3>
 
-<h4 className="description-places w-[90%]">
-  i used to play geoguessr hours on end every day during covid & i
-  developed a fascination with the world around us. i hope to add cool places / locations that makes you ask yourself:
-  
-  <span className="text-lightBeige">"how would life look if i spawned here?"</span>
-</h4>
+  <h4 className="description-places w-[90%]">
+    i used to play geoguessr hours on end every day during covid & i developed a
+    fascination with the world around us. i hope to add cool places / locations
+    that makes you ask yourself:
+    <span className="text-lightBeige">
+      " how would life look if i spawned here? "
+    </span>
+  </h4>
 
-#
+  <br/>
 
-<ScrollButtonTop>⬇ scroll to bottom</ScrollButtonTop>
+  <ScrollButtonTop>⬇ scroll to bottom</ScrollButtonTop>
 
-<SortedPlaces />
-{/* <div>
-  {places.map((place, index) => (
-    <InteractivePlace key={index} place={place} />
-  ))}
-</div> */}
+  <div>
+    {places.map((place, index) => (
+      <InteractivePlace key={index} place={place} />
+    ))}
+  </div>
 
-<ScrollButtonBottom>⬆ scroll to top</ScrollButtonBottom>
-<footer className="pt-4 border-t border-white/20 text-xs text-white/70 flex flex-row items-center">
-  <span className="shiny-green-dot inline-block mr-2" />
-  Last updated: 9/26/2025
-</footer>
-<div className="mt-[10px]" />
+  <ScrollButtonBottom>⬆ scroll to top</ScrollButtonBottom>
+  <footer className="pt-4 border-white/20 text-xs text-white/70 flex flex-row items-center">
+    <span className="shiny-green-dot inline-block mr-2" />
+    Last updated: 9/26/2025
+  </footer>
+</div>

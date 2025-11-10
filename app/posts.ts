@@ -20,7 +20,7 @@ export const posts: Post[] = [
   },
   {
     slug: "sf",
-    title: "going to sf between 2 midterms",
+    title: "✈️ visiting sf between 2 midterms",
     date: "oct 2025",
     pinned: false,
   },
@@ -45,13 +45,13 @@ export const posts: Post[] = [
   {
     slug: "futbol",
     title: "favourite jugadors ⚽️",
-    date: "march 2025",
+    date: "mar 2025",
     pinned: false,
   },
   {
     slug: "ambition",
     title: "an inherited ambition",
-    date: "march 2025",
+    date: "mar 2025",
     pinned: false,
   },
 ];

@@ -8,13 +8,15 @@ import Image from "next/image";
 
 export default function Sidebar() {
   return (
-    <div className="projects relative max-w-screen lg:h-auto h-120 py-3 px-7 m-1 mb-1 rounded-lg text-lightBeige">
+    <div className="relative max-w-screen h-auto py-3 px-7 m-1 mb-1 rounded-lg text-lightBeige overflow-x-hidden">
       {[
         { title: "projects", items: showcaseProjects, type: "project" },
         { title: "notes", items: posts, type: "note" },
       ].map((section) => (
         <div key={section.title} className="relative w-full h-full mb-8">
-          <h1 className="italic mb-5">{section.title}</h1>
+          <h1 className="italic mb-5 lg:text-base md:text-2xl text-sm ">
+            {section.title}
+          </h1>
           {section.type === "project" && (
             <div className="flex flex-col gap-10">
               {section.items.map((project: any, index: number) => (
@@ -43,7 +45,7 @@ export default function Sidebar() {
                   }}
                 >
                   <div
-                    className="glow-target relative w-full h-60 rounded-xl overflow-hidden transition-all duration-700"
+                    className="glow-target relative w-full lg:h-60 md:h-100 h-50 rounded-xl overflow-hidden transition-all duration-700"
                     style={{
                       filter: "drop-shadow(0 0 0 transparent)",
                     }}
@@ -68,8 +70,12 @@ export default function Sidebar() {
                     )}
                   </div>
                   <div className="absolute bottom-0 left-0 w-full p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                    <h1 className="text-lg font-semibold">{project.name}</h1>
-                    <p className="text-sm text-lighterBeige">{project.desc}</p>
+                    <h1 className="lg:text-lg md:text-xl text-md font-semibold">
+                      {project.name}
+                    </h1>
+                    <p className="lg:text-sm md:text-md text-sm text-lighterBeige">
+                      {project.desc}
+                    </p>
                   </div>
                 </Link>
               ))}
@@ -81,12 +87,12 @@ export default function Sidebar() {
               {section.items.map((post: any) => (
                 <div
                   key={post.slug}
-                  className="grid grid-cols-[100px_1fr] gap-1 text-md"
+                  className="grid grid-cols-[100px_1fr] gap-1 lg:text-base md:text-xl text-sm"
                 >
                   <span>{post.date}</span>
                   <LinkSlider
                     href={`/${post.slug}`}
-                    className="relative transition delay-150 duration-200 ease-in-out rounded-sm inline-block w-fit pr-1" 
+                    className="relative transition delay-150 duration-200 ease-in-out rounded-sm inline-block w-fit pr-1 whitespace-nowrap"
                     mode="light"
                     isNextLink
                   >

@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import PlaceLikes from "./Likes";
 
 export default function RenderPlace({ place }: { place: any }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,22 +12,24 @@ export default function RenderPlace({ place }: { place: any }) {
       },
       {
         rootMargin: "1000px", //controls how close the screen scroll is for the iframe to start loading
-        threshold: 0.05,  //controls how much the iframe has to be visible for the callback to trigger
+        threshold: 0.05, //controls how much the iframe has to be visible for the callback to trigger
       }
     );
-  
+
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col allContainer">
-      <div className="flex justify-between items-baseline pb-[10px] topContainer">
-        <div className="flex items-center m-0 gap-[10px]">
-          <h3 className="title !m-0 leading-none">{place.title}</h3>
-          <span className="text-[40px] !m-0 leading-none">{place.flag}</span>
+    <div ref={ref} className="flex flex-col">
+      <div className="flex justify-between md:items-baseline items-center pb-[10px] md:flex-row flex-col">
+        <div className="flex items-center m-0 gap-[10px] lg:mb-0 mb-2">
+          <h3 className="md:mb-0 mb-10 !m-0 leading-none">{place.title}</h3>
+          <span className="lg:text-[35px] text-[30px] !m-0 leading-none">
+            {place.flag}
+          </span>
         </div>
-        <div className="flex items-center gap-[10px] tagContainer m-0">
+        <div className="flex items-center gap-[10px] tagContainer m-0 lg:mb-0 mb-1">
           {place.tags.map((tag: any, i: number) => {
             const shadowMap: Record<string, string> = {
               mediumseagreen: "rgba(60,179,113,0.7)",
@@ -42,13 +43,13 @@ export default function RenderPlace({ place }: { place: any }) {
               midnightblue: "rgba(25,25,112,0.7)",
               mediumvioletred: "rgba(199,21,133,0.7)",
               coral: "rgba(255,127,80,0.7)",
-              paleturquoise: "rgba(70,160,160,0.8)",
+              powderblue: "rgba(70,160,160,0.8)"
             };
             const shadowColor = shadowMap[tag.color] || "rgba(0,0,0,0.3)";
             return (
               <div
                 key={i}
-                className="text-white px-[15px] py-[2px] rounded-[15px] text-[12px]"
+                className="text-white md:px-[15px] py-[2px] px-[10px] rounded-[15px] text-[12px]"
                 style={{
                   backgroundColor: tag.color,
                   boxShadow: `0px 4px 8px ${shadowColor}`,
@@ -58,13 +59,12 @@ export default function RenderPlace({ place }: { place: any }) {
               </div>
             );
           })}
-          <PlaceLikes slug={place.title} />
         </div>
       </div>
       {visible ? (
         <iframe
           src={place.iframeSrc}
-          className="h-[50vh] border-0 iframe"
+          className="h-[50vh] border-0"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
