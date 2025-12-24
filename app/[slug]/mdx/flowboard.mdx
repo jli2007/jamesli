@@ -1,0 +1,628 @@
+import { FiExternalLink } from "react-icons/fi";
+import { FaImage } from "react-icons/fa6";
+import { LuBanana, LuSparkles } from "react-icons/lu";
+
+<div className='w-full text-center flowboard-page'>
+    <span className='block text-lightBeige/95 italic text-2xl md:text-3xl'>flowboard</span>
+    <span className='block text-lighterBeige text-base mt-2'>project, 100+ github stars</span>
+    <div className="w-[95vw] relative left-1/2 -ml-[47.5vw] md:w-[105%] md:left-0 md:-ml-[2.5%] md:static">
+        <img
+            src="../../../projects/flowboard/blur.png"
+            alt="flowboard-main"
+            className="w-full h-auto object-cover rounded-lg !my-0 !py-0"
+            style={{
+                WebkitMaskImage:
+                "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
+            }}
+        />
+    </div>
+    
+    <div className='md:w-[90%] w-[100%] mx-auto'>
+        <div className='flex justify-center mb-5 text-base'>
+            <a href="https://www.flowboard.tech" target="_blank" rel="noopener noreferrer" className='a flex items-center gap-1 decoration-1 underline-offset-4'>
+                <span>project</span>
+                <FiExternalLink size={16} />
+            </a>
+        </div>
+
+        <div className='flex flex-col text-left'>
+            <span className='text-lightBeige/95 text-xl'>overview</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                flowboard is <span className='text-lightBeige/95 font-normal'>lovable for animators</span>. we hit <span className='text-lightBeige/95 font-normal italic'>100k+ views, 100+ github stars, ~200 users, and 1k animations generated</span>. instead of spending hours drawing frames from scratch, creators can now focus more on output rather than the tedious work.
+            </span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-8 text-left mt-6">
+            <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>timeline</span>
+                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>2 days, nov 2025</span>
+                </div>
+
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>team</span>
+                    <div className='text-lighterBeige flex flex-col gap-1 font-inter items-start text-[1rem]'>
+                        <a href="https://austinjian.ca/" target="_blank" className="a">austin jian</a>
+                        <a href="https://www.danielpu.dev/" target="_blank" className="a">daniel pu</a>
+                        <a href="https://www.linkedin.com/in/ferdinand-simmons-zhang-39ba62297/" target="_blank" className="a">ferdinand zhang</a>
+                    </div>
+                </div>
+
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>award</span>
+                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>second overall @ hackwestern 12</span>
+                </div>
+            </div>
+
+            <div className='flex flex-col gap-1'>
+                <span className='text-lightBeige/95 text-lg'>tools</span>
+                <div className='flex flex-col gap-1 font-inter font-light text-[1rem]'>
+                    <span>react</span>
+                    <span>typescript</span>
+                    <span>tldraw</span>
+                    <span>vertex ai platform</span>
+                    <span>blacksheep</span>
+                    <span>python</span>
+                    <span>docker</span>
+                    <span>supabase</span>
+                    <span>autumn</span>
+                </div>
+            </div>
+        </div>
+
+        <div className='flex flex-col text-left mt-15'>
+            <span className='text-lightBeige/95 text-xl'>background</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                it has been a while since i attended a hackathon (surviving 1a in uwaterloo). flowboard was inspired by <a href="https://tryvibedraw.com/" target="_blank" className="a">vibedraw</a> and <a href="https://x.com/henrydaubrez/status/1991914628751012220" target="_blank" className="a">this tweet</a>, which we took the intersection of.
+
+                we refined the idea into a <span className='text-lightBeige/95 font-normal'>frame-by-frame video generation tool for animators</span>. we had to pivot from long form video generation because veo is crazy expensive.
+
+                <img 
+                    src="../../../projects/flowboard/frames.png" 
+                    alt="flowboard-frames" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>create storyboard trees</span>
+
+                in this way, we could generate one 5-8s clip at a time and then write <span className='text-lightBeige/95 font-normal'>global context</span> to make clips relate to one another.
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>architecture</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                flowboard consists of python serverless infra, dockerized and hosted on gcp, and a react interface hosted on vercel.
+                <img 
+                    src="../../../projects/flowboard/architecture.png" 
+                    alt="flowboard-architecture" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+
+                client-side, flowboard uses the <a href="https://tldraw.dev/" target="_blank" className="a">tldraw sdk</a> for the canvas. and indexeddb as a low level client-side store for global context and temporary storage. 
+
+                on the backend, google cloud run deploys and runs a dockerized <a href="https://www.neoteroi.dev/blacksheep/" target="_blank" className="a">blacksheep asgi</a> service. redis is used for caching while vertex ai handles veo generation.
+
+                google cloud storage facilitates file storage via <a href="https://docs.cloud.google.com/storage/docs/buckets" target="_blank" className="a">buckets</a>.
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>frontend interface</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                each flowboard project begins with one 16:9 frame. this is the starting frame where users can upload images and annotate with the built in tldraw tools, then generate animations.
+
+                <div className="!my-1">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full">
+                        <source src="../../../projects/flowboard/redcar.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                on an infinite canvas, users can design full animation storyboards one frame at a time.
+            </span>
+
+            <span id="initial-ui-pitfalls" className='text-lightBeige/95 text-lg'>initial ui pitfalls</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                although flowboard is basically a 'tldraw wrapper', there are many small nuances that made the initial development incredibly difficult.
+
+                the nature of this concept is genuinely more intricate than it seems. sure, parents have children, which have more and more children, like a directed graph. 
+                
+                <span className='text-lightBeige/95 font-thin italic'>but what if the user wants to change previous frames? and how could we get each sequential frames to be coherent when they are generated in seperate api calls?</span>
+
+                our first main issue was with <span className='text-lightBeige/95 font-normal'>bounds</span>. tldraw shapes were not the nicest thing to work with, and we spent a long time getting the initial 16:9 frame to bind images and native user edits onto the frame. 
+
+                <img 
+                    src="../../../projects/flowboard/16:9.png" 
+                    alt="flowboard-16:9" 
+                    className="w-full h-auto object-cover rounded !mb-1"
+                />
+
+                to fix the bounds problem, we created a <span className='text-lightBeige/95 font-normal'>parent-child relationship</span>.
+
+                <span className="route-background text-[0.9rem]">frontend/src/components/canvas/FrameActionMenu.tsx</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`// creates a child shape
+const shape: TLShapePartial = {
+    id: imageShapeId,
+    type: "image",
+    x,
+    y,
+    parentId: frame.id,  // this sets the parent
+    props: {
+        assetId,
+        w: scaledW,
+        h: scaledH,
+    },
+};
+
+// deleting all children for a parent
+const childIds = editor.getSortedChildIdsForParent(shapeId);
+if (childIds.length > 0) {
+    editor.deleteShapes(childIds);
+}
+`}</code>
+                    </pre>
+                </div>
+
+                the key idea was that: <span className='text-lightBeige/95 font-normal'>tldraw shapes needed explicit parent-child relationships via parentId rather than positioning shapes "inside" the frame's bounds</span>.
+
+                child shapes use relative coordinates to their parent. when you place an image at (x, y) with <span className="route-background text-[0.9rem]">parentId: frame.id</span>, those coordinates are relative to the frame's top-left corner, not the canvas.
+
+                additionally, when frames move, children move with it automatically, and we get/delete all children with <span className="route-background text-[0.9rem]">getSortedChildIdsForParent()</span> without searching the entire canvas.
+
+                <span className='text-lightBeige/95 font-normal'>our second issue </span> was positioning the arrows correctly.
+
+                 <div className="!my-1">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full">
+                        <source src="../../../projects/flowboard/arrow.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                our ui involves arrows, which indicate order of frames.
+
+                we initially tried to manually placed the arrows, but we eventually ran into critical issues: the ui would break when frames were moved around, and glitch when overlapping.
+
+                we fixed this with <span className='text-lightBeige/95 font-normal'>tldraw's binding system</span>:
+
+                <span className="route-background text-[0.9rem]">frontend/src/components/canvas/ArrowActionMenu.tsx</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`const info = useValue(
+    "arrow info",
+    () => {
+        const arrows = editor.getCurrentPageShapes().
+            filter((s) => s.type === "arrow");
+        
+        return arrows.map((shape) => {
+        // Get tldraw's computed bounds (not manual calculation)
+        const bounds = editor.getShapePageBounds(shape.id);
+        
+        // Position at arrow's center
+        const center = {
+            x: bounds.x + bounds.w / 2,
+            y: bounds.y + bounds.h / 2,
+        };
+
+        return { id: shape.id, x: center.x, y: center.y /* ... */ };
+        });
+    },
+    [editor]
+);
+`}</code>
+                    </pre>
+                </div>
+
+                instead of manually placing the arrow, we use <span className="route-background text-[0.9rem]">editor.getShapePageBounds(shapeId)</span> which returns tldraw's computed bounds for the arrow based on its bindings.
+
+                when frames move → bindings update arrows → bounds change → tldraw's <span className="route-background text-[0.9rem]">useValue</span> hook re-computes → ui repositions automatically.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>frame toolbar</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                these are additional action for the user on top of the tldraw native tooling.
+
+                <img 
+                    src="../../../projects/flowboard/toolbar.png" 
+                    alt="flowboard-toolbar" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+
+                the three most crucial tools include <span className='text-lightBeige/95 font-normal'>image upload</span>, <span className='text-lightBeige/95 font-normal'>image enhancement</span>, and <span className='text-lightBeige/95 font-normal'>generate video</span>.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center'> <FaImage size={24} /> uploading an image</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                uploads an input file directly into the frame. it scales the image to fit within frame while maintaining the aspect ratio.
+                
+                <span className="route-background text-[0.9rem]">frontend/src/components/canvas/FrameActionMenu.tsx</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`const imageShapeId = createShapeId();
+const shape: TLShapePartial = {
+    id: imageShapeId,
+    type: "image",
+    x,
+    y,
+    parentId: frame.id,
+    props: {
+    assetId,
+    w: scaledW,
+    h: scaledH,
+    },
+};
+
+editor.createShapes([shape]);
+`}</code>
+                    </pre>
+                </div>
+
+                it then creates a shape and sets <span className="route-background text-[0.9rem]">parentId: frame.id</span>, like described in <a href="#initial-ui-pitfalls" className="a">initial ui pitfalls</a>.
+            </span>
+            
+            <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center'> <LuBanana size={24} /> enhancing raw sketches</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                this feature uses <a href="https://gemini.google/overview/image-generation/" target="_blank" className="a">nanobanana</a> via <span className='text-lightBeige/95 font-normal'>vertex ai platform</span> to make sketches better.
+
+                <div className="!mb-0">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full">
+                        <source src="../../../projects/flowboard/enhance.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                i'm terrible at drawing so i instantly upgrade my drawing with one click.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center'> <LuSparkles size={24} /> generating the animation</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                this button sends the whole frame, with all the children shapes added through image upload and tldraw tools, as well as a text prompt, to <a href="https://gemini.google/overview/video-generation/" target="_blank" className="a">veo 3</a>.
+
+                <span className="route-background text-[0.9rem]">frontend/src/components/canvas/FrameActionMenu.tsx</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`// Capture frame as image
+  const { blob } = await editor.toImage([shapeId], {
+    format: "png",
+    scale: 1,
+    background: true,
+    padding: 0,
+  });
+
+  // Send to Veo 3 API
+  const formData = new FormData();
+  formData.append("custom_prompt", promptText);
+  formData.append("global_context", JSON.stringify(context?.sceneState ?? {}));
+  formData.append("files", blob);
+
+  const response = await apiFetch(\`\${backend_url}/api/jobs/video\`, {
+    method: "POST",
+    body: formData,
+  });
+
+  const { job_id } = await response.json();
+`}</code>
+                    </pre>
+                </div>
+
+                <img 
+                    src="../../../projects/flowboard/frames2.png" 
+                    alt="flowboard-frames" 
+                    className="w-full h-auto object-cover rounded !my-1"
+                />
+                the post request creates a job in the backend to generate the animation. 
+                
+                later in the process, we make a new frame using the final shot of the video and an arrow component that connects them. this behavior occurs infinitly, which is the fundamental concept of flowboard.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>global context</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                for animations to be coherent together, we used the <a href="https://www.npmjs.com/package/idb-keyval" target="_blank" className="a">idb-keyval npm package</a> for global context.
+
+                we manage context though a <span className='text-lightBeige/95 font-normal'>custom hook</span>: <span className="route-background text-[0.9rem]">frontend/src/hooks/useGlobalContext.ts</span>, which persists clips and scene context in react state, which gets passed into successive animation calls.
+
+                <img 
+                    src="../../../projects/flowboard/context.png" 
+                    alt="flowboard-context" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+
+                <span className='text-lightBeige/95 font-thin italic'>after each animation call, we update this state to reflect the latest animation state</span>.
+                
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>hackathon mvp</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                our mvp after 36 hours was quite refined. we had all of our core features functional, which meant that it <span className='text-lightBeige/95 font-thin italic'>genuinely worked</span> with zero hardcoding or fugazi gimmicks.
+
+                although there were a couple of missing features, such as auth, and a couple of odd bugs, which we set to fix after the hackathon. more on this after i introduce the backend.
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>serverless backend</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                big props to <a href="https://www.danielpu.dev/" target="_blank" className="a">daniel</a> for carrying the backend.
+
+                the backend follows a service-based architecture:
+
+                <span className="route-background text-[0.9rem]">backend/controllers/</span>
+                http route handlers
+
+                <span className="route-background text-[0.9rem]">backend/models/</span>
+                dataclasses
+
+                <span className="route-background text-[0.9rem]">backend/scripts/</span>
+                sql db scripts
+
+                <span className="route-background text-[0.9rem]">backend/services/</span>
+                logic layer
+                
+                <span className="route-background text-[0.9rem]">backend/utils/</span>
+                helper utils
+                
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>video generation</span>
+                <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                    video generation follows an <span className='text-lightBeige/95 font-normal'>async, non-blocking architecture</span> where users get instant job ids and poll for completion.
+
+                    when a user clicks generate, the frontend captures the frame as a png and sends it with the prompt to the backend:
+
+                    <span className="route-background text-[0.9rem]">backend/controllers/jobs.py</span>
+                    <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                        <pre className='line-numbers'>
+                            <code className='language-python'>{`@post("/video")
+async def add_video_job(self, request: Request):
+    files = await request.files()
+    image_file = files[0]
+    
+    # Create job, instant return
+    job_id = await self.job_service.create_video_job(data)
+    return json({"job_id": job_id})
+`}</code>
+                        </pre>
+                    </div>
+
+                the job service creates a unique job id and <span className='text-lightBeige/95 font-normal'>fires a background task</span> without blocking the response.
+
+                in the background task, we <span className='text-lightBeige/95 font-normal'>parallelize image processing</span> using <span className="route-background text-[0.9rem]">asyncio.gather()</span> to analyze annotations and remove text simultaneously:
+
+                <span className="route-background text-[0.9rem]">backend/services/job_service.py</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-python'>{`async def _process_video_job(self, job_id: str, request: VideoJobRequest):
+    # PARALLEL: Analyze annotations + Remove text
+    tasks = [
+        self.vertex_service.analyze_image_content(
+            prompt="Describe animation annotations...",
+            image_data=request.starting_image
+        ),
+        self.vertex_service.generate_image_content(
+            prompt="Remove all text, captions, annotations...",
+            image=request.starting_image
+        )
+    ]
+    
+    # Wait for both to complete
+    results = await asyncio.gather(*tasks)
+    annotation_description = results[0]
+    starting_frame = results[1]  # Cleaned image
+    
+    # Generate video with Veo 3 ...
+`}</code>
+                    </pre>
+                </div>
+
+                the vertex service calls the <span className='text-lightBeige/95 font-normal'>veo 3.1 model</span> and saves videos directly to google cloud storage <a href="https://docs.cloud.google.com/storage/docs/buckets" target="_blank" className="a">buckets</a>:
+
+                meanwhile, the frontend <span className='text-lightBeige/95 font-normal'>polls for status</span> by repeatedly calling the status endpoint:
+
+                <span className="route-background text-[0.9rem]">backend/controllers/jobs.py</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-python'>{`@get("/video/{job_id}")
+async def get_video_job_status(self, job_id: str):
+    jobStatus = await self.job_service.get_video_job_status(job_id)
+    
+    if jobStatus.status == "waiting":
+        return json({"status": "waiting", ...}, status=202)
+    
+    if jobStatus.status == "done":
+        return json({
+            "status": "done", 
+            "video_url": jobStatus.video_url,
+            ...
+        })
+`}</code>
+                    </pre>
+                </div>
+
+                <img 
+                    src="../../../projects/flowboard/vidgen.png" 
+                    alt="flowboard-vid-gen-architecture" 
+                    className="w-full h-auto object-cover rounded !my-3"
+                />
+
+                upon success, the status check queries google's operation and converts the storage url that was uploaded by the job to a public https link.
+
+                now with a public video link, <span className='text-lightBeige/95 font-normal'>we could display it on the frontend</span>.
+
+                <span className='text-lightBeige/95 font-thin italic'>this architecture optimizes short video generation: parallel processing and redis caching keep the system efficient</span>.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>redis cloud</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                redis acts as a <span className='text-lightBeige/95 font-normal'>temporary job queue</span> for tracking video generation progress. since veo 3 takes 20-40 seconds to generate videos, we needed fast, ephemeral storage for job state.
+
+                redis stores three types of job states with <span className='text-lightBeige/95 font-normal'>5-minute <a href="https://en.wikipedia.org/wiki/Time_to_live" target="_blank" className="a">ttls</a></span> for automatic cleanup:
+
+                <span className="route-background text-[0.9rem]">backend/services/job_service.py</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-python'>{`# Pending: User just submitted, processing hasn't started
+self.redis_client.setex(f"job:{job_id}:pending", 300, self._serialize(pending_job))
+
+# Active: Processing with Google, stores operation name for polling
+self.redis_client.setex(f"job:{job_id}", 300, self._serialize(job))
+
+# Error: Failed during generation
+self.redis_client.setex(f"job:{job_id}:error", 300, self._serialize(error_job))
+`}</code>
+                    </pre>
+                </div>
+
+                job data is <span className='text-lightBeige/95 font-normal'>compressed with <a href="https://en.wikipedia.org/wiki/LZMA" target="_blank" className="a">lzma</a></span> before storing to save memory, especially important for operation metadata:
+
+                <span className="route-background text-[0.9rem]">backend/services/job_service.py</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-python'>{`def _serialize(self, data: dict) -> bytes:
+    """Serialize + compress data for Redis storage"""
+    return lzma.compress(pickle.dumps(data))
+
+def _deserialize(self, data: bytes) -> Optional[dict]:
+    """Decompress bytes from Redis storage"""
+    if not data:
+        return None
+    return pickle.loads(lzma.decompress(data))
+`}</code>
+                    </pre>
+                </div>
+
+                when status is polled, redis provides sub-millisecond lookups. once the video is done, the job is automatically deleted from redis:
+
+                <span className="route-background text-[0.9rem]">backend/services/job_service.py</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-python'>{`if result.status == "done":
+    self.redis_client.delete(f"job:{job_id}")  # Clean from redis
+`}</code>
+                    </pre>
+                </div>
+
+                <span className='text-lightBeige/95 font-thin italic'>redis was chosen over a traditional database because job data is temporary, needs sub-millisecond reads for frequent polling, and auto-expires without manual cleanup</span>. it also integrates well with supabase.
+            </span>
+            <span className='text-lightBeige/95 text-lg'>hosting the backend</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                i'm leaving it at that, but there are many other aspects of the backend that are <a href="https://github.com/austinjiann/FlowBoard/tree/main/backend" target="_blank" className="a"> worth checking out</a>.
+
+                we dockerized the backend and hosted it on google cloud run. we chose to stick with the google platform because the rest of our stack lives on gcp + the generous free trial 🤫
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>shipping the project</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                we spent the next week refining the project with the idea of shipping it. 
+
+                we added auth, integrated a stripe based payment system with <a href="https://useautumn.com/" target="_blank" className="a">autumn</a>, and created a video merging feature that allows users to download storyboards from start to finish.
+
+                the ui, concept, and branding were also refined.
+
+                <img 
+                    src="../../../projects/flowboard/commits.png" 
+                    alt="flowboard-commits" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>goated team</span>
+
+                instead of studying for our algebra quiz, we launched a week after hackwestern. austin's <a href="https://www.linkedin.com/feed/update/urn:li:activity:7401357315301699584/" target="_blank" className="a">linkedin post</a> did well: ~100k impressions and 1.5k+ likes. our <a href="https://github.com/austinjiann/FlowBoard" target="_blank" className="a">github repo</a> also took off, this is my first project with more than 100 stars!
+
+                for a different perspective, read <a href="https://austinjian.ca/projects/flowboard" target="_blank" className="a">austin's case study</a>.
+
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>animation gallery</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                here are some cool animations i made with flowboard:
+
+                <div className="!my-1">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full not-prose">
+                        <source src="../../../projects/flowboard/ex1.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>"random entity destroying everything"</span>
+                <div className="!mb-1 !mt-5">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full not-prose">
+                        <source src="../../../projects/flowboard/ex5.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>"no entities spawn and life goes on"</span>
+                <div className="!mb-1 !mt-5">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full not-prose">
+                        <source src="../../../projects/flowboard/ex2.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>"arctic winds in san francisco"</span>
+                <div className="!mb-1 !mt-5">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full not-prose">
+                        <source src="../../../projects/flowboard/ex3.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>"washington ww2 in art style"</span>
+                <div className="!mb-1 !mt-5">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full not-prose">
+                        <source src="../../../projects/flowboard/ex4.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>"grizzly bear enjoying aurora borealis"</span>
+
+                consider giving it a try, free trial on us.
+            </span>
+        </div>
+
+        <footer className="pt-4 border-t border-white/20 text-sm text-white/70 flex flex-row items-center">
+            <span className="shiny-green-dot inline-block mr-2" />
+            Last updated: 12/20/2025
+        </footer>
+    </div>  
+</div>

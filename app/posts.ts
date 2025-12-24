@@ -19,6 +19,18 @@ export const posts: Post[] = [
     pinned: true,
   },
   {
+    slug: "music",
+    title: "tuff music",
+    date: "ongoing",
+    pinned: true,
+  },
+    {
+    slug: "forest",
+    title: "the forest ⽊",
+    date: "dec 2025",
+    pinned: false,
+  },
+  {
     slug: "sf",
     title: "✈️ visiting sf between 2 midterms",
     date: "oct 2025",
@@ -32,7 +44,7 @@ export const posts: Post[] = [
   },
   {
     slug: "aifs",
-    title: "*collection of uw aifs*",
+    title: "uw aifs",
     date: "aug 2025",
     pinned: false,
   },
@@ -45,12 +57,6 @@ export const posts: Post[] = [
   {
     slug: "futbol",
     title: "favourite jugadors ⚽️",
-    date: "mar 2025",
-    pinned: false,
-  },
-  {
-    slug: "ambition",
-    title: "an inherited ambition",
     date: "mar 2025",
     pinned: false,
   },

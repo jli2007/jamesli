@@ -1,0 +1,431 @@
+import { FiExternalLink } from "react-icons/fi";
+import { FaCamera } from "react-icons/fa";
+import { CiLocationArrow1 } from "react-icons/ci";
+
+<div className='w-full text-center phuture-page'>
+    <span className='block text-lightBeige/95 italic text-2xl md:text-3xl'>phuture</span>
+    <span className='block text-lighterBeige text-base mt-2'>project, first build with traction</span>
+    <div className="w-[95vw] relative left-1/2 -ml-[47.5vw] md:w-[105%] md:left-0 md:-ml-[2.5%] md:static">
+        <img
+            src="../../../projects/phuture/blur.png"
+            alt="phuture-main"
+            className="w-full h-auto object-cover rounded-lg !my-0 !py-0"
+            style={{
+                WebkitMaskImage:
+                "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
+            }}
+        />
+    </div>
+    
+    <div className='md:w-[90%] w-[100%] mx-auto'>
+        <div className='flex justify-center mb-5 text-base'>
+            <a href="https://www.phutureai.com/" target="_blank" rel="noopener noreferrer" className='a flex items-center gap-1 decoration-1 underline-offset-4'>
+                <span>project</span>
+                <FiExternalLink size={16} />
+            </a>
+        </div>
+
+        <div className='flex flex-col text-left'>
+            <span className='text-lightBeige/95 text-xl'>overview</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                phuture is an nature exploration app with <span className='text-lightBeige/95 font-normal italic'>30 alpha testers</span> lined up for early-stage testing. inspired by the pokédex in pokémon and the mechanics of pokémon-go, the underlying concept of phuture revolves around <span className='text-lightBeige/95 font-normal'>collecting every single plant & animal species in the world</span> into a personal database.
+            </span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-8 text-left mt-6">
+            <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>timeline</span>
+                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>[incomplete]</span>
+                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>3 months, jun-aug 2025</span>
+                </div>
+
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>team</span>
+                    <div className='text-lighterBeige flex flex-col gap-1 font-inter items-start text-[1rem]'>
+                        <a href="https://www.linkedin.com/in/andy--duong/" target="_blank" className="a">andy duong</a>
+                    </div>
+                </div>
+            </div>
+
+            <div className='flex flex-col gap-1'>
+                <span className='text-lightBeige/95 text-lg'>tools</span>
+                <div className='flex flex-col gap-1 font-inter font-light text-[1rem]'>
+                    <span>unity</span>
+                    <span>c#</span>
+                    <span>node.js</span>
+                    <span>express</span>
+                    <span>docker</span>
+                    <span>redis</span>
+                    <span>rabbitmq</span>
+                    <span>supabase</span>
+                    <span>postgres</span>
+                </div>
+            </div>
+        </div>
+
+        <div className='flex flex-col text-left mt-15'>
+            <span className='text-lightBeige/95 text-xl'>inspiration</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                12am: i was riding my bike through the forest when it hit me: what if every species of wildlife was able to be collected?
+                <img 
+                    src="../../../projects/phuture/inspo.png" 
+                    alt="phuture-inspo" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+                it got me pondering and i genuinely almost crashed into a tree. being out in nature is underrated, but addiction to technology made people forget about what's out there. 
+
+                the <span className='text-lightBeige/95 font-normal'>intersection of ai and nature</span> seemed interesting, so i called andy up and began idealizing the concept.
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>architecture</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                <span className='text-lightBeige/95 font-normal'>unity</span> was the most logical choice for the mobile app as we needed to implement a mapping sdk. all the game logic lives in the <span className='text-lightBeige/95 font-normal'>containerized node.js server</span>, hosted on <span className='text-lightBeige/95 font-normal'>aws</span>.
+                <img 
+                    src="../../../projects/phuture/architecture.png" 
+                    alt="phuture-architecture" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+
+                essentially, the user would take a picture of a species using our in-app camera, and our logic layers will handle the rest.
+
+                we initially planned on creating a <span className='text-lightBeige/95 font-normal'>complex machine learning system</span> with feedback loops to accurately identify <span className='text-lightBeige/95 font-normal'>wildlife species</span> using a single image and location-based context.
+
+                the idea was to build <span className='text-lightBeige/95 font-normal'>regional models</span> through a <span className='text-lightBeige/95 font-normal'>model factory pipeline</span> so individual models wouldn’t grow too large or complex. <span className='text-lightBeige/95 font-thin italic'>for example, western canada, eastern canada, and arctic canada would each have separate models</span>.
+
+                the correct model would then be <span className='text-lightBeige/95 font-normal'>automatically downloaded</span> to the user’s phone based on their <span className='text-lightBeige/95 font-normal'>current location</span>.
+
+                however, once <span className='text-lightBeige/95 font-normal'>data cleaning</span> proved far more intensive than expected (there's lowkey too many species), we decided to pivot to a llm call.
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>server</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                i spent most of the summer trial and erroring the server. this was my first time using docker, redis, and rabbitmq so it was a perfect learning experience for me.
+
+                the routes are seperated with <span className='text-lightBeige/95 font-normal'>express router</span>:
+
+                <span className="route-background text-[0.9rem]">src/routes/openai.ts</span>
+                wildlife identification with ai
+
+                <span className="route-background text-[0.9rem]">src/routes/places.ts</span>
+                actions with location data
+
+                <span className="route-background text-[0.9rem]">src/routes/scripts.ts</span>
+                detecting % blur in an image and others
+
+                <span className="route-background text-[0.9rem]">src/routes/session.ts</span>
+                auth logic and redis sessions
+                
+                <span className="route-background text-[0.9rem]">src/routes/userdata.ts</span>
+                userdata logic and rabbit queues     
+            </span>
+
+            <span id="redis" className='text-lightBeige/95 text-lg'>redis</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                i used redis as a <span className='text-lightBeige/95 font-normal'>low-latency cache and session store</span> to avoid repeated database calls and to keep auth stateless.
+
+                user data is cached in redis hashes with a short ttl, while auth sessions are stored as token → user mappings.
+
+                <span className="route-background text-[0.9rem]">server/lib/redis/caching.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`await redis.hset(\`userdata:\${user.id}\`, {
+    username: user.username,
+    currency: user.currency,
+    inventory_plants: JSON.stringify(user.inventory_plants),
+    inventory_animals: JSON.stringify(user.inventory_animals),
+    location: JSON.stringify(user.location),
+});
+await redis.expire(\`userdata:\${user.id}\`, 60 * 5); // 5 min cache
+`}</code>
+                    </pre>
+                </div>
+
+                this allows the backend to <span className='text-lightBeige/95 font-normal'>serve frequent reads from memory</span> instead of postgres, reducing latency and load.
+
+                sessions are stored separately using expiring keys, so logging out is as simple as deleting a redis entry.
+            </span>
+
+
+            <span className='text-lightBeige/95 text-xl'>rabbitmq</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                i used rabbit as the <span className='text-lightBeige/95 font-normal'>event backbone</span> for the backend. instead of performing database writes directly in the main request lifecycle, events are published to queues and processed asynchronously by subscribers. 
+                
+                this makes gameplay responsive and allows heavy background tasks to be offloaded without slowing the app down.
+
+                <span className="route-background text-[0.9rem]">server/lib/rabbitmq/rabbitmq.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`// publish game event to queue
+await channel.assertQueue("game_events", { durable: true });
+channel.sendToQueue("game_events", Buffer.from(JSON.stringify({
+    sessionToken,
+    eventType: "level_up",
+    data: { newLevel: 5 }
+})), { persistent: true });
+`}</code>
+                    </pre>
+                </div>
+
+                events cover <span className='text-lightBeige/95 font-normal'>gameplay actions, collection updates, social interactions, location tracking, chat messages, and analytics</span>. 
+                subscribers consume the queues, validate sessions using <a href="#redis" className="a">redis</a>, and then update postgres or perform other side effects.
+
+                <span className="route-background text-[0.9rem]">server/lib/rabbitmq/subscribers.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`channel.consume("game_events", async (msg) => {
+    if (!msg) return;
+    const { sessionToken, eventType, data } = JSON.parse(msg.content.toString());
+    
+    // fetch userId from redis session
+    const payload = await redis.get(\`session:\${sessionToken}\`);
+    if (!payload) {
+        console.error("No session found for token", sessionToken);
+        return channel.ack(msg);
+    }
+
+    const { userId } = JSON.parse(payload);
+
+    // call the appropriate handler
+    const handler = gameEventHandlers[eventType];
+    if (handler) await handler(userId, eventType, data);
+
+    channel.ack(msg);
+});`}</code>
+                    </pre>
+                </div>
+
+                this setup is scalable, as events are handled in parallel and logic layers are seperated to reduce decoupling.
+
+                exchanges are also used to <span className='text-lightBeige/95 font-normal'>route events to multiple queues</span>. for example, a collection event can be sent to both the game logic queue and an analytics queue simultaneously:
+
+                <span className="route-background text-[0.9rem]">server/lib/rabbitmq/rabbitmq.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`channel.publish("game_exchange", "collection_events", Buffer.from(JSON.stringify({
+    sessionToken,
+    column: "inventory_animals",
+    body: { new: "lion" }
+})), { persistent: true });
+`}</code>
+                    </pre>
+                </div>
+
+                this architecture ensures that <span className='text-lightBeige/95 font-normal'>gameplay events, analytics, and background jobs</span> can scale independently: makes the whole backend easier to navigate and debug.
+            </span>
+
+            <span className='text-lightBeige/95 text-xl'>security scripts</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                i used bash scripts to set up secure configurations for redis, rabbitmq, and the application environment. one of the main uses cases was <span className='text-lightBeige/95 font-normal'>setting strong secret variables</span>.
+
+                <span className="route-background text-[0.9rem]">/setup-security.sh</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-bash'>{`#!/bin/bash
+# generate secure passwords
+REDIS_PASSWORD=$(openssl rand -base64 32)
+RABBITMQ_PASS=$(openssl rand -base64 24)
+SESSION_SECRET=$(openssl rand -base64 64)
+
+# create .env with strong secrets
+cat > .env << EOF
+REDIS_PASSWORD=\${REDIS_PASSWORD}
+RABBITMQ_PASS=\${RABBITMQ_PASS}
+SESSION_SECRET=\${SESSION_SECRET}
+EOF
+
+# secure Redis and RabbitMQ configs
+chmod 600 .env
+`}</code>
+                    </pre>
+                </div>
+
+                the whole script automatically generates environment secrets, sets restrictive permissions, and creates monitoring tables for logging security events in supabase. 
+            </span>
+
+            <span className='text-lightBeige/95 text-xl'>docker + kubernetes architecture</span>
+                <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                    our backend uses <span className='text-lightBeige/95 font-normal'>docker for containerization</span>  and <span className='text-lightBeige/95 font-normal'>kubernetes for orchestration</span>. each service, the server, redis, and rabbitmq, runs isolated in its own container.
+
+                    <span className="route-background text-[0.9rem]">dockerfile</span>
+                    <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                        <pre className='line-numbers'>
+                            <code className='language-bash'>{`FROM node:22.14.0-alpine AS prod
+ENV NODE_ENV=production
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+COPY --from=builder /app/dist ./dist
+USER nodejs
+EXPOSE 4000
+CMD ["node", "dist/index.js"]`}</code>
+                    </pre>
+                </div>
+
+                i used <span className='text-lightBeige/95 font-normal'>multi-stage builds</span>: a base stage for setup and permissions, a builder stage to install dependencies and build, and dev/prod stages to optimize image size and security.
+
+                <span className="route-background text-[0.9rem]">docker-compose.yaml</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-yaml'>{`server:
+  build:
+    context: .
+    target: dev
+  environment:
+    NODE_ENV: development
+    REDIS_URL: redis://default:\${REDIS_PASSWORD}@redis:6379
+    RABBITMQ_URL: amqp://\${RABBITMQ_USER}:\${RABBITMQ_PASS}@rabbitmq:5672
+  ports:
+    - "127.0.0.1:8080:4000"
+  user: "1000:1000"
+  networks:
+    - game_network
+redis:
+  image: redis:7-alpine
+  volumes:
+    - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+  ports:
+    - "127.0.0.1:6379:6379"`}</code>
+                    </pre>
+                </div>
+
+                each service communicates over <span className='text-lightBeige/95 font-normal'>an isolated bridge network</span>. redis and rabbitmq have healthchecks and resource limits to prevent overuse. ports are bound to localhost during development, and volumes persist data and configs.
+
+                i followed a <span className='text-lightBeige/95 font-normal'>microservice design</span> for the server, it doesn't embed services. rather, it connects to them over the network. this allows the server to scale independently!
+
+                <img 
+                    src="../../../projects/phuture/docker.png" 
+                    alt="phuture-docker" 
+                    className="w-full h-auto object-cover rounded"
+                />
+
+                <span className="route-background text-[0.9rem]">kubernetes.yaml</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-yaml'>{`apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phuture-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      todo: web
+  template:
+    metadata:
+      labels:
+        todo: web
+    spec:
+      containers:
+        - name: backend
+          image: phutureai/phuture-backend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-entrypoint
+spec:
+  type: NodePort
+  selector:
+    todo: web
+  ports:
+    - port: 4000
+      targetPort: 4000
+      nodePort: 30001`}</code>
+                    </pre>
+                </div>
+
+                kubernetes enforces <span className='text-lightBeige/95 font-normal'>self-healing</span>, so when pods crash, they are automatically recreated. the service exposes the backend via nodeports, supporting horizontal scaling and integration with <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank" className="a">ingress</a>.
+
+                the overall design separates concerns:
+
+                server handles api requests and cron jobs, 
+
+                redis handles caching and sessions, 
+
+                and rabbitmq handles async events, 
+
+                more on kubernetes networking and scaling can be found <a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target="_blank" className="a">here</a>. 
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>mobile app</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                andy worked on the unity app so i'll cover only the surface:
+
+                mapping was done with <a href="https://www.arcgis.com/index.html" target="_blank" className="a">arcgis</a>, login flow was standard supabase implementation.
+                <img 
+                    src="../../../projects/phuture/mapping.png" 
+                    alt="phuture-mapping" 
+                    className="w-full h-auto object-cover rounded"
+                />
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>user permissions</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem] mt-5'>
+                <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center font-playfair'> <FaCamera size={24} /> camera</span>
+                <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                    we needed camera access for the user to take pictures of wildlife.
+                </span>
+                <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center font-playfair'> <CiLocationArrow1 size={24} /> location</span>
+                <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                    we need user location for many features.
+                </span>
+            </span>
+
+           <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                here is a quick demo with raw mapping implemented. the goal was to have an avatar accurate to true location, similar to pokémon-go.
+                <div className="not-prose !mt-3">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full">
+                        <source src="../../../projects/phuture/unity.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>launch</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                we shot the launch video, with some help from <a href="https://www.youtube.com/@garf510" target="_blank" className="a">gary</a>, and it reached <span className='text-lightBeige/95 font-normal'>~20k impressions</span> on linkedin! this isn't a big number in any account, but it was my first time gaining traction on something that i was building.
+
+                <img 
+                    src="../../../projects/phuture/launch.png" 
+                    alt="phuture-inspo" 
+                    className="w-full h-auto object-cover rounded !mb-0"
+                />
+                
+                <div className="not-prose !mt-3">
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full">
+                        <source src="../../../projects/phuture/launch.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <span className='text-lighterBeige font-thin text-[0.9rem]'>watch the full launch with volume on my <a href="https://www.linkedin.com/feed/update/urn:li:activity:7357809750807367681/" target="_blank" className="a">linkedin</a></span>
+
+                andy and i stopped working on phuture when 1a began, and never touched it since. 
+
+                whether if we return to the project or not, the concept was worth pursuing, i learned alot about server infrastructure, and we received positive reception on social media, so the work put in was still valuable.
+            </span>
+        </div>
+
+        <footer className="pt-4 border-t border-white/20 text-sm text-white/70 flex flex-row items-center">
+            <span className="shiny-green-dot inline-block mr-2" />
+            Last updated: 12/23/2025
+        </footer>
+    </div>  
+</div>

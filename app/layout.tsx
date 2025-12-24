@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 import Sidebar from "./components/Sidebar";
 import CommandPalette from "./components/Cmd";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import "prismjs/themes/prism-twilight.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "prismjs";
+import "prismjs/plugins/line-numbers/prism-line-numbers";
+import "prismjs/components/prism-kotlin";
+import "prismjs/components/prism-typescript"; 
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-yaml"
+import "prismjs/components/prism-bash";
 import "./globals.css";
 
 export const metadataBase = new URL("https://jame.li");

@@ -1,0 +1,360 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #a9b1d6;
+  background: #12121a;
+  font-family: "Fira Code", "Cascadia Code", "JetBrains Mono", Consolas, Monaco,
+    "Andale Mono", "Ubuntu Mono", monospace;
+  line-height: 1.6;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.5rem;
+}
+
+.guideline-page pre[class*="language-"] {
+  border: 1px solid #bb9af7b3;
+  box-shadow: 0 0 0 1px rgba(187, 154, 247, 0.3);
+}
+
+.trivialguessr-page pre[class*="language-"] {
+  border: 1px solid #94D2D0b3;
+  box-shadow: 0 0 0 1px rgba(187, 154, 247, 0.3);
+}
+
+.flowboard-page pre[class*="language-"] {
+  border: 1px solid #E68040b3;
+  box-shadow: 0 0 0 1px rgba(187, 154, 247, 0.3);
+}
+
+.phuture-page pre[class*="language-"] {
+  border: 1px solid #37A2B0b3;
+  box-shadow: 0 0 0 1px rgba(187, 154, 247, 0.3);
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #12121a;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+/* Line numbers */
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em;
+  letter-spacing: -1px;
+  user-select: none;
+}
+
+.guideline-page .line-numbers .line-numbers-rows {
+  border-right: 1px solid #bb9af780;
+}
+
+.trivialguessr-page .line-numbers .line-numbers-rows {
+  border-right: 1px solid #6CBEC780;
+}
+
+.flowboard-page .line-numbers .line-numbers-rows {
+  border-right: 1px solid #E6804080;
+}
+
+.phuture-page .line-numbers .line-numbers-rows {
+  border-right: 1px solid #37A2B080;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #565f89;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+/* Token colors - Tokyo Night inspired */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #565f89;
+  font-style: italic;
+}
+
+.language-typescript .token.comment,
+.language-javascript .token.comment,
+.language-ts .token.comment,
+.language-js .token.comment,
+.language-kotlin .token.comment,
+.language-python .token.comment,
+.language-java .token.comment,
+.language-cpp .token.comment,
+.language-c .token.comment,
+.language-rust .token.comment,
+.language-go .token.comment,
+.language-php .token.comment,
+.language-ruby .token.comment,
+.language-swift .token.comment,
+.language-css .token.comment,
+.language-html .token.comment {
+  color: #565f89;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #a9b1d6;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #ff9e64; /* Orange for numbers/booleans */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #9ece6a; /* Green for strings */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #89ddff; /* Cyan for operators */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #bb9af7; /* Purple for keywords like class, async, const */
+}
+
+.token.function,
+.token.class-name {
+  color: #7aa2f7; /* Blue for function names and classes */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #7dcfff; /* Light blue for variables */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* TypeScript/JavaScript specific */
+.language-typescript .token.keyword,
+.language-javascript .token.keyword,
+.language-ts .token.keyword,
+.language-js .token.keyword {
+  color: #bb9af7; /* Purple for keywords like import, export, from */
+}
+
+.language-typescript .token.class-name,
+.language-javascript .token.class-name,
+.language-ts .token.class-name,
+.language-js .token.class-name {
+  color: #2ac3de; /* Cyan for type names like NextRequest, Promise */
+}
+
+.language-typescript .token.function,
+.language-javascript .token.function,
+.language-ts .token.function,
+.language-js .token.function {
+  color: #7aa2f7; /* Blue for function names */
+}
+
+.language-typescript .token.string,
+.language-javascript .token.string,
+.language-ts .token.string,
+.language-js .token.string {
+  color: #9ece6a; /* Green for strings */
+}
+
+/* Make 'async', 'await', 'const', 'let', 'var' more visible */
+.token.keyword.keyword-async,
+.token.keyword.keyword-await,
+.token.keyword.keyword-const,
+.token.keyword.keyword-let,
+.token.keyword.keyword-var,
+.token.keyword.keyword-function,
+.token.keyword.keyword-class,
+.token.keyword.keyword-return,
+.token.keyword.keyword-import,
+.token.keyword.keyword-export,
+.token.keyword.keyword-from {
+  color: #bb9af7;
+  font-weight: 500;
+}
+
+/* Generics and type parameters */
+.token.generic,
+.token.type-parameter {
+  color: #2ac3de;
+}
+
+/* 'this' keyword */
+.token.keyword.keyword-this {
+  color: #f7768e;
+  font-style: italic;
+}
+
+/* 'new' keyword */
+.token.keyword.keyword-new {
+  color: #bb9af7;
+}
+
+/* Try/catch/finally */
+.token.keyword.keyword-try,
+.token.keyword.keyword-catch,
+.token.keyword.keyword-finally {
+  color: #bb9af7;
+}
+
+/* 'private', 'public', 'protected' */
+.token.keyword.keyword-private,
+.token.keyword.keyword-public,
+.token.keyword.keyword-protected {
+  color: #bb9af7;
+}
+
+/* Method names */
+.token.method {
+  color: #7aa2f7;
+}
+
+/* Special values like null, undefined, true, false */
+.token.nil,
+.token.null,
+.token.undefined {
+  color: #ff9e64;
+}
+
+.language-kotlin .token.keyword {
+  color: #bb9af7 !important;
+  font-weight: 500;
+}
+
+.language-kotlin .token.class-name {
+  color: #73daca !important;
+}
+
+.language-kotlin .token.function {
+  color: #7aa2f7 !important;
+}
+
+.language-kotlin .token.string {
+  color: #9ece6a !important;
+}
+
+/* Override default colors for Kotlin */
+.language-kotlin .token {
+  color: #a9b1d6;
+}
+
+pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+}
+
+pre[class*="language-"]::-webkit-scrollbar {
+  height: 5px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+  background: #1a1b26;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+  background: #414868;
+  border-radius: 3px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+  background: #565f89;
+}
+
+.route-background {
+  background-color: rgba(248, 246, 238, 0.1);
+  color: rgb(248, 246, 238);
+  padding-right: 0.1rem;
+  padding-left: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: 0.25rem;
+  line-height: 1.5rem;
+  font-family: "Playfair Display", serif;
+}
+
+.a {
+  color: #f8f6ee;
+  font-weight: 200;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-delay: 150ms;
+  text-underline-offset: 4px;
+}
+
+.a:hover {
+  color: rgba(248, 246, 238, 0.9);
+}

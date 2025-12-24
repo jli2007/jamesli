@@ -1,9 +1,4 @@
-type Track = {
-  name: string;
-  album?: { images?: { url: string }[] };
-  artists?: { name: string }[];
-  external_urls?: { spotify: string };
-};
+import { Track } from "@/app/types/types";
 
 async function getAccessToken() {
   const res = await fetch("https://accounts.spotify.com/api/token", {
