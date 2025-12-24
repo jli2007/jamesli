@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -15,6 +15,7 @@
   --animate-slide-down: slide-down 0.4s ease;
   --animate-slide-up: slide-up 0.5s ease;
   --font-playfair: "Playfair Display", sans-serif;
+  --font-inter: "Inter", sans-serif;
 
   @keyframes pulse-and-scale {
     0% {
@@ -110,7 +111,6 @@
   }
 }
 
-
 .intro-container {
   background-color: black;
   transition: opacity 0.5s ease-out;
@@ -197,25 +197,36 @@
   max-width: 100% !important;
 }
 
-@media (max-height: 660px) {
+@media (min-width: 768px) and (max-height: 750px){
   .description{
     white-space: nowrap;
     font-size: 0.7rem;
+  }
+  
+  .h1descr{
+    margin-top: 10px;
+  }
+}
+
+@media (max-height: 700px) {
+  .description{
+    white-space: nowrap;
+    font-size: 0.65rem;
   }
 
   .h1descr{
     margin-top: 15px;
   }
 
-  .jam2{
+  .james{
     opacity: 90;
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 650px) {
   .description{
     white-space: nowrap;
-    font-size: 0.7rem;
+    font-size: 0.55rem;
   }
 
   .h1descr{
@@ -229,8 +240,14 @@
     padding-top: 5px;
   }
 
-  .jam2{
+  .james{
     opacity: 90;
+  }
+}
+
+@media (min-width: 1023px) and (max-width: 1180px){
+  .sideh1{
+    font-size: 1.1rem;
   }
 }
 
@@ -251,7 +268,7 @@
     padding-top: 5px;
   }
 
-  .jam2{
+  .james{
     opacity: 90;
   }
 }

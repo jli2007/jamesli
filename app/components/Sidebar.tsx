@@ -14,7 +14,7 @@ export default function Sidebar() {
         { title: "notes", items: posts, type: "note" },
       ].map((section) => (
         <div key={section.title} className="relative w-full h-full mb-8">
-          <h1 className="italic mb-5 lg:text-base md:text-2xl text-sm ">
+          <h1 className="italic mb-5 lg:text-base md:text-xl text-sm ">
             {section.title}
           </h1>
           {section.type === "project" && (
@@ -22,8 +22,7 @@ export default function Sidebar() {
               {section.items.map((project: any, index: number) => (
                 <Link
                   key={index}
-                  href={project.url}
-                  target="_blank"
+                  href={`/${project.slug}`}
                   className="group relative rounded-xl overflow-visible transition-all duration-500 block"
                   onMouseEnter={(e) => {
                     const imageDiv = e.currentTarget.querySelector(
@@ -57,6 +56,7 @@ export default function Sidebar() {
                         loop
                         muted
                         playsInline
+                        preload="auto"
                         className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
                       />
                     ) : (
@@ -65,15 +65,15 @@ export default function Sidebar() {
                         alt={project.name}
                         fill
                         sizes="100vw"
-                        className="object-cover brightness-80 group-hover:brightness-90 transition-all duration-300"
+                        className="object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
                       />
                     )}
                   </div>
                   <div className="absolute bottom-0 left-0 w-full p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                    <h1 className="lg:text-lg md:text-xl text-md font-semibold">
+                    <h1 className="lg:text-lg md:text-xl text-md font-semibold px-1 shadow-black [text-shadow:0.5px_0.5px_10px_black]">
                       {project.name}
                     </h1>
-                    <p className="lg:text-sm md:text-md text-sm text-lighterBeige">
+                    <p className="lg:text-sm md:text-md text-sm text-lighterBeige px-1 [text-shadow:0.5px_0.5px_5px_black]">
                       {project.desc}
                     </p>
                   </div>
@@ -87,7 +87,7 @@ export default function Sidebar() {
               {section.items.map((post: any) => (
                 <div
                   key={post.slug}
-                  className="grid grid-cols-[100px_1fr] gap-1 lg:text-base md:text-xl text-sm"
+                  className="grid grid-cols-[100px_1fr] gap-1 lg:text-base md:text-lg text-sm"
                 >
                   <span>{post.date}</span>
                   <LinkSlider

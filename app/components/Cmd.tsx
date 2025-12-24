@@ -173,7 +173,7 @@ export default function CommandPalette() {
     <Dialog.Root open={open} onOpenChange={setOpen}>
       {showDialog && (
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 bg-black/50 animate-fade-in z-40" />
+          <Dialog.Overlay className="fixed inset-0 bg-black/70 animate-fade-in z-40" />
           <Dialog.Content
             className={`fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-[500px] p-3 z-50 ${
               open ? "animate-slide-down" : "animate-slide-up"

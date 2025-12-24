@@ -1,0 +1,591 @@
+import { FiExternalLink } from "react-icons/fi";
+import { BsHeadsetVr } from "react-icons/bs";
+import { SiDwavesystems } from "react-icons/si";
+import { TbMathIntegrals } from "react-icons/tb";
+
+<div className='w-full text-center guideline-page'>
+    <span className='block text-lightBeige/95 italic text-2xl md:text-3xl'>guideline</span>
+    <span className='block text-lighterBeige text-base mt-2'>project, 2nd overall @ jamhacks x</span>
+    <div className="w-[95vw] relative left-1/2 -ml-[47.5vw] md:w-[105%] md:left-0 md:-ml-[2.5%] md:static">
+        <img
+            src="../../../projects/guideline/blur.png"
+            alt="guideline-main"
+            className="w-full h-auto object-cover rounded-lg !my-0 !py-0"
+            style={{
+                WebkitMaskImage:
+                "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
+            }}
+        />
+    </div>
+    
+    <div className='md:w-[90%] w-[100%] mx-auto'>
+        <div className='flex justify-center mb-5 text-base'>
+            <a href="https://dorahacks.io/buidl/26350/" target="_blank" rel="noopener noreferrer" className='a flex items-center gap-1 decoration-1 underline-offset-4'>
+                <span>project</span>
+                <FiExternalLink size={16} />
+            </a>
+        </div>
+
+        <div className='flex flex-col text-left'>
+            <span className='text-lightBeige/95 text-xl'>overview</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                guideline is an <span className='text-lightBeige/95 font-normal'>augmented reality </span>tool that visually guides users through the breadboarding process. it uses advanced algorithmic reasoning to accurately breadboard an electrical component list and layers intuitive instructions on screen.
+            </span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-8 text-left mt-6">
+            <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>timeline</span>
+                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>2 days, may 2025</span>
+                </div>
+
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>team</span>
+                    <div className='flex flex-col gap-1 font-inter items-start text-[1rem]'>
+                        <a href="https://www.linkedin.com/in/andy--duong/" className="a">andy duong</a>
+                        <a href="https://www.linkedin.com/in/jun-nur-mustaqeem/" className="a">jun nur mustaqeem</a>
+                        <a href="https://www.joshwu.ca/" className="a">josh wu</a>
+                    </div>
+                </div>
+
+                <div className='flex flex-col gap-1'>
+                    <span className='text-lightBeige/95 text-lg'>award</span>
+                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>second overall @ jamhacks x</span>
+                </div>
+            </div>
+
+            <div className='flex flex-col gap-1'>
+                <span className='text-lightBeige/95 text-lg'>tools</span>
+                <div className='text-lighterBeige flex flex-col gap-1 font-inter font-light text-[1rem]'>
+                    <span>kotlin</span>
+                    <span>opencv java</span>
+                    <span>opencv c++</span>
+                    <span>next.js</span>
+                    <span>typescript</span>
+                    <span>mongodb</span>
+                    <span>qr code</span>
+                    <span>vr headset</span>
+                </div>
+            </div>
+        </div>
+
+        <div className='flex flex-col text-left mt-15'>
+            <span className='text-lightBeige/95 text-xl'>inspiration & requirements</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                guideline started from a simple question—<span className='text-lightBeige/95 italic'>what if the breadboard could show you exactly what to do, right on top of it?</span>
+
+                in order to accomplish this, we came up with a cool solution with 3 main factors:
+            </span>
+            <span className="flex items-center gap-2 text-lightBeige/95 text-lg not-prose mb-1">
+                <BsHeadsetVr size={24} className="mt-2" />
+                vr headset
+            </span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem] not-prose'>
+                for the full experience of layering instructions on the physical breadboard, we needed a phone based vr viewer
+            </span>
+            <span className="flex items-center gap-2 text-lightBeige/95 text-lg not-prose mb-1 mt-4">
+                <SiDwavesystems size={24} className="mt-2" />
+                data pipeline
+            </span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem] not-prose'>
+                a raw electrical component list had to be uploaded via web app and then parsed into json & passed to our mobile app
+            </span>
+            <span className="flex items-center gap-2 text-lightBeige/95 text-lg not-prose mb-1 mt-4">
+                <TbMathIntegrals size={24} className="mt-2" />
+                advanced algorithms
+            </span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem] not-prose'>
+                the concept requires a computation heavy computer vision pipeline—what's left is the actual logic itself. we need to detect the breadboard with opencv, apply some cool algorithms, and finally, display the vr instructions!
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>architecture</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                there are two main parts to guideline: the web app and the mobile app.
+
+                <img 
+                    src="../../../projects/guideline/architecture.png" 
+                    alt="guideline-architecture" 
+                    className="w-full h-auto object-cover rounded"
+                />
+
+                the web app accepts a component list upload, stores it in mongodb using <a href="https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes" target="_blank" className="a">dynamic routing</a>, and generates a unique qr code that the mobile app can scan.
+
+                the mobile app scans the qr, downloads the parsed list, then runs a fast color-based segmentation to isolate the breadboard, estimate its corners, and flatten it to a top-down view. 
+                
+                histogram projections reveal the repeating hole grid so each cell can be mapped precisely. with that structure in place, the app overlays steps, components, and wiring onto each cell.
+            </span>
+        </div>
+
+         <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>web app</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                a quick next.js dynamic route integration never disappoints.
+                
+                <span className="italic"> the web app's functionality is simple: </span>
+                
+                take a component list, parse it, store it in a mongodb collection, and create a qr code using <a href="https://www.npmjs.com/package/react-qr-code" target="_blank" className="a">react-qr-code</a> that points to the document id.
+
+                <div>
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full"
+                        >
+                        <source src="../../../projects/guideline/web.mp4" type="video/mp4" />
+                    </video>
+                </div>
+       
+                the route acts as a bridge between the qr code scan via the mobile app, and the user data. 
+                
+                it contains some generic next.js route handler code:
+
+                <span className="route-background text-[0.9rem]">client/app/[slug]/route.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`import { NextResponse, NextRequest } from "next/server";
+import { Formatter } from "../lib/prettier";
+import connectDB from "../api/db/connect";
+import { ObjectId } from "mongodb";
+
+export async function GET(
+    request: NextRequest,
+    { params }: { params: Promise<{ slug: string }> }): Promise<NextResponse> {
+    const { slug } = await params;
+    const client = await connectDB();
+
+    try {
+        // minus error handling
+        const collection = client.db().collection("netlists");
+        const result = await collection.findOne({ _id: new ObjectId(slug) });
+
+        const raw = result.netlist as string;
+        const parsed = Formatter(raw);
+
+        return NextResponse.json({ id: slug, data: parsed });
+    } catch {
+        // ...
+    } finally {
+        await client.close();
+    }
+}
+`}</code>
+                    </pre>
+                </div>
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-10'>
+            <span className='text-lightBeige/95 text-xl'>mobile app</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                kotlin and opencv are heavily used in the mobile app. 
+            </span>
+
+            <span className='text-lightBeige/95 text-lg '>qr code integration</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                first, we must fetch the data! we do this with the <a href="https://github.com/journeyapps/zxing-android-embedded" target="_blank" className="a">journeyapps barcode scanner</a>. the data is stored inside an <span className='text-lightBeige/95 font-normal'> android intent</span>
+
+                <span className="route-background text-[0.9rem]">server/app/src/ScanActivity.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`package com.example.guideline_mobile
+ import android.content.Intent
+ import com.journeyapps.barcodescanner.ScanContract
+ import com.journeyapps.barcodescanner.ScanOptions
+
+ // Register scanner
+ private val barcodeLauncher = registerForActivityResult(ScanContract()) { result ->
+    if (result.contents != null) {
+        val intent = Intent()
+        intent.putExtra("SCAN_RESULT",result.contents)
+        // cleanup
+    }
+ }
+
+ // Launch scanner
+ val options = ScanOptions().apply {
+     setPrompt("Scan A QR Code")
+ }
+ barcodeLauncher.launch(options)
+`}</code>
+                    </pre>
+                </div>
+            </span>
+
+           <span className='text-lightBeige/95 text-lg mt-5'>chaining async operations</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                once we have the qr code, we need to fetch the circuit data from our server. we use <a href="https://kotlinlang.org/docs/coroutines-overview.html" target="_blank" className="a">kotlin coroutines</a> to handle this asynchronously without blocking the ui.
+
+                <span className="route-background text-[0.9rem]">server/app/src/MainActivity.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`import androidx.compose.runtime.rememberCoroutineScope
+ import kotlinx.coroutines.launch
+
+val coroutineScope = rememberCoroutineScope()
+
+val scanLauncher = rememberLauncherForActivityResult(
+    contract = ActivityResultContracts.StartActivityForResult()
+) { result ->
+    if (result.resultCode == Activity.RESULT_OK) {
+        val scanContent = result.data?.getStringExtra("SCAN_RESULT")
+        
+        // Launch coroutine to fetch circuit data
+        coroutineScope.launch {
+            linkReader(scanContent, context)
+        }
+    }
+}
+`}</code>
+                    </pre>
+                </div>
+
+                <span className="route-background text-[0.9rem]">rememberCoroutineScope()</span> creates a coroutine scope that's tied to the composable's lifecycle - it automatically cancels when the composable leaves the screen. 
+
+                <span className="route-background text-[0.9rem]">coroutineScope.launch</span> kicks off the network request without blocking the ui thread.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>fetching circuit data</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                the <span className="route-background text-[0.9rem]">linkReader()</span> function shows kotlin coroutines in action - properly managing threads for network operations and ui updates.
+
+                <span className="route-background text-[0.9rem]">server/app/src/MainActivity.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`withContext(Dispatchers.IO) {
+    urlConnection = url.openConnection() as HttpURLConnection
+    val response = BufferedReader(InputStreamReader(urlConnection.inputStream)).readText()
+    
+    withContext(Dispatchers.Main) {
+        val arPage = Intent(context, ARActivityOne::class.java)
+        arPage.putExtra("jsonData", response)
+        context.startActivity(arPage)
+    }
+}
+`}</code>
+                    </pre>
+                </div>
+
+                <span className="route-background text-[0.9rem]">withContext(Dispatchers.IO)</span> moves the network call off the main thread. we switch back to 
+                
+                <span className="route-background text-[0.9rem]">Dispatchers.Main</span> prevents the app from freezing during network requests.
+            </span>
+
+            <span className='text-lightBeige/95 text-xl'>augmented reality!</span>
+
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                this is where it gets fun and processing intensive, <a href="https://www.linkedin.com/in/andy--duong/" target="_blank" className="a">andy</a> did most of the heavylifting on 1 hour of hackathon sleep, let him cook 😮‍💨. 
+
+                <img 
+                    src="../../../projects/guideline/pipeline.png" 
+                    alt="guideline-pipeline" 
+                    className="w-full h-auto object-cover rounded !mt-0"
+                />
+                <span className='text-lightBeige/95 font-thin italic text-[0.9rem]'>there is around 2k lines of logic in AR.kt and it's more complex than what i'm going to describe but i'll keep it simple. </span>
+            </span>
+            
+            <span className='text-lightBeige/95 text-lg mt-5'>1 | detecting the breadboard in frame</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                the first challenge: finding a white breadboard in frame and getting a normalized top-down view.
+        
+                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
+
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`// HSV thresholding to isolate white breadboard
+val lowerWhite = Scalar(0.0, 0.0, 200.0)
+val upperWhite = Scalar(180.0, 50.0, 255.0)
+val mask = Mat()
+Core.inRange(hsv, lowerWhite, upperWhite, mask)
+
+// Find largest contour (assumed to be breadboard)
+var maxContour: MatOfPoint? = null
+var maxArea = 0.0
+for (contour in contours) {
+    val area = Imgproc.contourArea(contour)
+    if (area > maxArea) {
+        maxArea = area
+        maxContour = contour
+    }
+}
+`}</code>
+                    </pre>
+                </div>
+
+                we threshold for white objects with opencv (low saturation, high value in <a href="https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html" target="_blank" className="a">hsv</a>), then find the biggest blob. <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html" target="_blank" className="a">morphological operations</a> clean up the noise before <a href="https://docs.opencv.org/4.x/d4/d73/tutorial_py_contours_begin.html" target="_blank" className="a">contour detection</a>.
+            </span>
+            <span className='text-lightBeige/95 text-lg'>2 | perspective transform logic</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                once we have the four corners, we <span className='text-lightBeige/95 font-normal'>warp </span> the breadboard into a flat rectangle. this makes grid detection consistent regardless of camera angle.
+
+                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`private fun applyPerspectiveTransform(source: Mat, corners: Array<Point>): Mat {
+    val sortedCorners = sortPoints(corners)
+    
+    val dstPoints = arrayOf(
+        Point(0.0, 0.0),                          // top-left
+        Point(NORMALIZED_WIDTH - 1.0, 0.0),       // top-right
+        Point(NORMALIZED_WIDTH - 1.0, NORMALIZED_HEIGHT - 1.0),
+        Point(0.0, NORMALIZED_HEIGHT - 1.0)       // bottom-left
+    )
+    
+    val transformMatrix = Imgproc.getPerspectiveTransform(srcMat, dstMat)
+    
+    // Store inverse for mapping points back to original view
+    inverseTransformMatrix = Imgproc.getPerspectiveTransform(dstMat, srcMat)
+    
+    val warped = Mat()
+    Imgproc.warpPerspective(
+        source, warped, transformMatrix,
+        Size(NORMALIZED_WIDTH.toDouble(), NORMALIZED_HEIGHT.toDouble())
+    )
+    
+    return warped
+}
+`}</code>
+                    </pre>
+                </div>
+
+                <span className='text-lightBeige/95 font-normal'>problem: </span>we detect grid points in the warped rectangle, but need to draw highlights in the original camera frame. 
+                
+                our solution was using the <a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#gad327659ac03e5fd6894b90025e6900a7" target="_blank" className="a">inverse perspective transform</a>, which maps coordinates back using <a href="https://en.wikipedia.org/wiki/Homogeneous_coordinates" target="_blank" className="a">homogeneous coordinates</a>.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>3 | grid detection with histogram analysis</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                next, we must find where the holes exist on the breadboard, which are the <span className='text-lightBeige/95 font-normal'>intersection of rows and cols. </span><a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/project.htm" target="_blank" className="a">histogram projection</a> counts white pixels in each row and column, smooth the signal with <a href="https://en.wikipedia.org/wiki/Gaussian_filter" target="_blank" className="a">gaussian filtering</a> and find peaks (the intersection points).
+
+                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`private fun detectBreadboardGridRobust(warped: Mat): Pair<List<Line>, List<Line>> {
+    // Binary threshold the warped image
+    val binary = Mat()
+    Imgproc.adaptiveThreshold(
+        blur, binary, 255.0,
+        Imgproc.ADAPTIVE_THRESH_GAUSSIAN_C,
+        Imgproc.THRESH_BINARY_INV, 11, 11.0
+    )
+    
+    // Create projections - count white pixels per row/column
+    val horizontalProjection = IntArray(binary.height()) { 0 }
+    val verticalProjection = IntArray(binary.width()) { 0 }
+    
+    for (y in 0 until binary.height()) {
+        for (x in 0 until binary.width()) {
+            if (binary.get(y, x)[0] > 0) {
+                horizontalProjection[y]++
+                verticalProjection[x]++
+            }
+        }
+    }
+    
+    // Smooth and detect peaks
+    val smoothedHorizontal = smoothArray(horizontalProjection)
+    val horizontalPeaks = detectPeaks(smoothedHorizontal, binary.height())
+    
+    // Convert peaks to line coordinates
+    val hLines = horizontalLines.map { y ->
+        Line(0, y, NORMALIZED_WIDTH, y)
+    }
+    
+    return Pair(hLines, vLines)
+}
+`}</code>
+                    </pre>
+                </div>
+            </span>
+
+            <span className='text-lightBeige/95 text-lg mt-5'>4 | building the intersection matrix</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                now we compute every grid intersection and store it in a 2d array. this becomes our "map" of the breadboard.
+
+                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`private fun createIntersectionMatrix(
+    warped: Mat,
+    horizontalLines: List<Line>,
+    verticalLines: List<Line>
+): Array<Array<Point?>> {
+    val matrix = Array(horizontalLines.size) { 
+        Array<Point?>(verticalLines.size) { null } 
+    }
+    
+    // Find all intersections
+    for (rowIndex in horizontalLines.indices) {
+        val hLine = horizontalLines[rowIndex]
+        for (colIndex in verticalLines.indices) {
+            val vLine = verticalLines[colIndex]
+            val intersection = findIntersection(hLine, vLine)
+            matrix[rowIndex][colIndex] = intersection
+        }
+    }
+    
+    return matrix
+}
+`}</code>
+                    </pre>
+                </div>
+
+                now <span className='text-lightBeige/95 font-normal'>matrix[5][12]</span> gives us the exact pixel coordinates of row 5, column 12.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>5 | sequential pin highlighting</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                this is where the magic happens. the app cycles through components and their pins automatically.
+                
+                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`private fun processComponentHighlighting(frame: Mat) {
+    if (!isHighlightingActive || isComponentHighlightingPaused) return
+    
+    val currentTimeMs = System.currentTimeMillis()
+    
+    // Update every 1 second
+    if (currentTimeMs - lastUpdateTime >= PIN_HIGHLIGHT_DELAY_MS) {
+        clearHighlightedPoints()
+        
+        val component = placements[currentComponentIndex]
+        
+        if (currentPinIndex < component.positions.size) {
+            // Highlight current pin
+            val (rowIndex, colIndex) = component.positions[currentPinIndex]
+            highlightGridPoint(rowIndex, colIndex)
+            
+            // Display component info
+            val text = "\${component.ref} - Pin \${currentPinIndex + 1}"
+            displayComponentInfo(frame, text)
+            
+            currentPinIndex++
+        } else {
+            // Move to next component
+            currentComponentIndex = (currentComponentIndex + 1) % placements.size
+            currentPinIndex = 0
+        }
+        
+        lastUpdateTime = currentTimeMs
+    }
+}
+`}</code>
+                    </pre>
+                </div>
+
+                this implements a <a href="https://en.wikipedia.org/wiki/Finite-state_machine" target="_blank" className="a">state machine</a> that walks through each component's pins. 
+                
+                <img 
+                    src="../../../projects/guideline/state.png" 
+                    alt="guideline-state" 
+                    className="w-full h-auto object-cover rounded"
+                />
+
+                when it finishes one component, it moves to the next. when it finishes all components, it loops back. timing is controlled by checking <a href="https://developer.android.com/reference/java/lang/System#currentTimeMillis()" target="_blank" className="a">System.currentTimeMillis()</a> for frame-independent delays.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>6 | mapping highlights back to camera view</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                we detect everything in the warped view, but users see the camera feed. so we transform each highlight point back using the inverse matrix.
+
+                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`private fun drawHighlightedPointsInOriginalView(rgba: Mat) {
+    if (inverseTransformMatrix == null) return
+    
+    highlightedPoints.forEach { (row, col) ->
+        val warpedPoint = currentIntersectionMatrix[row][col]
+        
+        warpedPoint?.let {
+            // Map from warped to original view
+            val originalPoint = mapPointFromWarpedToOriginal(it)
+            
+            // Draw prominent marker
+            Imgproc.circle(rgba, originalPoint, 14,
+                Scalar(0.0, 0.0, 0.0), 2) // Black border
+            
+            Imgproc.circle(rgba, originalPoint, 8,
+                Scalar(0.0, 255.0, 255.0), -1) // Cyan fill
+            
+            // Add label
+            val label = "($row,$col)"
+            Imgproc.putText(rgba, label, 
+                Point(originalPoint.x, originalPoint.y - 4),
+                Imgproc.FONT_HERSHEY_SIMPLEX, 0.5,
+                Scalar(255.0, 255.0, 255.0), 1)
+        }
+    }
+}
+`}</code>
+                    </pre>
+                </div>
+
+                the result: bright dots with coordinates that follow the breadboard as you move it around.
+            </span>
+
+            <span className='text-lightBeige/95 text-lg'>7 | interaction design</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                ux was still considered ofc:
+
+                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-kotlin'>{`private fun setupHighlightingControls() {
+    // Auto-start highlighting
+    isHighlightingActive = true
+    
+    cameraView.setOnClickListener {
+        if (isHighlightingActive) {
+            pauseResumeHighlighting()
+        } else {
+            togglePinHighlighting()
+        }
+    }
+    
+    cameraView.setOnLongClickListener {
+        if (isHighlightingActive) {
+            jumpToNextComponent()
+            true
+        } else false
+    }
+}
+`}</code>
+                    </pre>
+                </div>
+
+                status displays at the top show whether you're paused, and component progress is shown in the bottom right.
+            </span>
+        </div>
+
+        <div className='flex flex-col text-left mt-5'>
+            <span className='text-lightBeige/95 text-xl'>result</span>
+            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                we created a functional prototype within 36 hours and <span className='text-lightBeige/95 font-normal'>won second at jamhacks x</span>.
+
+                there was real potential to ship guideline. however, this was during may of high school senior year so we were in full senioritis mode 🙏. anyways, heres a short clip to prove that it was functional:
+                <div>
+                    <video                      
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full">
+                        <source src="../../../projects/guideline/demo.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </span>
+        </div>
+
+        <footer className="pt-4 border-t border-white/20 text-sm text-white/70 flex flex-row items-center">
+            <span className="shiny-green-dot inline-block mr-2" />
+            Last updated: 12/17/2025
+        </footer>
+    </div>
+</div>
