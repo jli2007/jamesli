@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // use cache
-export const dynamic = process.env.NODE_ENV === "production" ? "force-static" : "force-dynamic";
+export const dynamic = "force-static";
 
 export async function GET(req: NextRequest) {
   const clientId = process.env.SPOTIFY_CLIENT_ID;

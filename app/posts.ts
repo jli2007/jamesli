@@ -24,6 +24,12 @@ export const posts: Post[] = [
     date: "ongoing",
     pinned: true,
   },
+    {
+    slug: "forest",
+    title: "the forest ⽊",
+    date: "dec 2025",
+    pinned: false,
+  },
   {
     slug: "sf",
     title: "✈️ visiting sf between 2 midterms",

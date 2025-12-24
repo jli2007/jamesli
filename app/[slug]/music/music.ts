@@ -21,7 +21,7 @@ export const TRACK_DATA: TrackMetadata[] = [
     id: "1Xapo8sq7KcQXdt0HrXX5B",
     genre: "uk rap",
     description:
-      "the cost of escaping the system is leaving your people behind.",
+      "the cost of escaping the system.",
     quotes: [
       "I've had ups and downs, but the highest of the highs\nNever last for as long as the lowest of lows",
       "Survivor's guilt\nI feel the worst at my happiest\n'Cause I miss all my n****s that couldn't be in this life I built",
@@ -62,7 +62,7 @@ export const TRACK_DATA: TrackMetadata[] = [
   {
     id: "2aMN1ky0SzSEcV1QdBYbW9",
     genre: "mandopop",
-    description: "risks that destiny has already decided.",
+    description: "destiny.",
     quotes: ["摺紙飛機碰到雨天\n終究會墜落 \n A paper airplane meeting rainy days will eventually fall"],
   },
   // psycho
@@ -109,7 +109,7 @@ export const TRACK_DATA: TrackMetadata[] = [
   {
     id: "25fvND4h7BT76CB77Mjsm3",
     genre: "uk rap",
-    description: "the freedom of fame comes with the weight of everything left behind.",
+    description: "freedom comes with the weight of everything left behind.",
     quotes: [
       "You'll always think that the grass is greener till you step foot over there and try it",
       "More money, less violence, time is free but somehow priceless\nSo watch how you spend it wisely"
@@ -119,7 +119,7 @@ export const TRACK_DATA: TrackMetadata[] = [
   {
     id: "4KCfCctnZQd5mem6S3HhKi",
     genre: "uk rap",
-    description: "19 candles but no cake, just scars. a reflection.",
+    description: "19 candles but no cake, just scars.",
     quotes: [
       "The pain's compulsory, suffering's optional\nTakeshi's castle, my life's got obstacles",
       "You gotta separate the rats from the G's if you can't handle cheese, how the hell you gonna be a great? \n — great = grate (for cheese)",

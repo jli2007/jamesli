@@ -281,32 +281,32 @@ export default function Home() {
 
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
                       <div className="flex items-center">recently:</div>
-                        <ul className="flex flex-col gap-2 mt-4">
-                          <li className="flex items-center gap-x-1">
-                            built 
-                            <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
-                              flowboard
-                            </LinkSlider>
-                            <span>@</span>
-                            <Image src={western} width={20} height={20} alt="western-logo" />
-                            hackwestern, winning 2nd
-                          </li>
-                          
-                          <li>
-                            cracked virality with <span className="font-bold">5m+</span> views on instagram
-                          </li>
-                          
-                          <li className="flex items-center gap-x-1">
-                            <LinkSlider href={`/sf`} mode="dark" className="relative flex" isNextLink>
-                              visited sf
-                            </LinkSlider>
-                            <span className="-ml-1">—met cool ppl & snuck into</span>
-                            <Image src={fdotinc} width={20} height={20} alt="fdotinc-logo"/>
-                            <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
-                              founders inc
-                            </LinkSlider>
-                          </li>
-                        </ul>
+                      <ul className="descr flex flex-col gap-2 mt-4">
+                        <li className="flex items-center gap-x-1 flex-wrap">
+                          built 
+                          <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
+                            flowboard
+                          </LinkSlider>
+                          <span>@</span>
+                          <Image src={western} width={20} height={20} alt="western-logo" />
+                          hackwestern, winning 2nd
+                        </li>
+                        
+                        <li>
+                          cracked virality with <span className="font-bold">5m+</span> views on instagram
+                        </li>
+                        
+                        <li className="flex items-center gap-x-1 flex-wrap">
+                          <LinkSlider href={`/sf`} mode="dark" className="relative flex" isNextLink>
+                            visited sf
+                          </LinkSlider>
+                          <span className="-ml-1">—met cool ppl & snuck into</span>
+                          <Image src={fdotinc} width={20} height={20} alt="fdotinc-logo"/>
+                          <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
+                            founders inc
+                          </LinkSlider>
+                        </li>
+                      </ul>
                     </h1>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ export default function Home() {
 
                 {/* last listened to section */}
                 <div className="lg:col-span-2 col-span-6 row-span-3 w-auto lg:h-auto lg:py-2 md:py-7 py-4 px-5 m-1 rounded-lg bg-midBeige2 bottom-section">
-                  <div className="flex items-center justify-center flex-wrap gap-2 md:text-sm text-xs w-full">
+                  <div className="lastlisten flex items-center justify-center flex-wrap gap-2 md:text-sm text-xs w-full">
                     <span>i last listened to</span>
                     <a
                       href={recent?.external_urls?.spotify || "#"}

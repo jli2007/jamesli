@@ -4,17 +4,15 @@ import { Command } from "cmdk";
 import { useRouter } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
 import { isMobile } from "react-device-detect";
-import { TfiWrite } from "react-icons/tfi";
-import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { FiGithub } from "react-icons/fi";
 import {
   IoLogoInstagram,
   IoSearchOutline,
-  IoLogoLinkedin,
   IoHomeOutline,
 } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { GoRepo } from "react-icons/go";
+import { PiLinkedinLogo } from "react-icons/pi";
 
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -245,7 +243,7 @@ export default function CommandPalette() {
                     }
                     className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
                   >
-                    <IoLogoLinkedin className="h-4 w-4" />
+                    <PiLinkedinLogo className="h-4 w-4" />
                     <span className="flex-1">linkedin</span>
                     <Shortcut>1</Shortcut>
                   </Command.Item>

@@ -221,16 +221,24 @@
   .james{
     opacity: 90;
   }
+
+  .lastlisten{
+    font-size: 0.8rem;
+  }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 660px) {
   .description{
     white-space: nowrap;
-    font-size: 0.55rem;
+    font-size: 0.6rem;
   }
 
   .h1descr{
     margin-top: 10px;
+  }
+
+  .descr{
+    margin-top: 5px;
   }
 
   .logos{
@@ -251,7 +259,7 @@
   }
 }
 
-@media (min-width:768px) and (max-width: 1180px){
+@media (min-width: 768px) and (max-width: 1180px){
   .description{
     white-space: nowrap;
     font-size: 0.7rem;
@@ -270,6 +278,23 @@
 
   .james{
     opacity: 90;
+  }
+}
+
+@media (max-height: 610px) and (max-width: 1180px) {
+  .h1descr{
+    margin-top: 5px;
+  }
+
+  .descr{
+    margin-top: 3px;
+  }
+
+  .logos{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 3px;
+    padding-top: 3px;
   }
 }
 
