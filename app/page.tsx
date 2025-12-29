@@ -183,7 +183,7 @@ export default function Home() {
                   <Image
                     src={james}
                     className="james absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-[5] z-0"
-                    priority={true}
+                    preload
                     style={{
                       WebkitMaskImage:
                         "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.01) 75%)",
@@ -248,8 +248,8 @@ export default function Home() {
                 </div>
 
                 {/* description section */}
-                <div className="relative lg:col-span-3 col-span-6 row-span-1 w-auto lg:h-auto md:h-100 h-auto py-3 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
-                  <div className="description relative h-auto w-full flex flex-col z-10 lg:text-sm md:text-lg text-xs">
+                <div className="relative lg:col-span-3 col-span-6 row-span-1 w-auto lg:h-auto h-auto lg:py-3 py-5 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
+                  <div className="description relative h-auto w-full flex flex-col z-10 lg:text-sm md:text-lg text-sm">
                     <span className="italic font-bold">
                       product of the environment.
                     </span>
@@ -281,7 +281,7 @@ export default function Home() {
 
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
                       <div className="flex items-center">recently:</div>
-                      <ul className="descr flex flex-col gap-2 mt-4">
+                      <ul className="descr flex flex-col gap-8 md:gap-4 mt-4">
                         <li className="flex items-center gap-x-1 flex-wrap">
                           built 
                           <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
@@ -312,7 +312,7 @@ export default function Home() {
                 </div>
 
                 {/* github logo section */}
-                <div className="relative lg:col-span-1 col-span-6 row-span-4 w-auto lg:h-auto lg:py-3 md:py-7 py-5 px-7 m-1 mb-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
+                <div className="relative lg:col-span-1 col-span-6 row-span-4 w-auto lg:h-auto lg:py-3 md:py-7 py-6 px-7 m-1 mb-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
                   <a
                     href="https://github.com/JLi2007"
                     className="w-full h-full absolute inset-0"
@@ -326,7 +326,7 @@ export default function Home() {
 
                 {/* last listened to section */}
                 <div className="lg:col-span-2 col-span-6 row-span-3 w-auto lg:h-auto lg:py-2 md:py-7 py-4 px-5 m-1 rounded-lg bg-midBeige2 bottom-section">
-                  <div className="lastlisten flex items-center justify-center flex-wrap gap-2 md:text-sm text-xs w-full">
+                  <div className="lastlisten flex items-center justify-center flex-wrap gap-2 text-sm w-full">
                     <span>i last listened to</span>
                     <a
                       href={recent?.external_urls?.spotify || "#"}

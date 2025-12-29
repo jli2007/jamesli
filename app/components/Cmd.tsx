@@ -220,7 +220,7 @@ export default function CommandPalette() {
                     value="home jame page"
                     onSelect={() => {
                       setTimeout(
-                        () => openNextLink(() => router.push("/projects")),
+                        () => openNextLink(() => router.push("/")),
                         0
                       );
                     }}

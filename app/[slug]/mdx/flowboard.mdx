@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { FiExternalLink } from "react-icons/fi";
 import { FaImage } from "react-icons/fa6";
 import { LuBanana, LuSparkles } from "react-icons/lu";
@@ -6,14 +7,17 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
     <span className='block text-lightBeige/95 italic text-2xl md:text-3xl'>flowboard</span>
     <span className='block text-lighterBeige text-base mt-2'>project, 100+ github stars</span>
     <div className="w-[95vw] relative left-1/2 -ml-[47.5vw] md:w-[105%] md:left-0 md:-ml-[2.5%] md:static">
-        <img
-            src="../../../projects/flowboard/blur.png"
+        <Image
+            src="/projects/flowboard/blur.png"
             alt="flowboard-main"
-            className="w-full h-auto object-cover rounded-lg !my-0 !py-0"
+            width={1200}
+            height={800}
+            className="object-cover rounded-lg !my-0 !py-0"
             style={{
                 WebkitMaskImage:
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
             }}
+            preload
         />
     </div>
     

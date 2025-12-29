@@ -73,7 +73,7 @@ export default function Sidebar() {
                     <h1 className="lg:text-lg md:text-xl text-md font-semibold px-1 shadow-black [text-shadow:0.5px_0.5px_10px_black]">
                       {project.name}
                     </h1>
-                    <p className="lg:text-sm md:text-md text-sm text-lighterBeige px-1 [text-shadow:0.5px_0.5px_5px_black]">
+                    <p className="lg:text-sm md:text-lg text-sm text-lighterBeige px-1 [text-shadow:0.5px_0.5px_5px_black]">
                       {project.desc}
                     </p>
                   </div>

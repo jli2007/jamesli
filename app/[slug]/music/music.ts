@@ -112,7 +112,7 @@ export const TRACK_DATA: TrackMetadata[] = [
     description: "freedom comes with the weight of everything left behind.",
     quotes: [
       "You'll always think that the grass is greener till you step foot over there and try it",
-      "More money, less violence, time is free but somehow priceless\nSo watch how you spend it wisely"
+      "Time is free but somehow priceless\nSo watch how you spend it wisely"
     ],
   },
   // my 19th birthday
@@ -133,6 +133,13 @@ export const TRACK_DATA: TrackMetadata[] = [
     id: "7vd1j4IDTU0koES9M8dvBQ",
     genre: "piano",
     description: "melancholic.",
+    quotes: [],
+  },
+  // therapy
+  {
+    id: "70lkOeQI0L3bSgj183ZPm5",
+    genre: "uk rap",
+    description: "a celebration of existence.",
     quotes: [],
   },
 ];

@@ -197,7 +197,7 @@
   max-width: 100% !important;
 }
 
-@media (min-width: 768px) and (max-height: 750px){
+@media (min-width: 768px) and (max-height: 775px){
   .description{
     white-space: nowrap;
     font-size: 0.7rem;
@@ -208,7 +208,7 @@
   }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 700px) and (min-width: 1024px) {
   .description{
     white-space: nowrap;
     font-size: 0.65rem;
@@ -225,9 +225,13 @@
   .lastlisten{
     font-size: 0.8rem;
   }
+
+  .descr{
+    gap: 8px;
+  }
 }
 
-@media (max-height: 660px) {
+@media (max-height: 660px) and (min-width: 1024px)  {
   .description{
     white-space: nowrap;
     font-size: 0.6rem;
@@ -256,28 +260,6 @@
 @media (min-width: 1023px) and (max-width: 1180px){
   .sideh1{
     font-size: 1.1rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1180px){
-  .description{
-    white-space: nowrap;
-    font-size: 0.7rem;
-  }
-
-  .h1descr{
-    margin-top: 10px;
-  }
-
-  .logos{
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-  }
-
-  .james{
-    opacity: 90;
   }
 }
 

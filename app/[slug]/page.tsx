@@ -2,7 +2,6 @@
 import { use, useRef, useEffect } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { redirect } from "next/navigation";
-import { notFound } from "next/navigation";
 import './codeblocks.css'
 // projects
 import Flowboard from "./mdx/flowboard.mdx";
@@ -48,7 +47,6 @@ export default function SlugPage({
   const topRef = useRef<HTMLDivElement>(null);
 
   const Post = MDX_MAP[slug];
-  // if (!Post) notFound(); // 404 if slug not found
 
   useEffect(() => {
     (async () => {
