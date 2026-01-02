@@ -1,37 +1,48 @@
+import Image from "next/image"
+
 <section className="bg-black p-1 rounded-2xl shadow-lg max-w-7xl mx-auto space-y-6">
   <header className="space-y-2">
     <h1 className="text-xl font-extrabold text-lightBeige">
       i'm about a month into uw cs — here are my thoughts.
     </h1>
-    <h3>
-      tldr; happy (met so many ambitious people that i fw), alot of free time for projects, lectures aren't that bad, glad not in eng
-    </h3>
+    <h4>
+      tldr; met many ambitious people that i fw, alot of free time for projects, lectures aren't that bad, coursework isn't as bad as eng (for now at least)
+    </h4>
   </header>
 
-  <article className="prose prose-invert prose-sm max-w-none text-lightBeige">
-    <h5>
-      beginning of sep: 
-
-      i move in and did math orientation (was a bunch of bs but worth going to i was just trolling ☠️ + met one of my closest friends there). classes start and it was hella light at first. i had so much time to network and make projects.
-      v1 life is vibrant — i thought that i got unlucky when i didn't get mkv, uwp, or cmh, but v1 is definitely optimal for cs. its very close to pac & cif and i found that 90% of my cs friends also got assigned here.
+  <article className="prose prose-invert prose-sm max-w-none text-lighterBeige font-inter font-light">
+    <h5 className='text-lg font-playfair'>
+      (early september, 2025)
     </h5>
 
-    <img src="../../../notes/uw/uw2.jpg" width={1200} alt='8-ball'/>
+    <h5>
+      i move in and did math orientation (was a bunch of bs but worth going to, i was just trolling ☠️ + met one of my closest friends there). classes start and it was hella light at first. i had so much time to network and make projects.
+      
+      v1 life is really chill, i thought that i got unlucky when i didn't get mkv, uwp, or cmh, but v1 is definitely optimal for cs. its very close to pac & cif and i found that 90% of my cs friends also got assigned here.
+    </h5>
+
+    <Image
+        src="/notes/uw/uw2.jpg"
+        alt="v1-8-ball"
+        width={1200}
+        height={800}
+        className="w-full h-auto object-cover"
+    />
 
     <h5>
-      when quizzes came around, workload started picking up, but it's still better compared to eng. although the assignments & studying defo started taking more time ( i didn't take any of the 14's, and for most of my homies who did, soon dropped 😭). side project wise, i worked alot on phuture (phutureai.com) and started making reels 
-      (deadass nothing better to do in waterloo), i also built trivalguessr (trivialguessr.com) in under a week + went to hack the north for the first time.
+      <span className='text-lightBeige/95 font-normal'>when quizzes came around, workload started picking up a little</span>. but it's still better compared to eng. although the assignments & studying defo started taking more time ( i didn't take any of the 14's, and for most of my homies who did dropped within a week or two). side project wise, i worked alot on <span className='text-lightBeige/95 font-normal'><a href="https://phutureai.com" target="_blank" className="a">phuture</a></span> and started making some fun reels
+      (nothing better to do in waterloo), i also built <span className='text-lightBeige/95 font-normal'><a href="https://trivialguessr.com" target="_blank" className="a">trivialguessr</a></span> in under a week + went to <span className='text-lightBeige/95 font-normal'>hack the north</span> for the first time.
     </h5>
 
     <h5 className='text-lighterBeige'>
-      side note: friends in eng (especially ce) are like 2 weeks in but 3 weeks behind already 😂.
+      side note: friends in eng (especially ce) are telling me that they are like 2 weeks in but 3 weeks behind already 😂.
     </h5>
 
     <h5>
-      i definitely missed out on waterloo tech week, i was too into my projects that i didn't consider it, but looking back i regret it. 
+      <span className='text-lightBeige/95 font-normal'>i definitely missed out on waterloo tech week</span>, i was too into my projects that i didn't consider going to events, but looking back i regret it. 
       
-      <span className='text-lighterBeige'>
-        tip: go to these events, don't miss out like me.
+      <span className='text-lightBeige/95 font-normal'>
+        go to these events, don't miss out like me.
       </span>
     </h5>
 
@@ -39,14 +50,18 @@
       studying in dc/dp every day has been a weird highlight, something that sounds so mundane creates hella memories. everyone being in the dc basement drinking ice capps + being 'locked in' tryna find each other after the quiz scores get released is actually hilarious ☠️.
     </h5>
 
-    <img src="../../../notes/uw/uw1.jpg" width={1200} alt='uw'/>
+    <Image
+        src="/notes/uw/uw1.jpg"
+        alt="uw-aesthetic"
+        width={1200}
+        height={800}
+        className="w-full h-auto object-cover"
+    />
 
     <h5>
-      i got friends flying to sf soon and homies who got interest from yc. 3 weeks in — the uw ecosystem is going strong. surround yourself with people who push you to think bigger and put 100% into your ambitons.
+      i got friends flying to sf soon and know people who have interest from yc. 3 weeks in, the uw ecosystem is already blossoming. friends are important—<span className='text-lightBeige/95 font-normal'>surround yourself with people who challenge you to dream bigger</span>.
       
       uw cs brings cracked people that you can't meet at your high school together. im enjoying my experience so far. 
-      
-      message me if you want to discuss anything, down to help. james out ✌🏻.
     </h5>
   </article>
 </section>

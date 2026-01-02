@@ -40,7 +40,7 @@ export const showcaseProjects: ProjectType[] = [
     name: "guideline",
     slug: "guideline",
     url: "https://github.com/JLi2007/guideline",
-    banner: "/projects/banners/guideline.jpg",
+    banner: "/projects/banners/guideline.png",
     desc: "augmented reality breadboarding guide",
     glowColors:
       "drop-shadow(0 0 20px rgba(59, 130, 246, 0.11)) drop-shadow(0 0 40px rgba(168, 85, 247, 0.11)) drop-shadow(0 0 60px rgba(236, 72, 153, 0.11))",

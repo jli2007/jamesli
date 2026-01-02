@@ -131,7 +131,7 @@ export default function Home() {
               <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0 lg:px-0 px-1">
                 {/* side section */}
                 <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:h-auto md:h-200 h-120 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
                   <div className="sidediv relative lg:text-xl md:text-2xl text-md h-[95%] flex items-end w-full z-10 whitespace-nowrap">
                     <span className="font-bold absolute top-0 left-0">
                       <span className="flex items-center justify-center gap-2 text-darkBeige3">
@@ -182,7 +182,7 @@ export default function Home() {
                   </div>
                   <Image
                     src={james}
-                    className="james absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-[5] z-0"
+                    className="absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-5 z-0"
                     preload
                     style={{
                       WebkitMaskImage:
@@ -208,14 +208,14 @@ export default function Home() {
                         <GrLinkedin className="lg:w-[4vw] lg:h-[4vh] md:w-[5vw] md:h-[5vh] w-[6vw] h-[6vh]" />
                       </div>
                       <h1 className="absolute bottom-5 italic right-5 lg:text-base md:text-lg text-sm">
-                        can't rush greatness
+                        hello@jame.li
                       </h1>
                     </a>
                   </div>
 
                   {/* socials section */}
                   <div className="relative py-3 px-7 rounded-lg bg-midBeige2 border-2 border-transparent transition delay-200 duration-150 ease-in flex flex-col items-center justify-center lg:gap-4 md:gap-2">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
                     <a
                       href="https://www.linkedin.com/in/jamessli/"
                       target="_blank"
@@ -250,7 +250,7 @@ export default function Home() {
                 {/* description section */}
                 <div className="relative lg:col-span-3 col-span-6 row-span-1 w-auto lg:h-auto h-auto lg:py-3 py-5 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
                   <div className="description relative h-auto w-full flex flex-col z-10 lg:text-sm md:text-lg text-sm">
-                    <span className="italic font-bold">
+                    <span className="italic font-bold p-1">
                       product of the environment.
                     </span>
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 lg:pb-0 pb-2 p-1">
@@ -258,26 +258,8 @@ export default function Home() {
                     </h1>
 
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
-                      i build cool software and post on social media:
+                      seeking summer '26 internships.
                     </h1>
-                    <div className="flex gap-3 lg:mb-0">
-                      <a
-                        href={"https://x.com/_jamesli"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
-                      >
-                        <FaXTwitter size={18} aria-hidden />
-                      </a>
-                      <a
-                        href={"https://www.instagram.com/jamesdialedin/"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="logos flex items-center gap-3 px-10 py-2 rounded-full shadow-sm ring-1 ring-midBeige3 hover:shadow-md transition lg:opacity-75 opacity-90"
-                      >
-                        <FaInstagram size={18} aria-hidden />
-                      </a>
-                    </div>
 
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
                       <div className="flex items-center">recently:</div>
@@ -334,7 +316,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 z-10 px-2 py-1 rounded-lg shadow-sm ring-1 ring-midBeige3 hover:shadow-lg transition opacity-90 backdrop-blur-lg"
                     >
-                      <div className="w-7 h-7 relative flex-shrink-0">
+                      <div className="w-7 h-7 relative shrink-0">
                         {recent?.album?.images?.[0] ? (
                           <Image
                             src={recent.album.images[0].url}
@@ -349,7 +331,7 @@ export default function Home() {
                           </div>
                         )}
                       </div>
-                      <span className="text-xs font-medium truncate max-w-[10rem]">
+                      <span className="text-xs font-medium truncate max-w-40">
                         {recent?.name?.toLowerCase()}
                       </span>
                     </a>

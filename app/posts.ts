@@ -56,7 +56,7 @@ export const posts: Post[] = [
   },
   {
     slug: "futbol",
-    title: "favourite jugadors ⚽️",
+    title: "jugadors ⚽️",
     date: "mar 2025",
     pinned: false,
   },

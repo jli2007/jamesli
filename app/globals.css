@@ -202,39 +202,27 @@
     white-space: nowrap;
     font-size: 0.7rem;
   }
-  
-  .h1descr{
-    margin-top: 10px;
-  }
 }
 
 @media (max-height: 700px) and (min-width: 1024px) {
   .description{
     white-space: nowrap;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
 
   .h1descr{
     margin-top: 15px;
   }
 
-  .james{
-    opacity: 90;
-  }
-
   .lastlisten{
     font-size: 0.8rem;
-  }
-
-  .descr{
-    gap: 8px;
   }
 }
 
 @media (max-height: 660px) and (min-width: 1024px)  {
   .description{
     white-space: nowrap;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
 
   .h1descr{
@@ -243,17 +231,6 @@
 
   .descr{
     margin-top: 5px;
-  }
-
-  .logos{
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-  }
-
-  .james{
-    opacity: 90;
   }
 }
 
@@ -271,12 +248,19 @@
   .descr{
     margin-top: 3px;
   }
+}
 
-  .logos{
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-bottom: 3px;
-    padding-top: 3px;
+@media (max-height: 550px) and (max-width: 1180px) {
+  .description{
+    white-space: nowrap;
+    font-size: 0.55rem;
+  }
+  .h1descr{
+    margin-top: 3px;
+  }
+
+  .descr{
+    margin-top: 2px;
   }
 }
 

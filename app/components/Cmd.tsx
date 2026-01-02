@@ -173,7 +173,7 @@ export default function CommandPalette() {
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-black/70 animate-fade-in z-40" />
           <Dialog.Content
-            className={`fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-[500px] p-3 z-50 ${
+            className={`fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-125 p-3 z-50 ${
               open ? "animate-slide-down" : "animate-slide-up"
             }`}
           >
@@ -210,7 +210,7 @@ export default function CommandPalette() {
                 />
               </div>
 
-              <Command.List className="max-h-[300px] overflow-y-auto px-3 py-4">
+              <Command.List className="max-h-75 overflow-y-auto px-3 py-4">
                 <Command.Empty className="px-5 py-4 text-sm text-midBeige2/90">
                   no results found.
                 </Command.Empty>

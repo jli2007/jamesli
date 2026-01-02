@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 <section className="bg-black p-1 rounded-2xl shadow-lg max-w-7xl mx-auto space-y-6">
   <header className="space-y-2">
     <h1 className="text-xl font-extrabold text-lightBeige">
@@ -8,23 +10,35 @@
     </h3>
   </header>
 
-  <article className="prose prose-invert prose-sm max-w-none text-lightBeige">
+  <article className="prose prose-invert prose-sm max-w-none text-lighterBeige font-inter font-light">
     <h5>
-      on 8pm on wednesday oct 22: <a target="_blank" href='https://x.com/coderpr0grammer'>zach</a> and i took our math137 midterm (i lowkey failed). 
+      on 8pm on wednesday oct 22: <a target="_blank" className='a' href='https://x.com/coderpr0grammer'>zach</a> and i took our math137 midterm (i lowkey failed). 
       
       we stayed in oakville for the night and woke up nice and early to head to yyz.
     </h5>
-    <h5>we bumped into <a target="_blank" href='https://www.linkedin.com/in/remy-aleagha-57aa9131b/'>remy</a>  <span className='text-lighterBeige'>(head of growth @ typeos)</span> at the airport so we tagged along with him. </h5>
+    <h5>we bumped into <a target="_blank" className='a' href='https://www.linkedin.com/in/remy-aleagha-57aa9131b/'>remy</a>  <span className='text-lighterBeige'>(head of growth @ typeos)</span> at the airport so we tagged along with him. </h5>
 
     <div className='w-full flex flex-row'>
-      <img src="../../../notes/sf/sf1.jpg" className='w-[50%]' alt="uw" />
-      <img src="../../../notes/sf/sf2.jpg" className='w-[50%]' alt="uw" />
+      <Image
+        src="/notes/sf/sf1.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
+      <Image
+        src="/notes/sf/sf2.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
     </div>
 
-    <h5>
-      <span className="text-lg"> landed in sf at 12pm on thursday oct 23: </span>
+    <h5 className='mt-10'>
+      <span className="text-xl font-playfair"> landed in sf, 12pm, thursday oct 23: </span>
 
-      we immediately got picked up by <a target="_blank" href='https://x.com/coderpr0grammer'>daniel martinez</a> and <a target="_blank" href='https://x.com/aql404'>musa aqeel</a> from vibegrade/<a target="_blank" href='https://typeos.com/'>typeos</a> & yc backed and visited their office @ the landing in dogpatch.
+      we immediately got picked up by <a target="_blank" className='a' href='https://x.com/coderpr0grammer'>daniel martinez</a> and <a target="_blank" className='a' href='https://x.com/aql404'>musa aqeel</a> from vibegrade(yc) / <a target="_blank" className='a' href='https://typeos.com/'>typeos</a> and visited their office @ the landing in dogpatch.
     </h5>
     <iframe src="https://www.google.com/maps/embed?pb=!4v1762546148383!6m8!1m7!1slGLTpCpgzlfxftPGJcCTng!2m2!1d37.75759901151951!2d-122.3945158964842!3f239.6058868671404!4f7.124056644737053!5f0.5946591027696385"
       className="h-[50vh] border-0 iframe w-full"
@@ -36,32 +50,57 @@
 
     <h5 className="my-5">
       then we visited visited dris & ben @{" "}
-      <a target="_blank" href="https://instinct.so/">instinct</a>, they cooking up a launch vid and kicked us out 😂. theres hella
+      <a target="_blank" className='a' href="https://instinct.so/">instinct</a>, they cooking up a launch vid and kicked us out 😂. theres hella
       founders in dogpatch area for some reason.
     </h5>
     <h5>
-      then we took a quick ride to the spermrace hq, met the team including <a target="_blank" href="https://x.com/Nick_Smoll">nick</a> &
-      <a target="_blank" href="https://x.com/0x_rxkvys">rishi</a> who took us for dinner.
+      then we took a quick ride to the spermrace hq, met the team including <a target="_blank" className='a' href="https://x.com/Nick_Smoll">nick</a> &
+      <a target="_blank" className='a' href="https://x.com/0x_rxkvys">rishi</a> who invited us for dinner.
     </h5>
-    <img src="../../../notes/sf/sf3.jpeg" width={700} alt="uw" />
+
+    <Image
+      src="/notes/sf/sf3.jpeg"
+      alt="sf"
+      width={1200}
+      height={800}
+      className="w-full h-auto object-cover"
+    />
 
     <h5>
-      we then visited <a target="_blank" href='https://x.com/shanebarakat_'>shane</a>, <a target="_blank" href='https://x.com/alexinbinary'>alex</a>  & <a target="_blank" href='https://x.com/JayChopra_'>jay</a>  <span className='text-lighterBeige'>(founders @ <a className='text-lighterBeige' target="_blank" href='https://www.polarity.cc/'>polarity)</a></span> at their place and talked tech. the view was hella nice and  <a target="_blank" href='https://x.com/liraliuwho'>lira</a> & <a target="_blank" href='https://x.com/selimaz_'>adam</a> from <a target="_blank" href='https://www.tryvectus.ai/'>vectus ai</a> invited us to stay the night. i rode waymo for the first time 🔥.
+      we then visited <a target="_blank" className='a' href='https://x.com/shanebarakat_'>shane</a>, <a target="_blank" className='a' href='https://x.com/alexinbinary'>alex</a>  & <a target="_blank" className='a' href='https://x.com/JayChopra_'>jay</a>  <span className='text-lighterBeige'>(founders @ <a className='a' target="_blank" href='https://www.polarity.cc/'>polarity)</a></span> at their place and talked tech. the view was hella nice and  <a target="_blank" className='a' href='https://x.com/liraliuwho'>lira</a> & <a target="_blank" className='a' href='https://x.com/selimaz_'>adam</a> from <a target="_blank" className='a' href='https://www.tryvectus.ai/'>vectus ai</a> invited us to stay the night. i rode waymo for the first time 🔥.
     </h5>
 
-    <img src="../../../notes/sf/sf4.jpg" width={700} alt="uw" />
+    <Image
+      src="/notes/sf/sf4.jpg"
+      alt="sf"
+      width={1200}
+      height={800}
+      className="w-full h-auto object-cover mb-1!"
+    />
 
-    <h5 className="text-lighterBeige mb-5">sf at night is beautiful</h5>
+    <h5 className="text-lighterBeige my-1!">sf at night is beautiful</h5>
 
-    <div className='w-full flex flex-row'>
-      <img src="../../../notes/sf/sf5.jpg" className='w-[50%]' alt="uw" />
-      <img src="../../../notes/sf/sf6.jpg" className='w-[50%]' alt="uw" />
+    <div className='w-full flex flex-row not-prose my-1!'>
+      <Image
+        src="/notes/sf/sf5.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
+      <Image
+        src="/notes/sf/sf6.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
     </div>
 
-    <h5>
-      <span className="text-lg">friday oct 24: </span>
+    <h5 className='mt-10'>
+      <span className="text-xl font-playfair">friday oct 24: </span>
 
-      we met up with cole and elliot from <a target="_blank" href='https://paywithlocus.com/'>locus (yc f25)</a>.
+      we met up with cole and elliot from <a target="_blank" className='a' href='https://paywithlocus.com/'>locus (yc f25)</a>.
 
       we then went to calhacks to check it out.
 
@@ -75,66 +114,118 @@
       allow="accelerometer; gyroscope;"
     ></iframe>
 
-    held at the palace of fine arts, the venue itself was aesthetic, however the bottleneck is that this wasn't a location meant to host this many people coding — the wifi couldn't handle it.
+    held at the palace of fine arts, the venue itself was aesthetic, however the bottleneck was that this wasn't a location meant to host this many people coding — the wifi couldn't handle it.
 
-    <div className='w-full flex flex-row'>
-      <img src="../../../notes/sf/sf8.jpg" className='w-[50%]' alt="uw" />
-      <img src="../../../notes/sf/sf7.jpg" className='w-[50%]' alt="uw" />
+    <div className='w-full flex flex-row not-prose my-1!'>
+      <Image
+        src="/notes/sf/sf8.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
+      <Image
+        src="/notes/sf/sf7.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
     </div>
 
-    we then decided to take a side quest to the <a target="_blank" href='https://www.browserbase.com/'>browserbase</a> hq for a canadian founder meetup hosted by <a target="_blank" href='https://x.com/tokifyi'>toki</a> and <a target="_blank" href='https://x.com/TyneeWorld'>tyler</a>. met cool people there, had many inspirational conversations.
+    we then decided to take a side quest to the <a target="_blank" className='a' href='https://www.browserbase.com/'>browserbase</a> hq for a canadian founder meetup hosted by <a target="_blank" className='a' href='https://x.com/tokifyi'>toki</a> and <a target="_blank" className='a' href='https://x.com/TyneeWorld'>tyler</a>. met cool people there, had many inspirational conversations.
 
-    <div className='w-full flex flex-row'>
-      <img src="../../../notes/sf/sf10.jpg" className='w-[50%]' alt="uw" />
-      <img src="../../../notes/sf/sf9.jpg" className='w-[50%]' alt="uw" />
+    <div className='w-full flex flex-row not-prose my-1!'>
+      <Image
+        src="/notes/sf/sf10.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
+      <Image
+        src="/notes/sf/sf9.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-[50%] h-auto object-cover"
+      />
     </div>
 
     we went back to calhacks, but zach and i decided that adventure > hacking and we dipped. <span className="text-lighterBeige">(but first we helped hand out celcius & typeos condoms). </span> but where would we leave to? we had to make a spontaneous decision on the fly.
 
-    <a target="_blank" href='https://f.inc/'>founders inc</a> was nearby. we decided to walk there and hopefully crash 🙏.
+    <a target="_blank" className='a' href='https://f.inc/'>founders inc</a> was nearby. we decided to walk there and hopefully crash 🙏.
 
-    <img src="../../../notes/sf/sf11.jpeg" width={700} alt="uw" />
+    <Image
+      src="/notes/sf/sf11.jpeg"
+      alt="sf"
+      width={1200}
+      height={800}
+      className="w-full h-auto object-cover"
+    />
 
     we saw a sidedoor open by a sliver and went inside.
 
     some ppl saw us and raised the obvious quesion "yo who tf are these kids and why are yall here".
 
-    we pitched our hackathon idea and they let us crash for the night. the office was hella chill. we met <a target="_blank" href='https://x.com/TsT3v0'>tom</a> and he instantly credited our ballsiness. we had a great convo with him and he gave us tons of valuable expertise.
+    we pitched our hackathon idea and they let us crash for the night. the office was hella chill. we met <a target="_blank" className='a' href='https://x.com/TsT3v0'>tom</a> and he instantly credited our ballsiness. we had a great convo with him and he gave us tons of valuable expertise.
 
-    <span className="text-lighterBeige mb-5">tbh we truly were crazy though. this experience taught me the ppl in sf all got that "f*** it" mentality. its been embedded into the environment. our night would've been totally different if we weren't like "yo lets do something crazy" and if the founders weren't like "yo these kids are weird af, but we fw it". </span>
+    <span className="text-lighterBeige mb-5">tbh we truly were crazy though. this experience taught me the ppl in sf all got that "f*** it" mentality. its been embedded into the environment. our night would've been totally different if we weren't like "yo lets do something crazy" and if the founders weren't like "yo these kids are weird af, but we'll let them in". </span>
     </h5>
 
-    <h5>
-      <span className="text-lg">saturday oct 25: </span>
+    <h5 className='mt-10'>
+      <span className="text-xl font-playfair">saturday oct 25: </span>
 
-      we mostly just chilled at adams place.
+      we mostly just chilled at adam's place.
 
-      <div className='w-full flex flex-row'>
-        <img src="../../../notes/sf/sf13.jpg" className='w-[50%]' alt="uw" />
-        <img src="../../../notes/sf/sf12.jpg" className='w-[50%]' alt="uw" />
+      <div className='w-full flex flex-row not-prose my-1!'>
+        <Image
+          src="/notes/sf/sf13.jpg"
+          alt="sf"
+          width={1200}
+          height={800}
+          className="w-[50%] h-auto object-cover"
+        />
+        <Image
+          src="/notes/sf/sf12.jpg"
+          alt="sf"
+          width={1200}
+          height={800}
+          className="w-[50%] h-auto object-cover"
+        />
       </div>
+
+      i also explored the hilly neighbourhoods (free leg day) & we doordashed panda express and popeyes, fully experienced the founder life.
     </h5>
 
-    <h5>
-      <span className="text-lg">sunday oct 26: </span>
+    <h5 className='mt-10'>
+      <span className="text-xl font-playfair">sunday oct 26: </span>
 
       we went to an yc afterparty, mostly just chilled.
 
-      then we attended the typeos launch party back @ the landing where we started 4 days ago then left for the airport.
+      then we attended the typeos launch party back @ the landing, where we started 4 days ago then rushed to the airport.
 
-      <img src="../../../notes/sf/sf14.jpg" width={700} alt="uw" />
+      <Image
+        src="/notes/sf/sf14.jpg"
+        alt="sf"
+        width={1200}
+        height={800}
+        className="w-full h-auto object-cover"
+      />
+    </h5>
+
+    <h5 className='mt-10'>
+    <span className="text-xl font-playfair">monday oct 27: </span>
+    
+    landed and i took my cs135 midterm later that day (went way better than math137 even though i crammed content in 8 hours)
     </h5>
 
     <h5>
-    <span className="text-lg">monday oct 27: </span>
+   <span className='text-lg underline font-playfair'> moral of the story: go to sf. </span>
     
-    landed and i took my cs135 midterm later that day (went way better than math137 even though i crammed it in 8 hours)
-    </h5>
-
-    <h5>
-   <span className='text-xl underline'> moral of the story: go to sf. </span>
+    my outlook on life was changed completely by the environment. be spontaneous, explore, sneak into founders inc, crash at founders' places, wake up with a mentality to take risks. 
     
-    my outlook on life altered greatly from the environment. be spontaneous, explore, sneak into founders inc, crash at founders' places, wake up with a f*** it mentality. can't wait to return after improving on myself 🫡
+    can't wait to return after improving on myself 🫡
     </h5>
   </article>
 </section>

@@ -64,12 +64,12 @@ export default function Sidebar() {
                         src={project.banner}
                         alt={project.name}
                         fill
-                        sizes="100vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 50vw"
                         className="object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
                       />
                     )}
                   </div>
-                  <div className="absolute bottom-0 left-0 w-full p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                  <div className="absolute bottom-0 left-0 w-full p-5 bg-linear-to-t from-black/80 via-black/40 to-transparent">
                     <h1 className="lg:text-lg md:text-xl text-md font-semibold px-1 shadow-black [text-shadow:0.5px_0.5px_10px_black]">
                       {project.name}
                     </h1>

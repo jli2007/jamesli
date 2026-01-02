@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 import { FiExternalLink } from "react-icons/fi";
 
 <div className='w-full text-center trivialguessr-page'>
@@ -10,7 +10,7 @@ import { FiExternalLink } from "react-icons/fi";
             alt="trivialguessr-main"
             width={1200}
             height={800}
-            className="object-cover rounded-lg !my-0 !py-0"
+            className="object-cover rounded-lg my-0! py-0!"
             style={{
                 WebkitMaskImage:
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
@@ -19,7 +19,7 @@ import { FiExternalLink } from "react-icons/fi";
         />
     </div>
     
-    <div className='md:w-[90%] w-[100%] mx-auto'>
+    <div className='md:w-[90%] w-full mx-auto'>
         <div className='flex justify-center mb-5 text-base'>
             <a href="https://www.trivialguessr.com/" target="_blank" rel="noopener noreferrer" className='a flex items-center gap-1 decoration-1 underline-offset-4'>
                 <span>project</span>
@@ -29,7 +29,7 @@ import { FiExternalLink } from "react-icons/fi";
 
         <div className='flex flex-col text-left'>
             <span className='text-lightBeige/95 text-xl'>overview</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 trivialguessr is <span className='text-lightBeige/95 font-normal'>geoguessr for trivia</span>. questions are interesting trivia problems that can be traced to a city/coordinate of the world. grew to 200+ users, 2k events, and a peak of 60 active daily users within the first two weeks of launch.
             </span>
         </div>
@@ -38,7 +38,7 @@ import { FiExternalLink } from "react-icons/fi";
             <div className='flex flex-col gap-4'>
                 <div className='flex flex-col gap-1'>
                     <span className='text-lightBeige/95 text-lg'>timeline</span>
-                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>1 week, sep 2025</span>
+                    <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>1 week, sep 2025</span>
                 </div>
 
                 <div className='flex flex-col gap-1'>
@@ -64,37 +64,43 @@ import { FiExternalLink } from "react-icons/fi";
 
         <div className='flex flex-col text-left mt-15'>
             <span className='text-lightBeige/95 text-xl'>inspiration</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 andy and i wanted to ship something fast at the beginning of our 1a term. i always see takes on geoguessr, like <a href="https://watguessr.io/" target="_blank" className="a">watguessr</a> for uwaterloo locations, so thought i'd create one for trivia.
-                <img 
-                    src="../../../projects/trivialguessr/game.png" 
-                    alt="trivialguessr-game" 
-                    className="w-full h-auto object-cover rounded !mb-0"
+ 
+                <Image
+                    src="/projects/trivialguessr/game.png"
+                    alt="trivialguessr-game"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded mb-0!"
                 />
             </span>
         </div>
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>architecture</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 the architecture was extremely trivial itself. all we needed was a next.js web app with gcp for google maps sdk, and supabase for postgres. 
 
                 the question generation pipeline was a simple llm script + image scrape with python.
-                <img 
-                    src="../../../projects/trivialguessr/architecture.png" 
-                    alt="trivialguessr-architecture" 
-                    className="w-full h-auto object-cover rounded !mb-0"
+
+                <Image
+                    src="/projects/trivialguessr/architecture.png"
+                    alt="trivialguessr-architecture"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded mb-0!"
                 />
             </span>
         </div>
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>daily challenge</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 every day, we <span className='text-lightBeige/95 font-normal'>auto-generate a new daily challenge</span>. users can play anonymously and see if they could crack the leaderboard.
 
                 it's impossible to stop users from playing multiple times with no auth, but we implemented local state for piece of mind—<span className='text-lightBeige/95 font-thin italic'>so technically you could only play the daily challenge once.</span>
-                <div className="!my-1">
+                <div className="my-1!">
                     <video                      
                         autoPlay
                         loop
@@ -110,7 +116,7 @@ import { FiExternalLink } from "react-icons/fi";
 
         <div className='flex flex-col text-left mt-5'>
             <span className='text-lightBeige/95 text-xl'>daily cron job</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 our daily challenge data need to cleared every day at 12am est. we do this with a <a href="https://vercel.com/docs/cron-jobs" target="_blank" className="a">vercel cron job</a>:
 
                 <span className="route-background text-[0.9rem]">client/vercel.json</span>
@@ -132,7 +138,7 @@ import { FiExternalLink } from "react-icons/fi";
             </span>
 
             <span className='text-lightBeige/95 text-lg'>clearing the leaderboard table</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 matches all rows and uses the <span className="route-background text-[0.9rem]">delete()</span> function.
 
                 <span className="route-background text-[0.9rem]">server/index.ts</span>
@@ -156,7 +162,7 @@ import { FiExternalLink } from "react-icons/fi";
             </span>
 
             <span className='text-lightBeige/95 text-lg'>resetting the question table</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 uses delete and insert logic rather than a replace. first, it would call <span className="route-background text-[0.9rem]">/api/delete-table</span>
 
                 then it would select 5 random questions from the pre-existing question bank. 
@@ -189,7 +195,7 @@ if (
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>question generation pipeline</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 we generated <span className='text-lightBeige/95 font-normal'>~1.5k unique questions</span> with our python scripts:
 
                 <span className="route-background text-[0.9rem]">main.py</span> calls openai api to generate trivia questions, then scrapes images from bing, with wikipedia as fallback. the script includes anti-blocking measures like <span className='text-lightBeige/95 font-normal'>rotating user agents</span> and <span className='text-lightBeige/95 font-normal'>adaptive delays</span>.
@@ -221,16 +227,19 @@ if (
                     </pre>
                 </div>
 
-                we implement a <span className='text-lightBeige/95 font-normal'>self-adjusting rate limiter</span> that monitors its own success rate in real-time. 
+                we implement a <span className='text-lightBeige/95 font-normal'>self-adjusting rate limiter</span> that monitors its own success rate in real-time.  
                 when detection risk increases (success drops below 70%), it automatically 
                 doubles delays to evade bot detection. the scraper gets blocked after ~50 requests, but with 
                 this logic, we successfully process 1000+ images per session.
 
-                <img 
-                    src="../../../projects/trivialguessr/db.png" 
-                    alt="trivialguessr-db" 
-                    className="w-full h-auto object-cover rounded !mb-0"
+                <Image
+                    src="/projects/trivialguessr/db.png"
+                    alt="trivialguessr-db"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded mb-0!"
                 />
+
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>1.5k+ unique questions!</span>
 
                 when generating questions, checking for duplicates during generation would require 
@@ -246,10 +255,10 @@ if (
 
         <div className='flex flex-col text-left mt-5'>
             <span className='text-lightBeige/95 text-xl'>ux considerations</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 we tried to make the game as intuitive as possible. we even included a <span className='text-lightBeige/95 font-normal'>report question</span> button for users to report faulty questions. we investigate the reported questions manually.
 
-                <div className="!my-1">
+                <div className="my-1!">
                     <video                      
                         autoPlay
                         loop
@@ -265,7 +274,7 @@ if (
 
         <div className='flex flex-col text-left mt-5'>
             <span className='text-lightBeige/95 text-xl'>next steps</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 many improvements could be made to the game. multiplayer mode, audio and video questions, and auth could all be implemented in the future.
 
                 honestly, the architecture and pipeline for trivialguessr aren't very technically challenging at all. <span className='text-lightBeige/95 font-thin italic'>you can say that the project is very trivial</span>. i just wanted to ship a fun concept quickly. 

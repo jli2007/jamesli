@@ -3,16 +3,24 @@ import { useRef, useEffect, useState } from "react";
 export default function RenderPlace({ place }: { place: any }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [iframeKey, setIframeKey] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const isVisible = entry.isIntersecting;
         setVisible(isVisible);
+        
+        // When becoming visible, reload the iframe with new key
+        if (isVisible) {
+          setIsLoaded(false);
+          setIframeKey(prev => prev + 1); // Force new iframe
+        }
       },
       {
-        rootMargin: "1000px", //controls how close the screen scroll is for the iframe to start loading
-        threshold: 0.05, //controls how much the iframe has to be visible for the callback to trigger
+        rootMargin: "500px",
+        threshold: 0.05,
       }
     );
 
@@ -20,16 +28,20 @@ export default function RenderPlace({ place }: { place: any }) {
     return () => observer.disconnect();
   }, []);
 
+  const handleIframeLoad = () => {
+    setIsLoaded(true);
+  };
+
   return (
-    <div ref={ref} className="flex flex-col">
-      <div className="flex justify-between md:items-baseline items-center pb-[10px] md:flex-row flex-col">
-        <div className="flex items-center m-0 gap-[10px] lg:mb-0 mb-2">
-          <h3 className="md:mb-0 mb-10 !m-0 leading-none">{place.title}</h3>
-          <span className="lg:text-[35px] text-[30px] !m-0 leading-none">
+    <div ref={ref} className="flex flex-col mb-8 md:mb-0">
+      <div className="flex justify-between md:items-baseline items-center pb-2.5 md:flex-row flex-col">
+        <div className="flex items-center m-0 gap-2.5 lg:mb-0 mb-2">
+          <h3 className="md:mb-0 mb-10 m-0! leading-none">{place.title}</h3>
+          <span className="lg:text-[35px] text-[30px] m-0! leading-none">
             {place.flag}
           </span>
         </div>
-        <div className="flex items-center gap-[10px] tagContainer m-0 lg:mb-0 mb-1">
+        <div className="flex items-center gap-2.5 tagContainer m-0 lg:mb-0 mb-1">
           {place.tags.map((tag: any, i: number) => {
             const shadowMap: Record<string, string> = {
               mediumseagreen: "rgba(60,179,113,0.7)",
@@ -49,7 +61,7 @@ export default function RenderPlace({ place }: { place: any }) {
             return (
               <div
                 key={i}
-                className="text-white md:px-[15px] py-[2px] px-[10px] rounded-[15px] text-[12px]"
+                className="text-white md:px-3.75 py-0.5 px-2.5 rounded-[15px] text-[12px]"
                 style={{
                   backgroundColor: tag.color,
                   boxShadow: `0px 4px 8px ${shadowColor}`,
@@ -61,20 +73,27 @@ export default function RenderPlace({ place }: { place: any }) {
           })}
         </div>
       </div>
-      {visible ? (
-        <iframe
-          src={place.iframeSrc}
-          className="h-[50vh] border-0"
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allow="accelerometer; gyroscope;"
-        ></iframe>
-      ) : (
-        <div className="h-[50vh] bg-black/5 rounded-md" />
-      )}
-      <h4 className="mt-[10px] mb-[25px]">{place.description}</h4>
-      <hr className="m-0 p-0 mb-[5px] opacity-50" />
+
+      <div className="relative md:h-[50vh] h-[30vh] bg-black/5 rounded-md">
+        {visible && (
+          <iframe
+            key={iframeKey}
+            src={place.iframeSrc}
+            className="absolute inset-0 w-full h-full border-0"
+            style={{
+              opacity: isLoaded ? 1 : 0,
+              transition: 'opacity 0.3s ease-in-out',
+            }}
+            onLoad={handleIframeLoad}
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            allow="accelerometer;"
+          ></iframe>
+        )}
+      </div>
+
+      <h4 className="mt-2.5 mb-6.25">{place.description}</h4>
+      <hr className="m-0 p-0 mb-1.25 opacity-50" />
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function RenderMusic() {
                 href={t.external_urls?.spotify || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative flex-shrink-0 w-full sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 aspect-square sm:aspect-auto group cursor-pointer"
+                className="relative shrink-0 w-full sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 aspect-square sm:aspect-auto group cursor-pointer"
               >
                 {t.album?.images && t.album.images[0] ? (
                   <Image
@@ -86,7 +86,7 @@ export default function RenderMusic() {
                 {metadata.quotes.map((quote, idx) => (
                   <blockquote
                     key={idx}
-                    className="text-sm md:text-base italic text-lighterBeige/75 border-l-4 border-gray-300 pl-4 break-words whitespace-pre-line"
+                    className="text-sm md:text-base italic text-lighterBeige/75 border-l-4 border-gray-300 pl-4 wrap-break-word whitespace-pre-line"
                   >
                     {quote}
                   </blockquote>

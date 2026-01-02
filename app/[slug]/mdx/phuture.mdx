@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 import { FiExternalLink } from "react-icons/fi";
 import { FaCamera } from "react-icons/fa";
 import { CiLocationArrow1 } from "react-icons/ci";
@@ -12,7 +12,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
             alt="phuture-main"
             width={1200}
             height={800}
-            className="object-cover rounded-lg !my-0 !py-0"
+            className="object-cover rounded-lg my-0! py-0!"
             style={{
                 WebkitMaskImage:
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
@@ -21,7 +21,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
         />
     </div>
     
-    <div className='md:w-[90%] w-[100%] mx-auto'>
+    <div className='md:w-[90%] w-full mx-auto'>
         <div className='flex justify-center mb-5 text-base'>
             <a href="https://www.phutureai.com/" target="_blank" rel="noopener noreferrer" className='a flex items-center gap-1 decoration-1 underline-offset-4'>
                 <span>project</span>
@@ -31,7 +31,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
         <div className='flex flex-col text-left'>
             <span className='text-lightBeige/95 text-xl'>overview</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 phuture is an nature exploration app with <span className='text-lightBeige/95 font-normal italic'>30 alpha testers</span> lined up for early-stage testing. inspired by the pokédex in pokémon and the mechanics of pokémon-go, the underlying concept of phuture revolves around <span className='text-lightBeige/95 font-normal'>collecting every single plant & animal species in the world</span> into a personal database.
             </span>
         </div>
@@ -40,8 +40,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
             <div className='flex flex-col gap-4'>
                 <div className='flex flex-col gap-1'>
                     <span className='text-lightBeige/95 text-lg'>timeline</span>
-                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>[incomplete]</span>
-                    <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>3 months, jun-aug 2025</span>
+                    <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>[incomplete]</span>
+                    <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>3 months, jun-aug 2025</span>
                 </div>
 
                 <div className='flex flex-col gap-1'>
@@ -70,13 +70,16 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
         <div className='flex flex-col text-left mt-15'>
             <span className='text-lightBeige/95 text-xl'>inspiration</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 12am: i was riding my bike through the forest when it hit me: what if every species of wildlife was able to be collected?
-                <img 
-                    src="../../../projects/phuture/inspo.png" 
-                    alt="phuture-inspo" 
-                    className="w-full h-auto object-cover rounded !mb-0"
+                <Image
+                    src="/projects/phuture/inspo.png"
+                    alt="phuture-inspo"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded mb-0!"
                 />
+
                 it got me pondering and i genuinely almost crashed into a tree. being out in nature is underrated, but addiction to technology made people forget about what's out there. 
 
                 the <span className='text-lightBeige/95 font-normal'>intersection of ai and nature</span> seemed interesting, so i called andy up and began idealizing the concept.
@@ -85,12 +88,14 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>architecture</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 <span className='text-lightBeige/95 font-normal'>unity</span> was the most logical choice for the mobile app as we needed to implement a mapping sdk. all the game logic lives in the <span className='text-lightBeige/95 font-normal'>containerized node.js server</span>, hosted on <span className='text-lightBeige/95 font-normal'>aws</span>.
-                <img 
-                    src="../../../projects/phuture/architecture.png" 
-                    alt="phuture-architecture" 
-                    className="w-full h-auto object-cover rounded !mb-0"
+                <Image
+                    src="/projects/phuture/architecture.png"
+                    alt="phuture-architecture"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded mb-0!"
                 />
 
                 essentially, the user would take a picture of a species using our in-app camera, and our logic layers will handle the rest.
@@ -107,7 +112,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>server</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 i spent most of the summer trial and erroring the server. this was my first time using docker, redis, and rabbitmq so it was a perfect learning experience for me.
 
                 the routes are seperated with <span className='text-lightBeige/95 font-normal'>express router</span>:
@@ -129,7 +134,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
             </span>
 
             <span id="redis" className='text-lightBeige/95 text-lg'>redis</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 i used redis as a <span className='text-lightBeige/95 font-normal'>low-latency cache and session store</span> to avoid repeated database calls and to keep auth stateless.
 
                 user data is cached in redis hashes with a short ttl, while auth sessions are stored as token → user mappings.
@@ -156,7 +161,7 @@ await redis.expire(\`userdata:\${user.id}\`, 60 * 5); // 5 min cache
 
 
             <span className='text-lightBeige/95 text-xl'>rabbitmq</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 i used rabbit as the <span className='text-lightBeige/95 font-normal'>event backbone</span> for the backend. instead of performing database writes directly in the main request lifecycle, events are published to queues and processed asynchronously by subscribers. 
                 
                 this makes gameplay responsive and allows heavy background tasks to be offloaded without slowing the app down.
@@ -223,7 +228,7 @@ channel.sendToQueue("game_events", Buffer.from(JSON.stringify({
             </span>
 
             <span className='text-lightBeige/95 text-xl'>security scripts</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 i used bash scripts to set up secure configurations for redis, rabbitmq, and the application environment. one of the main uses cases was <span className='text-lightBeige/95 font-normal'>setting strong secret variables</span>.
 
                 <span className="route-background text-[0.9rem]">/setup-security.sh</span>
@@ -252,7 +257,7 @@ chmod 600 .env
             </span>
 
             <span className='text-lightBeige/95 text-xl'>docker + kubernetes architecture</span>
-                <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                     our backend uses <span className='text-lightBeige/95 font-normal'>docker for containerization</span>  and <span className='text-lightBeige/95 font-normal'>kubernetes for orchestration</span>. each service, the server, redis, and rabbitmq, runs isolated in its own container.
 
                     <span className="route-background text-[0.9rem]">dockerfile</span>
@@ -300,9 +305,11 @@ redis:
 
                 i followed a <span className='text-lightBeige/95 font-normal'>microservice design</span> for the server, it doesn't embed services. rather, it connects to them over the network. this allows the server to scale independently!
 
-                <img 
-                    src="../../../projects/phuture/docker.png" 
-                    alt="phuture-docker" 
+                <Image
+                    src="/projects/phuture/docker.png"
+                    alt="phuture-docker"
+                    width={1200}
+                    height={800}
                     className="w-full h-auto object-cover rounded"
                 />
 
@@ -358,32 +365,35 @@ spec:
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>mobile app</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 andy worked on the unity app so i'll cover only the surface:
 
                 mapping was done with <a href="https://www.arcgis.com/index.html" target="_blank" className="a">arcgis</a>, login flow was standard supabase implementation.
-                <img 
-                    src="../../../projects/phuture/mapping.png" 
-                    alt="phuture-mapping" 
+     
+                <Image
+                    src="/projects/phuture/mapping.png"
+                    alt="phuture-mapping"
+                    width={1200}
+                    height={800}
                     className="w-full h-auto object-cover rounded"
                 />
             </span>
 
             <span className='text-lightBeige/95 text-lg'>user permissions</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem] mt-5'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem] mt-5'>
                 <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center font-playfair'> <FaCamera size={24} /> camera</span>
-                <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                     we needed camera access for the user to take pictures of wildlife.
                 </span>
                 <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center font-playfair'> <CiLocationArrow1 size={24} /> location</span>
-                <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+                <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                     we need user location for many features.
                 </span>
             </span>
 
-           <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+           <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 here is a quick demo with raw mapping implemented. the goal was to have an avatar accurate to true location, similar to pokémon-go.
-                <div className="not-prose !mt-3">
+                <div className="not-prose mt-3!">
                     <video                      
                         autoPlay
                         loop
@@ -399,16 +409,18 @@ spec:
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>launch</span>
-            <span className='text-lighterBeige font-inter font-[200] text-[1rem]'>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 we shot the launch video, with some help from <a href="https://www.youtube.com/@garf510" target="_blank" className="a">gary</a>, and it reached <span className='text-lightBeige/95 font-normal'>~20k impressions</span> on linkedin! this isn't a big number in any account, but it was my first time gaining traction on something that i was building.
 
-                <img 
-                    src="../../../projects/phuture/launch.png" 
-                    alt="phuture-inspo" 
-                    className="w-full h-auto object-cover rounded !mb-0"
+                <Image
+                    src="/projects/phuture/launch.png"
+                    alt="phuture-launch"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded mb-0!"
                 />
                 
-                <div className="not-prose !mt-3">
+                <div className="not-prose mt-3!">
                     <video                      
                         autoPlay
                         loop
