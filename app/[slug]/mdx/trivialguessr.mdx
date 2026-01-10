@@ -16,6 +16,8 @@ import { FiExternalLink } from "react-icons/fi";
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
             }}
             preload
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+            quality={85}
         />
     </div>
     
@@ -73,6 +75,8 @@ import { FiExternalLink } from "react-icons/fi";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
             </span>
         </div>
@@ -90,6 +94,8 @@ import { FiExternalLink } from "react-icons/fi";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
             </span>
         </div>
@@ -101,11 +107,12 @@ import { FiExternalLink } from "react-icons/fi";
 
                 it's impossible to stop users from playing multiple times with no auth, but we implemented local state for piece of mind—<span className='text-lightBeige/95 font-thin italic'>so technically you could only play the daily challenge once.</span>
                 <div className="my-1!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full">
                         <source src="../../../projects/trivialguessr/daily.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -238,6 +245,8 @@ if (
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>1.5k+ unique questions!</span>
@@ -259,11 +268,12 @@ if (
                 we tried to make the game as intuitive as possible. we even included a <span className='text-lightBeige/95 font-normal'>report question</span> button for users to report faulty questions. we investigate the reported questions manually.
 
                 <div className="my-1!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full">
                         <source src="../../../projects/trivialguessr/report.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.

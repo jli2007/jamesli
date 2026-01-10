@@ -136,7 +136,13 @@ export default function Home() {
                     <span className="font-bold absolute top-0 left-0">
                       <span className="flex items-center justify-center gap-2 text-darkBeige3">
                         cs
-                        <Image src={uw} width={25} height={25} alt="uw-logo" />
+                        <Image
+                          src={uw}
+                          width={25}
+                          height={25}
+                          alt="uw-logo"
+                          placeholder="blur"
+                        />
                         uwaterloo
                       </span>
                     </span>
@@ -183,12 +189,13 @@ export default function Home() {
                   <Image
                     src={james}
                     className="absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-5 z-0"
-                    preload
                     style={{
                       WebkitMaskImage:
                         "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.01) 75%)",
                     }}
                     alt="jame"
+                    placeholder="blur"
+                    preload
                   />
                 </div>
 
@@ -265,12 +272,18 @@ export default function Home() {
                       <div className="flex items-center">recently:</div>
                       <ul className="descr flex flex-col gap-8 md:gap-4 mt-4">
                         <li className="flex items-center gap-x-1 flex-wrap">
-                          built 
+                          built
                           <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
                             flowboard
                           </LinkSlider>
                           <span>@</span>
-                          <Image src={western} width={20} height={20} alt="western-logo" />
+                          <Image
+                            src={western}
+                            width={20}
+                            height={20}
+                            alt="western-logo"
+                            placeholder="blur"
+                          />
                           hackwestern, winning 2nd
                         </li>
                         
@@ -283,7 +296,13 @@ export default function Home() {
                             visited sf
                           </LinkSlider>
                           <span className="-ml-1">—met cool ppl & snuck into</span>
-                          <Image src={fdotinc} width={20} height={20} alt="fdotinc-logo"/>
+                          <Image
+                            src={fdotinc}
+                            width={20}
+                            height={20}
+                            alt="fdotinc-logo"
+                            placeholder="blur"
+                          />
                           <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
                             founders inc
                           </LinkSlider>

@@ -19,6 +19,8 @@ import { TbMathIntegrals } from "react-icons/tb";
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
             }}
             preload
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+            quality={85}
         />
     </div>
     
@@ -115,6 +117,8 @@ import { TbMathIntegrals } from "react-icons/tb";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 the web app accepts a component list upload, stores it in mongodb using <a href="https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes" target="_blank" className="a">dynamic routing</a>, and generates a unique qr code that the mobile app can scan.
@@ -292,6 +296,8 @@ val scanLauncher = rememberLauncherForActivityResult(
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mt-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
                 <span className='text-lightBeige/95 font-thin italic text-[0.9rem]'>there is around 2k lines of logic in AR.kt and it's more complex than what i'm going to describe but i'll keep it simple. </span>
             </span>
@@ -494,6 +500,8 @@ for (contour in contours) {
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 when it finishes one component, it moves to the next. when it finishes all components, it loops back. timing is controlled by checking <a href="https://developer.android.com/reference/java/lang/System#currentTimeMillis()" target="_blank" className="a">System.currentTimeMillis()</a> for frame-independent delays.

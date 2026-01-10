@@ -9,6 +9,8 @@ import Image from "next/image"
   height={800}
   loading="eager"
   className="w-full"
+  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+  quality={85}
 />
 
 <div>
@@ -18,6 +20,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -34,6 +37,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -50,6 +54,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -66,6 +71,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -82,6 +88,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -98,6 +105,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -114,6 +122,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -130,6 +139,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
@@ -146,6 +156,7 @@ import Image from "next/image"
     loop
     muted
     playsInline
+    preload="none"
     className="w-full cursor-pointer"
     onClick={(e) => {
       e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();

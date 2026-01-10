@@ -18,6 +18,8 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
             }}
             preload
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+            quality={85}
         />
     </div>
     
@@ -87,6 +89,8 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>creating storyboard trees on the canvas</span>
 
@@ -105,6 +109,8 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 client-side, flowboard uses the <a href="https://tldraw.dev/" target="_blank" className="a">tldraw sdk</a> for the canvas. and indexeddb as a low level client-side store for global context and temporary storage. 
@@ -121,11 +127,12 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                 each flowboard project begins with one 16:9 frame. this is the starting frame where users can upload images and annotate with the built in tldraw tools, then generate animations.
 
                 <div className="my-1!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full">
                         <source src="../../../projects/flowboard/redcar.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -151,6 +158,8 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-1!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 to fix the bounds problem, we created a <span className='text-lightBeige/95 font-normal'>parent-child relationship</span>.
@@ -190,11 +199,12 @@ if (childIds.length > 0) {
                 <span className='text-lightBeige/95 font-normal'>our second issue </span> was positioning the arrows correctly.
 
                  <div className="my-1!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full">
                         <source src="../../../projects/flowboard/arrow.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -250,6 +260,8 @@ if (childIds.length > 0) {
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 the three most crucial tools include <span className='text-lightBeige/95 font-normal'>image upload</span>, <span className='text-lightBeige/95 font-normal'>image enhancement</span>, and <span className='text-lightBeige/95 font-normal'>generate video</span>.
@@ -289,11 +301,12 @@ editor.createShapes([shape]);
                 this feature uses <a href="https://gemini.google/overview/image-generation/" target="_blank" className="a">nanobanana</a> via <span className='text-lightBeige/95 font-normal'>vertex ai platform</span> to make sketches better.
 
                 <div className="mb-0!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full">
                         <source src="../../../projects/flowboard/enhance.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -340,6 +353,8 @@ editor.createShapes([shape]);
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded my-3!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
                 the post request creates a job in the backend to generate the animation. 
                 
@@ -358,6 +373,8 @@ editor.createShapes([shape]);
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 <span className='text-lightBeige/95 font-thin italic'>after each animation call, we update this state to reflect the latest animation state</span>.
@@ -476,6 +493,8 @@ async def get_video_job_status(self, job_id: str):
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded my-3!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 upon success, the status check queries google's operation and converts the storage url that was uploaded by the job to a public https link.
@@ -560,6 +579,8 @@ def _deserialize(self, data: bytes) -> Optional[dict]:
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>goated team</span>
 
@@ -576,11 +597,12 @@ def _deserialize(self, data: bytes) -> Optional[dict]:
                 here are some cool animations i made with flowboard:
 
                 <div className="my-1!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full not-prose">
                         <source src="../../../projects/flowboard/ex1.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -588,11 +610,12 @@ def _deserialize(self, data: bytes) -> Optional[dict]:
                 </div>
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>"random entity destroying everything"</span>
                 <div className="mb-1! mt-5!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full not-prose">
                         <source src="../../../projects/flowboard/ex5.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -600,11 +623,12 @@ def _deserialize(self, data: bytes) -> Optional[dict]:
                 </div>
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>"no entities spawn"</span>
                 <div className="mb-1! mt-5!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full not-prose">
                         <source src="../../../projects/flowboard/ex2.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -612,11 +636,12 @@ def _deserialize(self, data: bytes) -> Optional[dict]:
                 </div>
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>"arctic winds in san francisco"</span>
                 <div className="mb-1! mt-5!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full not-prose">
                         <source src="../../../projects/flowboard/ex3.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -624,11 +649,12 @@ def _deserialize(self, data: bytes) -> Optional[dict]:
                 </div>
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>"washington ww2 in art style"</span>
                 <div className="mb-1! mt-5!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full not-prose">
                         <source src="../../../projects/flowboard/ex4.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.

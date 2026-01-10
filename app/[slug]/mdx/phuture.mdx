@@ -18,6 +18,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
             }}
             preload
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+            quality={85}
         />
     </div>
     
@@ -78,6 +80,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 it got me pondering and i genuinely almost crashed into a tree. being out in nature is underrated, but addiction to technology made people forget about what's out there. 
@@ -96,6 +100,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 essentially, the user would take a picture of a species using our in-app camera, and our logic layers will handle the rest.
@@ -311,6 +317,8 @@ redis:
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
 
                 <span className="route-background text-[0.9rem]">kubernetes.yaml</span>
@@ -376,6 +384,8 @@ spec:
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
             </span>
 
@@ -394,11 +404,12 @@ spec:
            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 here is a quick demo with raw mapping implemented. the goal was to have an avatar accurate to true location, similar to pokémon-go.
                 <div className="not-prose mt-3!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full">
                         <source src="../../../projects/phuture/unity.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
@@ -418,14 +429,17 @@ spec:
                     width={1200}
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={85}
                 />
                 
                 <div className="not-prose mt-3!">
-                    <video                      
+                    <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="none"
                         className="w-full">
                         <source src="../../../projects/phuture/launch.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
