@@ -56,7 +56,6 @@ export default function Sidebar() {
                         loop
                         muted
                         playsInline
-                        preload="auto"
                         className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
                       />
                     ) : (
@@ -66,6 +65,7 @@ export default function Sidebar() {
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 50vw"
                         className="object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
+                        loading={index === 0 ? "eager" : "lazy"}
                       />
                     )}
                   </div>

@@ -17,7 +17,7 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                 WebkitMaskImage:
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
             }}
-            preload
+            loading="eager"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
             quality={85}
         />
@@ -90,7 +90,9 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>creating storyboard trees on the canvas</span>
 
@@ -110,7 +112,9 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 client-side, flowboard uses the <a href="https://tldraw.dev/" target="_blank" className="a">tldraw sdk</a> for the canvas. and indexeddb as a low level client-side store for global context and temporary storage. 
@@ -159,7 +163,9 @@ import { LuBanana, LuSparkles } from "react-icons/lu";
                     height={800}
                     className="w-full h-auto object-cover rounded mb-1!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 to fix the bounds problem, we created a <span className='text-lightBeige/95 font-normal'>parent-child relationship</span>.
@@ -261,7 +267,9 @@ if (childIds.length > 0) {
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 the three most crucial tools include <span className='text-lightBeige/95 font-normal'>image upload</span>, <span className='text-lightBeige/95 font-normal'>image enhancement</span>, and <span className='text-lightBeige/95 font-normal'>generate video</span>.
@@ -354,7 +362,9 @@ editor.createShapes([shape]);
                     height={800}
                     className="w-full h-auto object-cover rounded my-3!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
                 the post request creates a job in the backend to generate the animation. 
                 
@@ -374,7 +384,9 @@ editor.createShapes([shape]);
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 <span className='text-lightBeige/95 font-thin italic'>after each animation call, we update this state to reflect the latest animation state</span>.
@@ -494,7 +506,9 @@ async def get_video_job_status(self, job_id: str):
                     height={800}
                     className="w-full h-auto object-cover rounded my-3!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 upon success, the status check queries google's operation and converts the storage url that was uploaded by the job to a public https link.
@@ -580,7 +594,9 @@ def _deserialize(self, data: bytes) -> Optional[dict]:
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
                 />
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>goated team</span>
 

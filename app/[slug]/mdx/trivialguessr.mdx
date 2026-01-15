@@ -15,7 +15,7 @@ import { FiExternalLink } from "react-icons/fi";
                 WebkitMaskImage:
                 "radial-gradient(circle, rgba(0,0,0,0.98) 60%, rgba(0,0,0,0.3) 90%)"
             }}
-            preload
+            loading="eager"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
             quality={85}
         />
@@ -76,7 +76,9 @@ import { FiExternalLink } from "react-icons/fi";
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+            loading="lazy"
+            decoding="async"
                 />
             </span>
         </div>
@@ -95,7 +97,9 @@ import { FiExternalLink } from "react-icons/fi";
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+            loading="lazy"
+            decoding="async"
                 />
             </span>
         </div>
@@ -246,7 +250,9 @@ if (
                     height={800}
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
-                    quality={85}
+                    quality={75}
+            loading="lazy"
+            decoding="async"
                 />
 
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>1.5k+ unique questions!</span>

@@ -141,7 +141,7 @@ export default function Home() {
                           width={25}
                           height={25}
                           alt="uw-logo"
-                          placeholder="blur"
+                          loading="eager"
                         />
                         uwaterloo
                       </span>
@@ -195,7 +195,7 @@ export default function Home() {
                     }}
                     alt="jame"
                     placeholder="blur"
-                    preload
+                    loading="eager"
                   />
                 </div>
 
@@ -282,7 +282,6 @@ export default function Home() {
                             width={20}
                             height={20}
                             alt="western-logo"
-                            placeholder="blur"
                           />
                           hackwestern, winning 2nd
                         </li>
@@ -301,7 +300,6 @@ export default function Home() {
                             width={20}
                             height={20}
                             alt="fdotinc-logo"
-                            placeholder="blur"
                           />
                           <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
                             founders inc

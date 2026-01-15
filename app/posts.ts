@@ -43,12 +43,6 @@ export const posts: Post[] = [
     pinned: false,
   },
   {
-    slug: "aifs",
-    title: "uw aifs",
-    date: "aug 2025",
-    pinned: false,
-  },
-  {
     slug: "footy",
     title: "highlights ⚽️",
     date: "may 2025",
