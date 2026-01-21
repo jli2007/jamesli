@@ -13,20 +13,14 @@ export const posts: Post[] = [
     pinned: true,
   },
   {
-    slug: "quotes",
-    title: "quotes",
-    date: "ongoing",
-    pinned: true,
-  },
-  {
     slug: "music",
-    title: "tuff music",
+    title: "music",
     date: "ongoing",
     pinned: true,
   },
     {
     slug: "forest",
-    title: "the forest ⽊",
+    title: "树林 (the forest)",
     date: "dec 2025",
     pinned: false,
   },
@@ -50,7 +44,7 @@ export const posts: Post[] = [
   },
   {
     slug: "futbol",
-    title: "jugadors ⚽️",
+    title: "⚽️ players i like",
     date: "mar 2025",
     pinned: false,
   },

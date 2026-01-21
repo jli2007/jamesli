@@ -2,12 +2,18 @@ import { places } from "../places/places.ts";
 import InteractivePlace from "../places/PlaceRender.tsx";
 
 <div className="flex flex-col">
-  <h3> the world around us </h3>
+  <h1 className="text-xl font-extrabold text-lightBeige mb-0!">
+    limitless.
+  </h1>
 
-  <h4 className="description-places w-[90%]">
-    i used to play geoguessr hours on end every day during covid & i developed a
-    fascination with the world around us. i hope to add cool places / locations
-    that makes you ask yourself:
+  <h4 className="my-0!">
+    i used to play geoguessr for hours every day during covid. 
+    
+    through streetview, i developed a fascination with the world around us. i don't want to live one-dimensionally: <span className="italic">not knowing what exists beyond the scope of the life i happened to grow up in.</span>
+
+    curiosity, for me, is a refusal to be bounded by circumstance. it's an imagination beyond the small slice of life i was handed by default. i will travel the world one day.
+    
+    here, i hope to add locations that makes you wonder,
     <span className="text-lightBeige">
       " how would life look if i spawned here? "
     </span>
@@ -17,15 +23,13 @@ import InteractivePlace from "../places/PlaceRender.tsx";
 
   <ScrollButtonTop>⬇ scroll to bottom</ScrollButtonTop>
 
+  <br/>
+
   <div>
     {places.map((place, index) => (
-      <InteractivePlace key={index} place={place} />
+      <InteractivePlace key={index} place={place} isLast={index === places.length - 1} />
     ))}
   </div>
 
   <ScrollButtonBottom>⬆ scroll to top</ScrollButtonBottom>
-  <footer className="pt-4 border-white/20 text-xs text-white/70 flex flex-row items-center">
-    <span className="shiny-green-dot inline-block mr-2" />
-    Last updated: 9/26/2025
-  </footer>
 </div>

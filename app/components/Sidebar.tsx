@@ -104,6 +104,11 @@ export default function Sidebar() {
           )}
         </div>
       ))}
+
+      <footer className="pt-4 md:pb-0 pb-2 border-t border-white/20 lg:text-xs md:text-sm text-xs text-white/70 flex flex-row items-center lg:justify-end justify-start">
+        <span className="shiny-green-dot inline-block mr-2 w-3 h-3" />
+        Last updated: 1/21/2025
+      </footer>
     </div>
   );
 }

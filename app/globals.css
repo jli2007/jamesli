@@ -87,9 +87,12 @@
 }
 
 * {
-  overscroll-behavior: none;
   text-underline-offset: 2px;
   /* overflow-x: hidden; */
+}
+
+body {
+  overscroll-behavior: none;
 }
 @layer base {
   ::-webkit-scrollbar {
@@ -160,8 +163,6 @@
 }
 
 .shiny-green-dot {
-  width: 12px;
-  height: 12px;
   border-radius: 50%;
   background-color: #06c506;
   background-image: linear-gradient(

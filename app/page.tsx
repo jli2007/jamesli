@@ -12,6 +12,7 @@ import james from "./assets/jame3.jpg";
 import uw from "./assets/uw.png";
 import western from "./assets/western.png";
 import fdotinc from "./assets/fdotinc.png";
+import polymarket from "./assets/polymarket.png";
 
 export default function Home() {
   const { hasPlayed, setHasPlayed } = useIntroStore();
@@ -156,7 +157,7 @@ export default function Home() {
                       <h1 className="sideh1 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem]">
                         <span className="flex items-center justify-start gap-2 text-darkBeige3">
                           <span>•</span>
-                          software dev @
+                          engineering @
                           <span className="cursor-pointer text-darkBeige2">
                             <LinkSlider
                               href="https://www.weblakes.com/"
@@ -172,7 +173,7 @@ export default function Home() {
                       <h1 className="sideh1 lg:mb-0 mb-5 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem]">
                         <span className="flex items-center justify-start gap-2 text-darkBeige3">
                           <span>•</span>
-                          engineering @
+                          product @
                           <span className="cursor-pointer text-darkBeige2">
                             <LinkSlider
                               href="https://www.tauria.com/"
@@ -202,19 +203,16 @@ export default function Home() {
                 {/* linkedin and socials section */}
                 <div className="row-span-1 lg:col-span-3 col-span-6 w-auto lg:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-1">
                   {/* linkedin section */}
-                  <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in">
+                  <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in overflow-hidden">
                     <a
                       href="https://www.linkedin.com/in/jamessli/"
                       target="_blank"
                       className="absolute inset-0 w-full h-full"
                     >
-                      <h1 className="absolute italic left-5 top-2 lg:text-base md:text-lg text-sm">
+                      <h1 className="absolute italic left-5 top-2 lg:text-base md:text-lg text-sm z-30">
                         linkedin
                       </h1>
-                      <div className="absolute lg:bottom-4 lg:left-2 lg:right-0 lg:top-auto right-1 top-0 bottom-auto left-auto z-20">
-                        <GrLinkedin className="lg:w-[4vw] lg:h-[4vh] md:w-[5vw] md:h-[5vh] w-[6vw] h-[6vh]" />
-                      </div>
-                      <h1 className="absolute bottom-5 italic right-5 lg:text-base md:text-lg text-sm">
+                      <h1 className="absolute bottom-5 italic right-5 lg:text-base md:text-lg text-sm z-30">
                         hello@jame.li
                       </h1>
                     </a>
@@ -258,21 +256,28 @@ export default function Home() {
                 <div className="relative lg:col-span-3 col-span-6 row-span-1 w-auto lg:h-auto h-auto lg:py-3 py-5 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
                   <div className="description relative h-auto w-full flex flex-col z-10 lg:text-sm md:text-lg text-sm">
                     <span className="italic font-bold p-1">
-                      product of the environment.
+                      software engineer.
                     </span>
-                    <h1 className="h1descr break-normal lg:mt-5 mt-8 lg:pb-0 pb-2 p-1">
-                      i'm currently blueprinting intelligent systems.
-                    </h1>
-
-                    <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
-                      seeking summer '26 internships.
-                    </h1>
 
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
                       <div className="flex items-center">recently:</div>
-                      <ul className="descr flex flex-col gap-8 md:gap-4 mt-4">
+                      <ul className="descr flex flex-col gap-8 md:gap-5 mt-4">
                         <li className="flex items-center gap-x-1 flex-wrap">
-                          built
+                         - won
+                          <Image
+                            src={polymarket}
+                            width={20}
+                            height={20}
+                            alt="western-logo"
+                          />
+                          polymarket prize track with
+                          <LinkSlider href="https://devpost.com/software/a-vckqad" mode="dark" className="relative flex">
+                            pindex
+                          </LinkSlider>
+                        </li>
+
+                        <li className="flex items-center gap-x-1 flex-wrap">
+                          - built
                           <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
                             flowboard
                           </LinkSlider>
@@ -283,29 +288,37 @@ export default function Home() {
                             height={20}
                             alt="western-logo"
                           />
-                          hackwestern, winning 2nd
+                          <span>hackwestern,</span>
+                          winning 2nd
                         </li>
                         
                         <li>
-                          cracked virality with <span className="font-bold">5m+</span> views on instagram
+                          - cracked virality with <span className="font-bold">5m+</span> views on instagram
                         </li>
                         
                         <li className="flex items-center gap-x-1 flex-wrap">
+                          - 
                           <LinkSlider href={`/sf`} mode="dark" className="relative flex" isNextLink>
                             visited sf
                           </LinkSlider>
                           <span className="-ml-1">—met cool ppl & snuck into</span>
-                          <Image
-                            src={fdotinc}
-                            width={20}
-                            height={20}
-                            alt="fdotinc-logo"
-                          />
-                          <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
-                            founders inc
-                          </LinkSlider>
+                          <span className="flex flex-row gap-1">
+                            <Image
+                              src={fdotinc}
+                              width={20}
+                              height={20}
+                              alt="fdotinc-logo"
+                            />
+                            <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
+                              founders inc
+                            </LinkSlider>
+                          </span>
                         </li>
                       </ul>
+                    </h1>
+
+                    <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
+                      seeking summer '26 internships.
                     </h1>
                   </div>
                 </div>
