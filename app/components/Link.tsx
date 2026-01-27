@@ -71,42 +71,18 @@ export default function LinkSlider({
     ${className}
   `.trim();
 
-  return (
-    <>
-      <style jsx global>{`
-        @keyframes underline {
-          0% {
-            transform: scaleX(0);
-            transform-origin: left;
-          }
-          49% {
-            transform: scaleX(1);
-            transform-origin: left;
-          }
-          51% {
-            transform: scaleX(1);
-            transform-origin: right;
-          }
-          100% {
-            transform: scaleX(0);
-            transform-origin: right;
-          }
-        }
-      `}</style>
-      {isNextLink ? (
-        <NextLink href={href} className={baseStyles}>
-          {children}
-        </NextLink>
-      ) : (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={baseStyles}
-        >
-          {children}
-        </a>
-      )}
-    </>
+  return isNextLink ? (
+    <NextLink href={href} className={baseStyles}>
+      {children}
+    </NextLink>
+  ) : (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={baseStyles}
+    >
+      {children}
+    </a>
   );
 }

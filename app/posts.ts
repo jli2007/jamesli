@@ -8,7 +8,7 @@ interface Post {
 export const posts: Post[] = [
   {
     slug: "places",
-    title: "places of the world 📍",
+    title: "places of the world",
     date: "ongoing",
     pinned: true,
   },
@@ -20,13 +20,13 @@ export const posts: Post[] = [
   },
     {
     slug: "forest",
-    title: "树林 (the forest)",
+    title: "a tribute to freedom",
     date: "dec 2025",
     pinned: false,
   },
   {
     slug: "sf",
-    title: "✈️ visiting sf between 2 midterms",
+    title: "visiting sf between 2 midterms",
     date: "oct 2025",
     pinned: false,
   },
@@ -37,14 +37,8 @@ export const posts: Post[] = [
     pinned: false,
   },
   {
-    slug: "footy",
-    title: "highlights ⚽️",
-    date: "may 2025",
-    pinned: false,
-  },
-  {
     slug: "futbol",
-    title: "⚽️ players i like",
+    title: "players i enjoy watching",
     date: "mar 2025",
     pinned: false,
   },

@@ -16,7 +16,6 @@ import Forest from "./mdx/forest.mdx";
 import Futbol from "./mdx/futbol.mdx";
 import Music from "./mdx/music.mdx";
 import Places from "./mdx/places.mdx";
-import Quotes from "./mdx/quotes.mdx";
 import Sf from "./mdx/sf.mdx";
 import UWReflection from "./mdx/uw-reflection.mdx";
 
@@ -27,7 +26,6 @@ const MDX_MAP: Record<string, React.ComponentType> = {
   futbol: Futbol,
   music: Music,
   places: Places,
-  quotes: Quotes,
   sf: Sf,
   uwreflection: UWReflection,
   flowboard: Flowboard,

@@ -317,7 +317,7 @@ pre {
 }
 
 pre[class*="language-"]::-webkit-scrollbar {
-  height: 5px;
+  height: 4px;
 }
 
 pre[class*="language-"]::-webkit-scrollbar-track {

@@ -126,12 +126,6 @@ export default function CommandPalette() {
             window.open("https://www.instagram.com/jamesdialedin/", "_blank")
           );
           break;
-        case "Digit5":
-        case "Numpad5":
-          openLink(() =>
-            window.open("https://github.com/jli2007/jamesli", "_blank")
-          );
-          break;
       }
     };
 
@@ -289,37 +283,10 @@ export default function CommandPalette() {
                     <span className="flex-1">instagram</span>
                     <Shortcut>4</Shortcut>
                   </Command.Item>
-                  <Command.Item
-                    value="website repository github jame repo"
-                    onSelect={() =>
-                      openLink(() =>
-                        window.open(
-                          "https://github.com/JLi2007/JamesLi",
-                          "_blank"
-                        )
-                      )
-                    }
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-midBeige2/90 rounded hover:bg-darkBeige1/40 cursor-pointer data-[selected=true]:bg-darkBeige1/40"
-                  >
-                    <GoRepo className="h-4 w-4" />
-                    <span className="flex-1">website repository</span>
-                    <Shortcut>5</Shortcut>
-                  </Command.Item>
                 </Command.Group>
               </Command.List>
               <div className="border-t border-stone-700 px-3 py-4">
-                <div className="flex items-center justify-between text-midBeige2/90 text-xs">
-                  <div className="flex items-center gap-2">
-                    <span>use</span>
-                    <kbd className="px-0.5 py-0.5 rounded bg-stone-800 text-midBeige2/90">
-                      ↑
-                    </kbd>
-                    |
-                    <kbd className="px-0.5 py-0.5 rounded bg-stone-800 text-midBeige2/90">
-                      ↓
-                    </kbd>
-                    <span>to toggle</span>
-                  </div>
+                <div className="flex items-center justify-end text-midBeige2/90 text-xs">
                   <div className="flex items-center gap-2">
                     <span>press</span>
                     <kbd className="px-1.5 py-0.5 rounded bg-stone-800 text-midBeige2/90">

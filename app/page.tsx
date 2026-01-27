@@ -8,7 +8,7 @@ import useModifierKey from "./components/ModifierKey";
 import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaInstagram, FaXTwitter, FaSpotify } from "react-icons/fa6";
-import james from "./assets/jame3.jpg";
+import james from "./assets/james.jpg";
 import uw from "./assets/uw.png";
 import western from "./assets/western.png";
 import fdotinc from "./assets/fdotinc.png";
@@ -147,7 +147,7 @@ export default function Home() {
                         uwaterloo
                       </span>
                     </span>
-                    <div className="flex flex-col gap-3 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-sm">
+                    <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-sm">
                       <h1 className="lg:bg-transparent rounded-lg sideh1 pl-6 [-text-indent:1.5rem]">
                         <span className="flex items-center justify-start gap-2 text-darkBeige3">
                           previously:
@@ -262,7 +262,7 @@ export default function Home() {
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
                       <div className="flex items-center">recently:</div>
                       <ul className="descr flex flex-col gap-8 md:gap-5 mt-4">
-                        <li className="flex items-center gap-x-1 flex-wrap">
+                        <li className="flex items-center gap-x-1 gap-y-2 flex-wrap">
                          - won
                           <Image
                             src={polymarket}
@@ -276,7 +276,7 @@ export default function Home() {
                           </LinkSlider>
                         </li>
 
-                        <li className="flex items-center gap-x-1 flex-wrap">
+                        <li className="flex items-center gap-x-1 gap-y-2 flex-wrap">
                           - built
                           <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
                             flowboard
@@ -291,13 +291,13 @@ export default function Home() {
                           <span>hackwestern,</span>
                           winning 2nd
                         </li>
-                        
-                        <li>
+
+                        <li className="gap-y-2">
                           - cracked virality with <span className="font-bold">5m+</span> views on instagram
                         </li>
-                        
-                        <li className="flex items-center gap-x-1 flex-wrap">
-                          - 
+
+                        <li className="flex items-center gap-x-1 gap-y-2 flex-wrap">
+                          -
                           <LinkSlider href={`/sf`} mode="dark" className="relative flex" isNextLink>
                             visited sf
                           </LinkSlider>

@@ -282,7 +282,7 @@ val scanLauncher = rememberLauncherForActivityResult(
                     </pre>
                 </div>
 
-                <span className="route-background text-[0.9rem]">withContext(Dispatchers.IO)</span> moves the network call off the main thread. we switch back to 
+                <span className="route-background text-[0.9rem]">withContext(Dispatchers.IO)</span> moves the network call off the main thread.
                 
                 <span className="route-background text-[0.9rem]">Dispatchers.Main</span> prevents the app from freezing during network requests.
             </span>
@@ -290,18 +290,18 @@ val scanLauncher = rememberLauncherForActivityResult(
             <span className='text-lightBeige/95 text-xl'>augmented reality!</span>
 
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                this is where it gets fun and processing intensive, <a href="https://www.linkedin.com/in/andy--duong/" target="_blank" className="a">andy</a> did most of the heavylifting on 1 hour of hackathon sleep 😮‍💨. 
+                this is where it gets fun and processing intensive, <a href="https://www.linkedin.com/in/andy--duong/" target="_blank" className="a">andy</a> did most of the heavylifting on 1 hour of sleep. 
 
                 <Image
                     src="/projects/guideline/pipeline.png"
                     alt="guideline-pipeline"
                     width={1200}
                     height={800}
-                    className="w-full h-auto object-cover rounded mt-0!"
+                    className="w-full h-auto object-cover rounded mt-0! mb-2"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
                     quality={75}
-            loading="lazy"
-            decoding="async"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <span className='text-lightBeige/95 font-thin italic text-[0.9rem]'>there is around 2k lines of logic in AR.kt and it's more complex than what i'm going to describe but i'll keep it simple. </span>
             </span>
