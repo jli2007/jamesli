@@ -32,7 +32,7 @@ const MDX_MAP: Record<string, React.ComponentType> = {
   guideline: Guideline,
   neodev: Neodev,
   phuture: Phuture,
-  trivialguessr: Trivialguessr,
+  trivialguessr: Trivialguessr
 };
 
 export default function SlugPage({

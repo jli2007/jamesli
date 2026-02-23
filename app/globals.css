@@ -111,6 +111,7 @@
 body {
   overscroll-behavior: none;
 }
+
 @layer base {
   ::-webkit-scrollbar {
     width: 5px;
@@ -160,21 +161,6 @@ body {
     transparent 10px,
     #ede8d703 10px,
     #d8cfbc03 20px
-  );
-  animation: wave 7s ease-in-out infinite;
-}
-
-.wave-effect2 {
-  position: absolute;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 10px,
-    #ede8d70d 10px,
-    #d8cfbc0d 20px
   );
   animation: wave 7s ease-in-out infinite;
 }

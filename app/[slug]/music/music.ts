@@ -1,6 +1,5 @@
 export interface TrackMetadata {
   id: string;
-  genre: string;
   description?: string;
   quotes?: string[];
 }
@@ -9,7 +8,6 @@ export const TRACK_DATA: TrackMetadata[] = [
   // yango
   {
     id: "1adaMoHauuI9B45YefZtsC",
-    genre: "uk rap",
     description: "freedom.",
     quotes: [
       "Ain’t lettin’ no school system in our lives, we’re lettin’ the streets prepare us",
@@ -19,7 +17,6 @@ export const TRACK_DATA: TrackMetadata[] = [
   // survivor's guilt
   {
     id: "1Xapo8sq7KcQXdt0HrXX5B",
-    genre: "uk rap",
     description:
       "the cost of escaping the system.",
     quotes: [
@@ -33,7 +30,6 @@ export const TRACK_DATA: TrackMetadata[] = [
   // 黑夜問白天
   {
     id: "5KNh5YQgfduzV4028Cfh3J",
-    genre: "mandopop",
     description: "unbroken through 53 dawns.",
     quotes: [
       "等黑夜問白天\n能不能赦免\n灰色的人間 \n Waiting for night to ask day if it can forgive this gray world",
@@ -44,7 +40,6 @@ export const TRACK_DATA: TrackMetadata[] = [
   // hunnids
   {
     id: "1N4WFXhgmkrTRxK0X7R90u",
-    genre: "uk rap",
     description: "chasing success with the crew.",
     quotes: [
       "The grinds on I'm just tryna get the bands in",
@@ -54,21 +49,18 @@ export const TRACK_DATA: TrackMetadata[] = [
   // the wind of life
   {
     id: "47fjdEwVngKqmgda3UR3Rl",
-    genre: "modern classical",
     description: "nostalgia.",
     quotes: [],
   },
   // 那些你很冒險的夢
   {
     id: "2aMN1ky0SzSEcV1QdBYbW9",
-    genre: "mandopop",
     description: "destiny.",
     quotes: ["摺紙飛機碰到雨天\n終究會墜落 \n A paper airplane meeting rainy days will eventually fall"],
   },
   // psycho
   {
     id: "0FWAIRd9Uz5uNek7cALYNC",
-    genre: "uk rap",
     description: "product of the environment.",
     quotes: [
       "I was born to be wild, I don't wanna be tamed\nTalent's in my blood and I don't wanna be vain\nBut if I'm a psycho, then I don't wanna be sane \n vain = vein (blood)",
@@ -78,14 +70,12 @@ export const TRACK_DATA: TrackMetadata[] = [
   // home
   {
     id: "6Ncr1lCYnE3JHwtVK4nLAx",
-    genre: "uk rap",
     description: "a cautionary tale.",
     quotes: ["The victim, whose name currently cannot be disclosed\nIs now among over 51 young people who have\nBeen fatally stabbed in London this year alone\nLast month more than 250"],
   },
   // chapters
   {
     id: "5DT2fVrYGbXNhMYCnEFfg2",
-    genre: "uk rap",
     description: "a narrative on success.",
     quotes: [
       "They think that I came up quick, they don't know 'bout the rest of the chapters"
@@ -94,21 +84,18 @@ export const TRACK_DATA: TrackMetadata[] = [
   // es
   {
     id: "1aO78Al3o07IrUdeBy9HXm",
-    genre: "piano",
     description: "tranquility.",
     quotes: [],
   },
   // 我会等
   {
     id: "5Rzpn60KTM11EBETHaF9Kt",
-    genre: "mandopop",
     description: "patience is a virtue.",
     quotes: [],
   },
   // limitless
   {
     id: "25fvND4h7BT76CB77Mjsm3",
-    genre: "uk rap",
     description: "freedom comes with the weight of everything left behind.",
     quotes: [
       "You'll always think that the grass is greener till you step foot over there and try it",
@@ -118,7 +105,6 @@ export const TRACK_DATA: TrackMetadata[] = [
   // my 19th birthday
   {
     id: "4KCfCctnZQd5mem6S3HhKi",
-    genre: "uk rap",
     description: "19 candles but no cake, just scars.",
     quotes: [
       "The pain's compulsory, suffering's optional\nTakeshi's castle, my life's got obstacles",
@@ -131,14 +117,12 @@ export const TRACK_DATA: TrackMetadata[] = [
   // kiss the rain
   {
     id: "7vd1j4IDTU0koES9M8dvBQ",
-    genre: "piano",
     description: "melancholic.",
     quotes: [],
   },
   // therapy
   {
     id: "70lkOeQI0L3bSgj183ZPm5",
-    genre: "uk rap",
     description: "a celebration of existence.",
     quotes: [],
   },

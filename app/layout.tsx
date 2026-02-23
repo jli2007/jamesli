@@ -26,7 +26,7 @@ export const viewport = {
 export const metadata: Metadata = {
   title: "james li",
   description:
-    "james li — computer science at the university of waterloo. full-stack and ai engineer. building cool software and posting on social media.",
+    "james li — computer science at the university of waterloo. full-stack and ai engineer.",
   keywords: [
     "james li",
     "james li uw",

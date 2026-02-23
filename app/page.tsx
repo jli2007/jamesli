@@ -85,7 +85,7 @@ export default function Home() {
       >
         <div className="wave-effect" />
         <div className="relative flex justify-center items-center">
-          <h1 className="text-white lg:text-lg md:text-md text-sm crg my-3">
+          <h1 className="crg text-white lg:text-lg md:text-md text-sm my-3">
             product of the environment.
           </h1>
         </div>
@@ -261,7 +261,7 @@ export default function Home() {
 
                     <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
                       <div className="flex items-center">recently:</div>
-                      <ul className="descr flex flex-col gap-8 md:gap-5 mt-4">
+                      <ul className="descr flex flex-col gap-8 md:gap-6 mt-4">
                         <li className="flex items-center gap-x-1 gap-y-2 flex-wrap">
                          - won
                           <Image
@@ -315,10 +315,6 @@ export default function Home() {
                           </span>
                         </li>
                       </ul>
-                    </h1>
-
-                    <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
-                      seeking summer '26 internships.
                     </h1>
                   </div>
                 </div>

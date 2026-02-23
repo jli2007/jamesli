@@ -51,7 +51,7 @@ export default function RenderMusic() {
                 )}
               </Link>
 
-              <div className="flex-1 min-w-0 flex flex-col gap-0">
+              <div className="flex-1 min-w-0 flex flex-col md:gap-5">
                 <div className="flex items-start gap-3">
                   <div className="flex-1 min-w-0">
                     <h3 className="text-xl md:text-2xl font-semibold text-lightBeige">
@@ -63,11 +63,6 @@ export default function RenderMusic() {
                     {t.album?.name && (
                       <p className="text-sm text-lighterBeige/75 mt-1">
                         Album: {t.album.name}
-                      </p>
-                    )}
-                    {metadata?.genre && (
-                      <p className="text-sm text-lighterBeige/75 italic mt-1">
-                        {metadata.genre}
                       </p>
                     )}
                   </div>
