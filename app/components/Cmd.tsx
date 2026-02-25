@@ -293,7 +293,7 @@ export default function CommandPalette() {
                     <Shortcut>3</Shortcut>
                   </Command.Item>
                   <Command.Item
-                    value="ig instagram profile socials james"
+                    value="ig instagram profile socials james jamesdialedin flowstatejames"
                     onSelect={() =>
                       openLink(() =>
                         window.open(
@@ -305,14 +305,14 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoLogoInstagram className="h-4 w-4" />
-                    <span className="flex-1">instagram</span>
+                    <span className="flex-1">instagram (5m+ views)</span>
                     <Shortcut>4</Shortcut>
                   </Command.Item>
                 </Command.Group>
 
                 <Command.Group heading="projects" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
                   <Command.Item
-                    value="flowboard"
+                    value="project flowboard"
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/flowboard")),
@@ -326,7 +326,7 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="trivialguessr"
+                    value="project trivialguessr"
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/trivialguessr")),
@@ -340,7 +340,7 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="phuture"
+                    value="project phuture"
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/phuture")),
@@ -354,7 +354,7 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="guideline"
+                    value="project guideline"
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/guideline")),
@@ -368,7 +368,7 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="neodev neo developer league"
+                    value="project neodev neo developer league"
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/neodev")),

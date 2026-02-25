@@ -7,7 +7,7 @@ import { Track } from "./types/types";
 import useModifierKey from "./components/ModifierKey";
 import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
-import { FaGithub, FaInstagram, FaXTwitter, FaSpotify } from "react-icons/fa6";
+import { FaGithub, FaXTwitter, FaSpotify } from "react-icons/fa6";
 import james from "./assets/james.jpg";
 import uw from "./assets/uw.png";
 import western from "./assets/western.png";
@@ -147,7 +147,7 @@ export default function Home() {
                         uwaterloo
                       </span>
                     </span>
-                    <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-sm">
+                    <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-xs">
                       <h1 className="lg:bg-transparent rounded-lg sideh1 pl-6 [-text-indent:1.5rem]">
                         <span className="flex items-center justify-start gap-2 text-darkBeige3">
                           previously:
@@ -219,7 +219,7 @@ export default function Home() {
                   </div>
 
                   {/* socials section */}
-                  <div className="relative py-3 px-7 rounded-lg bg-midBeige2 border-2 border-transparent transition delay-200 duration-150 ease-in flex flex-col items-center justify-center lg:gap-4 md:gap-2">
+                  <div className="relative py-3 px-7 rounded-lg bg-midBeige2 border-2 border-transparent transition delay-200 duration-150 ease-in flex flex-col items-center justify-center lg:gap-5 md:gap-2">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
                     <a
                       href="https://www.linkedin.com/in/jamessli/"
@@ -242,13 +242,6 @@ export default function Home() {
                     >
                       <FaXTwitter className="lg:w-[1.75vw] lg:h-[1.75vw] md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
                     </a>
-                    <a
-                      href="https://www.instagram.com/jamesdialedin/"
-                      target="_blank"
-                      className="z-10 hover:opacity-50 opacity-70 transition"
-                    >
-                      <FaInstagram className="lg:w-[1.75vw] lg:h-[1.75vw] md:w-[4vw] md:h-[4vh] w-[6vw] h-[6vh]" />
-                    </a>
                   </div>
                 </div>
 
@@ -259,59 +252,69 @@ export default function Home() {
                       software engineer.
                     </span>
 
-                    <h1 className="h1descr break-normal lg:mt-5 mt-8 pb-2 p-1">
+                    <h1 className="h1descr break-normal mt-5 pb-2 p-1">
                       <div className="flex items-center">recently:</div>
-                      <ul className="descr flex flex-col gap-8 md:gap-6 mt-4">
-                        <li className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                         - won
-                          <Image
-                            src={polymarket}
-                            width={20}
-                            height={20}
-                            alt="western-logo"
-                          />
-                          polymarket prize track with
-                          <LinkSlider href="https://devpost.com/software/a-vckqad" mode="dark" className="relative flex">
-                            pindex
-                          </LinkSlider>
+                      <ul className="descr flex flex-col gap-10 md:gap-7 mt-5">
+                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                          <span className="shrink-0">-</span>
+                          <span className="leading-loose">currently executing distributed agents with infra isolation</span>
                         </li>
 
-                        <li className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                          - built
-                          <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
-                            flowboard
-                          </LinkSlider>
-                          <span>@</span>
-                          <Image
-                            src={western}
-                            width={20}
-                            height={20}
-                            alt="western-logo"
-                          />
-                          <span>hackwestern,</span>
-                          winning 2nd
-                        </li>
-
-                        <li className="gap-y-2">
-                          - cracked virality with <span className="font-bold">5m+</span> views on instagram
-                        </li>
-
-                        <li className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                          -
-                          <LinkSlider href={`/sf`} mode="dark" className="relative flex" isNextLink>
-                            visited sf
-                          </LinkSlider>
-                          <span className="-ml-1">—met cool ppl & snuck into</span>
-                          <span className="flex flex-row gap-1">
+                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                          <span className="shrink-0">-</span>
+                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
+                            won
                             <Image
-                              src={fdotinc}
+                              src={polymarket}
                               width={20}
                               height={20}
-                              alt="fdotinc-logo"
+                              alt="western-logo"
                             />
-                            <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
-                              founders inc
+                            polymarket prize track with
+                            <LinkSlider href="https://devpost.com/software/a-vckqad" mode="dark" className="relative flex">
+                              pindex
                             </LinkSlider>
+                          </span>
+                        </li>
+
+                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                          <span className="shrink-0">-</span>
+                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
+                            built
+                            <LinkSlider href={`/flowboard`} mode="dark" className="relative flex" isNextLink>
+                              flowboard
+                            </LinkSlider>
+                            <span>@</span>
+                            <Image
+                              src={western}
+                              width={20}
+                              height={20}
+                              alt="western-logo"
+                            />
+                            <span>hackwestern,</span>
+                            winning 2nd
+                          </span>
+                        </li>
+
+                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                          <span className="shrink-0">-</span>
+                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
+                            <LinkSlider href={`/sf`} mode="dark" className="relative flex" isNextLink>
+                              visited sf
+                            </LinkSlider>
+                            <span className="-ml-1">—met cool ppl & snuck into</span>
+                            <span className="flex flex-row gap-1">
+                              <Image
+                                src={fdotinc}
+                                width={20}
+                                height={20}
+                                alt="fdotinc-logo"
+                                className="object-contain"
+                              />
+                              <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
+                                founders inc
+                              </LinkSlider>
+                            </span>
                           </span>
                         </li>
                       </ul>

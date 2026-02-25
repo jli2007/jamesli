@@ -1,7 +1,9 @@
 "use client";
-import { use, useRef, useEffect } from "react";
+import { use, useRef, useEffect, useState } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { redirect } from "next/navigation";
+import { isMobile } from "react-device-detect";
+import useModifierKey from "../components/ModifierKey";
 import './codeblocks.css'
 // projects
 import Flowboard from "./mdx/flowboard.mdx";
@@ -86,15 +88,49 @@ export default function SlugPage({
     ),
   };
 
+  const [isMac, setIsMac] = useState(false);
+  const isModifierPressed = useModifierKey();
+
+  useEffect(() => {
+    const isMac =
+      navigator.platform.toLowerCase().includes("mac") ||
+      navigator.userAgent.toLowerCase().includes("mac");
+    setIsMac(isMac);
+  }, []);
+
+  const openCommandPalette = () => {
+    window.dispatchEvent(new CustomEvent("open-command-palette"));
+  };
+
   return (
-    <div className="p-6 lg:max-h-screen min-h-screen lg:overflow-y-scroll overflow-auto overflow-x-hidden">
-      <button
-        onClick={() => redirect("/")}
-        className="text-sm text-lightBeige hover:underline cursor-pointer"
-      >
-        ← back
-      </button>
-      <div className="w-full flex items-center justify-center">
+    <div className="lg:max-h-screen min-h-screen lg:overflow-y-scroll overflow-auto overflow-x-hidden">
+      <div className="sticky top-0 z-30 flex items-center justify-between px-6 py-2.5">
+        <button
+          onClick={() => redirect("/")}
+          className="text-sm text-white hover:text-neutral-400 cursor-pointer transition"
+        >
+          ← back
+        </button>
+        {!isMobile && (
+          <button
+            onClick={openCommandPalette}
+            className="px-4 py-2 flex cursor-pointer items-center gap-1 text-xs bg-neutral-800/60 text-neutral-300 rounded-lg hover:bg-neutral-800/80 hover:text-neutral-200 transition duration-300 ease-in-out"
+          >
+            <kbd
+              className={`px-1.5 py-1 rounded bg-neutral-600/50 text-neutral-300 ${
+                isModifierPressed ? "opacity-40" : "opacity-100"
+              }`}
+            >
+              {isMac ? "⌘" : "ctrl"}
+            </kbd>
+            <span>+</span>
+            <kbd className="px-1.5 py-1 rounded bg-neutral-600/50 text-neutral-300">
+              k
+            </kbd>
+          </button>
+        )}
+      </div>
+      <div className="w-full flex items-center justify-center px-6 pb-6">
         <article
           className="prose mt-6 text-lighterBeige lg:w-[75%] md:text-sm text-xs"
           style={{
