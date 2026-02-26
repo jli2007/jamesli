@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Sidebar from "./components/Sidebar";
 import CommandPalette from "./components/Cmd";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next"
 import "prismjs/themes/prism-twilight.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs";
@@ -84,6 +85,7 @@ export default function RootLayout({
           </div>
         </div>
         <GoogleAnalytics gaId="G-T54T8RQLW5" />
+        <Analytics />
       </body>
     </html>
   );
