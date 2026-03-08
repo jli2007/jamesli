@@ -9,11 +9,9 @@ import {
   IoLogoInstagram,
   IoSearchOutline,
   IoHomeOutline,
-  IoColorPaletteOutline,
-  IoGlobeOutline,
+  IoBulbOutline,
   IoLeafOutline,
   IoHardwareChipOutline,
-  IoCodeSlashOutline,
 } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiLinkedinLogo } from "react-icons/pi";
@@ -206,7 +204,7 @@ export default function CommandPalette() {
               }`}>
                 <img src="/jsl.png" alt="jsl" className="w-7 rounded-sm" />
                 <div className="flex-1">
-                  <h2 className={`font-medium ${isHome ? "text-midBeige1" : "text-white"}`}>hello@jame.li</h2>
+                  <h2 className={`font-medium ${isHome ? "text-midBeige1" : "text-white"}`}>jamessli.com</h2>
                   <p className={`text-xs ${isHome ? "text-midBeige2/90" : "text-neutral-400"}`}>
                     use <kbd className="px-1">esc</kbd> or click outside to
                     close
@@ -321,7 +319,20 @@ export default function CommandPalette() {
                     }
                     className={itemClass}
                   >
-                    <IoColorPaletteOutline className="h-4 w-4" />
+                    <div
+                      className="h-4 w-4"
+                      style={{
+                        backgroundColor: 'currentColor',
+                        maskImage: 'url(/flowboard.png)',
+                        maskSize: 'contain',
+                        maskRepeat: 'no-repeat',
+                        maskPosition: 'center',
+                        WebkitMaskImage: 'url(/flowboard.png)',
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskRepeat: 'no-repeat',
+                        WebkitMaskPosition: 'center',
+                      }}
+                    />
                     <span className="flex-1">flowboard</span>
                   </Command.Item>
 
@@ -335,7 +346,7 @@ export default function CommandPalette() {
                     }
                     className={itemClass}
                   >
-                    <IoGlobeOutline className="h-4 w-4" />
+                    <IoBulbOutline className="h-4 w-4" />
                     <span className="flex-1">trivialguessr</span>
                   </Command.Item>
 
@@ -377,7 +388,18 @@ export default function CommandPalette() {
                     }
                     className={itemClass}
                   >
-                    <IoCodeSlashOutline className="h-4 w-4" />
+                    <div
+                      className="h-5 w-4"
+                      style={{
+                        backgroundColor: 'currentColor',
+                        maskImage: 'url(/neodev.png)',
+                        maskSize: 'contain',
+                        maskRepeat: 'no-repeat',
+                        WebkitMaskImage: 'url(/neodev.png)',
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskRepeat: 'no-repeat',
+                      }}
+                    />
                     <span className="flex-1">neo developer league</span>
                   </Command.Item>
                 </Command.Group>

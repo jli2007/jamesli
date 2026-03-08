@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import LinkSlider from "./components/Link";
 import { useIntroStore } from "./store/zustand";
@@ -23,6 +23,8 @@ export default function Home() {
   const [isMac, setIsMac] = useState(false);
   const isModifierPressed = useModifierKey(); // for opacity of button
   const [recent, setRecent] = useState<Track>();
+  const lakesLineRef = useRef<HTMLSpanElement | null>(null);
+  const [forceTauriaWrap, setForceTauriaWrap] = useState(false);
 
   useEffect(() => {
     if (hasPlayed) {
@@ -70,6 +72,37 @@ export default function Home() {
     window.addEventListener("command-palette-opened", handlePaletteOpened);
     return () =>
       window.removeEventListener("command-palette-opened", handlePaletteOpened);
+  }, []);
+
+  useEffect(() => {
+    const el = lakesLineRef.current;
+    if (!el) return;
+
+    let frame = 0;
+    const measure = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const styles = window.getComputedStyle(el);
+        let lineHeight = parseFloat(styles.lineHeight);
+        if (Number.isNaN(lineHeight)) {
+          const fontSize = parseFloat(styles.fontSize) || 16;
+          lineHeight = fontSize * 1.2;
+        }
+        const wraps = el.getBoundingClientRect().height > lineHeight * 1.35;
+        setForceTauriaWrap(wraps);
+      });
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    window.addEventListener("resize", measure);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
   }, []);
 
   const openCommandPalette = () => {
@@ -147,22 +180,25 @@ export default function Home() {
                         uwaterloo
                       </span>
                     </span>
-                    <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-xs">
+                    <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-xs overflow-hidden">
                       <h1 className="lg:bg-transparent rounded-lg sideh1 pl-6 [-text-indent:1.5rem]">
                         <span className="flex items-center justify-start gap-2 text-darkBeige3">
                           previously:
                         </span>
                       </h1>
 
-                      <h1 className="sideh1 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem]">
-                        <span className="flex items-center justify-start gap-2 text-darkBeige3">
+                      <h1 className="sideh1 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem] text-left">
+                        <span
+                          ref={lakesLineRef}
+                          className="flex items-center justify-start gap-2 text-darkBeige3 flex-wrap"
+                        >
                           <span>•</span>
                           engineering @
                           <span className="cursor-pointer text-darkBeige2">
                             <LinkSlider
                               href="https://www.weblakes.com/"
                               mode="dark"
-                              className="ml-1 relative"
+                              className="relative"
                             >
                               lakes software
                             </LinkSlider>
@@ -170,15 +206,19 @@ export default function Home() {
                         </span>
                       </h1>
 
-                      <h1 className="sideh1 lg:mb-0 mb-5 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem]">
-                        <span className="flex items-center justify-start gap-2 text-darkBeige3">
+                      <h1 className="sideh1 lg:mb-0 mb-5 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem] text-left">
+                        <span className="flex items-center justify-start gap-2 text-darkBeige3 flex-wrap">
                           <span>•</span>
                           product @
-                          <span className="cursor-pointer text-darkBeige2">
+                          <span
+                            className={`cursor-pointer text-darkBeige2 ${
+                              forceTauriaWrap ? "basis-full" : ""
+                            }`}
+                          >
                             <LinkSlider
                               href="https://www.tauria.com/"
                               mode="dark"
-                              className="ml-1 relative"
+                              className="relative"
                             >
                               tauria
                             </LinkSlider>
@@ -189,7 +229,7 @@ export default function Home() {
                   </div>
                   <Image
                     src={james}
-                    className="absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-5 z-0"
+                    className="jame absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-5 z-0"
                     style={{
                       WebkitMaskImage:
                         "radial-gradient(circle, rgba(0,0,0.99) 30%, rgba(0,0,0,0.01) 75%)",
@@ -246,7 +286,7 @@ export default function Home() {
                 </div>
 
                 {/* description section */}
-                <div className="relative lg:col-span-3 col-span-6 row-span-1 w-auto lg:h-auto h-auto lg:py-3 py-5 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
+                <div className="description-div relative lg:col-span-3 col-span-6 row-span-1 w-auto h-auto pt-5 pb-10 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
                   <div className="description relative h-auto w-full flex flex-col z-10 lg:text-sm md:text-lg text-sm">
                     <span className="italic font-bold p-1">
                       software engineer.
