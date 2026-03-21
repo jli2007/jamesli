@@ -15,6 +15,7 @@ import {
 } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiLinkedinLogo } from "react-icons/pi";
+import { LuLandmark } from "react-icons/lu";
 
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function CommandPalette() {
   const itemClass = `flex items-center gap-2 px-3 py-2 text-sm rounded cursor-pointer ${
     isHome
       ? "text-midBeige2/90 hover:bg-darkBeige1/40 data-[selected=true]:bg-darkBeige1/40"
-      : "text-neutral-300 hover:bg-neutral-800 data-[selected=true]:bg-neutral-800"
+      : "text-neutral-300 hover:bg-neutral-700/30 data-[selected=true]:bg-neutral-700/30"
   }`;
 
   // don't render on mobile
@@ -308,11 +309,25 @@ export default function CommandPalette() {
                   </Command.Item>
                 </Command.Group>
 
-                <Command.Group heading="projects" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
-                  <Command.Item
-                    value="project flowboard"
-                    onSelect={() =>
-                      setTimeout(
+	                <Command.Group heading="projects" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
+	                  <Command.Item
+	                    value="project arcki architecture building 3d playground"
+	                    onSelect={() =>
+	                      setTimeout(
+	                        () => openNextLink(() => router.push("/arcki")),
+	                        0
+	                      )
+	                    }
+	                    className={itemClass}
+	                  >
+	                    <LuLandmark className="h-4 w-4" />
+	                    <span className="flex-1">3d architectural playground</span>
+	                  </Command.Item>
+
+	                  <Command.Item
+	                    value="project flowboard"
+	                    onSelect={() =>
+	                      setTimeout(
                         () => openNextLink(() => router.push("/flowboard")),
                         0
                       )
@@ -333,7 +348,7 @@ export default function CommandPalette() {
                         WebkitMaskPosition: 'center',
                       }}
                     />
-                    <span className="flex-1">flowboard</span>
+                    <span className="flex-1">cursor for animators</span>
                   </Command.Item>
 
                   <Command.Item
@@ -347,7 +362,7 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoBulbOutline className="h-4 w-4" />
-                    <span className="flex-1">trivialguessr</span>
+                    <span className="flex-1">geoguessr for trivia</span>
                   </Command.Item>
 
                   <Command.Item
@@ -361,7 +376,7 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoLeafOutline className="h-4 w-4" />
-                    <span className="flex-1">phuture</span>
+                    <span className="flex-1">wildlife pokemon-go</span>
                   </Command.Item>
 
                   <Command.Item
@@ -375,7 +390,7 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoHardwareChipOutline className="h-4 w-4" />
-                    <span className="flex-1">guideline</span>
+                    <span className="flex-1">augmented reality breadboarding</span>
                   </Command.Item>
 
                   <Command.Item
@@ -400,7 +415,7 @@ export default function CommandPalette() {
                         WebkitMaskRepeat: 'no-repeat',
                       }}
                     />
-                    <span className="flex-1">neo developer league</span>
+                    <span className="flex-1">co-founded programming league</span>
                   </Command.Item>
                 </Command.Group>
               </Command.List>

@@ -8,7 +8,7 @@ interface Post {
 export const posts: Post[] = [
   {
     slug: "places",
-    title: "places of the world",
+    title: "the art of noticing",
     date: "ongoing",
     pinned: true,
   },

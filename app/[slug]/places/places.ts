@@ -49,7 +49,7 @@ export const places: PlacesType[] = [
     description: 
     `villages deeply nestled in the mountainside in rural portugal. zoom in, it's surreal. \n
     these are the schist villages of northern portugal, pulled straight from the ground beneath them. similar to the italian ghost towns, most of these portugese towns were abandoned as people left for cities. \n
-    the kind of place that almost disappeared and didn't.
+    the kind of place that almost disappeared but survived.
     `,
     tags: [
       { color: "dodgerblue", text: "● streetview" },
@@ -205,8 +205,8 @@ export const places: PlacesType[] = [
     flag: "🇨🇳",
     description:
       `rolling grasslands beneath vast blue skies define the hulunbuir prairie. \n
-      genghis khan was born in this region. 800 years ago, the mongol empire stretched from korea to hungary, the largest contiguous land empire in history. it all started from horsemen on these grasslands. \n
-      in many stretches of this sparse land, there are no trees, no buildings, just horizon in every direction. \n
+      genghis khan was born in this region. 800 years ago, the mongol empire stretched from korea to hungary. the largest land empire in world history all started from horsemen on these grasslands. \n
+      in this sparse land, there are no trees, no buildings, just horizon in every direction. \n
       watched a [chinese film](https://www.diggitmagazine.com/column/my-people-my-country) in 2019 about seven stories depicting influential moments in chinese history (if you’re chinese, go watch it). one of the stories showed the landing of the shenzhou 11 spacecraft in inner mongolia. \n
       since then, i’ve always wanted to visit the area and the rolling grasslands.
       `,
@@ -223,7 +223,7 @@ export const places: PlacesType[] = [
     flag: "🇧🇷",
     description:
       `lençóis maranhenses: this place shouldn't exist. desert dunes exist here for some reason, in one of the wettest regions on earth, right next to the world's largest rainforest. \n
-      ocean meet desert dunes meet jungle.
+      ocean meets desert meets jungle.
       `,
     tags: [
       { color: "midnightblue", text: "● arial view" },

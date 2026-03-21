@@ -20,7 +20,7 @@ export default function Home() {
     typeof window !== "undefined" &&
     Boolean(useIntroStore.getState?.().hasPlayed);
   const [isLoaded, setIsLoaded] = useState<boolean>(initialHasPlayed);
-  const [isMac, setIsMac] = useState(false);
+  const [isMac, setIsMac] = useState(true);
   const isModifierPressed = useModifierKey(); // for opacity of button
   const [recent, setRecent] = useState<Track>();
   const lakesLineRef = useRef<HTMLSpanElement | null>(null);

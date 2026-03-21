@@ -6,6 +6,7 @@ import { isMobile } from "react-device-detect";
 import useModifierKey from "../components/ModifierKey";
 import './codeblocks.css'
 // projects
+import Arcki from "./mdx/arcki.mdx";
 import Flowboard from "./mdx/flowboard.mdx";
 import Guideline from "./mdx/guideline.mdx";
 import Neodev from "./mdx/neodev.mdx";
@@ -30,6 +31,7 @@ const MDX_MAP: Record<string, React.ComponentType> = {
   places: Places,
   sf: Sf,
   uwreflection: UWReflection,
+  arcki: Arcki,
   flowboard: Flowboard,
   guideline: Guideline,
   neodev: Neodev,
@@ -88,7 +90,7 @@ export default function SlugPage({
     ),
   };
 
-  const [isMac, setIsMac] = useState(false);
+  const [isMac, setIsMac] = useState(true);
   const isModifierPressed = useModifierKey();
 
   useEffect(() => {

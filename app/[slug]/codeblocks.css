@@ -41,6 +41,11 @@ pre[class*="language-"] {
   box-shadow: 0 0 0 1px rgba(187, 154, 247, 0.3);
 }
 
+.arcki-page pre[class*="language-"] {
+  border: 1px solid #030E2Eb3;
+  box-shadow: 0 0 0 1px rgba(187, 154, 247, 0.3);
+}
+
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: #12121a;
@@ -90,6 +95,10 @@ pre[class*="language-"].line-numbers > code {
 
 .phuture-page .line-numbers .line-numbers-rows {
   border-right: 1px solid #37A2B080;
+}
+
+.arcki .line-numbers .line-numbers-rows {
+  border-right: 1px solid #030E2E80;
 }
 
 .line-numbers-rows > span {
