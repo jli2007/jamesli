@@ -13,6 +13,7 @@ import Neodev from "./mdx/neodev.mdx";
 import Phuture from "./mdx/phuture.mdx";
 import Trivialguessr from "./mdx/trivialguessr.mdx";
 // notes
+import Creative from "./mdx/creative.mdx";
 import Aifs from "./mdx/aifs.mdx";
 import Footy from "./mdx/footy.mdx";
 import Forest from "./mdx/forest.mdx";
@@ -23,6 +24,7 @@ import Sf from "./mdx/sf.mdx";
 import UWReflection from "./mdx/uw-reflection.mdx";
 
 const MDX_MAP: Record<string, React.ComponentType> = {
+  creative: Creative,
   aifs: Aifs,
   footy: Footy,
   forest: Forest,

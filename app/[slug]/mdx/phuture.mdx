@@ -34,7 +34,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
         <div className='flex flex-col text-left'>
             <span className='text-lightBeige/95 text-xl'>overview</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                phuture is an nature exploration app with <span className='text-lightBeige/95 font-normal italic'>30 alpha testers</span> lined up for early-stage testing. inspired by the pokédex in pokémon and the mechanics of pokémon-go, the underlying concept of phuture revolves around <span className='text-lightBeige/95 font-normal'>collecting every single plant & animal species in the world</span> into a personal database.
+                phuture is an nature exploration app with <span className='text-lightBeige/95 font-normal italic'>50 alpha testers</span> lined up for early-stage testing. inspired by the pokédex in pokémon and the mechanics of pokémon-go, the underlying concept of phuture revolves around <span className='text-lightBeige/95 font-normal'>collecting every single plant & animal species in the world</span> into a personal database.
             </span>
         </div>
 
@@ -81,8 +81,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
                     quality={75}
-            loading="lazy"
-            decoding="async"
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 it got me pondering and i genuinely almost crashed into a tree. being out in nature is underrated, but addiction to technology made people forget about what's out there. 
@@ -103,8 +103,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
                     quality={75}
-            loading="lazy"
-            decoding="async"
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 essentially, the user would take a picture of a species using our in-app camera, and our logic layers will handle the rest.
@@ -236,6 +236,89 @@ channel.sendToQueue("game_events", Buffer.from(JSON.stringify({
                 this architecture ensures that <span className='text-lightBeige/95 font-normal'>gameplay events, analytics, and background jobs</span> can scale independently: makes the whole backend easier to navigate and debug.
             </span>
 
+            <span className='text-lightBeige/95 text-xl'>notifications</span>
+            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
+                notifications were not just a frontend toast system. i wanted them to work <span className='text-lightBeige/95 font-normal'>both live and durably</span>, so i pushed delivery into the async pipeline instead of writing directly in the request lifecycle.
+
+                the api accepts the command first, resolves the current session, and publishes a <span className='text-lightBeige/95 font-normal'>notification_events</span> job to rabbitmq. that keeps the request fast while still handing the actual delivery work to the worker layer.
+
+                <span className="route-background text-[0.9rem]">src/routes/notifications.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`router.post("/send", async (req, res) => {
+    const { userId } = await getSessionPayload(req.body.sessionToken);
+
+    await publishToQueue("notification_events", {
+        userId,
+        title: req.body.title,
+        body: req.body.body,
+        priority: req.body.priority,
+        persist: req.body.persist,
+        sourceQueue: "notification_events",
+    });
+
+    res.json({ success: true, queued: true });
+});`}</code>
+                    </pre>
+                </div>
+
+                once the worker consumes that job, redis gets used in <span className='text-lightBeige/95 font-normal'>two separate patterns</span>: a capped inbox list for persistent history, and pub/sub channels for instant delivery to connected clients.
+
+                <span className="route-background text-[0.9rem]">src/lib/notifications/notificationBus.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`export async function deliverNotification(redis, command) {
+    const notification = buildNotification(command);
+
+    if (command.persist !== false) {
+        await redis
+            .multi()
+            .lpush(\`notifications:inbox:\${command.userId}\`, JSON.stringify(notification))
+            .ltrim(\`notifications:inbox:\${command.userId}\`, 0, 99)
+            .expire(\`notifications:inbox:\${command.userId}\`, 30 * 24 * 60 * 60)
+            .exec();
+    }
+
+    await redis.publish(\`notifications:user:\${command.userId}\`, JSON.stringify(notification));
+}`}</code>
+                    </pre>
+                </div>
+
+                that split let me support <span className='text-lightBeige/95 font-normal'>live-only events</span> and <span className='text-lightBeige/95 font-normal'>durable inbox notifications</span> with the same backend primitive. if a user is online, they see it instantly; if they reconnect later, the inbox still has the event.
+
+                i also added an internal <span className='text-lightBeige/95 font-normal'>sse pipeline stream</span> for the dashboard so i could see the exact queue, handler, status, and worker container that processed each command. this made the difference between <span className='text-lightBeige/95 font-normal'>api accepted</span> and <span className='text-lightBeige/95 font-normal'>worker processed</span> visible in real time, which made the rabbitmq architecture feel tangible instead of theoretical.
+
+                <span className="route-background text-[0.9rem]">src/lib/sse/eventBus.ts</span>
+                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
+                    <pre className='line-numbers'>
+                        <code className='language-ts'>{`emitSSE(
+    "notification_events",
+    "game_exchange",
+    notification.category,
+    payload.userId,
+    \`Delivered notification \${notification.id} to \${payload.userId}\`,
+    "success"
+);`}</code>
+                    </pre>
+                </div>
+
+                from the outside it looks like a simple push notification. under the hood it is <span className='text-lightBeige/95 font-normal'>api -> rabbitmq -> worker -> redis inbox/pubsub -> sse client delivery</span>, which ended up being one of the more technically satisfying parts of the backend.
+
+                <Image
+                    src="/projects/phuture/html.png"
+                    alt="phuture-html"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-cover rounded mb-0!"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+                    quality={75}
+                    loading="lazy"
+                    decoding="async"
+                />
+
+                i used a plain html dashboard to test the notification system. interesting to see how quick http responses fire much faster than the actual action handled by rabbit!
+            </span>
+
             <span className='text-lightBeige/95 text-xl'>security scripts</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 i used bash scripts to set up secure configurations for redis, rabbitmq, and the application environment. one of the main uses cases was <span className='text-lightBeige/95 font-normal'>setting strong secret variables</span>.
@@ -322,8 +405,8 @@ redis:
                     className="w-full h-auto object-cover rounded"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
                     quality={75}
-            loading="lazy"
-            decoding="async"
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 <span className="route-background text-[0.9rem]">kubernetes.yaml</span>
@@ -391,8 +474,8 @@ spec:
                     className="w-full h-auto object-cover rounded"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
                     quality={75}
-            loading="lazy"
-            decoding="async"
+                    loading="lazy"
+                    decoding="async"
                 />
             </span>
 
@@ -438,8 +521,8 @@ spec:
                     className="w-full h-auto object-cover rounded mb-0!"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
                     quality={75}
-            loading="lazy"
-            decoding="async"
+                    loading="lazy"
+                    decoding="async"
                 />
                 
                 <div className="not-prose mt-3!">
