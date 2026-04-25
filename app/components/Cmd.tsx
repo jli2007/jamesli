@@ -6,7 +6,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { isMobile } from "react-device-detect";
 import { FiGithub } from "react-icons/fi";
 import {
-  IoLogoInstagram,
   IoSearchOutline,
   IoHomeOutline,
   IoBulbOutline,
@@ -130,12 +129,6 @@ export default function CommandPalette() {
         case "Numpad3":
           openLink(() => window.open("https://x.com/_jamesli", "_blank"));
           break;
-        case "Digit4":
-        case "Numpad4":
-          openLink(() =>
-            window.open("https://www.instagram.com/jamesdialedin/", "_blank")
-          );
-          break;
       }
     };
 
@@ -179,6 +172,7 @@ export default function CommandPalette() {
               isHome ? "bg-black/80" : "bg-black/60 backdrop-blur-sm"
             }`} />
           <Dialog.Content
+            aria-describedby={undefined}
             className={`fixed top-[20%] left-1/2 -translate-x-1/2 w-full max-w-125 p-3 z-50 ${
               open ? "animate-slide-down" : "animate-slide-up"
             }`}
@@ -205,7 +199,7 @@ export default function CommandPalette() {
               }`}>
                 <img src="/jsl.png" alt="jsl" className="w-7 rounded-sm" />
                 <div className="flex-1">
-                  <h2 className={`font-medium ${isHome ? "text-midBeige1" : "text-white"}`}>jamessli.com</h2>
+                  <h2 className={`font-medium ${isHome ? "text-midBeige1" : "text-white"}`}>cmd</h2>
                   <p className={`text-xs ${isHome ? "text-midBeige2/90" : "text-neutral-400"}`}>
                     use <kbd className="px-1">esc</kbd> or click outside to
                     close
@@ -290,22 +284,6 @@ export default function CommandPalette() {
                     <FaXTwitter className="h-4 w-4" />
                     <span className="flex-1">x</span>
                     <Shortcut>3</Shortcut>
-                  </Command.Item>
-                  <Command.Item
-                    value="ig instagram profile socials james jamesdialedin flowstatejames"
-                    onSelect={() =>
-                      openLink(() =>
-                        window.open(
-                          "https://www.instagram.com/jamesdialedin",
-                          "_blank"
-                        )
-                      )
-                    }
-                    className={itemClass}
-                  >
-                    <IoLogoInstagram className="h-4 w-4" />
-                    <span className="flex-1">instagram (5m+ views)</span>
-                    <Shortcut>4</Shortcut>
                   </Command.Item>
                 </Command.Group>
 

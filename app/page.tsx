@@ -11,8 +11,8 @@ import { FaGithub, FaXTwitter, FaSpotify } from "react-icons/fa6";
 import james from "./assets/james.jpg";
 import uw from "./assets/uw.png";
 import western from "./assets/western.png";
-import fdotinc from "./assets/fdotinc.png";
 import polymarket from "./assets/polymarket.png";
+import mercor from "./assets/mercor.png";
 
 export default function Home() {
   const { hasPlayed, setHasPlayed } = useIntroStore();
@@ -245,15 +245,15 @@ export default function Home() {
                   {/* linkedin section */}
                   <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in overflow-hidden">
                     <a
-                      href="https://www.linkedin.com/in/jamessli/"
+                      href="https://www.mercor.com/"
                       target="_blank"
                       className="absolute inset-0 w-full h-full"
                     >
                       <h1 className="absolute italic left-5 top-2 lg:text-base md:text-lg text-sm z-30">
-                        linkedin
+                        mercor
                       </h1>
                       <h1 className="absolute bottom-5 italic right-5 lg:text-base md:text-lg text-sm z-30">
-                        hello@jame.li
+                        currently
                       </h1>
                     </a>
                   </div>
@@ -297,6 +297,20 @@ export default function Home() {
                       <ul className="descr flex flex-col gap-10 md:gap-7 mt-5">
                         <li className="flex items-baseline gap-x-1 gap-y-3">
                           <span className="shrink-0">-</span>
+                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
+                            making rl eval infrastructure at
+                            <Image
+                              src={mercor}
+                              width={20}
+                              height={20}
+                              alt="mercor-logo"
+                            />
+                            mercor
+                          </span>
+                        </li>
+
+                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                          <span className="shrink-0">-</span>
                           <span className="leading-loose">currently executing distributed agents with infra isolation</span>
                         </li>
 
@@ -332,29 +346,7 @@ export default function Home() {
                               alt="western-logo"
                             />
                             <span>hackwestern,</span>
-                            winning 2nd
-                          </span>
-                        </li>
-
-                        <li className="flex items-baseline gap-x-1 gap-y-3">
-                          <span className="shrink-0">-</span>
-                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            <LinkSlider href={`/sf`} mode="dark" className="relative flex" isNextLink>
-                              visited sf
-                            </LinkSlider>
-                            <span className="-ml-1">—met cool ppl & snuck into</span>
-                            <span className="flex flex-row gap-1">
-                              <Image
-                                src={fdotinc}
-                                width={20}
-                                height={20}
-                                alt="fdotinc-logo"
-                                className="object-contain"
-                              />
-                              <LinkSlider href="https://f.inc/" mode="dark" className="relative flex">
-                                founders inc
-                              </LinkSlider>
-                            </span>
+                            100+ github stars
                           </span>
                         </li>
                       </ul>
@@ -363,17 +355,7 @@ export default function Home() {
                 </div>
 
                 {/* github logo section */}
-                <div className="relative lg:col-span-1 col-span-6 row-span-4 w-auto lg:h-auto lg:py-3 md:py-7 py-6 px-7 m-1 mb-1 rounded-lg bg-darkBeige1 text-midBeige1 hover:border-midBeige3 border-2 border-transparent transition delay-200 duration-150 ease-in">
-                  <a
-                    href="https://github.com/JLi2007"
-                    className="w-full h-full absolute inset-0"
-                    target="_blank"
-                  >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <FaGithub className="w-auto h-[50%]" />
-                    </div>
-                  </a>
-                </div>
+                <div className="relative lg:col-span-1 col-span-6 row-span-4 w-auto lg:h-auto lg:py-3 md:py-7 py-6 px-7 m-1 mb-1 rounded-lg bg-darkBeige1 text-midBeige1 border-2 border-transparent"></div>
 
                 {/* last listened to section */}
                 <div className="lg:col-span-2 col-span-6 row-span-3 w-auto lg:h-auto lg:py-2 md:py-7 py-4 px-5 m-1 rounded-lg bg-midBeige2 bottom-section">

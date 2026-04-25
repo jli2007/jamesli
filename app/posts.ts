@@ -9,13 +9,13 @@ export const posts: Post[] = [
   {
     slug: "places",
     title: "the art of noticing",
-    date: "ongoing",
+    date: "-",
     pinned: true,
   },
   {
     slug: "music",
     title: "music",
-    date: "ongoing",
+    date: "-",
     pinned: true,
   },
     {
