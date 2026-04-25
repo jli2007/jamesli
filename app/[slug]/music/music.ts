@@ -69,7 +69,7 @@ export const TRACK_DATA: TrackMetadata[] = [
     id: "0FWAIRd9Uz5uNek7cALYNC",
     description: "product of the environment.",
     quotes: [
-      "I was born to be wild, I don't wanna be tamed\nTalent's in my blood and I don't wanna be vain\nBut if I'm a psycho, then I don't wanna be sane \n vain = vein (blood)",
+      "I was born to be wild, I don't wanna be tamed\nTalent's in my blood and I don't wanna be vain\nBut if I'm a psycho, then I don't wanna be sane \n",
       "Blame my environment, it made me a sicko"
     ],
   },
@@ -111,10 +111,10 @@ export const TRACK_DATA: TrackMetadata[] = [
   // my 19th birthday
   {
     id: "4KCfCctnZQd5mem6S3HhKi",
-    description: "19 candles but no cake, just scars.",
+    description: "19 candles.",
     quotes: [
       "The pain's compulsory, suffering's optional\nTakeshi's castle, my life's got obstacles",
-      "You gotta separate the rats from the G's if you can't handle cheese, how the hell you gonna be a great? \n — great = grate (for cheese)",
+      "You gotta separate the rats from the G's if you can't handle cheese, how the hell you gonna be a great? \n",
       "I'm hot headed and dangerous\nAnd still living in this matrix\nAll I wanna do is make my loved ones proud\nIn this year alone we made three hundred thousand\nBut my mum won't smile because her son's on trial",
       "We used to have cards and now we're playing with swords\nMy G went from Blackjack to a black Jack Sparrow",
       "You know the difference between life and death is one bad decision, 3 or 4 inches\nSo many man my age have got P.T.S.D and I don't think that it's hit them"

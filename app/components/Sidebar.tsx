@@ -70,7 +70,7 @@ export default function Sidebar() {
                     )}
                   </div>
                   <div className="absolute bottom-0 left-0 w-full p-5 bg-linear-to-t from-black/80 via-black/40 to-transparent">
-                    <h1 className="lg:text-lg md:text-xl text-md font-semibold px-1 shadow-black [text-shadow:0.5px_0.5px_10px_black]">
+                    <h1 className="lg:text-lg md:text-xl text-base font-semibold px-1 shadow-black [text-shadow:0.5px_0.5px_10px_black]">
                       {project.name}
                     </h1>
                     <p className="lg:text-sm md:text-lg text-sm text-lighterBeige px-1 [text-shadow:0.5px_0.5px_5px_black]">
@@ -107,7 +107,7 @@ export default function Sidebar() {
 
       <footer className="pt-4 md:pb-0 pb-2 border-t border-white/20 lg:text-xs md:text-sm text-xs text-white/70 flex flex-row items-center lg:justify-end justify-start">
         <span className="shiny-green-dot inline-block mr-2 w-3 h-3" />
-        last updated: 3/23/2025
+        last updated: 4/25/2025
       </footer>
     </div>
   );

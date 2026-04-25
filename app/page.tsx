@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import LinkSlider from "./components/Link";
 import { useIntroStore } from "./store/zustand";
@@ -13,6 +13,10 @@ import uw from "./assets/uw.png";
 import western from "./assets/western.png";
 import polymarket from "./assets/polymarket.png";
 import mercor from "./assets/mercor.png";
+import lakesLogo from "./assets/lakes.png";
+import lakesBackground from "./assets/lakes.webp";
+import tauriaLogo from "./assets/tauria.png";
+import tauriaBackground from "./assets/tauria.webp";
 
 export default function Home() {
   const { hasPlayed, setHasPlayed } = useIntroStore();
@@ -23,8 +27,6 @@ export default function Home() {
   const [isMac, setIsMac] = useState(true);
   const isModifierPressed = useModifierKey(); // for opacity of button
   const [recent, setRecent] = useState<Track>();
-  const lakesLineRef = useRef<HTMLSpanElement | null>(null);
-  const [forceTauriaWrap, setForceTauriaWrap] = useState(false);
 
   useEffect(() => {
     if (hasPlayed) {
@@ -74,36 +76,6 @@ export default function Home() {
       window.removeEventListener("command-palette-opened", handlePaletteOpened);
   }, []);
 
-  useEffect(() => {
-    const el = lakesLineRef.current;
-    if (!el) return;
-
-    let frame = 0;
-    const measure = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const styles = window.getComputedStyle(el);
-        let lineHeight = parseFloat(styles.lineHeight);
-        if (Number.isNaN(lineHeight)) {
-          const fontSize = parseFloat(styles.fontSize) || 16;
-          lineHeight = fontSize * 1.2;
-        }
-        const wraps = el.getBoundingClientRect().height > lineHeight * 1.35;
-        setForceTauriaWrap(wraps);
-      });
-    };
-
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    window.addEventListener("resize", measure);
-
-    return () => {
-      cancelAnimationFrame(frame);
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
-    };
-  }, []);
 
   const openCommandPalette = () => {
     window.dispatchEvent(new CustomEvent("open-command-palette"));
@@ -118,7 +90,7 @@ export default function Home() {
       >
         <div className="wave-effect" />
         <div className="relative flex justify-center items-center">
-          <h1 className="crg text-white lg:text-lg md:text-md text-sm my-3">
+          <h1 className="crg text-white lg:text-lg md:text-base text-sm my-3">
             product of the environment.
           </h1>
         </div>
@@ -164,9 +136,9 @@ export default function Home() {
 
               <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0 lg:px-0 px-1">
                 {/* side section */}
-                <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:h-auto md:h-200 h-120 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
+                <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:min-w-[22vw] lg:h-auto md:h-200 h-120 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
-                  <div className="sidediv relative lg:text-xl md:text-2xl text-md h-[95%] flex items-end w-full z-10 whitespace-nowrap">
+                  <div className="sidediv relative lg:text-xl md:text-2xl text-base h-[95%] flex items-end w-full z-10 whitespace-nowrap">
                     <span className="font-bold absolute top-0 left-0">
                       <span className="flex items-center justify-center gap-2 text-darkBeige3">
                         cs
@@ -180,51 +152,46 @@ export default function Home() {
                         uwaterloo
                       </span>
                     </span>
-                    <div className="flex flex-col gap-5 text-darkBeige1 bg-midBeige1/40 z-10 lg:p-2 p-3 w-full items-start text-center relative rounded-xl backdrop-blur-xs overflow-hidden">
-                      <h1 className="lg:bg-transparent rounded-lg sideh1 pl-6 [-text-indent:1.5rem]">
-                        <span className="flex items-center justify-start gap-2 text-darkBeige3">
-                          previously:
-                        </span>
+                    <div className="flex flex-col gap-3 z-10 w-full relative">
+                      <h1 className="text-darkBeige3 lg:text-lg md:text-xl text-base mb-1 drop-shadow-lg md:drop-shadow-none">
+                        work:
                       </h1>
 
-                      <h1 className="sideh1 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem] text-left">
-                        <span
-                          ref={lakesLineRef}
-                          className="flex items-center justify-start gap-2 text-darkBeige3 flex-wrap"
-                        >
-                          <span>•</span>
-                          engineering @
-                          <span className="cursor-pointer text-darkBeige2">
-                            <LinkSlider
-                              href="https://www.weblakes.com/"
-                              mode="dark"
-                              className="relative"
-                            >
-                              lakes software
-                            </LinkSlider>
-                          </span>
-                        </span>
-                      </h1>
+                      <a
+                        href="https://www.weblakes.com/"
+                        target="_blank"
+                        className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
+                      >
+                        <div className="relative z-20 flex items-center gap-3 p-3">
+                          <Image src={lakesLogo} width={40} height={40} alt="lakes-logo" className="rounded-lg ring-1 ring-darkBeige3/20" />
+                          <div>
+                            <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">lakes software</p>
+                            <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">software engineering</p>
+                          </div>
+                        </div>
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                          <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
+                          <Image src={lakesBackground} alt="" fill className="object-cover object-right" />
+                        </div>
+                      </a>
 
-                      <h1 className="sideh1 lg:mb-0 mb-5 lg:bg-transparent rounded-lg pl-6 [-text-indent:1.5rem] text-left">
-                        <span className="flex items-center justify-start gap-2 text-darkBeige3 flex-wrap">
-                          <span>•</span>
-                          product @
-                          <span
-                            className={`cursor-pointer text-darkBeige2 ${
-                              forceTauriaWrap ? "basis-full" : ""
-                            }`}
-                          >
-                            <LinkSlider
-                              href="https://www.tauria.com/"
-                              mode="dark"
-                              className="relative"
-                            >
-                              tauria
-                            </LinkSlider>
-                          </span>
-                        </span>
-                      </h1>
+                      <a
+                        href="https://www.tauria.com/"
+                        target="_blank"
+                        className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
+                      >
+                        <div className="relative z-20 flex items-center gap-3 p-3">
+                          <Image src={tauriaLogo} width={40} height={40} alt="tauria-logo" className="rounded-lg ring-1 ring-darkBeige3/20" />
+                          <div>
+                            <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">tauria</p>
+                            <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">product engineering</p>
+                          </div>
+                        </div>
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                          <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
+                          <Image src={tauriaBackground} alt="" fill className="object-cover object-right" />
+                        </div>
+                      </a>
                     </div>
                   </div>
                   <Image
@@ -244,6 +211,18 @@ export default function Home() {
                 <div className="row-span-1 lg:col-span-3 col-span-6 w-auto lg:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-1">
                   {/* linkedin section */}
                   <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in overflow-hidden">
+                    <div className="absolute -bottom-10 -left-10 pointer-events-none">
+                      <Image
+                        src={mercor}
+                        width={300}
+                        height={300}
+                        alt=""
+                        className="opacity-10"
+                        style={{
+                          filter: "sepia(10) saturate(0.1) brightness(1) drop-shadow(0 4px 12px rgba(0,0,0,0.1))",
+                        }}
+                      />
+                    </div>
                     <a
                       href="https://www.mercor.com/"
                       target="_blank"
@@ -286,19 +265,23 @@ export default function Home() {
                 </div>
 
                 {/* description section */}
-                <div className="description-div relative lg:col-span-3 col-span-6 row-span-1 w-auto h-auto pt-5 pb-10 px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3">
-                  <div className="description relative h-auto w-full flex flex-col z-10 lg:text-sm md:text-lg text-sm">
+                <div className="description-div relative lg:col-span-3 col-span-6 row-span-1 w-auto h-auto px-6 bg-midBeige1 m-1 mb-1 rounded-lg lg:text-darkBeige2 text-darkBeige3" style={{ paddingTop: "clamp(0.75rem, 2vh, 1.25rem)", paddingBottom: "clamp(1rem, 3vh, 2.5rem)" }}>
+                  <div className="description relative h-auto w-full lg:max-w-sm flex flex-col z-10 lg:text-sm md:text-lg text-sm">
                     <span className="italic font-bold p-1">
                       software engineer.
                     </span>
 
-                    <h1 className="h1descr break-normal mt-5 pb-2 p-1">
+                    <h1 className="h1descr break-normal pb-2 p-1" style={{ marginTop: "clamp(0.25rem, 1vh, 0.5rem)" }}>
+                      i was born and raised in waterloo. i'm product focused and enjoy backend and infra work. in my free time i wander street view and play fútbol.
+                    </h1>
+
+                    <h1 className="h1descr break-normal md:mt-0 mt-5 p-1">
                       <div className="flex items-center">recently:</div>
-                      <ul className="descr flex flex-col gap-10 md:gap-7 mt-5">
-                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                      <ul className="descr flex flex-col gap-10 md:gap-[clamp(0.75rem,3vh,1.75rem)]" style={{ marginTop: "clamp(0.75rem, 2vh, 1.75rem)" }}>
+                        <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            making rl eval infrastructure at
+                            building rl eval infrastructure at
                             <Image
                               src={mercor}
                               width={20}
@@ -309,12 +292,7 @@ export default function Home() {
                           </span>
                         </li>
 
-                        <li className="flex items-baseline gap-x-1 gap-y-3">
-                          <span className="shrink-0">-</span>
-                          <span className="leading-loose">currently executing distributed agents with infra isolation</span>
-                        </li>
-
-                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                        <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
                             won
@@ -324,14 +302,14 @@ export default function Home() {
                               height={20}
                               alt="western-logo"
                             />
-                            polymarket prize track with
+                            polymarket prize track at
                             <LinkSlider href="https://devpost.com/software/a-vckqad" mode="dark" className="relative flex">
-                              pindex
+                              carnegie mellon
                             </LinkSlider>
                           </span>
                         </li>
 
-                        <li className="flex items-baseline gap-x-1 gap-y-3">
+                        <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
                             built
@@ -354,8 +332,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* github logo section */}
-                <div className="relative lg:col-span-1 col-span-6 row-span-4 w-auto lg:h-auto lg:py-3 md:py-7 py-6 px-7 m-1 mb-1 rounded-lg bg-darkBeige1 text-midBeige1 border-2 border-transparent"></div>
+                {/* empty section */}
+                <div className="relative lg:col-span-1 col-span-6 row-span-4 w-auto lg:h-auto px-5 m-1 mb-1 rounded-lg bg-darkBeige1 text-midBeige1 border-2 border-transparent hidden md:block"></div>
 
                 {/* last listened to section */}
                 <div className="lg:col-span-2 col-span-6 row-span-3 w-auto lg:h-auto lg:py-2 md:py-7 py-4 px-5 m-1 rounded-lg bg-midBeige2 bottom-section">
