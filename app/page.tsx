@@ -17,6 +17,8 @@ import lakesLogo from "./assets/lakes.png";
 import lakesBackground from "./assets/lakes.webp";
 import tauriaLogo from "./assets/tauria.png";
 import tauriaBackground from "./assets/tauria.webp";
+import mercorLogo from "./assets/mercor_.png";
+import mercorBackground from "./assets/mercor.webp";
 
 export default function Home() {
   const { hasPlayed, setHasPlayed } = useIntroStore();
@@ -138,7 +140,7 @@ export default function Home() {
                 {/* side section */}
                 <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:min-w-[22vw] lg:h-auto md:h-200 h-120 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
-                  <div className="sidediv relative lg:text-xl md:text-2xl text-base h-[95%] flex items-end w-full z-10 whitespace-nowrap">
+                  <div className="sidediv relative lg:text-xl md:text-2xl text-base h-[97%] flex items-end w-full z-10 whitespace-nowrap">
                     <span className="font-bold absolute top-0 left-0">
                       <span className="flex items-center justify-center gap-2 text-darkBeige3">
                         cs
@@ -158,6 +160,24 @@ export default function Home() {
                       </h1>
 
                       <a
+                        href="https://www.mercor.com/"
+                        target="_blank"
+                        className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
+                      >
+                        <div className="relative z-20 flex items-center gap-3 p-3">
+                          <Image src={mercorLogo} width={40} height={40} alt="mercor-logo" className="rounded-lg ring-1 ring-darkBeige3/20" />
+                          <div>
+                            <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">mercor</p>
+                            <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">software engineering</p>
+                          </div>
+                        </div>
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                          <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
+                          <Image src={mercorBackground} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-right" />
+                        </div>
+                      </a>
+
+                      <a
                         href="https://www.weblakes.com/"
                         target="_blank"
                         className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
@@ -171,7 +191,7 @@ export default function Home() {
                         </div>
                         <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image src={lakesBackground} alt="" fill className="object-cover object-right" />
+                          <Image src={lakesBackground} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-right" />
                         </div>
                       </a>
 
@@ -189,7 +209,7 @@ export default function Home() {
                         </div>
                         <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image src={tauriaBackground} alt="" fill className="object-cover object-right" />
+                          <Image src={tauriaBackground} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-right" />
                         </div>
                       </a>
                     </div>

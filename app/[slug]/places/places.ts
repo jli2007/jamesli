@@ -33,7 +33,7 @@ export const places: PlacesType[] = [
       `a quiet fishing village on the edge of the world. the coverage makes me feel reminiscent of something. unsure of what it is. \n
       natsukashii (懐かしい) — a bittersweet feeling triggered by something that reminds you of a place you've never actually been. \n
       [yoshie shiratori](https://medium.com/breakingasia/yoshie-shiratori-the-incredible-story-of-a-man-no-prison-could-hold-6d79a67345f5), infamous prison break artist, was born in aomori. watched a documentary about him a long time ago, which sparked an interest regarding the prefecture. \n
-      [lake towada](https://medium.com/globetrotters/lake-towada-hidden-treasure-of-unrivaled-beauty-338e0b47e589) is super cool, on my bucket list.
+      [lake towada](https://medium.com/globetrotters/lake-towada-hidden-treasure-of-unrivaled-beauty-338e0b47e589) is super neat. on my bucket list.
       `,
     tags: [
       { color: "dodgerblue", text: "● streetview" },

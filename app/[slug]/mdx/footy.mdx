@@ -1,172 +1,45 @@
 import Image from "next/image"
 
+export const videos = ["f9","f8","f7","f6","f5","f4","f3","f2","f1"];
+export const labels = { f9: "foul baiting 😼" };
+
 <h4>congrats, you found a hidden page.</h4>
 
-<h3>some clips from 2025 high school season. was accepted into uw cs around this time so i enjoyed myself on the pitch for once.</h3>
+<br/>
+
+<h4>some clips from 2025 high school season. was accepted into uw cs around this time so i enjoyed myself on the pitch for once.</h4>
+
+<br/>
 
 <h4>click to play/pause.</h4>
 
 <Image
-  src="/notes/footy/footy.png"
+  src="/notes/footy/f.png"
   alt="footy"
   width={1200}
   height={800}
   loading="eager"
   className="w-full"
-  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+  sizes="(max-width: 768px) 100vw, 1280px"
   quality={85}
 />
 
-<div>
-  <h4>foul baiting 😼</h4>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy09.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy08.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy07.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy06.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy05.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy04.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy03.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy02.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
-
-<div>
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="w-full cursor-pointer"
-    onClick={(e) => {
-      e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
-    }}
-  >
-    <source src="../../../notes/footy/footy01.mp4" type="video/mp4" />
-    your browser does not support the video tag.
-  </video>
-</div>
+{videos.map((v) => (
+  <div key={v}>
+    {labels[v] && <h4>{labels[v]}</h4>}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="none"
+      className="w-full cursor-pointer"
+      onClick={(e) => {
+        e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause();
+      }}
+    >
+      <source src={`../../../notes/footy/${v}.mp4`} type="video/mp4" />
+      your browser does not support the video tag.
+    </video>
+  </div>
+))}
