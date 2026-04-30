@@ -270,7 +270,7 @@ export const places: PlacesType[] = [
     flag: "🇳🇴",
     description:
       `a lonely house by the shore in the lofoten archipelago, above the arctic circle. \n
-      imagine living here. so detached from the big cities. imagine how much history his shack holds.
+      imagine living here. so detached from the big cities. imagine how much history this shack holds.
       `,
     tags: [
       { color: "dodgerblue", text: "● streetview" },

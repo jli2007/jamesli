@@ -16,7 +16,7 @@ import Trivialguessr from "./mdx/trivialguessr.mdx";
 import Creative from "./mdx/creative.mdx";
 import Aifs from "./mdx/aifs.mdx";
 import Footy from "./mdx/footy.mdx";
-import Forest from "./mdx/forest.mdx";
+import Freedom from "./mdx/freedom.mdx";
 import Futbol from "./mdx/futbol.mdx";
 import Music from "./mdx/music.mdx";
 import Places from "./mdx/places.mdx";
@@ -27,7 +27,7 @@ const MDX_MAP: Record<string, React.ComponentType> = {
   creative: Creative,
   aifs: Aifs,
   footy: Footy,
-  forest: Forest,
+  freedom: Freedom,
   futbol: Futbol,
   music: Music,
   places: Places,

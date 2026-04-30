@@ -322,10 +322,11 @@ export default function Home() {
                               height={20}
                               alt="western-logo"
                             />
-                            polymarket prize track at
+                            polymarket
                             <LinkSlider href="https://devpost.com/software/a-vckqad" mode="dark" className="relative flex">
-                              carnegie mellon
+                              prize track
                             </LinkSlider>
+                            at carnegie mellon
                           </span>
                         </li>
 

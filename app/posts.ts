@@ -19,7 +19,7 @@ export const posts: Post[] = [
     pinned: true,
   },
     {
-    slug: "forest",
+    slug: "freedom",
     title: "a tribute to freedom",
     date: "dec 2025",
     pinned: false,
