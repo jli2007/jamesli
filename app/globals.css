@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&text=%E6%97%A5%E6%9C%AC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC&text=%E4%B8%AD%E5%9B%BD&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic&text=%D9%85%D8%B5%D8%B1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Thai&text=%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&text=%D0%BC%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB%20%D1%83%D0%BB%D1%81&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -16,6 +21,11 @@
   --animate-slide-up: slide-up 0.5s ease;
   --font-playfair: "Playfair Display", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-noto-jp: "Noto Serif JP", "Playfair Display", serif;
+  --font-noto-sc: "Noto Serif SC", "Playfair Display", serif;
+  --font-noto-ar: "Noto Serif Arabic", "Playfair Display", serif;
+  --font-noto-th: "Noto Serif Thai", "Playfair Display", serif;
+  --font-noto-cy: "Noto Serif", "Playfair Display", serif;
 
   @keyframes pulse-and-scale {
     0% {

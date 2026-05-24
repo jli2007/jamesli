@@ -12,13 +12,16 @@ import james from "./assets/james.jpg";
 import uw from "./assets/uw.png";
 import western from "./assets/western.png";
 import polymarket from "./assets/polymarket.png";
-import mercor from "./assets/mercor.png";
+import mercor from "./assets/mercor_.png";
+import aleph from "./assets/aleph_.png";
 import lakesLogo from "./assets/lakes.png";
 import lakesBackground from "./assets/lakes.webp";
 import tauriaLogo from "./assets/tauria.png";
 import tauriaBackground from "./assets/tauria.webp";
-import mercorLogo from "./assets/mercor_.png";
+import mercorLogo from "./assets/mercor.png";
 import mercorBackground from "./assets/mercor.webp";
+import alephBackground from "./assets/aleph.webp";
+import alephLogo from "./assets/aleph.png";
 
 export default function Home() {
   const { hasPlayed, setHasPlayed } = useIntroStore();
@@ -138,10 +141,10 @@ export default function Home() {
 
               <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0 lg:px-0 px-1">
                 {/* side section */}
-                <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:min-w-[22vw] lg:h-auto md:h-200 h-120 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
+                <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:min-w-[22vw] lg:h-auto md:h-200 h-160 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
-                  <div className="sidediv relative lg:text-xl md:text-2xl text-base h-[97%] flex items-end w-full z-10 whitespace-nowrap">
-                    <span className="font-bold absolute top-0 left-0">
+                  <div className="sidediv relative lg:text-xl md:text-2xl text-base h-[97%] flex items-center w-full z-10 whitespace-nowrap">
+                    <span className="font-bold absolute top-0 md:left-0 md:translate-x-0 left-1/2 -translate-x-1/2">
                       <span className="flex items-center justify-center gap-2 text-darkBeige3">
                         cs
                         <Image
@@ -154,10 +157,29 @@ export default function Home() {
                         uwaterloo
                       </span>
                     </span>
-                    <div className="flex flex-col gap-3 z-10 w-full relative">
+                    <div className="flex flex-col gap-10 z-10 w-full relative">
                       <h1 className="text-darkBeige3 lg:text-lg md:text-xl text-base mb-1 drop-shadow-lg md:drop-shadow-none">
                         work:
                       </h1>
+                      
+                      <a
+                        href="https://www.getaleph.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
+                      >
+                        <div className="relative z-20 flex items-center gap-3 p-3">
+                          <Image src={alephLogo} width={56} height={56} alt="aleph-logo" className="w-14 h-14 rounded-lg ring-1 ring-darkBeige3/20" />
+                          <div>
+                            <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">aleph</p>
+                            <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">software engineering</p>
+                          </div>
+                        </div>
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                          <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
+                          <Image src={alephBackground} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-right" />
+                        </div>
+                      </a>
 
                       <a
                         href="https://www.mercor.com/"
@@ -165,7 +187,7 @@ export default function Home() {
                         className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
                       >
                         <div className="relative z-20 flex items-center gap-3 p-3">
-                          <Image src={mercorLogo} width={40} height={40} alt="mercor-logo" className="rounded-lg ring-1 ring-darkBeige3/20" />
+                          <Image src={mercorLogo} width={56} height={56} alt="mercor-logo" className="w-14 h-14 rounded-lg ring-1 ring-darkBeige3/20" />
                           <div>
                             <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">mercor</p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">software engineering</p>
@@ -183,7 +205,7 @@ export default function Home() {
                         className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
                       >
                         <div className="relative z-20 flex items-center gap-3 p-3">
-                          <Image src={lakesLogo} width={40} height={40} alt="lakes-logo" className="rounded-lg ring-1 ring-darkBeige3/20" />
+                          <Image src={lakesLogo} width={56} height={56} alt="lakes-logo" className="w-14 h-14 rounded-lg ring-1 ring-darkBeige3/20" />
                           <div>
                             <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">lakes software</p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">software engineering</p>
@@ -201,7 +223,7 @@ export default function Home() {
                         className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
                       >
                         <div className="relative z-20 flex items-center gap-3 p-3">
-                          <Image src={tauriaLogo} width={40} height={40} alt="tauria-logo" className="rounded-lg ring-1 ring-darkBeige3/20" />
+                          <Image src={tauriaLogo} width={56} height={56} alt="tauria-logo" className="w-14 h-14 rounded-lg ring-1 ring-darkBeige3/20" />
                           <div>
                             <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">tauria</p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">product engineering</p>
@@ -214,7 +236,7 @@ export default function Home() {
                       </a>
                     </div>
                   </div>
-                  <Image
+                  {/* <Image
                     src={james}
                     className="jame absolute w-full lg:h-auto opacity-99 rounded-xl top-10 lg:top-15 right-0 lg:z-5 z-0"
                     style={{
@@ -224,32 +246,39 @@ export default function Home() {
                     alt="jame"
                     placeholder="blur"
                     loading="eager"
-                  />
+                  /> */}
                 </div>
 
                 {/* linkedin and socials section */}
                 <div className="row-span-1 lg:col-span-3 col-span-6 w-auto lg:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-1">
                   {/* linkedin section */}
                   <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in overflow-hidden">
-                    <div className="absolute -bottom-10 -left-10 pointer-events-none">
-                      <Image
-                        src={mercor}
-                        width={300}
-                        height={300}
-                        alt=""
-                        className="opacity-10"
-                        style={{
-                          filter: "sepia(10) saturate(0.1) brightness(1) drop-shadow(0 4px 12px rgba(0,0,0,0.1))",
-                        }}
-                      />
-                    </div>
+                    <div
+                      aria-hidden
+                      className="absolute -bottom-24 -left-24 w-96 h-96 pointer-events-none opacity-90 z-0"
+                      style={{
+                        backgroundColor: "#4e4b43",
+                        backgroundImage:
+                          "radial-gradient(circle at center, rgba(220,200,165,0.06) 0.75px, transparent 1.25px)",
+                        backgroundSize: "10px 10px",
+                        transform: "rotate(-6deg)",
+                        WebkitMaskImage: `url(${aleph.src})`,
+                        maskImage: `url(${aleph.src})`,
+                        WebkitMaskSize: "contain",
+                        maskSize: "contain",
+                        WebkitMaskRepeat: "no-repeat",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskPosition: "center",
+                        maskPosition: "center",
+                      }}
+                    />
                     <a
-                      href="https://www.mercor.com/"
+                      href="https://www.getaleph.com"
                       target="_blank"
                       className="absolute inset-0 w-full h-full"
                     >
                       <h1 className="absolute italic left-5 top-2 lg:text-base md:text-lg text-sm z-30">
-                        mercor
+                        aleph
                       </h1>
                       <h1 className="absolute bottom-5 italic right-5 lg:text-base md:text-lg text-sm z-30">
                         currently
@@ -301,7 +330,7 @@ export default function Home() {
                         <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            building rl eval infrastructure at
+                            built rl eval infrastructure at
                             <Image
                               src={mercor}
                               width={20}

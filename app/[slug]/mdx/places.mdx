@@ -33,7 +33,7 @@ import InteractivePlace from "../places/PlaceRender.tsx";
 
   <div>
     {places.map((place, index) => (
-      <InteractivePlace key={index} place={place} isLast={index === places.length - 1} />
+      <InteractivePlace key={place.iframeSrc} place={place} isLast={index === places.length - 1} />
     ))}
   </div>
 

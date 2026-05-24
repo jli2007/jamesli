@@ -1,7 +1,7 @@
 "use client";
 import { use, useRef, useEffect, useState } from "react";
 import { MDXProvider } from "@mdx-js/react";
-import { redirect } from "next/navigation";
+import { redirect, notFound } from "next/navigation";
 import { isMobile } from "react-device-detect";
 import useModifierKey from "../components/ModifierKey";
 import './codeblocks.css'
@@ -51,6 +51,7 @@ export default function SlugPage({
   const topRef = useRef<HTMLDivElement>(null);
 
   const Post = MDX_MAP[slug];
+  if (!Post) notFound();
 
   useEffect(() => {
     (async () => {

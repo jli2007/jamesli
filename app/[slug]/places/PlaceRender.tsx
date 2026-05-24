@@ -1,4 +1,20 @@
 import { useRef, useEffect, useState } from "react";
+import type { CountryScript, PlacesType } from "./places";
+
+const scriptFontFamily: Record<CountryScript, string> = {
+  latin: "var(--font-playfair)",
+  jp: "var(--font-noto-jp)",
+  sc: "var(--font-noto-sc)",
+  arabic: "var(--font-noto-ar)",
+  thai: "var(--font-noto-th)",
+  cyrillic: "var(--font-noto-cy)",
+};
+
+function flagEmojiToTwemoji(emoji: string): string {
+  return [...emoji]
+    .map((c) => (c.codePointAt(0) ?? 0).toString(16))
+    .join("-");
+}
 
 // Parse [text](url)
 function parseLinks(text: string) {
@@ -22,7 +38,7 @@ function parseLinks(text: string) {
   });
 }
 
-export default function RenderPlace({ place, isLast = false }: { place: any; isLast?: boolean }) {
+export default function RenderPlace({ place, isLast = false }: { place: PlacesType; isLast?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [iframeKey, setIframeKey] = useState(0);
@@ -56,52 +72,33 @@ export default function RenderPlace({ place, isLast = false }: { place: any; isL
 
   return (
     <div ref={ref} className="flex flex-col mb-0 md:mb-0 not-prose">
-      <div className="flex items-baseline justify-between md:justify-start gap-3 pb-3 mb-3 md:mb-0">
-        <h3 className="m-0 pb-2 leading-none lg:text-3xl md:text-4xl text-2xl font-light tracking-tight">
+      <div className="flex items-center justify-between gap-3 pb-3 mb-3">
+        <h3 className="m-0 leading-none lg:text-3xl md:text-4xl text-2xl font-light tracking-tight">
           {place.title}
         </h3>
-        <div className="flex md:hidden items-center gap-1.5 opacity-80 leading-none">
-          <span className="text-xl leading-none">{place.flag}</span>
-          <span className="text-xs leading-none font-thin">{place.country}</span>
-        </div>
-      </div>
-
-      {/* Tags + flag on desktop - above iframe */}
-      <div className="hidden md:flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2.5">
-          {place.tags.map((tag: any, i: number) => {
-            const shadowMap: Record<string, string> = {
-              mediumseagreen: "rgba(60,179,113,0.7)",
-              orchid: "rgba(218,112,214,0.7)",
-              dodgerblue: "rgba(30,144,255,0.7)",
-              red: "rgba(255,0,0,0.7)",
-              darksalmon: "rgba(233,150,122,0.7)",
-              slategray: "rgba(112,128,144,0.7)",
-              darkgoldenrod: "rgba(184,134,11,0.7)",
-              darkturquoise: "rgba(0,206,209,0.7)",
-              midnightblue: "rgba(25,25,112,0.7)",
-              mediumvioletred: "rgba(199,21,133,0.7)",
-              coral: "rgba(255,127,80,0.7)",
-              powderblue: "rgba(70,160,160,0.8)"
-            };
-            const shadowColor = shadowMap[tag.color] || "rgba(0,0,0,0.3)";
-            return (
-              <div
-                key={i}
-                className="text-white px-4 py-0.5 rounded-[15px] text-[12px]"
-                style={{
-                  backgroundColor: tag.color,
-                  boxShadow: `0px 4px 8px ${shadowColor}`,
-                }}
-              >
-                <span>{tag.text}</span>
-              </div>
-            );
-          })}
-        </div>
-        <div className="flex items-center gap-1.5 opacity-80 leading-none">
-          <span className="text-2xl leading-none">{place.flag}</span>
-          <span className="text-sm leading-none font-thin">{place.country}</span>
+        <div className="flex items-center gap-2 opacity-90 leading-none">
+          <img
+            src={`https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/${flagEmojiToTwemoji(place.flag)}.svg`}
+            alt={place.country}
+            loading="lazy"
+            className="md:w-8 md:h-8 w-6 h-6"
+            onError={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const img = e.currentTarget;
+              const fallback = document.createElement("span");
+              fallback.textContent = place.flag;
+              fallback.className = img.className;
+              img.replaceWith(fallback);
+            }}
+          />
+          <span
+            dir={place.script === "arabic" ? "rtl" : "ltr"}
+            className="md:text-lg text-xs leading-none font-thin"
+            style={{ fontFamily: scriptFontFamily[place.script] ?? "var(--font-playfair)" }}
+          >
+            {place.nativeName}
+          </span>
         </div>
       </div>
 
@@ -121,39 +118,6 @@ export default function RenderPlace({ place, isLast = false }: { place: any; isL
             allow="accelerometer;"
           ></iframe>
         )}
-      </div>
-
-      {/* Tags on mobile - below iframe */}
-      <div className="flex md:hidden items-center justify-center gap-2.5 my-5">
-        {place.tags.map((tag: any, i: number) => {
-          const shadowMap: Record<string, string> = {
-            mediumseagreen: "rgba(60,179,113,0.7)",
-            orchid: "rgba(218,112,214,0.7)",
-            dodgerblue: "rgba(30,144,255,0.7)",
-            red: "rgba(255,0,0,0.7)",
-            darksalmon: "rgba(233,150,122,0.7)",
-            slategray: "rgba(112,128,144,0.7)",
-            darkgoldenrod: "rgba(184,134,11,0.7)",
-            darkturquoise: "rgba(0,206,209,0.7)",
-            midnightblue: "rgba(25,25,112,0.7)",
-            mediumvioletred: "rgba(199,21,133,0.7)",
-            coral: "rgba(255,127,80,0.7)",
-            powderblue: "rgba(70,160,160,0.8)"
-          };
-          const shadowColor = shadowMap[tag.color] || "rgba(0,0,0,0.3)";
-          return (
-            <div
-              key={i}
-              className="text-white px-4 py-0.5 rounded-[15px] text-[12px]"
-              style={{
-                backgroundColor: tag.color,
-                boxShadow: `0px 4px 8px ${shadowColor}`,
-              }}
-            >
-              <span>{tag.text}</span>
-            </div>
-          );
-        })}
       </div>
 
       <h4 className="mt-5 mb-0 leading-relaxed whitespace-pre-line">{parseLinks(place.description)}</h4>
