@@ -17,6 +17,7 @@
   --color-darkBeige2: #3d3b35;
   --color-darkBeige3: #201f1a;
   --animate-fade-in: fade-in 0.2s ease;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out;
   --animate-slide-down: slide-down 0.4s ease;
   --animate-slide-up: slide-up 0.5s ease;
   --font-playfair: "Playfair Display", sans-serif;
@@ -26,25 +27,6 @@
   --font-noto-ar: "Noto Serif Arabic", "Playfair Display", serif;
   --font-noto-th: "Noto Serif Thai", "Playfair Display", serif;
   --font-noto-cy: "Noto Serif", "Playfair Display", serif;
-
-  @keyframes pulse-and-scale {
-    0% {
-      transform: scale(0.2);
-      opacity: 0;
-    }
-    40% {
-      transform: scale(1.5);
-      opacity: 1;
-    }
-    60% {
-      transform: scale(1.5);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.2);
-      opacity: 0;
-    }
-  }
 
   @keyframes wave {
     0% {
@@ -105,6 +87,17 @@
       opacity: 1;
     }
   }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 @layer components {
@@ -140,18 +133,6 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #807f7b;
   }
-}
-
-.intro-container {
-  background-color: black;
-  transition: opacity 0.5s ease-out;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .fade-out {
@@ -201,10 +182,6 @@ body {
       0 0 14px rgba(0, 255, 0, 1),
       inset 0 0 5px rgba(255, 255, 255, 0.7);
   }
-}
-
-.crg {
-  animation: pulse-and-scale 3.25s ease-out infinite;
 }
 
 .prose {

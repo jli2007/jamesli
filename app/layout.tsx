@@ -27,7 +27,7 @@ export const viewport = {
 export const metadata: Metadata = {
   title: "james li",
   description:
-    "james li — computer science at the university of waterloo. full-stack and ai engineer.",
+    "james li — computer science at the university of waterloo. ai engineer.",
   keywords: [
     "james li",
     "james li uw",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "james li",
     description:
-      "portfolio of james li — computer science at the university of waterloo.",
+      "james li — computer science at the university of waterloo.",
     url: "https://jame.li",
     siteName: "jame.li",
     images: [{ url: "https://jame.li/banner.png", width: 1200, height: 630 }],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "james li",
     description:
-      "portfolio of james li — computer science at the university of waterloo.",
+      "james li — computer science at the university of waterloo.",
     images: ["https://jame.li/banner.png"],
   },
   icons: {
