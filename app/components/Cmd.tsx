@@ -14,7 +14,6 @@ import {
 } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiLinkedinLogo } from "react-icons/pi";
-import { LuLandmark } from "react-icons/lu";
 
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -298,7 +297,20 @@ export default function CommandPalette() {
 	                    }
 	                    className={itemClass}
 	                  >
-	                    <LuLandmark className="h-4 w-4" />
+	                    <div
+                      className="h-4 w-4"
+                      style={{
+                        backgroundColor: 'currentColor',
+                        maskImage: 'url(/arcki.png)',
+                        maskSize: 'contain',
+                        maskRepeat: 'no-repeat',
+                        maskPosition: 'center',
+                        WebkitMaskImage: 'url(/arcki.png)',
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskRepeat: 'no-repeat',
+                        WebkitMaskPosition: 'center',
+                      }}
+                    />
 	                    <span className="flex-1">3d architectural playground</span>
 	                  </Command.Item>
 

@@ -377,7 +377,7 @@ export default function Home({ recent }: { recent?: Track }) {
                         <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            built
+                            won w/
                             <LinkSlider
                               href={`/flowboard`}
                               mode="dark"
@@ -394,7 +394,7 @@ export default function Home({ recent }: { recent?: Track }) {
                               alt="western-logo"
                             />
                             <span>hackwestern,</span>
-                            100+ github stars
+                            150+ github stars
                           </span>
                         </li>
                       </ul>

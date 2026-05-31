@@ -2,10 +2,6 @@ import { places } from "../places/places.ts";
 import InteractivePlace from "../places/PlaceRender.tsx";
 
 <div className="flex flex-col">
-  <h1 className="text-xl font-extrabold text-lightBeige mb-0!">
-    limitless.
-  </h1>
-
   <h4 className="my-0!">
     i used to play geoguessr for hours every day during covid.
     
@@ -23,19 +19,9 @@ import InteractivePlace from "../places/PlaceRender.tsx";
 
   <br/>
 
-  <ScrollButtonTop>⬇ scroll to bottom</ScrollButtonTop>
-
-  <br/>
-  
-  <h4 className="font-bold italic"> * click on 'view on google maps' for better experience.</h4>
-
-  <br/>
-
   <div>
     {places.map((place, index) => (
       <InteractivePlace key={place.iframeSrc} place={place} isLast={index === places.length - 1} />
     ))}
   </div>
-
-  <ScrollButtonBottom>⬆ scroll to top</ScrollButtonBottom>
 </div>

@@ -35,14 +35,14 @@ export const places: PlacesType[] = [
     description:
       `a quiet fishing village on the edge of the world. the coverage makes me feel reminiscent of something. unsure of what it is. \n
       natsukashii (懐かしい) — a bittersweet feeling triggered by something that reminds you of a place you've never actually been. \n
-      [yoshie shiratori](https://medium.com/breakingasia/yoshie-shiratori-the-incredible-story-of-a-man-no-prison-could-hold-6d79a67345f5), infamous prison break artist, was born in aomori. watched a documentary about him a long time ago, which sparked an interest regarding the prefecture. \n
+      [yoshie shiratori](https://medium.com/breakingasia/yoshie-shiratori-the-incredible-story-of-a-man-no-prison-could-hold-6d79a67345f5), infamous prison break artist, was born in aomori prefecture. \n
       [lake towada](https://medium.com/globetrotters/lake-towada-hidden-treasure-of-unrivaled-beauty-338e0b47e589) is super neat. on my bucket list.
       `,
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1742522944358!6m8!1m7!1sW75jxFiQTqRxGhaS4j29nA!2m2!1d41.47529215239408!2d141.077070760996!3f77.55!4f-2.230000000000004!5f0.7820865974627469",
   },
   {
-    title: "ghost towns",
+    title: "aldeias do xisto",
     country: "portugal",
     nativeName: "república portuguesa",
     script: "latin",
@@ -69,7 +69,7 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1779578708312!6m8!1m7!1seK0jIH6nu72Hd9UCZNQ68g!2m2!1d47.58840798729733!2d118.1269264567826!3f303.4405116130315!4f-0.282244759874132!5f0.7820865974627469",
   },
   {
-    title: "desert and andes",
+    title: "ecotone",
     country: "chile",
     nativeName: "república de chile",
     script: "latin",
@@ -96,7 +96,7 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1742855033062!6m8!1m7!1skg9CAEfVgaSmqyDMD2qWYQ!2m2!1d37.87869572943686!2d30.85741539789047!3f242.51!4f-1.5100000000000051!5f0.7820865974627469",
   },
   {
-    title: "relic frozen in time",
+    title: "frozen relic",
     country: "indonesia",
     nativeName: "republik indonesia",
     script: "latin",
@@ -123,7 +123,7 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1742857422955!6m8!1m7!1sXFJSLiGs5WHmsHx8ES9zJg!2m2!1d47.56692372548685!2d-59.1285977123117!3f79.1228721831438!4f1.6240971263550108!5f0.7820865974627469",
   },
   {
-    title: "central tokyo at twilight",
+    title: "ōmagatoki (liminal hour)",
     country: "japan",
     nativeName: "日本",
     script: "jp",
@@ -208,7 +208,7 @@ export const places: PlacesType[] = [
       "https://www.google.com/maps/embed?pb=!4v1744658192221!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ3FuOGlsWlE.!2m2!1d49.66488812384653!2d120.0746440619686!3f95.52286779856084!4f-10.129033421545387!5f0.7820865974627469",
   },
   {
-    title: "nature glitching",
+    title: "paradox dunes",
     country: "brazil",
     nativeName: "república do brasil",
     script: "latin",

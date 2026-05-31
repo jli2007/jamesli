@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { isMobile } from "react-device-detect";
 import { showcaseProjects } from "../projects";
 import { posts } from "../posts";
 import LinkSlider from "./Link";
@@ -7,8 +9,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Sidebar() {
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isMobile) return;
+    rootRef.current?.querySelectorAll("video").forEach((v) => {
+      v.play().catch(() => {});
+    });
+  }, []);
+
   return (
-    <div className="relative max-w-screen h-auto py-3 px-7 m-1 mb-1 rounded-lg text-lightBeige overflow-x-hidden">
+    <div ref={rootRef} className="relative max-w-screen h-auto py-3 px-7 m-1 mb-1 rounded-lg text-lightBeige overflow-x-hidden">
       {[
         { title: "projects", items: showcaseProjects, type: "project" },
         { title: "notes", items: posts, type: "note" },
@@ -33,6 +44,8 @@ export default function Sidebar() {
                         project.glowColors ||
                         "drop-shadow(0 0 16px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 32px rgba(168, 85, 247, 0.3)) drop-shadow(0 0 48px rgba(236, 72, 153, 0.2))";
                     }
+                    const video = e.currentTarget.querySelector("video");
+                    video?.play().catch(() => {});
                   }}
                   onMouseLeave={(e) => {
                     const imageDiv = e.currentTarget.querySelector(
@@ -40,6 +53,11 @@ export default function Sidebar() {
                     ) as HTMLElement;
                     if (imageDiv) {
                       imageDiv.style.filter = "drop-shadow(0 0 0 transparent)";
+                    }
+                    const video = e.currentTarget.querySelector("video");
+                    if (video) {
+                      video.pause();
+                      video.currentTime = 0;
                     }
                   }}
                 >
@@ -52,10 +70,9 @@ export default function Sidebar() {
                     {project.banner.endsWith(".mp4") ? (
                       <video
                         src={project.banner}
-                        autoPlay
-                        loop
                         muted
                         playsInline
+                        preload="metadata"
                         className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
                       />
                     ) : (

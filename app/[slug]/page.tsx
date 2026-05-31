@@ -18,7 +18,7 @@ import Aifs from "./mdx/aifs.mdx";
 import Footy from "./mdx/footy.mdx";
 import Freedom from "./mdx/freedom.mdx";
 import Futbol from "./mdx/futbol.mdx";
-import Music from "./mdx/music.mdx";
+import Works from "./mdx/works.mdx";
 import Places from "./mdx/places.mdx";
 import Sf from "./mdx/sf.mdx";
 import UWReflection from "./mdx/uw-reflection.mdx";
@@ -29,7 +29,7 @@ const MDX_MAP: Record<string, React.ComponentType> = {
   footy: Footy,
   freedom: Freedom,
   futbol: Futbol,
-  music: Music,
+  works: Works,
   places: Places,
   sf: Sf,
   uwreflection: UWReflection,
@@ -49,6 +49,27 @@ export default function SlugPage({
   const { slug } = use(params);
   const bottomRef = useRef<HTMLDivElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    const onScroll = () => {
+      const y = container && container.scrollTop > 0 ? container.scrollTop : window.scrollY;
+      setShowBackToTop(y > 500);
+    };
+    container?.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      container?.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    scrollContainerRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const Post = MDX_MAP[slug];
   if (!Post) notFound();
@@ -73,24 +94,6 @@ export default function SlugPage({
         {children}
       </a>
     ),
-    ScrollButtonTop: ({ children }: { children: React.ReactNode }) => (
-      <button
-        onClick={() =>
-          bottomRef.current?.scrollIntoView({ behavior: "smooth" })
-        }
-        className="bg-white/20 cursor-pointer font-bold hover:bg-white/25 p-2 transition delay-200 duration-300 ease-in-out rounded-2xl my-5"
-      >
-        {children}
-      </button>
-    ),
-    ScrollButtonBottom: ({ children }: { children: React.ReactNode }) => (
-      <button
-        onClick={() => topRef.current?.scrollIntoView({ behavior: "smooth" })}
-        className="bg-white/20 cursor-pointer font-bold hover:bg-white/25 p-2 transition delay-200 duration-300 ease-in-out rounded-2xl my-5"
-      >
-        {children}
-      </button>
-    ),
   };
 
   const [isMac, setIsMac] = useState(true);
@@ -108,7 +111,7 @@ export default function SlugPage({
   };
 
   return (
-    <div className="lg:max-h-screen min-h-screen lg:overflow-y-scroll overflow-auto overflow-x-hidden">
+    <div ref={scrollContainerRef} className="lg:max-h-screen min-h-screen lg:overflow-y-scroll overflow-auto overflow-x-hidden">
       <div className="sticky top-0 z-30 flex items-center justify-between px-6 py-2.5">
         <button
           onClick={() => redirect("/")}
@@ -151,6 +154,16 @@ export default function SlugPage({
           <div ref={bottomRef} />
         </article>
       </div>
+
+      <button
+        onClick={scrollToTop}
+        aria-label="back to top"
+        className={`fixed bottom-6 right-6 lg:right-[calc(33.333vw+1.5rem)] z-40 w-10 h-10 rounded-full bg-neutral-800/70 hover:bg-neutral-800/90 backdrop-blur-sm text-neutral-200 flex items-center justify-center cursor-pointer transition-opacity duration-300 ${
+          showBackToTop ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        ↑
+      </button>
     </div>
   );
 }

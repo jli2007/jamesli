@@ -2,10 +2,64 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Track } from "@/app/types/types";
-import { TRACK_DATA } from "./music";
+import { TRACK_DATA, ENTRIES, Entry } from "./works";
 import { FaSpotify } from "react-icons/fa6";
 
-export default function RenderMusic() {
+// parse [text](url) into inline anchor tags
+function parseLinks(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/\[([^\]]+)\]\(([^)]+)\)/);
+    if (match) {
+      return (
+        <a
+          key={i}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:opacity-70 transition"
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
+function EntryRow({ entry }: { entry: Entry }) {
+  const commaIdx = entry.title.lastIndexOf(",");
+  const name = commaIdx === -1 ? entry.title : entry.title.slice(0, commaIdx);
+  const author = commaIdx === -1 ? "" : entry.title.slice(commaIdx);
+
+  const line = (
+    <span className="text-base">
+      <span className="text-white">{parseLinks(name)}</span>
+      {author && <span className="text-white/60">{parseLinks(author)}</span>}
+      {entry.description && (
+        <span className="text-white/60"> — {entry.description}</span>
+      )}
+    </span>
+  );
+
+  if (entry.image) {
+    return (
+      <li className="flex items-center gap-4">
+        <Image
+          src={entry.image}
+          alt=""
+          width={72}
+          height={72}
+          className="w-18 h-18 rounded-md object-cover shrink-0"
+        />
+        {line}
+      </li>
+    );
+  }
+  return <li>{line}</li>;
+}
+
+export default function RenderWorks() {
   const [tracks, setTracks] = useState<Track[]>([]);
   const TRACK_IDS = TRACK_DATA.map(track => track.id);
 
@@ -23,8 +77,19 @@ export default function RenderMusic() {
   };
 
   return (
-    <div className="space-y-10 md:space-y-20 mb-20">
-      {tracks.map((t) => {
+    <div className="space-y-16 md:space-y-24 mb-20">
+      {ENTRIES.length > 0 && (
+        <ul className="not-prose list-none space-y-10 md:space-y-6 pl-0 m-0">
+          {ENTRIES.map((entry, i) => (
+            <EntryRow key={i} entry={entry} />
+          ))}
+        </ul>
+      )}
+
+      <br/>
+
+      <div className="space-y-10 md:space-y-20">
+      {tracks.map((t, i) => {
         const metadata = getTrackMetadata(t.id);
         
         return (
@@ -41,6 +106,7 @@ export default function RenderMusic() {
                     src={t.album.images[0].url}
                     alt={t.name}
                     fill
+                    priority={i === 0}
                     sizes="(max-width: 768px) 160px, (max-width: 1024px) 208px, 256px"
                     className="rounded-lg object-cover group-hover:opacity-85 transition-opacity delay-100"
                   />
@@ -60,19 +126,13 @@ export default function RenderMusic() {
                     <p className="text-base md:text-lg text-lighterBeige mt-1">
                       {t.artists?.map(a => a.name).join(", ")}
                     </p>
-                    {t.album?.name && (
-                      <p className="text-sm text-lighterBeige/75 mt-1">
-                        Album: {t.album.name}
+                    {metadata?.description && (
+                      <p className="text-sm md:text-base text-lighterBeige/75 mt-3">
+                        {metadata.description}
                       </p>
                     )}
                   </div>
                 </div>
-
-                {metadata?.description && (
-                  <p className="text-sm md:text-base text-lighterBeige/75 mt-0 lg:mt-3">
-                    {metadata.description}
-                  </p>
-                )}
               </div>
             </div>
 
@@ -91,6 +151,7 @@ export default function RenderMusic() {
           </div>
         );
       })}
+      </div>
     </div>
   );
 }

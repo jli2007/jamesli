@@ -13,15 +13,15 @@ export const showcaseProjects: ProjectType[] = [
     banner: "/projects/banners/arcki.mp4",
     desc: "3d architectural playground for the world",
     glowColors:
-      "drop-shadow(0 0 16px rgba(99, 102, 241, 0.10)) drop-shadow(0 0 24px rgba(139, 92, 246, 0.09)) drop-shadow(0 0 32px rgba(168, 85, 247, 0.08))",
+      "drop-shadow(0 0 16px rgba(59, 130, 246, 0.10)) drop-shadow(0 0 24px rgba(99, 102, 241, 0.09)) drop-shadow(0 0 32px rgba(139, 92, 246, 0.08))",
   },
   {
     name: "flowboard",
     slug: "flowboard",
     banner: "/projects/banners/flowboard.mp4",
-    desc: "cursor for video animation — inbound vc interest, 100+ stars",
+    desc: "cursor for video animation — inbound vc interest, 150+ stars",
     glowColors:
-      "drop-shadow(0 8px 16px rgba(204, 85, 0, 0.04)) drop-shadow(0 12px 24px rgba(230, 115, 40, 0.04)) drop-shadow(0 16px 32px rgba(255, 140, 0, 0.03)) drop-shadow(0 20px 40px rgba(255, 165, 50, 0.03))",
+      "drop-shadow(0 0 10px rgba(30, 58, 138, 0.06)) drop-shadow(0 0 20px rgba(30, 64, 175, 0.05))",
   },
   {
     name: "phuture",
@@ -29,7 +29,7 @@ export const showcaseProjects: ProjectType[] = [
     banner: "/projects/banners/phuture.mp4",
     desc: "pokémon-go for wildlife 🌿",
     glowColors:
-      "drop-shadow(0 0 16px rgba(16, 185, 129, 0.09)) drop-shadow(0 0 24px rgba(34, 197, 94, 0.09)) drop-shadow(0 0 32px rgba(132, 204, 22, 0.09))",
+      "drop-shadow(0 0 16px rgba(132, 204, 22, 0.09)) drop-shadow(0 0 24px rgba(101, 163, 13, 0.09)) drop-shadow(0 0 32px rgba(163, 230, 53, 0.09))",
   },
   {
     name: "guideline",

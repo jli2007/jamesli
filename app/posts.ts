@@ -13,8 +13,8 @@ export const posts: Post[] = [
     pinned: true,
   },
   {
-    slug: "music",
-    title: "music",
+    slug: "works",
+    title: "great works",
     date: "-",
     pinned: true,
   },
@@ -22,18 +22,6 @@ export const posts: Post[] = [
     slug: "freedom",
     title: "a tribute to freedom",
     date: "dec 2025",
-    pinned: false,
-  },
-  {
-    slug: "sf",
-    title: "visiting sf between 2 midterms",
-    date: "oct 2025",
-    pinned: false,
-  },
-  {
-    slug: "uwreflection",
-    title: "thoughts on uw cs 1 month in",
-    date: "sep 2025",
     pinned: false,
   },
   {
