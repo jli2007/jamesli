@@ -86,7 +86,7 @@ export default function Home({ recent }: { recent?: Track }) {
 
               <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0 lg:px-0 px-1">
                 {/* side section */}
-                <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:min-w-[22vw] lg:h-auto md:h-200 h-160 py-3 px-4 bg-midBeige1 m-1 mb-1 rounded-lg overflow-hidden">
+                <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:min-w-[22vw] lg:h-auto md:h-200 h-160 py-3 px-4 bg-midBeige1 m-1 rounded-lg overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>
                   <div className="sidediv relative lg:text-xl md:text-2xl text-base h-[97%] flex items-center w-full z-10 whitespace-nowrap">
                     <span className="font-bold absolute top-0 md:left-0 md:translate-x-0 left-1/2 -translate-x-1/2">
@@ -111,7 +111,7 @@ export default function Home({ recent }: { recent?: Track }) {
                         href="https://www.getaleph.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
+                        className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer -mt-5 lg:mt-0"
                       >
                         <div className="relative z-20 flex items-center gap-3 p-3">
                           <Image
@@ -319,7 +319,7 @@ export default function Home({ recent }: { recent?: Track }) {
                   }}
                 >
                   <div className="description relative h-auto w-full lg:max-w-sm flex flex-col z-10 lg:text-sm md:text-lg text-sm">
-                    <span className="italic font-bold p-1">
+                    <span className="italic font-bold p-1 md:pb-1 pb-5">
                       software engineer.
                     </span>
 
@@ -333,7 +333,7 @@ export default function Home({ recent }: { recent?: Track }) {
                     </h1>
 
                     <h1 className="h1descr break-normal md:mt-0 mt-5 p-1">
-                      <div className="flex items-center">recently:</div>
+                      <div className="flex items-center md:pb-0 pb-3">recently:</div>
                       <ul
                         className="descr flex flex-col gap-10 md:gap-[clamp(0.75rem,3vh,1.75rem)]"
                         style={{ marginTop: "clamp(0.75rem, 2vh, 1.75rem)" }}

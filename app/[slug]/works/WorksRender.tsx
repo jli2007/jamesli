@@ -28,7 +28,7 @@ function parseLinks(text: string) {
 }
 
 function EntryRow({ entry }: { entry: Entry }) {
-  const commaIdx = entry.title.lastIndexOf(",");
+  const commaIdx = entry.title.indexOf(",");
   const name = commaIdx === -1 ? entry.title : entry.title.slice(0, commaIdx);
   const author = commaIdx === -1 ? "" : entry.title.slice(commaIdx);
 

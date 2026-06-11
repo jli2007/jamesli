@@ -13,9 +13,23 @@ export default function Sidebar() {
 
   useEffect(() => {
     if (!isMobile) return;
-    rootRef.current?.querySelectorAll("video").forEach((v) => {
-      v.play().catch(() => {});
-    });
+    const root = rootRef.current;
+    if (!root) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const v = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            v.play().catch(() => {});
+          } else {
+            v.pause();
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    root.querySelectorAll("video").forEach((v) => observer.observe(v));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -70,6 +84,9 @@ export default function Sidebar() {
                     {project.banner.endsWith(".mp4") ? (
                       <video
                         src={project.banner}
+                        poster={project.banner
+                          .replace("/banners/", "/banners/posters/")
+                          .replace(/\.mp4$/, ".jpg")}
                         muted
                         playsInline
                         preload="metadata"
@@ -122,9 +139,9 @@ export default function Sidebar() {
         </div>
       ))}
 
-      <footer className="pt-4 md:pb-0 pb-2 border-t border-white/20 lg:text-xs md:text-sm text-xs text-white/70 flex flex-row items-center lg:justify-end justify-start">
+      <footer className="pt-4 md:pb-0 pb-2 border-t border-white/20 lg:text-xs md:text-sm text-xs text-white/70 flex flex-row items-center justify-end">
         <span className="shiny-green-dot inline-block mr-2 w-3 h-3" />
-        last updated 05/2026
+        last updated 06/2026
       </footer>
     </div>
   );

@@ -47,8 +47,6 @@ export default function SlugPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = use(params);
-  const bottomRef = useRef<HTMLDivElement>(null);
-  const topRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -147,11 +145,9 @@ export default function SlugPage({
             ["--tw-prose-links" as any]: "rgb(var(--color-lighterBeige))",
           }}
         >
-          <div ref={topRef} />
           <MDXProvider components={components}>
             <Post />
           </MDXProvider>
-          <div ref={bottomRef} />
         </article>
       </div>
 
