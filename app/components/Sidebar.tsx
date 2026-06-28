@@ -20,8 +20,10 @@ export default function Sidebar() {
         entries.forEach((entry) => {
           const v = entry.target as HTMLVideoElement;
           if (entry.isIntersecting) {
+            v.style.opacity = "1";
             v.play().catch(() => {});
           } else {
+            v.style.opacity = "0";
             v.pause();
           }
         });
@@ -59,7 +61,10 @@ export default function Sidebar() {
                         "drop-shadow(0 0 16px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 32px rgba(168, 85, 247, 0.3)) drop-shadow(0 0 48px rgba(236, 72, 153, 0.2))";
                     }
                     const video = e.currentTarget.querySelector("video");
-                    video?.play().catch(() => {});
+                    if (video) {
+                      video.style.opacity = "1";
+                      video.play().catch(() => {});
+                    }
                   }}
                   onMouseLeave={(e) => {
                     const imageDiv = e.currentTarget.querySelector(
@@ -70,8 +75,13 @@ export default function Sidebar() {
                     }
                     const video = e.currentTarget.querySelector("video");
                     if (video) {
-                      video.pause();
-                      video.currentTime = 0;
+                      video.style.opacity = "0";
+                      const onFaded = () => {
+                        video.pause();
+                        video.currentTime = 0;
+                        video.removeEventListener("transitionend", onFaded);
+                      };
+                      video.addEventListener("transitionend", onFaded);
                     }
                   }}
                 >
@@ -82,16 +92,23 @@ export default function Sidebar() {
                     }}
                   >
                     {project.banner.endsWith(".mp4") ? (
-                      <video
-                        src={project.banner}
-                        poster={project.banner
-                          .replace("/banners/", "/banners/posters/")
-                          .replace(/\.mp4$/, ".jpg")}
-                        muted
-                        playsInline
-                        preload="metadata"
-                        className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
-                      />
+                      <>
+                        <img
+                          src={project.banner
+                            .replace("/banners/", "/banners/posters/")
+                            .replace(/\.mp4$/, ".jpg")}
+                          alt={project.name}
+                          className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-all duration-300"
+                        />
+                        <video
+                          src={project.banner}
+                          muted
+                          playsInline
+                          preload="metadata"
+                          style={{ opacity: 0 }}
+                          className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-opacity duration-500 ease-out"
+                        />
+                      </>
                     ) : (
                       <Image
                         src={project.banner}

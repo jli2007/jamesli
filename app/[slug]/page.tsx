@@ -151,6 +151,8 @@ export default function SlugPage({
         </article>
       </div>
 
+      <hr className="mx-8 my-10 border-t border-white/20 lg:border-none" />
+
       <button
         onClick={scrollToTop}
         aria-label="back to top"
