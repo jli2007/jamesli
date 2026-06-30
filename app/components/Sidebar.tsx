@@ -8,6 +8,25 @@ import LinkSlider from "./Link";
 import Link from "next/link";
 import Image from "next/image";
 
+const NO_GLOW = "drop-shadow(0 0 0 transparent)";
+
+const fading = new WeakSet<HTMLVideoElement>();
+
+function setCardState(link: HTMLElement, hovered: boolean, glow: string) {
+  const imageDiv = link.querySelector(".glow-target") as HTMLElement | null;
+  if (imageDiv) imageDiv.style.filter = hovered ? glow : NO_GLOW;
+
+  const video = link.querySelector("video");
+  if (video) {
+    const target = hovered ? "1" : "0";
+    if (video.style.opacity !== target) {
+      fading.add(video);
+      video.style.opacity = target;
+      if (hovered) video.play().catch(() => {});
+    }
+  }
+}
+
 export default function Sidebar() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -25,6 +44,7 @@ export default function Sidebar() {
           } else {
             v.style.opacity = "0";
             v.pause();
+            v.currentTime = 0;
           }
         });
       },
@@ -52,37 +72,22 @@ export default function Sidebar() {
                   href={`/${project.slug}`}
                   className="group relative rounded-xl overflow-visible transition-all duration-500 block"
                   onMouseEnter={(e) => {
-                    const imageDiv = e.currentTarget.querySelector(
-                      ".glow-target"
-                    ) as HTMLElement;
-                    if (imageDiv) {
-                      imageDiv.style.filter =
-                        project.glowColors ||
-                        "drop-shadow(0 0 16px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 32px rgba(168, 85, 247, 0.3)) drop-shadow(0 0 48px rgba(236, 72, 153, 0.2))";
-                    }
                     const video = e.currentTarget.querySelector("video");
-                    if (video) {
-                      video.style.opacity = "1";
-                      video.play().catch(() => {});
-                    }
+                    if (video && fading.has(video)) return;
+                    setCardState(
+                      e.currentTarget,
+                      true,
+                      project.glowColors
+                    );
                   }}
                   onMouseLeave={(e) => {
-                    const imageDiv = e.currentTarget.querySelector(
-                      ".glow-target"
-                    ) as HTMLElement;
-                    if (imageDiv) {
-                      imageDiv.style.filter = "drop-shadow(0 0 0 transparent)";
-                    }
                     const video = e.currentTarget.querySelector("video");
-                    if (video) {
-                      video.style.opacity = "0";
-                      const onFaded = () => {
-                        video.pause();
-                        video.currentTime = 0;
-                        video.removeEventListener("transitionend", onFaded);
-                      };
-                      video.addEventListener("transitionend", onFaded);
-                    }
+                    if (video && fading.has(video)) return;
+                    setCardState(
+                      e.currentTarget,
+                      false,
+                      project.glowColors
+                    );
                   }}
                 >
                   <div
@@ -106,7 +111,25 @@ export default function Sidebar() {
                           playsInline
                           preload="metadata"
                           style={{ opacity: 0 }}
-                          className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-opacity duration-500 ease-out"
+                          onTransitionEnd={(e) => {
+                            if (e.propertyName !== "opacity") return;
+                            const v = e.currentTarget;
+                            fading.delete(v);
+                            if (v.style.opacity === "0") {
+                              v.pause();
+                              v.currentTime = 0;
+                            }
+                            if (isMobile) return;
+                            const link = v.closest("a");
+                            if (link) {
+                              setCardState(
+                                link as HTMLElement,
+                                link.matches(":hover"),
+                                project.glowColors
+                              );
+                            }
+                          }}
+                          className="absolute inset-0 w-full h-full object-cover brightness-85 group-hover:brightness-90 transition-opacity duration-1000 ease-in-out"
                         />
                       </>
                     ) : (

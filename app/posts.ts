@@ -25,7 +25,7 @@ export const posts: Post[] = [
     pinned: false,
   },
   {
-    slug: "futbol",
+    slug: "players",
     title: "players i enjoy watching",
     date: "mar 2025",
     pinned: false,

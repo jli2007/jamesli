@@ -19,6 +19,7 @@ export const ENTRIES: Entry[] = [
   { title: "plain of jars, laos", image: "/notes/works/jars.png" },
   { title: "mont-saint-michel, france", image: "/notes/works/mont.png" },
   { title: "sword of goujian, ~470 bce, china", image: "/notes/works/goujian.png" },
+  { title: "the door to hell, darvaza crater, turkmenistan", image: "/notes/works/darvaza.png" },
 ];
 
 export const TRACK_DATA: TrackMetadata[] = [
@@ -39,7 +40,7 @@ export const TRACK_DATA: TrackMetadata[] = [
     quotes: [
       "I've had ups and downs, but the highest of the highs\nNever last for as long as the lowest of lows",
       "Survivor's guilt\nI feel the worst at my happiest\n'Cause I miss all my n****s that couldn't be in this life I built",
-      "I got nights where it's light, and I got days where it's dark\nAnd the waters that I swim in, it ain't safe for the sharks",
+      "I got nights where it's light, and I got days where it's dark",
       "What I've realised, what I realised 'bout who I am\nIs that you're kinda taught\nYou're taught to die for what you stand for, you feel me?\nBut I realise I'm here to live for what I stand for\n'Cause I wanna see it, bro, I wanna enjoy it, bro",
     ],
   },
@@ -57,10 +58,7 @@ export const TRACK_DATA: TrackMetadata[] = [
   {
     id: "1N4WFXhgmkrTRxK0X7R90u",
     description: "chasing success with the crew",
-    quotes: [
-      "The grinds on I'm just tryna get the bands in",
-      "Don't ask what I do\nI ain't even moving no food\nBut I make bits for my crew",
-    ],
+    quotes: [],
   },
   // moments
   {
@@ -121,10 +119,8 @@ export const TRACK_DATA: TrackMetadata[] = [
     description: "19 candles",
     quotes: [
       "The pain's compulsory, suffering's optional\nTakeshi's castle, my life's got obstacles",
-      "You gotta separate the rats from the G's if you can't handle cheese, how the hell you gonna be a great? \n",
+      "You gotta separate the rats from the G's if you can't handle cheese, how the hell you gonna be a great (grate)? \n",
       "I'm hot headed and dangerous\nAnd still living in this matrix\nAll I wanna do is make my loved ones proud\nIn this year alone we made three hundred thousand\nBut my mum won't smile because her son's on trial",
-      "We used to have cards and now we're playing with swords\nMy G went from Blackjack to a black Jack Sparrow",
-      "You know the difference between life and death is one bad decision, 3 or 4 inches\nSo many man my age have got P.T.S.D and I don't think that it's hit them"
     ],
   },
   // kiss the rain

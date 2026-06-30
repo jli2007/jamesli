@@ -13,7 +13,7 @@ export const showcaseProjects: ProjectType[] = [
     banner: "/projects/banners/arcki.mp4",
     desc: "3d architectural playground for the world",
     glowColors:
-      "drop-shadow(0 0 16px rgba(59, 130, 246, 0.10)) drop-shadow(0 0 24px rgba(99, 102, 241, 0.09)) drop-shadow(0 0 32px rgba(139, 92, 246, 0.08))",
+      "drop-shadow(0 0 16px rgba(59, 130, 246, 0.08)) drop-shadow(0 0 24px rgba(99, 102, 241, 0.07)) drop-shadow(0 0 32px rgba(139, 92, 246, 0.06))",
   },
   {
     name: "flowboard",
@@ -21,7 +21,7 @@ export const showcaseProjects: ProjectType[] = [
     banner: "/projects/banners/flowboard.mp4",
     desc: "cursor for video animation — inbound vc interest, 150+ stars",
     glowColors:
-      "drop-shadow(0 0 10px rgba(30, 58, 138, 0.06)) drop-shadow(0 0 20px rgba(30, 64, 175, 0.05))",
+      "drop-shadow(0 0 14px rgba(96, 165, 250, 0.15)) drop-shadow(0 0 28px rgba(59, 130, 246, 0.10))",
   },
   {
     name: "phuture",

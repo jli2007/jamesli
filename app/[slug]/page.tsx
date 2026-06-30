@@ -17,7 +17,7 @@ import Creative from "./mdx/creative.mdx";
 import Aifs from "./mdx/aifs.mdx";
 import Footy from "./mdx/footy.mdx";
 import Freedom from "./mdx/freedom.mdx";
-import Futbol from "./mdx/futbol.mdx";
+import Players from "./mdx/players.mdx";
 import Works from "./mdx/works.mdx";
 import Places from "./mdx/places.mdx";
 import Sf from "./mdx/sf.mdx";
@@ -28,7 +28,7 @@ const MDX_MAP: Record<string, React.ComponentType> = {
   aifs: Aifs,
   footy: Footy,
   freedom: Freedom,
-  futbol: Futbol,
+  players: Players,
   works: Works,
   places: Places,
   sf: Sf,
@@ -110,7 +110,7 @@ export default function SlugPage({
 
   return (
     <div ref={scrollContainerRef} className="lg:max-h-screen min-h-screen lg:overflow-y-scroll overflow-auto overflow-x-hidden">
-      <div className="sticky top-0 z-30 flex items-center justify-between px-6 py-2.5">
+      <div className="sticky top-0 z-30 flex items-start justify-between px-6 pt-5 pb-2.5">
         <button
           onClick={() => redirect("/")}
           className="text-sm text-white hover:text-neutral-400 cursor-pointer transition"
