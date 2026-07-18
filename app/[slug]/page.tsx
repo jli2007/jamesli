@@ -110,7 +110,7 @@ export default function SlugPage({
 
   return (
     <div ref={scrollContainerRef} className="lg:max-h-screen min-h-screen lg:overflow-y-scroll overflow-auto overflow-x-hidden">
-      <div className="sticky top-0 z-30 flex items-start justify-between px-6 pt-5 pb-2.5">
+      <div className="sticky top-0 z-30 flex items-center justify-between px-6 pt-5 pb-2.5">
         <button
           onClick={() => redirect("/")}
           className="text-sm text-white hover:text-neutral-400 cursor-pointer transition"

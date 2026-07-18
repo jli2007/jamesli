@@ -48,7 +48,7 @@ export default function Home({ recent }: { recent?: Track }) {
     <>
       <div className="relative content inset-0 overflow-x-hidden home animate-fade-in-up">
         <div className="min-w-screen lg:max-h-screen lg:h-screen w-auto text-darkBeige2 font-playfair overflow-x-hidden lg:overflow-y-hidden pb-1 lg:pb-0">
-          <div className="flex lg:flex-row flex-col w-full">
+          <div className="flex lg:flex-row flex-col w-full lg:h-full">
             {/* side section */}
             <div className="lg:w-2/3 w-full ml-0 flex flex-col">
               {/* top section */}
@@ -84,7 +84,7 @@ export default function Home({ recent }: { recent?: Track }) {
                 </div>
               </div>
 
-              <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:h-[91vh] content-section space-y-1 lg:space-y-0 lg:px-0 px-1">
+              <div className="grid grid-flow-row lg:grid-flow-col grid-rows-2 h-auto lg:flex-1 lg:min-h-0 lg:mb-1 content-section space-y-1 lg:space-y-0 lg:px-0 px-1">
                 {/* side section */}
                 <div className="relative row-span-6 lg:col-span-2 col-span-6 w-auto lg:min-w-[22vw] lg:h-auto md:h-200 h-160 py-3 px-4 bg-midBeige1 m-1 rounded-lg overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-size-[10px_10px] opacity-25 pointer-events-none rounded-lg"></div>

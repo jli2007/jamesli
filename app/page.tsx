@@ -21,6 +21,7 @@ async function getAccessToken(): Promise<string | undefined> {
       grant_type: "refresh_token",
       refresh_token: refreshToken,
     }),
+    signal: AbortSignal.timeout(5000),
   });
   if (!res.ok) {
     console.error("spotify token request failed:", res.status, await res.text());
@@ -40,10 +41,11 @@ async function getRecentlyPlayed(): Promise<Track | undefined> {
       {
         headers: { Authorization: `Bearer ${access_token}` },
         next: { revalidate: 60 },
+        signal: AbortSignal.timeout(5000),
       }
     );
     if (!res.ok) {
-      console.error("spotify recently-played failed:", res.status);
+      console.error("spotify recently-played failed:", res.status, await res.text());
       return undefined;
     }
     const data = await res.json();
