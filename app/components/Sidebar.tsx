@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { isMobile } from "react-device-detect";
-import { showcaseProjects } from "../projects";
+import { showcaseWork } from "../work";
 import { posts } from "../posts";
 import LinkSlider from "./Link";
 import Link from "next/link";
@@ -57,7 +57,7 @@ export default function Sidebar() {
   return (
     <div ref={rootRef} className="relative max-w-screen h-auto py-3 px-7 m-1 mb-1 rounded-lg text-lightBeige overflow-x-hidden">
       {[
-        { title: "projects", items: showcaseProjects, type: "project" },
+        { title: "work", items: showcaseWork, type: "project" },
         { title: "notes", items: posts, type: "note" },
       ].map((section) => (
         <div key={section.title} className="relative w-full h-full mb-8">

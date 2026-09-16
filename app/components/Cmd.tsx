@@ -286,9 +286,10 @@ export default function CommandPalette() {
                   </Command.Item>
                 </Command.Group>
 
-	                <Command.Group heading="projects" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
+	                <Command.Group heading="work" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
 	                  <Command.Item
-	                    value="project arcki architecture building 3d playground"
+	                    value="arcki"
+                      keywords={["project", "work", "architecture", "building", "3d", "playground"]}
 	                    onSelect={() =>
 	                      setTimeout(
 	                        () => openNextLink(() => router.push("/arcki")),
@@ -315,7 +316,8 @@ export default function CommandPalette() {
 	                  </Command.Item>
 
 	                  <Command.Item
-	                    value="project flowboard"
+	                    value="flowboard"
+                      keywords={["project", "work"]}
 	                    onSelect={() =>
 	                      setTimeout(
                         () => openNextLink(() => router.push("/flowboard")),
@@ -342,7 +344,8 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="project trivialguessr"
+                    value="trivialguessr"
+                    keywords={["project", "work"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/trivialguessr")),
@@ -356,7 +359,8 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="project phuture"
+                    value="phuture"
+                    keywords={["project", "work"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/phuture")),
@@ -370,7 +374,8 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="project guideline"
+                    value="guideline"
+                    keywords={["project", "work", "breadboard", "ar"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/guideline")),
@@ -384,7 +389,8 @@ export default function CommandPalette() {
                   </Command.Item>
 
                   <Command.Item
-                    value="project neodev neo developer league"
+                    value="neodev"
+                    keywords={["project", "work", "neo", "developer", "league"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/neodev")),
