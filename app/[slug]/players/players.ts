@@ -9,57 +9,62 @@ export const players: PlayerType[] = [
     player: "lucas moura",
     flag: "🇧🇷",
     description:
-      "that hatrick in the champions league semi final against ajax; i remember being in sixth grade, staring at the live scoreboard when it happened. chills.",
+      "that hatrick in the champions league semi final against ajax; i remember being in sixth grade, staring at the live scoreboard because i couldn't find the game to watch live",
   },
   {
-    player: "khvicha kvaratskhelia",
-    flag: "🇬🇪",
+    player: "sergio busquets",
+    flag: "🇪🇸",
     description:
-      "reminiscent of the nostalgic flair in players like neymar, ribery, coutinho, ben arfa & eden hazard.",
+      "you watch the game, you don't see busquets. you watch busquets, you see the whole game",
   },
   {
     player: "christian eriksen",
     flag: "🇩🇰",
     description:
-      "eriksen in his prime was the best architect i have ever witnessed on a football pitch.",
+      "eriksen was the best architect i have ever witnessed",
   },
   {
     player: "paulo dybala",
     flag: "🇦🇷",
     description:
-      "traditional number 10.",
+      "magician",
   },
   {
     player: "ao tanaka",
     flag: "🇯🇵",
     description:
-      "signed tanaka in fm 19 and followed him ever since. can run for days.",
+      "my first signing in fm 19 and followed him ever since",
   },
   {
     player: "dele alli",
     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    description: "i miss prime dele.",
+    description: "i miss prime dele",
   },
   {
     player: "james rodríguez",
     flag: "🇨🇴",
     description:
-      "james rodríguez at the 2014 world cup made me fall in love with the game.",
+      "james at the 2014 world cup made me fall in love with the game",
   },
   {
     player: "kaoru mitoma",
     flag: "🇯🇵",
-    description: "blue lock; wrote a university thesis on dribbling.",
+    description: "wrote a university thesis on dribbling",
   },
   {
     player: "eden hazard",
     flag: "🇧🇪",
     description:
-      "whenever he stepped onto the pitch it was beauty to the eye. made dancing through defenders look effortless.",
+      "whenever he stepped onto the pitch it was beauty to the eye",
   },
   {
     player: "son heung-min",
     flag: "🇰🇷",
-    description: "greatest asian player of all time.",
+    description: "every asian kids idol",
+  },
+  {
+    player: "jeremy lin",
+    flag: "🇺🇸",
+    description: "shoutout linsanity",
   },
 ];

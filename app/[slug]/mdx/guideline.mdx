@@ -95,14 +95,14 @@ import { TbMathIntegrals } from "react-icons/tb";
                 data pipeline
             </span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem] not-prose'>
-                a raw electrical component list had to be uploaded via web app and then parsed into json & passed to our mobile app
+                manually inputting a list of components would suck. so we wanted a design where a raw electrical component list is uploaded via web app and then parsed into json & passed to our mobile app automatically
             </span>
             <span className="flex items-center gap-2 text-lightBeige/95 text-lg not-prose mb-1 mt-4">
                 <TbMathIntegrals size={24} className="mt-2" />
                 advanced algorithms
             </span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem] not-prose'>
-                the concept requires a computation heavy computer vision pipeline—what's left is the actual logic itself. we need to detect the breadboard with opencv, apply some cool algorithms, and finally, display the vr instructions!
+                the concept requires a computation heavy computer vision pipeline. we need to detect the breadboard with opencv, apply some cool algorithms, and finally, display the vr instructions!
             </span>
         </div>
 
@@ -134,9 +134,7 @@ import { TbMathIntegrals } from "react-icons/tb";
          <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>web app</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                a quick next.js dynamic route integration never disappoints.
-                
-                <span className="italic"> the web app's functionality is simple: </span>
+                built with next.js and dynamic routes, <span className="italic"> the web app's functionality is simple: </span>
                 
                 take a component list, parse it, store it in a mongodb collection, and create a qr code using <a href="https://www.npmjs.com/package/react-qr-code" target="_blank" className="a">react-qr-code</a> that points to the document id.
 
@@ -552,39 +550,6 @@ for (contour in contours) {
 
                 the result: bright dots with coordinates that follow the breadboard as you move it around.
             </span>
-
-            <span className='text-lightBeige/95 text-lg'>7 | interaction design</span>
-            <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                ux was still considered ofc:
-
-                <span className="route-background text-[0.9rem]">server/app/src/AR.kt</span>
-                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
-                    <pre className='line-numbers'>
-                        <code className='language-kotlin'>{`private fun setupHighlightingControls() {
-    // Auto-start highlighting
-    isHighlightingActive = true
-    
-    cameraView.setOnClickListener {
-        if (isHighlightingActive) {
-            pauseResumeHighlighting()
-        } else {
-            togglePinHighlighting()
-        }
-    }
-    
-    cameraView.setOnLongClickListener {
-        if (isHighlightingActive) {
-            jumpToNextComponent()
-            true
-        } else false
-    }
-}
-`}</code>
-                    </pre>
-                </div>
-
-                status displays at the top show whether you're paused, and component progress is shown in the bottom right.
-            </span>
         </div>
 
         <div className='flex flex-col text-left mt-5'>
@@ -592,7 +557,9 @@ for (contour in contours) {
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 we created a functional prototype within 36 hours and <span className='text-lightBeige/95 font-normal'>won second at jamhacks x</span>.
 
-                there was real potential to ship guideline. however, this was during may of high school senior year so we were in full senioritis mode 🙏. anyways, heres a short clip to prove that it was functional:
+                there was real potential to ship guideline. however, this was during may of high school senior year so we were in full senioritis 🙏.
+                
+                heres a short clip to prove that it was functional!
                 <div>
                     <video                      
                         autoPlay

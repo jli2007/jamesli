@@ -311,7 +311,7 @@ export default function CommandPalette() {
                         WebkitMaskPosition: 'center',
                       }}
                     />
-	                    <span className="flex-1">3d architectural playground</span>
+	                    <span className="flex-1">arcki // 3d architectural playground</span>
 	                  </Command.Item>
 
 	                  <Command.Item
@@ -338,7 +338,7 @@ export default function CommandPalette() {
                         WebkitMaskPosition: 'center',
                       }}
                     />
-                    <span className="flex-1">cursor for animators</span>
+                    <span className="flex-1">flowboard // cursor for animators</span>
                   </Command.Item>
 
                   <Command.Item
@@ -352,7 +352,7 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoBulbOutline className="h-4 w-4" />
-                    <span className="flex-1">geoguessr for trivia</span>
+                    <span className="flex-1">trivialguessr // geoguessr for trivia</span>
                   </Command.Item>
 
                   <Command.Item
@@ -366,7 +366,7 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoLeafOutline className="h-4 w-4" />
-                    <span className="flex-1">wildlife pokemon-go</span>
+                    <span className="flex-1">phuture // wildlife pokemon-go</span>
                   </Command.Item>
 
                   <Command.Item
@@ -380,7 +380,7 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoHardwareChipOutline className="h-4 w-4" />
-                    <span className="flex-1">augmented reality breadboarding</span>
+                    <span className="flex-1">guideline // augmented reality breadboarding</span>
                   </Command.Item>
 
                   <Command.Item
@@ -405,7 +405,7 @@ export default function CommandPalette() {
                         WebkitMaskRepeat: 'no-repeat',
                       }}
                     />
-                    <span className="flex-1">co-founded programming league</span>
+                    <span className="flex-1">neodev // co-founded programming league</span>
                   </Command.Item>
                 </Command.Group>
               </Command.List>

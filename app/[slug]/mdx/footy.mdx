@@ -1,17 +1,12 @@
 import Image from "next/image"
 
 export const videos = ["f9","f8","f7","f6","f5","f4","f3","f2","f1"];
-export const labels = { f9: "foul baiting 😼" };
 
 <h4>congrats, you found a hidden page.</h4>
 
 <br/>
 
-<h4>some clips from 2025 high school season. was accepted into uw cs around this time so i enjoyed myself on the pitch for once.</h4>
-
-<br/>
-
-<h4>click to play/pause.</h4>
+<h4>click to play/pause</h4>
 
 <Image
   src="/notes/footy/f.png"
@@ -26,7 +21,6 @@ export const labels = { f9: "foul baiting 😼" };
 
 {videos.map((v) => (
   <div key={v}>
-    {labels[v] && <h4>{labels[v]}</h4>}
     <video
       autoPlay
       loop

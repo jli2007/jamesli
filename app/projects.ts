@@ -19,7 +19,7 @@ export const showcaseProjects: ProjectType[] = [
     name: "flowboard",
     slug: "flowboard",
     banner: "/projects/banners/flowboard.mp4",
-    desc: "cursor for video animation — inbound vc interest, 150+ stars",
+    desc: "cursor for video animation, inbound vc interest, 150+ stars",
     glowColors:
       "drop-shadow(0 0 14px rgba(96, 165, 250, 0.15)) drop-shadow(0 0 28px rgba(59, 130, 246, 0.10))",
   },
