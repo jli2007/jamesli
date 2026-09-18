@@ -1,15 +1,25 @@
 export type WorkType = {
   name: string;
-  slug: string;
+  href: string;
   banner: string;
   desc: string;
   glowColors: string;
 };
 
+export const isExternal = (href: string) => /^https?:\/\//.test(href);
+
 export const showcaseWork: WorkType[] = [
   {
+    name: "aleph",
+    href: "https://www.getaleph.com/platform/ai/agent",
+    banner: "/work/banners/aleph.png",
+    desc: "engineering for ai native fp&a platform",
+    glowColors:
+      "drop-shadow(0 0 28px rgba(255, 255, 255, 0.05)) drop-shadow(0 0 56px rgba(255, 255, 255, 0.035)) drop-shadow(0 0 84px rgba(255, 255, 255, 0.02))",
+  },
+  {
     name: "arcki",
-    slug: "arcki",
+    href: "/arcki",
     banner: "/work/banners/arcki.mp4",
     desc: "3d architectural playground for the world",
     glowColors:
@@ -17,7 +27,7 @@ export const showcaseWork: WorkType[] = [
   },
   {
     name: "flowboard",
-    slug: "flowboard",
+    href: "/flowboard",
     banner: "/work/banners/flowboard.mp4",
     desc: "cursor for video animation, inbound vc interest, 150+ stars",
     glowColors:
@@ -25,7 +35,7 @@ export const showcaseWork: WorkType[] = [
   },
   {
     name: "phuture",
-    slug: "phuture",
+    href: "/phuture",
     banner: "/work/banners/phuture.mp4",
     desc: "pokémon-go for wildlife 🌿",
     glowColors:
@@ -33,7 +43,7 @@ export const showcaseWork: WorkType[] = [
   },
   {
     name: "guideline",
-    slug: "guideline",
+    href: "/guideline",
     banner: "/work/banners/guideline.png",
     desc: "augmented reality breadboarding guide",
     glowColors:
@@ -41,7 +51,7 @@ export const showcaseWork: WorkType[] = [
   },
   {
     name: "neo developer league",
-    slug: "neodev",
+    href: "/neodev",
     banner: "/work/banners/neodev.mp4",
     desc: "raised $12k, backed by convictional (yc w19)",
     glowColors:

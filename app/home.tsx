@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import LinkSlider from "./components/Link";
 import { Track } from "./types/types";
 import useModifierKey from "./components/ModifierKey";
 import { isMobile } from "react-device-detect";
@@ -11,10 +10,7 @@ import uw from "./assets/uw.png";
 import mercor from "./assets/mercor_.png";
 import aleph from "./assets/aleph_.png";
 import lakesLogo from "./assets/lakes.png";
-import lakesBackground from "./assets/lakes.webp";
 import mercorLogo from "./assets/mercor.png";
-import mercorBackground from "./assets/mercor.webp";
-import alephBackground from "./assets/aleph.webp";
 import alephLogo from "./assets/aleph.png";
 import fu from "./assets/fu.png"
 
@@ -105,7 +101,7 @@ export default function Home({ recent }: { recent?: Track }) {
                       </h1>
 
                       <a
-                        href="https://www.getaleph.com/platform/ai/agent"
+                        href="https://www.getaleph.com/platform/ai/mcp"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer -mt-5 lg:mt-0"
@@ -127,15 +123,8 @@ export default function Home({ recent }: { recent?: Track }) {
                             </p>
                           </div>
                         </div>
-                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-900 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image
-                            src={alephBackground}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover object-right"
-                          />
                         </div>
                       </a>
 
@@ -161,15 +150,8 @@ export default function Home({ recent }: { recent?: Track }) {
                             </p>
                           </div>
                         </div>
-                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-900 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image
-                            src={mercorBackground}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover object-right"
-                          />
                         </div>
                       </a>
 
@@ -195,15 +177,8 @@ export default function Home({ recent }: { recent?: Track }) {
                             </p>
                           </div>
                         </div>
-                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-900 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image
-                            src={lakesBackground}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover object-right"
-                          />
                         </div>
                       </a>
                     </div>

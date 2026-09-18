@@ -287,6 +287,31 @@ export default function CommandPalette() {
                 </Command.Group>
 
 	                <Command.Group heading="work" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
+                    <Command.Item
+	                    value="aleph"
+                      keywords={["work", "mcp", "tool"]}
+	                    onSelect={() =>
+                        openLink(() => window.open("https://getaleph.com/platform/ai/mcp", "_blank"))
+                      }
+	                    className={itemClass}
+	                  >
+	                    <div
+                      className="h-4 w-4"
+                      style={{
+                        backgroundColor: 'currentColor',
+                        maskImage: 'url(/aleph.png)',
+                        maskSize: 'contain',
+                        maskRepeat: 'no-repeat',
+                        maskPosition: 'center',
+                        WebkitMaskImage: 'url(/aleph.png)',
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskRepeat: 'no-repeat',
+                        WebkitMaskPosition: 'center',
+                      }}
+                    />
+	                    <span className="flex-1">aleph // mcp tool suite</span>
+	                  </Command.Item>
+
 	                  <Command.Item
 	                    value="arcki"
                       keywords={["project", "work", "architecture", "building", "3d", "playground"]}
@@ -317,7 +342,7 @@ export default function CommandPalette() {
 
 	                  <Command.Item
 	                    value="flowboard"
-                      keywords={["project", "work"]}
+                      keywords={["project", "work", "ai"]}
 	                    onSelect={() =>
 	                      setTimeout(
                         () => openNextLink(() => router.push("/flowboard")),

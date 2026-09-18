@@ -35,7 +35,7 @@ import { LuBox, LuBuilding2, LuPencil, LuTrash } from "react-icons/lu";
         <div className='flex flex-col text-left'>
             <span className='text-lightBeige/95 text-xl'>overview</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                arcki is a <span className='text-lightBeige/95 font-normal'>3d architectural playground</span>. fly to any city on the globe, generate stunning models with the built in ai generator, and drop them onto real streets. it hit <span className='text-lightBeige/95 font-normal italic'>50+ github stars</span> and growing. <span className='text-lightBeige/95 font-normal'>architect the world the way you imagine it</span>.
+                arcki is a <span className='text-lightBeige/95 font-normal'>3d architectural playground</span>. fly to any city on the globe, generate stunning models with the built in ai generator, and drop them onto real streets. it's at <span className='text-lightBeige/95 font-normal italic'>50+ github stars</span> and growing. <span className='text-lightBeige/95 font-normal'>architect the world the way you imagine it</span>.
             </span>
         </div>
 
@@ -117,7 +117,7 @@ import { LuBox, LuBuilding2, LuPencil, LuTrash } from "react-icons/lu";
                     decoding="async"
                 />
 
-                client side, arcki renders a comprehensive mapbox globe with react three fiber overlaying generated glb models. indexeddb stores model data locally, and localstorage persists world state: camera position, deleted buildings, weather settings, so scenes are persisted in memory.
+                client side, arcki renders a comprehensive mapbox globe with react three fiber overlaying generated glb models. indexeddb stores model data locally, and localstorage persists world state: camera position, deleted buildings, weather settings, so scenes survive a page reload.
 
                 on the backend, fastapi orchestrates a <span className='text-lightBeige/95 font-normal'>multi stage ai pipeline</span>: gpt-4o cleans and enhances prompts, dall-e 3 generates a reference image, and fal.ai's trellis model reconstructs a 3d mesh from it. redis tracks async jobs with ttl based expiration, with a graceful fallback to in memory storage for local development.
 
@@ -147,7 +147,7 @@ import { LuBox, LuBuilding2, LuPencil, LuTrash } from "react-icons/lu";
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 the toolbar provides four core modes: <span className='text-lightBeige/95 font-normal'>select, delete, insert, and generate</span>. each mode changes how the map responds to user interaction.
 
-                in <span className='text-lightBeige/95 font-normal'>select mode</span>, clicking a building reverse geocodes its coordinates with mapbox's api to show the building name, address, and dimensions. we use <a href="https://turfjs.org/" target="_blank" className="a">turf.js</a> to calculate real world area and dimensions from geojson polygons, converting degrees to meters with a cosine correction for longitude convergence at the poles.
+                in <span className='text-lightBeige/95 font-normal'>select mode</span>, clicking a building reverse geocodes its coordinates with mapbox's api to show the building name, address, and dimensions. arcki uses <a href="https://turfjs.org/" target="_blank" className="a">turf.js</a> to calculate real world area and dimensions from geojson polygons, converting degrees to meters with a cosine correction for longitude convergence at the poles.
 
                 <span className='text-lightBeige/95 font-normal'>delete mode</span> uses <a href="https://github.com/mapbox/mapbox-gl-draw" target="_blank" className="a">mapbox gl draw</a> to let you draw polygons. any building within that polygon gets removed from the extrusion layer. <span className='text-lightBeige/95 font-normal'>insert mode</span> lets you drop custom glb files onto the map. and <span className='text-lightBeige/95 font-normal'>generate mode</span> opens the ai panel.
             </span>
@@ -189,7 +189,7 @@ import { LuBox, LuBuilding2, LuPencil, LuTrash } from "react-icons/lu";
                     </pre>
                 </div>
 
-                all of this is screen space delta calculations that get translated into geographic coordinate offsets.
+                these are all screen space delta calculations that get translated into geographic coordinate offsets.
             </span>
 
             <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center'><LuBuilding2 size={24} /> generator panel</span>
@@ -249,7 +249,7 @@ useEffect(() => {
 
             <span className='text-lightBeige/95 text-lg mt-10'>model placement & persistence</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                when a model is ready, the client downloads the glb file and enters placement mode. click anywhere on the map to drop it. after placement, the model becomes fully interactable. select it, drag it with the transform gizmo, rotate it, publish it to the global model library, or delete it. <span className='text-lightBeige/95 font-thin italic'>these features, when combined, makes arcki a sandbox.</span>
+                when a model is ready, the client downloads the glb file and enters placement mode. click anywhere on the map to drop it. after placement, the model becomes fully interactable. select it, drag it with the transform gizmo, rotate it, publish it to the global model library, or delete it. <span className='text-lightBeige/95 font-thin italic'>these features, when combined, make arcki a sandbox.</span>
 
                 everything the user does, placing models, deleting buildings, changing weather, and moving the camera, is <span className='text-lightBeige/95 font-normal'>persisted locally</span>. localstorage handles world state metadata, but glb files are too large for localstorage, so they go into <span className='text-lightBeige/95 font-normal'>indexeddb</span>:
 
@@ -297,7 +297,7 @@ useEffect(() => {
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 the user types something like "japanese garden with stone lanterns". but dall-e needs a very specific prompt to produce images that work for 3d reconstruction, with <span className='text-lightBeige/95 font-normal'>isometric view, white background, specific lighting, and no shadows</span>.
 
-                so we run the user's prompt through gpt-4o with a heavily engineered system prompt:
+                so arcki runs the user's prompt through gpt-4o with a heavily engineered system prompt:
 
                 <span className="route-background text-[0.9rem]">server/app/services/openai_service.py</span>
                 <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
@@ -359,14 +359,14 @@ CRITICAL FOR 3D RECONSTRUCTION:
                     </pre>
                 </div>
 
-                the reference image scraper uses duckduckgo's image api with vqd tokens. it's stateless, no auth image search. the vision analysis then creates a detailed architectural description which gets fed into dall-e for a much more accurate rendering.
+                the reference image scraper uses duckduckgo's image api with vqd tokens. it's a stateless, no auth image search. the vision analysis then creates a detailed architectural description which gets fed into dall-e for a much more accurate rendering.
 
                 this means typing "cn tower" produces a model that actually <span className='text-lightBeige/95 font-thin italic'>looks like the cn tower</span>, not a generic tower.
             </span>
 
             <span className='text-lightBeige/95 text-lg'>stage 2: image generation (dall-e 3)</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                with the cleaned prompt, we generate the reference image. the dall-e prompt is heavily engineered:
+                with the cleaned prompt, arcki generates the reference image. the dall-e prompt is heavily engineered:
 
                 <span className="route-background text-[0.9rem]">server/app/services/openai_service.py</span>
                 <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
@@ -397,12 +397,12 @@ CRITICAL FOR 3D RECONSTRUCTION:
                     decoding="async"
                 />
 
-                we also <span className='text-lightBeige/95 font-normal'>parallelize</span> the main image generation with a "prettier" perspective preview using <span className="route-background text-[0.9rem]">asyncio.gather()</span>. the user sees the nice preview to review, while the reconstruction-optimized isometric version is what actually gets sent to trellis.
+                i also <span className='text-lightBeige/95 font-normal'>parallelized</span> the main image generation with a "prettier" perspective preview using <span className="route-background text-[0.9rem]">asyncio.gather()</span>. the user sees the nice preview to review, while the reconstruction-optimized isometric version is what actually gets sent to trellis.
             </span>
 
             <span id="trellis" className='text-lightBeige/95 text-lg'>stage 3: 3d reconstruction (fal.ai trellis)</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                this is where the image becomes a 3d model. we use the <a href="https://microsoft.github.io/TRELLIS/" target="_blank" className="a">trellis model</a> hosted on <a href="https://fal.ai/" target="_blank" className="a">fal.ai</a> which takes an image and outputs a textured glb mesh.
+                this is where the image becomes a 3d model. arcki leverages the <a href="https://microsoft.github.io/TRELLIS/" target="_blank" className="a">trellis model</a> hosted on <a href="https://fal.ai/" target="_blank" className="a">fal.ai</a> which takes an image and outputs a textured glb mesh.
 
                 <span className="route-background text-[0.9rem]">server/app/services/fal_service.py</span>
                 <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
@@ -430,13 +430,13 @@ result = await asyncio.to_thread(
 
             <span className='text-lightBeige/95 text-lg'>finding the right model</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                i spent a long time finding the optimal pipeline to model combination.
+                i spent a long time finding the optimal model for the pipeline.
 
                 my first attempt was running open source image to 3d models from <span className='text-lightBeige/95 font-normal'>hugging face</span> and deploying them on <span className='text-lightBeige/95 font-normal'>modal</span>. the idea was simple: host the model ourselves, avoid api costs, and control the pipeline end to end. 
                 
-                but in practice, the output quality was terrible. meshes were fried, textures were cooked, and inference times were way too long for an interactive tool. i tried a few different models on the hub and none of them produced anything close to usable for placing on an interactive map <span className='text-lightBeige/95 font-thin italic'>(panning, transforming, etc were all factors on top of the base model)</span>.
+                but in practice, the output quality was terrible. i was not happy with how the meshes and textures looked, and inference times were way too long for an interactive tool. i tried a few different models on the hub and none of them produced anything close to usable for placing on an interactive map <span className='text-lightBeige/95 font-thin italic'>(panning, transforming, etc were all factors on top of the base model)</span>.
 
-                after that i pivoted to fal.ai's hosted trellis model, and found that it was viable. it wasn't perfect, had to finetune many aspects of the pipeline, but at the end of the day, it does its job.
+                after that i pivoted to fal.ai's hosted trellis model, and found that it was viable. it wasn't perfect and i had to finetune many aspects of the pipeline, but at the end of the day, it does the job.
             </span>
 
             <span className='text-lightBeige/95 text-lg'>the multi image experiment</span>
@@ -445,7 +445,7 @@ result = await asyncio.to_thread(
 
                 so i tried generating <span className='text-lightBeige/95 font-normal'>four isometric views with dall-e</span>, front, back, left, and right, and feeding all four into trellis multi. the idea was to give the model complete coverage of the building.
 
-                <span className='text-lightBeige/95 font-thin italic'>the generated model was ass.</span>
+                <span className='text-lightBeige/95 font-thin italic'>the output sucked.</span>
 
                 the problem was <span className='text-lightBeige/95 font-normal'>shadows</span>. even though the system prompt explicitly says "no shadows", dall-e 3 subtly bakes directional shadows into every image, with soft gradients on surfaces, ambient occlusion at edges, and slight darkening on one side. these shadows are consistent <span className='text-lightBeige/95 font-thin italic'>within</span> a single image, but they're <span className='text-lightBeige/95 font-normal'>inconsistent across the four generated views</span>.
 
@@ -465,7 +465,7 @@ if use_multi and image_urls and len(image_urls) > 1:
                     </pre>
                 </div>
 
-                this is actually super interesting. dug around and <a href="https://tfwang-9527.github.io/GS-3I/" target="_blank" className="a">found a paper</a> that talks about how inconsistent lighting/shadows across views generate worse images. 
+                this is actually super interesting. dug around and <a href="https://tfwang-9527.github.io/GS-3I/" target="_blank" className="a">found a paper</a> that talks about how inconsistent lighting/shadows across views generate worse output. 
 
                 <div className="not-prose mt-3!">
                     <video
@@ -480,9 +480,7 @@ if use_multi and image_urls and len(image_urls) > 1:
                     </video>
                 </div>
 
-                essentially, it turns out that a  <span className='text-lightBeige/95 font-normal'>single well composed isometric image</span> is far more reliable than four slightly inconsistent views.
-
-                <span className='text-lightBeige/95 font-thin italic'>this was one of those cases where more data actually made things worse</span>...
+                essentially, it turns out that a  <span className='text-lightBeige/95 font-normal'>single well composed isometric image</span> is far more reliable than four slightly inconsistent views because gen ai models today can't reliably reason when given inconsistencies across inputs.
             </span>
         </div>
 
@@ -537,33 +535,14 @@ CRITICAL RULES:
 
             <span className='text-lightBeige/95 text-lg'>building search</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                for <span className="route-background text-[0.9rem]">find_building</span> queries like "tallest building here", we fetch real building data from <a href="https://wiki.openstreetmap.org/wiki/Overpass_API" target="_blank" className="a">openstreetmap's overpass api</a> with failover across multiple endpoints. buildings are ranked by the query's attribute: height, footprint area, or an "underdeveloped" heuristic that finds buildings with <span className='text-lightBeige/95 font-normal'>large footprints relative to their height</span> (high area to height ratio = a lot of land "wasted" on a short building).
+                for <span className="route-background text-[0.9rem]">find_building</span> queries like "tallest building here", arcki fetches real building data from <a href="https://wiki.openstreetmap.org/wiki/Overpass_API" target="_blank" className="a">openstreetmap's overpass api</a> with failover across multiple endpoints. buildings are ranked by the query's attribute: height, footprint area, or an "underdeveloped" heuristic that finds buildings with <span className='text-lightBeige/95 font-normal'>large footprints relative to their height</span> (high area to height ratio = a lot of land "wasted" on a short building).
 
                 the <span className="route-background text-[0.9rem]">delete_building</span> action is fun. it geocodes the building, then generates a deletion polygon around it scaled to the building type. towers get small, precise polygons; stadiums and arenas get larger ones since they're wide.
             </span>
 
             <span className='text-lightBeige/95 text-lg'>geocoding</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                building selection uses <a href="https://nominatim.openstreetmap.org/" target="_blank" className="a">nominatim</a> for reverse geocoding. we wrote a display name shortener that strips long addresses into readable labels:
-
-                <span className="route-background text-[0.9rem]">server/app/services/geocoding_service.py</span>
-                <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
-                    <pre className='line-numbers'>
-                        <code className='language-python'>{`def shorten_display_name(full_name: str, address_details=None):
-    # Full: "CN Tower, 301 Front Street West, Toronto, Ontario, Canada"
-    # Short: "CN Tower, Toronto, Canada"
-
-    if address_details:
-        parts = []
-        for key in ["tourism", "building", "amenity"]:
-            if key in address_details:
-                parts.append(address_details[key])
-                break
-        # ... city, country
-        return ", ".join(parts)
-`}</code>
-                    </pre>
-                </div>
+                building selection uses <a href="https://nominatim.openstreetmap.org/" target="_blank" className="a">nominatim</a> for reverse geocoding. i wrote a display name shortener that strips long addresses into readable labels:
 
                 this prevents addresses like "cn tower, 301 front street west, entertainment district, toronto, golden horseshoe, ontario, m5v 3t6, canada" from cluttering the ui. it strips down to "cn tower, toronto, canada".
             </span>
@@ -574,7 +553,7 @@ CRITICAL RULES:
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 rendering 3d models on a mapbox map in the browser required careful optimization. heavy components like the toolbar, search bar, generator panel, and transform gizmo are wrapped with <span className="route-background text-[0.9rem]">React.memo()</span> to prevent rerenders when the map moves. modals and the tutorial are loaded with <span className="route-background text-[0.9rem]">next/dynamic</span> and <span className="route-background text-[0.9rem]">ssr: false</span> to keep the initial bundle small.
 
-                one subtle issue: mapbox event handlers are registered once during initialization. without refs, they capture stale state from the initial render. so every piece of state that mapbox callbacks need is synced to a ref:
+                a subtle pitfall is that mapbox event handlers are registered once during initialization. without refs, they capture stale state from the initial render. so every piece of state that mapbox callbacks need is synced to a ref:
 
                 <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
                     <pre className='line-numbers'>
@@ -607,16 +586,16 @@ useEffect(() => {
                     <span className='font-normal'>~ $0.10</span>
                 </div>
 
-                the range depends on whether landmark enhancement triggers (extra gpt-4o vision calls + image search).
+                the cost varies depending on whether landmark enhancement triggers (extra gpt-4o vision calls + image search).
                 
-                <span className='text-lightBeige/95 font-thin italic'>our pipeline, considering its nature, is pretty cost efficient!</span>
+                <span className='text-lightBeige/95 font-thin italic'>the pipeline, considering its nature, is pretty cost efficient!</span>
             </span>
         </div>
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>takeaways</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                arcki was a massive learning experience. the technical challenges were genuinely hard. combining mapbox's terrain rendering with react three fiber, engineering prompts that produce reconstruction friendly images, building a multi stage async pipeline with job tracking, and persisting model data across browser sessions all took real work.
+                the technical challenges were genuinely hard. combining mapbox's terrain rendering with react three fiber, engineering prompts that produce reconstruction friendly images, building a multi stage async pipeline with job tracking, and persisting model data across browser sessions all took considerable planning.
 
                 the <span className='text-lightBeige/95 font-normal'>prompt engineering</span> alone took ample iteration. small changes to the dall-e prompt, like adding "no pedestal" or "floating in white void", dramatically improved the output quality. the landmark enhancement pipeline was a late addition that made a huge difference.
 
@@ -636,7 +615,7 @@ useEffect(() => {
                     decoding="async"
                 />
 
-                check out the <a href="https://github.com/JLi2007/arcki" target="_blank" className="a">github repo</a> for the full source!
+                check out the <a href="https://github.com/JLi2007/arcki" target="_blank" className="a">github repo</a>.
             </span>
         </div>
     </div>

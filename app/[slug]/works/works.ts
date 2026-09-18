@@ -22,6 +22,11 @@ export const ENTRIES: Entry[] = [
 ];
 
 export const TRACK_DATA: TrackMetadata[] = [
+  // my 24th birthday
+  {
+    id: "2gCiBmdTLk7SEmdn9nGy7c",
+    quotes: [],
+  },
   // yango
   {
     id: "1adaMoHauuI9B45YefZtsC",
@@ -62,14 +67,6 @@ export const TRACK_DATA: TrackMetadata[] = [
     id: "2aMN1ky0SzSEcV1QdBYbW9",
     quotes: ["摺紙飛機碰到雨天\n終究會墜落 \n A paper airplane meeting rainy days will eventually fall"],
   },
-  // psycho
-  {
-    id: "0FWAIRd9Uz5uNek7cALYNC",
-    quotes: [
-      "I was born to be wild, I don't wanna be tamed\nTalent's in my blood and I don't wanna be vain\nBut if I'm a psycho, then I don't wanna be sane \n",
-      "Blame my environment, it made me a sicko"
-    ],
-  },
   // home
   {
     id: "6Ncr1lCYnE3JHwtVK4nLAx",
@@ -81,11 +78,6 @@ export const TRACK_DATA: TrackMetadata[] = [
     quotes: [
       "They think that I came up quick, they don't know 'bout the rest of the chapters"
     ],
-  },
-  // 我会等
-  {
-    id: "5Rzpn60KTM11EBETHaF9Kt",
-    quotes: [],
   },
   // my 19th birthday
   {
