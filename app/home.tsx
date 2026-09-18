@@ -1,25 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import LinkSlider from "./components/Link";
 import { Track } from "./types/types";
 import useModifierKey from "./components/ModifierKey";
 import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaXTwitter, FaSpotify } from "react-icons/fa6";
 import uw from "./assets/uw.png";
-import western from "./assets/western.png";
-import polymarket from "./assets/polymarket.png";
 import mercor from "./assets/mercor_.png";
 import aleph from "./assets/aleph_.png";
 import lakesLogo from "./assets/lakes.png";
-import lakesBackground from "./assets/lakes.webp";
-import tauriaLogo from "./assets/tauria.png";
-import tauriaBackground from "./assets/tauria.webp";
 import mercorLogo from "./assets/mercor.png";
-import mercorBackground from "./assets/mercor.webp";
-import alephBackground from "./assets/aleph.webp";
 import alephLogo from "./assets/aleph.png";
+import fu from "./assets/fu.png"
 
 export default function Home({ recent }: { recent?: Track }) {
   const [isMac, setIsMac] = useState(true);
@@ -108,7 +101,7 @@ export default function Home({ recent }: { recent?: Track }) {
                       </h1>
 
                       <a
-                        href="https://www.getaleph.com/"
+                        href="https://www.getaleph.com/platform/ai/mcp"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer -mt-5 lg:mt-0"
@@ -126,19 +119,12 @@ export default function Home({ recent }: { recent?: Track }) {
                               aleph
                             </p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">
-                              first engineering intern
+                              software engineer intern, mcp
                             </p>
                           </div>
                         </div>
-                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-900 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image
-                            src={alephBackground}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover object-right"
-                          />
                         </div>
                       </a>
 
@@ -160,19 +146,12 @@ export default function Home({ recent }: { recent?: Track }) {
                               mercor
                             </p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">
-                              software engineer, rl
+                              software engineer, rl environments
                             </p>
                           </div>
                         </div>
-                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-900 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image
-                            src={mercorBackground}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover object-right"
-                          />
                         </div>
                       </a>
 
@@ -194,94 +173,39 @@ export default function Home({ recent }: { recent?: Track }) {
                               lakes software
                             </p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">
-                              software engineering intern
+                              software engineer intern
                             </p>
                           </div>
                         </div>
-                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                        <div className="absolute inset-0 opacity-0 transition-opacity duration-900 ease-in-out group-hover:opacity-100">
                           <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image
-                            src={lakesBackground}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover object-right"
-                          />
-                        </div>
-                      </a>
-
-                      <a
-                        href="https://www.tauria.com/"
-                        target="_blank"
-                        className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-darkBeige3/10 bg-midBeige1/60 backdrop-blur-sm transition-all duration-500 cursor-pointer"
-                      >
-                        <div className="relative z-20 flex items-center gap-3 p-3">
-                          <Image
-                            src={tauriaLogo}
-                            width={56}
-                            height={56}
-                            alt="tauria-logo"
-                            className="w-14 h-14 rounded-lg ring-1 ring-darkBeige3/20"
-                          />
-                          <div>
-                            <p className="font-semibold text-darkBeige3 lg:text-base md:text-lg text-base">
-                              tauria
-                            </p>
-                            <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">
-                              product engineering intern
-                            </p>
-                          </div>
-                        </div>
-                        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
-                          <div className="absolute inset-0 bg-linear-to-r from-midBeige1 via-midBeige1/80 to-transparent z-10" />
-                          <Image
-                            src={tauriaBackground}
-                            alt=""
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="object-cover object-right"
-                          />
                         </div>
                       </a>
                     </div>
                   </div>
                 </div>
 
-                {/* linkedin and socials section */}
+                {/* socials section */}
                 <div className="row-span-1 lg:col-span-3 col-span-6 w-auto lg:h-auto h-80 grid grid-cols-3 gap-2 m-1 mb-1">
-                  {/* linkedin section */}
-                  <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige hover:border-darkBeige1 border-2 border-transparent transition delay-200 duration-150 ease-in overflow-hidden">
-                    <div
-                      aria-hidden
-                      className="absolute -bottom-24 -left-24 w-96 h-96 pointer-events-none opacity-90 z-0"
-                      style={{
-                        backgroundColor: "#4e4b43",
-                        backgroundImage: "radial-gradient(circle at center, rgba(220,200,165,0.06) 0.75px, transparent 1.25px)",
-                        backgroundSize: "10px 10px",
-                        transform: "rotate(-6deg)",
-                        WebkitMaskImage: `url(${aleph.src})`,
-                        maskImage: `url(${aleph.src})`,
-                        WebkitMaskSize: "contain",
-                        maskSize: "contain",
-                        WebkitMaskRepeat: "no-repeat",
-                        maskRepeat: "no-repeat",
-                        WebkitMaskPosition: "center",
-                        maskPosition: "center",
-                      }}
-                    />
-                    <a
-                      href="https://www.getaleph.com"
-                      target="_blank"
-                      className="absolute inset-0 w-full h-full"
-                    >
-                      <h1 className="absolute italic left-5 top-2 lg:text-base md:text-lg text-sm z-30">
-                        aleph
-                      </h1>
-                      <h1 className="absolute bottom-5 italic right-5 lg:text-base md:text-lg text-sm z-30">
-                        currently
-                      </h1>
-                    </a>
-                  </div>
+                    <div className="relative col-span-2 py-3 px-7 rounded-lg bg-darkBeige2 text-lightBeige border-transparent ease-in overflow-hidden">
+                      <div
+                        aria-hidden
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-144 pointer-events-none opacity-90 z-0"
+                        style={{
+                          backgroundColor: "#4e4b43BF",
+                          backgroundImage: "radial-gradient(circle at center, rgba(220,200,165,0.03) 0.75px, transparent 1.25px)",
+                          backgroundSize: "10px 10px",
+                          WebkitMaskImage: `url(${fu.src})`,
+                          maskImage: `url(${fu.src})`,
+                          WebkitMaskSize: "contain",
+                          maskSize: "contain",
+                          WebkitMaskRepeat: "no-repeat",
+                          maskRepeat: "no-repeat",
+                          WebkitMaskPosition: "center",
+                          maskPosition: "center",
+                        }}
+                      />
+                    </div>
 
                   {/* socials section */}
                   <div className="relative py-3 px-7 rounded-lg bg-midBeige2 border-2 border-transparent transition delay-200 duration-150 ease-in flex flex-col items-center justify-center lg:gap-5 md:gap-2">
@@ -327,9 +251,9 @@ export default function Home({ recent }: { recent?: Track }) {
                       className="h1descr break-normal pb-2 p-1"
                       style={{ marginTop: "clamp(0.25rem, 1vh, 0.5rem)" }}
                     >
-                      i was born and raised in waterloo. i'm product focused and
-                      enjoy backend and infra work. in my free time i wander
-                      street view and play fútbol.
+                      i was born and raised in waterloo. i'm product focused,
+                      enjoy backend work, and specialize in applied ai and mcp. in my free
+                      time i wander street view and play fútbol.
                     </h1>
 
                     <h1 className="h1descr break-normal md:mt-0 mt-5 p-1">
@@ -341,6 +265,27 @@ export default function Home({ recent }: { recent?: Track }) {
                         <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
+                            mlh top 50, 2026
+                          </span>
+                        </li>
+
+                        <li className="flex items-baseline gap-x-1">
+                          <span className="shrink-0">-</span>
+                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
+                            shipped and scaled the mcp tool suite at
+                            <Image
+                              src={aleph}
+                              width={20}
+                              height={20}
+                              alt="aleph-logo"
+                            />
+                              aleph
+                          </span>
+                        </li>
+
+                        <li className="flex items-baseline gap-x-1">
+                          <span className="shrink-0">-</span>
+                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
                             built rl eval infrastructure at
                             <Image
                               src={mercor}
@@ -349,52 +294,6 @@ export default function Home({ recent }: { recent?: Track }) {
                               alt="mercor-logo"
                             />
                             mercor
-                          </span>
-                        </li>
-
-                        <li className="flex items-baseline gap-x-1">
-                          <span className="shrink-0">-</span>
-                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            won
-                            <Image
-                              src={polymarket}
-                              width={20}
-                              height={20}
-                              alt="western-logo"
-                            />
-                            polymarket
-                            <LinkSlider
-                              href="https://devpost.com/software/a-vckqad"
-                              mode="dark"
-                              className="relative flex"
-                            >
-                              prize track
-                            </LinkSlider>
-                            at carnegie mellon
-                          </span>
-                        </li>
-
-                        <li className="flex items-baseline gap-x-1">
-                          <span className="shrink-0">-</span>
-                          <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            won w/
-                            <LinkSlider
-                              href={`/flowboard`}
-                              mode="dark"
-                              className="relative flex"
-                              isNextLink
-                            >
-                              flowboard
-                            </LinkSlider>
-                            <span>@</span>
-                            <Image
-                              src={western}
-                              width={20}
-                              height={20}
-                              alt="western-logo"
-                            />
-                            <span>hackwestern,</span>
-                            150+ github stars
                           </span>
                         </li>
                       </ul>

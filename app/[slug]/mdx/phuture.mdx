@@ -8,7 +8,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
     <span className='block text-lighterBeige text-base mt-2'>project, first build with traction</span>
     <div className="w-[95vw] relative left-1/2 -ml-[47.5vw] md:w-[105%] md:left-0 md:-ml-[2.5%] md:static">
         <Image
-            src="/projects/phuture/blur.webp"
+            src="/work/phuture/blur.webp"
             alt="phuture-main"
             width={1200}
             height={800}
@@ -34,7 +34,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
         <div className='flex flex-col text-left'>
             <span className='text-lightBeige/95 text-xl'>overview</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                phuture is an nature exploration app with <span className='text-lightBeige/95 font-normal italic'>50 alpha testers</span> lined up for early-stage testing. inspired by the pokédex in pokémon and the mechanics of pokémon-go, the underlying concept of phuture revolves around <span className='text-lightBeige/95 font-normal'>collecting every single plant & animal species in the world</span> into a personal database.
+                phuture is a nature exploration app with <span className='text-lightBeige/95 font-normal italic'>30 alpha testers</span> lined up for early-stage testing. inspired by the pokédex in pokémon and the mechanics of pokémon-go, the underlying concept of phuture revolves around <span className='text-lightBeige/95 font-normal'>collecting every single plant & animal species in the world</span> into a personal database.
             </span>
         </div>
 
@@ -74,7 +74,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 12am: i was riding my bike through the forest when it hit me: what if every species of wildlife was able to be collected?
                 <Image
-                    src="/projects/phuture/inspo.png"
+                    src="/work/phuture/inspo.png"
                     alt="phuture-inspo"
                     width={1200}
                     height={800}
@@ -87,16 +87,16 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
                 it got me pondering and i genuinely almost crashed into a tree. being out in nature is underrated, but addiction to technology made people forget about what's out there. 
 
-                the <span className='text-lightBeige/95 font-normal'>intersection of ai and nature</span> seemed interesting, so i called andy up and began idealizing the concept.
+                the <span className='text-lightBeige/95 font-normal'>intersection of ai and nature</span> seemed interesting, so i called andy up and began brainstorming the concept.
             </span>
         </div>
 
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>architecture</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                <span className='text-lightBeige/95 font-normal'>unity</span> was the most logical choice for the mobile app as we needed to implement a mapping sdk. all the game logic lives in the <span className='text-lightBeige/95 font-normal'>containerized node.js server</span>, hosted on <span className='text-lightBeige/95 font-normal'>aws</span>.
+                <span className='text-lightBeige/95 font-normal'>unity</span> was the most logical choice for the mobile app as phuture needed mapping functionality. there were plenty of cool mapping sdks to choose from. all the game logic lives in the <span className='text-lightBeige/95 font-normal'>containerized node.js server</span>, hosted on <span className='text-lightBeige/95 font-normal'>aws</span>.
                 <Image
-                    src="/projects/phuture/architecture.png"
+                    src="/work/phuture/architecture.png"
                     alt="phuture-architecture"
                     width={1200}
                     height={800}
@@ -107,15 +107,15 @@ import { CiLocationArrow1 } from "react-icons/ci";
                     decoding="async"
                 />
 
-                essentially, the user would take a picture of a species using our in-app camera, and our logic layers will handle the rest.
+                essentially, the user would take a picture of a species using the in-app camera, and the correct species would (somehow) be figured out under the hood in a reasonable amount of time.
 
-                we initially planned on creating a <span className='text-lightBeige/95 font-normal'>complex machine learning system</span> with feedback loops to accurately identify <span className='text-lightBeige/95 font-normal'>wildlife species</span> using a single image and location-based context.
+                phuture initially was designed to include a <span className='text-lightBeige/95 font-normal'>complex machine learning system</span> with feedback loops to accurately identify <span className='text-lightBeige/95 font-normal'>wildlife species</span> using a single image and location-based context.
 
                 the idea was to build <span className='text-lightBeige/95 font-normal'>regional models</span> through a <span className='text-lightBeige/95 font-normal'>model factory pipeline</span> so individual models wouldn’t grow too large or complex. <span className='text-lightBeige/95 font-thin italic'>for example, western canada, eastern canada, and arctic canada would each have separate models</span>.
 
                 the correct model would then be <span className='text-lightBeige/95 font-normal'>automatically downloaded</span> to the user’s phone based on their <span className='text-lightBeige/95 font-normal'>current location</span>.
 
-                however, once <span className='text-lightBeige/95 font-normal'>data cleaning</span> proved far more intensive than expected (there's lowkey too many species), we decided to pivot to a llm call.
+                however, once <span className='text-lightBeige/95 font-normal'>data cleaning</span> proved far more intensive than expected (so many species!), it was decided to pivot to direct llm calls in the meantime, sacrificing accuracy for simplicity.
             </span>
         </div>
 
@@ -124,7 +124,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
                 i spent most of the summer trial and erroring the server. this was my first time using docker, redis, and rabbitmq so it was a perfect learning experience for me.
 
-                the routes are seperated with <span className='text-lightBeige/95 font-normal'>express router</span>:
+                the routes are separated with <span className='text-lightBeige/95 font-normal'>express router</span>:
 
                 <span className="route-background text-[0.9rem]">src/routes/openai.ts</span>
                 wildlife identification with ai
@@ -233,7 +233,7 @@ channel.sendToQueue("game_events", Buffer.from(JSON.stringify({
                     </pre>
                 </div>
 
-                this architecture ensures that <span className='text-lightBeige/95 font-normal'>gameplay events, analytics, and background jobs</span> can scale independently: makes the whole backend easier to navigate and debug.
+                this architecture ensures that <span className='text-lightBeige/95 font-normal'>gameplay events, analytics, and background jobs</span> can scale independently, which makes the whole backend easier to navigate and debug.
             </span>
 
             <span className='text-lightBeige/95 text-xl'>notifications</span>
@@ -305,7 +305,7 @@ channel.sendToQueue("game_events", Buffer.from(JSON.stringify({
                 from the outside it looks like a simple push notification. under the hood it is <span className='text-lightBeige/95 font-normal'>api -> rabbitmq -> worker -> redis inbox/pubsub -> sse client delivery</span>, which ended up being one of the more technically satisfying parts of the backend.
 
                 <Image
-                    src="/projects/phuture/html.png"
+                    src="/work/phuture/html.png"
                     alt="phuture-html"
                     width={1200}
                     height={800}
@@ -316,12 +316,12 @@ channel.sendToQueue("game_events", Buffer.from(JSON.stringify({
                     decoding="async"
                 />
 
-                i used a plain html dashboard to test the notification system. interesting to see how quick http responses fire much faster than the actual action handled by rabbit!
+                i used a plain html dashboard to test the notification system. interesting to see how http responses fire much faster than the actual action handled by rabbit!
             </span>
 
             <span className='text-lightBeige/95 text-xl'>security scripts</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                i used bash scripts to set up secure configurations for redis, rabbitmq, and the application environment. one of the main uses cases was <span className='text-lightBeige/95 font-normal'>setting strong secret variables</span>.
+                i used bash scripts to set up secure configurations for redis, rabbitmq, and the application environment. one of the main use cases was <span className='text-lightBeige/95 font-normal'>setting strong secret variables</span>.
 
                 <span className="route-background text-[0.9rem]">/setup-security.sh</span>
                 <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
@@ -350,7 +350,7 @@ chmod 600 .env
 
             <span className='text-lightBeige/95 text-xl'>docker + kubernetes architecture</span>
                 <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                    our backend uses <span className='text-lightBeige/95 font-normal'>docker for containerization</span>  and <span className='text-lightBeige/95 font-normal'>kubernetes for orchestration</span>. each service, the server, redis, and rabbitmq, runs isolated in its own container.
+                    the backend uses <span className='text-lightBeige/95 font-normal'>docker for containerization</span>  and <span className='text-lightBeige/95 font-normal'>kubernetes for orchestration</span>. each service, the server, redis, and rabbitmq, runs isolated in its own container.
 
                     <span className="route-background text-[0.9rem]">dockerfile</span>
                     <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs'>
@@ -395,10 +395,10 @@ redis:
 
                 each service communicates over <span className='text-lightBeige/95 font-normal'>an isolated bridge network</span>. redis and rabbitmq have healthchecks and resource limits to prevent overuse. ports are bound to localhost during development, and volumes persist data and configs.
 
-                i followed a <span className='text-lightBeige/95 font-normal'>microservice design</span> for the server, it doesn't embed services. rather, it connects to them over the network. this allows the server to scale independently!
+                i followed a <span className='text-lightBeige/95 font-normal'>microservice design</span> for the server; it doesn't embed services. rather, it connects to them over the network. this allows the server to scale independently!
 
                 <Image
-                    src="/projects/phuture/docker.png"
+                    src="/work/phuture/docker.png"
                     alt="phuture-docker"
                     width={1200}
                     height={800}
@@ -467,7 +467,7 @@ spec:
                 mapping was done with <a href="https://www.arcgis.com/index.html" target="_blank" className="a">arcgis</a>, login flow was standard supabase implementation.
      
                 <Image
-                    src="/projects/phuture/mapping.png"
+                    src="/work/phuture/mapping.png"
                     alt="phuture-mapping"
                     width={1200}
                     height={800}
@@ -483,11 +483,11 @@ spec:
             <span className='text-lighterBeige font-inter font-extralight text-[1rem] mt-5'>
                 <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center font-playfair'> <FaCamera size={24} /> camera</span>
                 <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                    we needed camera access for the user to take pictures of wildlife.
+                    phuture needs camera access for the user to take pictures of wildlife.
                 </span>
                 <span className='text-lightBeige/95 text-lg flex flex-row gap-2 items-center font-playfair'> <CiLocationArrow1 size={24} /> location</span>
                 <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                    we need user location for many features.
+                    phuture requires user location for many in-app features.
                 </span>
             </span>
 
@@ -501,7 +501,7 @@ spec:
                         playsInline
                         preload="none"
                         className="w-full">
-                        <source src="../../../projects/phuture/unity.mp4" type="video/mp4"/>
+                        <source src="../../../work/phuture/unity.mp4" type="video/mp4"/>
                         your browser does not support the video tag.
                     </video>
                 </div>
@@ -511,10 +511,10 @@ spec:
         <div className='flex flex-col text-left mt-10'>
             <span className='text-lightBeige/95 text-xl'>launch</span>
             <span className='text-lighterBeige font-inter font-extralight text-[1rem]'>
-                we shot the launch video, with some help from <a href="https://www.youtube.com/@garf510" target="_blank" className="a">gary</a>, and it reached <span className='text-lightBeige/95 font-normal'>~20k impressions</span> on linkedin! this isn't a big number in any account, but it was my first time gaining traction on something that i was building.
+                andy and i shot the launch video, with some help from <a href="https://www.youtube.com/@garf510" target="_blank" className="a">gary</a>, and it reached <span className='text-lightBeige/95 font-normal'>~20k impressions</span> on linkedin! this isn't a big number by any account, but it was my first time gaining traction on something that i was building.
 
                 <Image
-                    src="/projects/phuture/launch.png"
+                    src="/work/phuture/launch.png"
                     alt="phuture-launch"
                     width={1200}
                     height={800}
@@ -533,15 +533,15 @@ spec:
                         playsInline
                         preload="none"
                         className="w-full">
-                        <source src="../../../projects/phuture/launch.mp4" type="video/mp4"/>
+                        <source src="../../../work/phuture/launch.mp4" type="video/mp4"/>
                         your browser does not support the video tag.
                     </video>
                 </div>
                 <span className='text-lighterBeige font-thin text-[0.9rem]'>watch the full launch with volume on my <a href="https://www.linkedin.com/feed/update/urn:li:activity:7357809750807367681/" target="_blank" className="a">linkedin</a></span>
 
-                andy and i stopped working on phuture when 1a began, and never touched it since. 
+                andy and i stopped working on phuture when we began uwaterloo.
 
-                life got in the way but i have zero regrets. the concept was worth pursuing, i learned a plethora of server infrastructure, and we received positive reception on social media (50 alpha tester signups!), so the work put in was still valuable.
+                life got in the way but i have zero regrets. the concept was worth pursuing, i learned a ton about server infrastructure. i also received positive reception on social media (30 alpha tester signups!), so the work put in was still valuable.
             </span>
         </div>
     </div>  
