@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { isMobile } from "react-device-detect";
-import { showcaseProjects } from "../projects";
+import { showcaseWork, isExternal } from "../work";
 import { posts } from "../posts";
 import LinkSlider from "./Link";
 import Link from "next/link";
@@ -57,7 +57,7 @@ export default function Sidebar() {
   return (
     <div ref={rootRef} className="relative max-w-screen h-auto py-3 px-7 m-1 mb-1 rounded-lg text-lightBeige overflow-x-hidden">
       {[
-        { title: "projects", items: showcaseProjects, type: "project" },
+        { title: "work", items: showcaseWork, type: "project" },
         { title: "notes", items: posts, type: "note" },
       ].map((section) => (
         <div key={section.title} className="relative w-full h-full mb-8">
@@ -69,7 +69,11 @@ export default function Sidebar() {
               {section.items.map((project: any, index: number) => (
                 <Link
                   key={index}
-                  href={`/${project.slug}`}
+                  href={project.href}
+                  {...(isExternal(project.href) && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
                   className="group relative rounded-xl overflow-visible transition-all duration-500 block"
                   onMouseEnter={(e) => {
                     const video = e.currentTarget.querySelector("video");
@@ -180,8 +184,7 @@ export default function Sidebar() {
       ))}
 
       <footer className="pt-4 md:pb-0 pb-2 border-t border-white/20 lg:text-xs md:text-sm text-xs text-white/70 flex flex-row items-center justify-end">
-        <span className="shiny-green-dot inline-block mr-2 w-3 h-3" />
-        last updated 06/2026
+        last updated 09/2026
       </footer>
     </div>
   );

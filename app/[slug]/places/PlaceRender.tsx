@@ -71,11 +71,8 @@ export default function RenderPlace({ place, isLast = false }: { place: PlacesTy
   };
 
   return (
-    <div ref={ref} className="flex flex-col mb-0 md:mb-0 not-prose">
-      <div className="flex items-center justify-between gap-3 pb-3 mb-3">
-        <h3 className="m-0 leading-none lg:text-3xl md:text-4xl text-2xl font-light tracking-tight">
-          {place.title}
-        </h3>
+    <div ref={ref} className="flex flex-col mb-0 not-prose">
+      <div className="flex items-center justify-center gap-3 pb-3 mb-3">
         <div className="flex items-center gap-2 opacity-90 leading-none">
           <img
             src={`https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/${flagEmojiToTwemoji(place.flag)}.svg`}

@@ -286,9 +286,35 @@ export default function CommandPalette() {
                   </Command.Item>
                 </Command.Group>
 
-	                <Command.Group heading="projects" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
+	                <Command.Group heading="work" className={`px-2 mt-2 ${isHome ? "text-lightBeige" : "text-white"}`}>
+                    <Command.Item
+	                    value="aleph"
+                      keywords={["work", "mcp", "tool"]}
+	                    onSelect={() =>
+                        openLink(() => window.open("https://getaleph.com/platform/ai/mcp", "_blank"))
+                      }
+	                    className={itemClass}
+	                  >
+	                    <div
+                      className="h-4 w-4"
+                      style={{
+                        backgroundColor: 'currentColor',
+                        maskImage: 'url(/aleph.png)',
+                        maskSize: 'contain',
+                        maskRepeat: 'no-repeat',
+                        maskPosition: 'center',
+                        WebkitMaskImage: 'url(/aleph.png)',
+                        WebkitMaskSize: 'contain',
+                        WebkitMaskRepeat: 'no-repeat',
+                        WebkitMaskPosition: 'center',
+                      }}
+                    />
+	                    <span className="flex-1">aleph // mcp tool suite</span>
+	                  </Command.Item>
+
 	                  <Command.Item
-	                    value="project arcki architecture building 3d playground"
+	                    value="arcki"
+                      keywords={["project", "work", "architecture", "building", "3d", "playground"]}
 	                    onSelect={() =>
 	                      setTimeout(
 	                        () => openNextLink(() => router.push("/arcki")),
@@ -311,11 +337,12 @@ export default function CommandPalette() {
                         WebkitMaskPosition: 'center',
                       }}
                     />
-	                    <span className="flex-1">3d architectural playground</span>
+	                    <span className="flex-1">arcki // 3d architectural playground</span>
 	                  </Command.Item>
 
 	                  <Command.Item
-	                    value="project flowboard"
+	                    value="flowboard"
+                      keywords={["project", "work", "ai"]}
 	                    onSelect={() =>
 	                      setTimeout(
                         () => openNextLink(() => router.push("/flowboard")),
@@ -338,11 +365,12 @@ export default function CommandPalette() {
                         WebkitMaskPosition: 'center',
                       }}
                     />
-                    <span className="flex-1">cursor for animators</span>
+                    <span className="flex-1">flowboard // cursor for animators</span>
                   </Command.Item>
 
                   <Command.Item
-                    value="project trivialguessr"
+                    value="trivialguessr"
+                    keywords={["project", "work"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/trivialguessr")),
@@ -352,11 +380,12 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoBulbOutline className="h-4 w-4" />
-                    <span className="flex-1">geoguessr for trivia</span>
+                    <span className="flex-1">trivialguessr // geoguessr for trivia</span>
                   </Command.Item>
 
                   <Command.Item
-                    value="project phuture"
+                    value="phuture"
+                    keywords={["project", "work"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/phuture")),
@@ -366,11 +395,12 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoLeafOutline className="h-4 w-4" />
-                    <span className="flex-1">wildlife pokemon-go</span>
+                    <span className="flex-1">phuture // wildlife pokemon-go</span>
                   </Command.Item>
 
                   <Command.Item
-                    value="project guideline"
+                    value="guideline"
+                    keywords={["project", "work", "breadboard", "ar"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/guideline")),
@@ -380,11 +410,12 @@ export default function CommandPalette() {
                     className={itemClass}
                   >
                     <IoHardwareChipOutline className="h-4 w-4" />
-                    <span className="flex-1">augmented reality breadboarding</span>
+                    <span className="flex-1">guideline // augmented reality breadboarding</span>
                   </Command.Item>
 
                   <Command.Item
-                    value="project neodev neo developer league"
+                    value="neodev"
+                    keywords={["project", "work", "neo", "developer", "league"]}
                     onSelect={() =>
                       setTimeout(
                         () => openNextLink(() => router.push("/neodev")),
@@ -405,7 +436,7 @@ export default function CommandPalette() {
                         WebkitMaskRepeat: 'no-repeat',
                       }}
                     />
-                    <span className="flex-1">co-founded programming league</span>
+                    <span className="flex-1">neodev // co-founded programming league</span>
                   </Command.Item>
                 </Command.Group>
               </Command.List>

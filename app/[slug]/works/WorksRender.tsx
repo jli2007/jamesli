@@ -126,22 +126,17 @@ export default function RenderWorks() {
                     <p className="text-base md:text-lg text-lighterBeige mt-1">
                       {t.artists?.map(a => a.name).join(", ")}
                     </p>
-                    {metadata?.description && (
-                      <p className="text-sm md:text-base text-lighterBeige/75 mt-3">
-                        {metadata.description}
-                      </p>
-                    )}
                   </div>
                 </div>
               </div>
             </div>
 
             {metadata?.quotes && metadata.quotes.length > 0 && (
-              <div className="mt-5 md:mt-10 space-y-2">
+              <div className="mt-5 md:mt-15 space-y-2">
                 {metadata.quotes.map((quote, idx) => (
                   <blockquote
                     key={idx}
-                    className="text-sm md:text-base italic text-lighterBeige/75 border-l-4 border-gray-300 pl-4 wrap-break-word whitespace-pre-line"
+                    className="text-sm md:text-base italic text-lighterBeige/75 border-l-2 border-gray-300 pl-4 wrap-break-word whitespace-pre-line"
                   >
                     {quote}
                   </blockquote>

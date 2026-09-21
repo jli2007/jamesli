@@ -5,7 +5,7 @@ import { redirect, notFound } from "next/navigation";
 import { isMobile } from "react-device-detect";
 import useModifierKey from "../components/ModifierKey";
 import './codeblocks.css'
-// projects
+// work
 import Arcki from "./mdx/arcki.mdx";
 import Flowboard from "./mdx/flowboard.mdx";
 import Guideline from "./mdx/guideline.mdx";
