@@ -1,0 +1,121 @@
+<section className="bg-black p-1 rounded-2xl shadow-lg max-w-7xl mx-auto space-y-6">
+  <header className="space-y-2">
+    <h4 className='text-lightBeige'>
+      tldr; linear's mcp patch mode edits the live doc instead of replaying an old copy, which is the right call. two edges i found: full rewrites are still last write wins, and a patch only checks its anchor, so it will happily write text that's based on a stale read.
+    </h4>
+  </header>
+
+  <article className="prose prose-invert prose-sm max-w-none text-lighterBeige font-inter font-light">
+   <h5 className="mt-10">
+      note: this design is based on my observations, recollection of past experience, and recent probing
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">what i hit over the summer</span>
+
+      at aleph, an agent updating a linear doc through the mcp would sometimes land on top of edits someone had just made. the agent read the doc, someone typed, and the agent wrote the whole body back from its earlier read, replacing the new writes.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">what i found when i went to repro it now</span>
+
+      <span className='text-lightBeige/95 font-normal'>save_document</span> now has two ways to write.
+
+      <ul>
+        <li><span className="text-lightBeige/95 font-normal">content</span> replaces the whole doc.</li>
+        <li><span className="text-lightBeige/95 font-normal">patch</span> applies anchored edits (replace, insert before or after, append, replace a range) to the current content. if any anchor doesn't match exactly once, the whole save aborts and nothing is written.</li>
+      </ul>
+
+      in my test, patches left my live ui edits alone every time. the full rewrite through content wiped them.
+
+      patch works because the agent only claims the text it's touching, and everything else stays whatever it is right now. the failure path is just as good. a bad anchor returns "anchor not found in the current content. fetch the latest content and copy the text exactly", which tells the agent how to recover, not just that it failed.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">my assumptions going in</span>
+
+      <ul>
+        <li>the model chooses content or patch on each call, based on context</li>
+        <li>when asked to rewrite a whole doc, the model tends to pick content, since patching every line is harder</li>
+        <li>save_document has no way to say which version the agent's edit was based on</li>
+      </ul>
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">edge 1, rewrites are still last write wins</span>
+
+      the agent read the doc, then in the ui i added a note and saved, then the agent wrote a cleaned up version with content from its earlier read. the new note was gone, with no merge and no warning.
+
+      this happens whenever the model picks content, which it does for full rewrites.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">edge 2, patch only checks its anchor, not whether the read is current</span>
+
+      the common version of this is a long conversation. lets say you spend twenty minutes with an agent working through a doc, and halfway through a coworker replaces a whole section. the agent never rereads, so every answer and edit for the rest of the conversation is built on the old section.
+
+      i reproduced a small version of it with one prompt, create an issue per section and add a summary. while it ran, i changed the dark mode section to remove themes. the issue and the summary both still followed the old instructions.
+
+      the patch succeeded, because its anchor hadn't changed. nothing was overwritten. the agent just acted on a read that had already gone stale.
+
+      <div className="my-10! not-prose">
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          className="w-full rounded"
+        >
+          <source src="/notes/linear/linear.mp4" type="video/mp4" />
+          your browser does not support the video tag.
+        </video>
+      </div>
+
+      later in the same conversation, the agent re-read the doc, noticed an issue no longer matched, and offered to fix it. a fresh read is what surfaces this, which is the whole idea behind option b.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">proposed design</span>
+
+      <span className="text-lightBeige/95 font-normal">option a, give content writes the check patch already has.</span> a patch already refuses to apply if the text it quotes isn't in the doc as it stands. that's the anchor rule from earlier, and it's why patches left my ui edits alone in the test. a content write has no equivalent. it sends the whole body and the server has nothing to compare it against.
+
+      so: get_document returns a version alongside the content, and the agent sends it back when it writes. a content write whose version no longer matches is rejected with something like "this doc changed since you read it. read it again and reapply your change, or send it as a patch so only the parts you're changing get touched". patches keep working exactly as they do now, with a warning added when the version moved, since a matching anchor only tells you nobody touched that passage, not that the rest of the doc still says what the agent thinks it says.
+
+      with this, edge 1 is resolved. but it only fires on a write, so we need a different fix to complement this for edge 2.
+
+      <ul>
+        <li><span className="text-lightBeige/95 font-normal">pros.</span> one optional field. patch keeps working as it does, it just gains a warning, and the model doesn't have to decide anything new.</li>
+        <li><span className="text-lightBeige/95 font-normal">cons.</span> false conflicts on busy docs, where a typo fix elsewhere blocks a whole rewrite. scoping the check to the sections a write replaces would narrow that.</li>
+      </ul>
+
+      <span className="text-lightBeige/95 font-normal">option b, tell the agent when something it read has changed.</span> the mcp session spans the conversation, so the server can remember which docs this session read. when one changes, the next response from any linear tool carries a short note, "the doc you read at 1:44 has changed since". the agent doesn't have to remember to check, which matters because anything it has to choose to check it won't.
+
+      this is a wrapper at the tool layer rather than per tool work. the server tracks what the session read, and every response passes through one place that writes the note in. it should happen on any linear call, so most sessions hear about it quickly.
+
+      it doesn't fully close edge 2, and i don't think anything on the server can. if the agent never calls a tool it will obviously never receive fresh context.
+
+      <ul>
+        <li><span className="text-lightBeige/95 font-normal">pros.</span> the only one that reaches the agent while it's reading rather than writing, resolves the fixable part of edge 2.</li>
+        <li><span className="text-lightBeige/95 font-normal">cons.</span> per session state on the server, which cuts against stateless mcp. new plumbing introduced.</li>
+      </ul>
+
+      <span className="text-lightBeige/95 font-normal">option c, ask the user on conflict, like vscode/code editor.</span> on a conflict, don't pick a winner by design. show what changed and offer overwrite, merge, or cancel, the way an editor asks about a file that changed on disk. mcp elicitation lets a server ask mid call, and clients that can't ask fall back to a.
+
+      <ul>
+        <li><span className="text-lightBeige/95 font-normal">pros.</span> nobody loses work silently, and the person who knows which version is right decides.</li>
+        <li><span className="text-lightBeige/95 font-normal">cons.</span> it interrupts the flow, needs underlying logic to detect the conflict, is a bigger design decision.</li>
+      </ul>
+
+      one thing i wondered about while testing. after the agent's write, the doc showed updatedBy as me, so a write that came through the mcp is indistinguishable from one i typed. something internal must know the call arrived over the mcp, since that's how it was authenticated. is there a reason not to surface it?
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">what i think</span>
+
+      a and b, because they're the two edges. a is small, it's the closest to something linear already does, and it ends the writes that destroy work. b is the only one that reaches the agent while it's reading rather than writing, which addresses edge 2.
+
+      c is the better version of a, but it's a bigger design decision, it interrupts a person and leans on the client. and it still wouldn't cover edge 2, so b stays either way.
+    </h5>
+
+    enjoyed studying linear agent's behaviour, would love to contribute :)
+  </article>
+</section>

@@ -3,14 +3,12 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Track } from "./types/types";
 import useModifierKey from "./components/ModifierKey";
-import LinkSlider from "./components/Link";
 import { isMobile } from "react-device-detect";
 import { GrLinkedin } from "react-icons/gr";
 import { FaGithub, FaXTwitter, FaSpotify } from "react-icons/fa6";
 import uw from "./assets/uw.png";
 import mercor from "./assets/mercor_.png";
 import aleph from "./assets/aleph_.png";
-import orbis from "./assets/orbis.png";
 import lakesLogo from "./assets/lakes.png";
 import mercorLogo from "./assets/mercor.png";
 import alephLogo from "./assets/aleph.png";
@@ -98,10 +96,6 @@ export default function Home({ recent }: { recent?: Track }) {
                       </span>
                     </span>
                     <div className="flex flex-col gap-10 z-10 w-full relative">
-                      <h1 className="text-darkBeige3 lg:text-lg md:text-xl text-base mb-1 drop-shadow-lg md:drop-shadow-none">
-                        work:
-                      </h1>
-
                       <a
                         href="https://www.getaleph.com/platform/ai/mcp"
                         target="_blank"
@@ -267,20 +261,7 @@ export default function Home({ recent }: { recent?: Track }) {
                         <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            hack the north finalist 2026 with 
-                            <Image
-                              src={orbis}
-                              width={20}
-                              height={20}
-                              alt="orbis-logo"
-                            />
-                            <LinkSlider
-                              href="https://devpost.com/software/temp-jcyltx"
-                              className="relative inline-block w-fit pr-1 whitespace-nowrap"
-                              mode="dark"
-                            >
-                              orbis engine
-                            </LinkSlider>
+                            mlh top 50, hack the north finalist
                           </span>
                         </li>
 

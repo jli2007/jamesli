@@ -5,6 +5,7 @@ export interface PlacesType {
   nativeName: string;
   script: CountryScript;
   flag: string;
+  kind: 'streetview' | 'photosphere' | 'misc';
   description: string;
   iframeSrc: string;
 }
@@ -15,6 +16,7 @@ export const places: PlacesType[] = [
     nativeName: "república de bolivia",
     script: "latin",
     flag: "🇧🇴",
+    kind: "photosphere",
     description:
       `salar de uyuni; the most disorienting place on earth. area of 10b tons of pure salt larger than jamaica 🇯🇲 that's perfectly flat. \n
       biggest salt flat in the world. can be seen from space. always found it eye-catching, mesmerizing. \n
@@ -29,6 +31,7 @@ export const places: PlacesType[] = [
     nativeName: "日本",
     script: "jp",
     flag: "🇯🇵",
+    kind: "streetview",
     description:
       `aomori prefecture; a quiet fishing village on the edge of the world. the coverage makes me feel reminiscent of something. unsure of what it is. \n
       natsukashii (懐かしい) — a bittersweet feeling triggered by something that reminds you of a place you've never actually been. \n
@@ -43,6 +46,7 @@ export const places: PlacesType[] = [
     nativeName: "república portuguesa",
     script: "latin",
     flag: "🇵🇹",
+    kind: "streetview",
     description: 
     `villages deeply nestled in the mountainside in rural portugal. zoom in, it's surreal. \n
     these are the schist villages of northern portugal, pulled straight from the ground beneath them. similar to the italian ghost towns, most of these portugese towns were abandoned as people left for cities. \n
@@ -56,6 +60,7 @@ export const places: PlacesType[] = [
     nativeName: "монгол улс",
     script: "cyrillic",
     flag: "🇲🇳",
+    kind: "streetview",
     description:
     `dornod, the easternmost province of mongolia. \n
     mongolia is the least densely populated country on earth (dornod is one of the emptiest corners of it). the eastern steppe is also one of the last great unbroken grasslands left on the planet. nothing to interrupt the horizon. \n
@@ -68,6 +73,7 @@ export const places: PlacesType[] = [
     nativeName: "república de chile",
     script: "latin",
     flag: "🇨🇱",
+    kind: "misc",
     description:
       `a sudden shift between the chilean desert to the towering andes peaks. \n
       san carlos de apoquindo, national park, sits on the edge of santiago, somehow untouched, despite being next to a capital city. \n
@@ -80,6 +86,7 @@ export const places: PlacesType[] = [
     nativeName: "türkiye",
     script: "latin",
     flag: "🇹🇷",
+    kind: "streetview",
     description: 
     `narrow road on lake close to isparta, a leading global producer of rose oil. in the actual city, [fields of damask roses](https://thursd.com/articles/isparta-flowers-heritage-perfume-industry) can be seen covering the hillsides during spring. \n
     the city has been conquered and renamed so many times, byzantine, seljuk, ottoman, now isparta. been passed between civilizations for 3,000 years and still just quietly grows roses. \n
@@ -93,6 +100,7 @@ export const places: PlacesType[] = [
     nativeName: "republik indonesia",
     script: "latin",
     flag: "🇮🇩",
+    kind: "streetview",
     description:
       `misty villages built on the slopes of mount merbabu, "mountain of ash" in central java, indonesia. \n
       crazy how mount merapi is a walkable distance away and still erupts every few years. the long history and traditions keep locals here, and the culture shows even in ~1 hr of life captured in streetview. \n
@@ -106,6 +114,7 @@ export const places: PlacesType[] = [
     nativeName: "canada",
     script: "latin",
     flag: "🇨🇦",
+    kind: "streetview",
     description: 
     `atlantic canada; quaint village in newfoundland, a world apart from industrial cities. \n
     atlantic canada in general has such a distinctive character, life looks so slow. been around once, the environment seems to restore you in a sense. you know how when you reminisce positive memories from your childhood, and how there's a distinctive sunshine? maybe it's just me.
@@ -118,6 +127,7 @@ export const places: PlacesType[] = [
     nativeName: "日本",
     script: "jp",
     flag: "🇯🇵",
+    kind: "misc",
     description:
     `hamamatsuchō station at dusk, so eerie yet peaceful. \n
     this coverage was likely captured by a regular resident just commuting home. mundane to them, ethereal to us. so many tiny details can be noticed when zooming in.
@@ -130,6 +140,7 @@ export const places: PlacesType[] = [
     nativeName: "república argentina",
     script: "latin",
     flag: "🇦🇷",
+    kind: "streetview",
     description:
       `villages on the andes' foothills, the province of mendoza produces ~70% of argentina's wine. \n
       there's a melancholy here, people are leaving for the cities. feels like we're in its last chapter, reminds you of the forgotten villages you'd find deep in rural russia or central asia. disappearing. \n
@@ -143,6 +154,7 @@ export const places: PlacesType[] = [
     nativeName: "مصر",
     script: "arabic",
     flag: "🇪🇬",
+    kind: "photosphere",
     description:
       `the nile delta has been a cradle of civilization for over 5,000 years. \n
       nearby in alexandria brought many historical figures in mathematics/physics like euclid, eratosthenes, and hypatia. [the library of alexandria](https://www.britannica.com/topic/Library-of-Alexandria) held an estimated 400,000 scrolls, an attempt to collect all human knowledge in one place before it was burned down. \n
@@ -156,6 +168,7 @@ export const places: PlacesType[] = [
     nativeName: "中国",
     script: "sc",
     flag: "🇨🇳",
+    kind: "photosphere",
     description:
       `longmen grottoes in henan province, over 100,000 buddha statues carved into limestone cliffs. \n
       construction started in 493 AD and continued for 400 years across multiple dynasties. many statues are headless now, looted during the 20th century. the heads are now scattered across western museums. \n
@@ -170,6 +183,7 @@ export const places: PlacesType[] = [
     nativeName: "tuaisceart éireann",
     script: "latin",
     flag: "🇯🇪",
+    kind: "streetview",
     description:
       `northern edge of northern ireland, overlooking the north atlantic. \n
       the troubles feel distant here. just wind, sheep, and endless gray sky meeting gray sea. i just love how rural coastlines villages look in the uk, especially in scotland / northern ireland overlooking the north atlantic, there could've been a kingdom here once upon a time.
@@ -182,6 +196,7 @@ export const places: PlacesType[] = [
     nativeName: "中国",
     script: "sc",
     flag: "🇨🇳",
+    kind: "photosphere",
     description:
       `inner mongolia; rolling grasslands beneath vast blue skies define the hulunbuir prairie. \n
       genghis khan was born in this region. 800 years ago, the mongol empire stretched from korea to hungary. the largest land empire in world history all started from horsemen on these grasslands. \n
@@ -197,6 +212,7 @@ export const places: PlacesType[] = [
     nativeName: "república do brasil",
     script: "latin",
     flag: "🇧🇷",
+    kind: "misc",
     description:
       `lençóis maranhenses: this place shouldn't exist. desert dunes exist here for some reason, in one of the wettest regions on earth, right next to the world's largest rainforest. \n
       ocean meets desert meets jungle.
@@ -209,6 +225,7 @@ export const places: PlacesType[] = [
     nativeName: "ประเทศไทย",
     script: "thai",
     flag: "🇹🇭",
+    kind: "streetview",
     description:
       `historic old city of chiang mai, northern thailand. the old city is still surrounded by a moat and remnants of ancient walls. \n
       chiang mai has become a digital nomad hub in recent years. cheap rent, good wifi, temples everywhere. strange mix of ancient and modern. \n
@@ -223,6 +240,7 @@ export const places: PlacesType[] = [
     nativeName: "jamhuri ya tanzania",
     script: "latin",
     flag: "🇹🇿",
+    kind: "photosphere",
     description:
       `zanzibar is a historic island off the coast of tanzania. layers of arab, persian, indian, and african history are fused into one culture. \n
       the doors of stone town are globally famous: intricately carved, each one unique, some centuries old. people literally come here just to photograph doors.
@@ -235,6 +253,7 @@ export const places: PlacesType[] = [
     nativeName: "norge",
     script: "latin",
     flag: "🇳🇴",
+    kind: "streetview",
     description:
       `nordland; a lonely house by the shore in the lofoten archipelago, above the arctic circle. \n
       imagine living here. so detached from the big cities. imagine how much history this shack holds.

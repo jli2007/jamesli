@@ -1,5 +1,4 @@
-import { places } from "../places/places.ts";
-import InteractivePlace from "../places/PlaceRender.tsx";
+import PlacesTabs from "../places/PlacesTabs.tsx";
 
 <div className="flex flex-col">
   <h4 className="my-0!">
@@ -21,8 +20,6 @@ import InteractivePlace from "../places/PlaceRender.tsx";
   <br/>
 
   <div>
-    {places.map((place, index) => (
-      <InteractivePlace key={place.iframeSrc} place={place} isLast={index === places.length - 1} />
-    ))}
+    <PlacesTabs />
   </div>
 </div>

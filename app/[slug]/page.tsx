@@ -14,6 +14,8 @@ import Phuture from "./mdx/phuture.mdx";
 import Trivialguessr from "./mdx/trivialguessr.mdx";
 // notes
 import Creative from "./mdx/creative.mdx";
+import Linear from "./mdx/linear.mdx";
+import Vercel from "./mdx/vercel.mdx";
 import Aifs from "./mdx/aifs.mdx";
 import Footy from "./mdx/footy.mdx";
 import Freedom from "./mdx/freedom.mdx";
@@ -25,6 +27,8 @@ import UWReflection from "./mdx/uw-reflection.mdx";
 
 const MDX_MAP: Record<string, React.ComponentType> = {
   creative: Creative,
+  linear: Linear,
+  vercel: Vercel,
   aifs: Aifs,
   footy: Footy,
   freedom: Freedom,

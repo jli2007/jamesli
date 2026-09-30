@@ -1,0 +1,91 @@
+<section className="bg-black p-1 rounded-2xl shadow-lg max-w-7xl mx-auto space-y-6">
+  <header className="space-y-2">
+    <h4 className='text-lightBeige'>
+      tldr; mcp says a failed tool call is a result with a flag on it, so it can carry real content and still be a failure. the ai sdk says a failure is a thrown exception, so it gets flattened to a string. our tool layer at aleph exists mostly to absorb that subtlety, and i think the sdk should absorb it instead.
+    </h4>
+  </header>
+
+  <article className="prose prose-invert prose-sm max-w-none text-lighterBeige font-inter font-light">
+    <h5 className="mt-10">
+      note: written from working on this at aleph plus reading the sdk from the outside.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">what i worked on</span>
+
+      at aleph the same 22 tools run under two agent loops: our mcp server, and our own in-app agent on the ai sdk. we had one tool definition that was handed to both.
+
+      i owned the tools and contributed to the shared handler they run through. that means the schemas, descriptions, validation, and the errors a tool hands back when the agent needs correction. writing those for two consumers at once is how i noticed the two sides don't agree on what a failure is.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">what a failure looks like on each side</span>
+
+      over mcp, a failure is a result with a flag on it. same content array as a success, isError set to true. it can carry the list of values that would have worked, and it still counts as a failure.
+
+      in the ai sdk, a failure is a thrown exception. the call gets counted as failed, correctly. but the model only ever reads text, whatever was thrown gets turned into a string. a success can hand the model shaped content but a failure can't.
+
+      so mcp treats a failure as a kind of result (carries structure), but the ai sdk treats it as a kind of exception (stringified).
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">which leaves two choices, and i wasn't a big fan of either</span>
+
+      <ul>
+        <li><span className="text-lightBeige/95 font-normal">throw.</span> the call is counted as a failure, which is correct, and the model gets getErrorMessage of whatever you threw. throw an Error and it resolves to err.toString(), a bare string, so every bit of recovery guidance has to be flattened into that sentence. if we throw a plain object instead, the model gets the whole thing as json. this is because the sdk only flattens real Errors. this works, but typed errors would be sacrificed.</li>
+        <li><span className="text-lightBeige/95 font-normal">return the detail.</span> the model gets something structured, but the call is recorded as a success, which leads to false assumptions.</li>
+      </ul>
+
+      we throw. the reason is that if a failed call is recorded as a success, nothing tells you the tool is broken. this leads to long retry loops and agent confusion.
+
+      the object route wasn't open to us either. our errors are typed classes, and the handler decides what's safe to show the model by checking the class. a plain object isn't one of them, so it gets treated as an unexpected error and swapped for a generic message before the model ever sees it. our own layer would have eaten the structure. we could have rebuilt it to let objects through, but that's a workaround, and everyone hitting this would end up writing their own version of it.
+
+      so we're left with a sentence. the guidance lives in strings like "maximum 20 table ids allowed, you provided 34", which is fine when a sentence is the right answer. it often isn't.
+
+      a success can return whatever the tool produced: text, json, an image. a failure can only return a string. a tool that renders a chart and dies partway can describe what went wrong, but it can't hand the model the frame it got to. over mcp it could send both at once, because a failure there is a content array with isError set, so the message and the image go back together and the call is still marked as failed. that one isn't a formatting preference. there's no version of a string that carries an image.
+
+      i wondered whether this was just how we'd set things up, so i looked at how the sdk consumes mcp tools itself:
+
+      <div className='text-[0.65rem] md:text-[0.75rem] lg:text-xs not-prose'>
+        <pre className='line-numbers'>
+          <code className='language-ts'>{`const result = await self.callTool({ name, arguments: args, options })
+
+if (result.isError) {
+  return result   // returned, not thrown
+}
+`}</code>
+        </pre>
+      </div>
+
+      returning instead of throwing means the ai sdk treats it as ordinary output. everything the mcp server sent threads through untouched, and as far as i can tell from reading it, nothing records that the tool failed.
+
+      the alternative was worse. throwing sends the result through getErrorMessage, which flattens it, so returning is the only way to keep the payload intact.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">so why not match mcp shape?</span>
+
+      mcp doesn't make you choose. a failure is a result with a label on it, and it carries as much as a success does. if the ai sdk's tool layer could express that, the trade goes away, the bridge stops losing something in each direction, and the layer we wrote to absorb it isn't needed.
+
+      i'm sure there's a reason behind why it was designed this way. i've only seen this from the outside and from one codebase. would've been a nice thing to have out of the box at aleph.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">assumptions i'm working from</span>
+
+      <ul>
+        <li>the shape of a failure matters, because it's what the model reads to decide whether to retry or do something else</li>
+        <li>error-json already exists in ToolResultOutput, so the message layer can carry a structured failure. what's missing is a way for the tool author to produce one</li>
+      </ul>
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">what i'm still unsure about</span>
+
+      <ul>
+        <li>whether a failure can carry content without giving up the throw, since throwing is what makes tools pleasant to write in the first place.</li>
+        <li>whether other teams face this decision, or whether it's the result of how we set ours up at aleph.</li>
+      </ul>
+    </h5>
+  </article>
+</section>
