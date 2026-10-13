@@ -89,13 +89,6 @@ export default function RenderPlace({ place, isLast = false }: { place: PlacesTy
               img.replaceWith(fallback);
             }}
           />
-          <span
-            dir={place.script === "arabic" ? "rtl" : "ltr"}
-            className="md:text-lg text-xs leading-none font-thin"
-            style={{ fontFamily: scriptFontFamily[place.script] ?? "var(--font-playfair)" }}
-          >
-            {place.nativeName}
-          </span>
         </div>
       </div>
 

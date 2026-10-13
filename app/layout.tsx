@@ -24,7 +24,10 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jame.li"),
-  title: "james li",
+  title: {
+    default: "james li",
+    template: "%s · james li",
+  },
   description:
     "james li studies computer science at the university of waterloo, specializing in backend, infra, and applied ai.",
   keywords: [

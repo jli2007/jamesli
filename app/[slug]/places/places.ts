@@ -2,7 +2,6 @@ export type CountryScript = "latin" | "jp" | "sc" | "arabic" | "thai" | "cyrilli
 
 export interface PlacesType {
   country: string;
-  nativeName: string;
   script: CountryScript;
   flag: string;
   kind: 'streetview' | 'photosphere' | 'misc';
@@ -13,7 +12,6 @@ export interface PlacesType {
 export const places: PlacesType[] = [
   {
     country: "bolivia",
-    nativeName: "república de bolivia",
     script: "latin",
     flag: "🇧🇴",
     kind: "photosphere",
@@ -28,7 +26,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "japan",
-    nativeName: "日本",
     script: "jp",
     flag: "🇯🇵",
     kind: "streetview",
@@ -43,7 +40,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "portugal",
-    nativeName: "república portuguesa",
     script: "latin",
     flag: "🇵🇹",
     kind: "streetview",
@@ -57,7 +53,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "mongolia",
-    nativeName: "монгол улс",
     script: "cyrillic",
     flag: "🇲🇳",
     kind: "streetview",
@@ -70,7 +65,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "chile",
-    nativeName: "república de chile",
     script: "latin",
     flag: "🇨🇱",
     kind: "misc",
@@ -83,7 +77,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "turkey",
-    nativeName: "türkiye",
     script: "latin",
     flag: "🇹🇷",
     kind: "streetview",
@@ -97,7 +90,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "indonesia",
-    nativeName: "republik indonesia",
     script: "latin",
     flag: "🇮🇩",
     kind: "streetview",
@@ -111,7 +103,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "canada",
-    nativeName: "canada",
     script: "latin",
     flag: "🇨🇦",
     kind: "streetview",
@@ -124,7 +115,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "japan",
-    nativeName: "日本",
     script: "jp",
     flag: "🇯🇵",
     kind: "misc",
@@ -137,7 +127,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "argentina",
-    nativeName: "república argentina",
     script: "latin",
     flag: "🇦🇷",
     kind: "streetview",
@@ -151,7 +140,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "egypt",
-    nativeName: "مصر",
     script: "arabic",
     flag: "🇪🇬",
     kind: "photosphere",
@@ -165,7 +153,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "china",
-    nativeName: "中国",
     script: "sc",
     flag: "🇨🇳",
     kind: "photosphere",
@@ -180,7 +167,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "northern ireland",
-    nativeName: "tuaisceart éireann",
     script: "latin",
     flag: "🇯🇪",
     kind: "streetview",
@@ -193,7 +179,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "china",
-    nativeName: "中国",
     script: "sc",
     flag: "🇨🇳",
     kind: "photosphere",
@@ -209,7 +194,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "brazil",
-    nativeName: "república do brasil",
     script: "latin",
     flag: "🇧🇷",
     kind: "misc",
@@ -222,7 +206,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "thailand",
-    nativeName: "ประเทศไทย",
     script: "thai",
     flag: "🇹🇭",
     kind: "streetview",
@@ -237,7 +220,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "tanzania",
-    nativeName: "jamhuri ya tanzania",
     script: "latin",
     flag: "🇹🇿",
     kind: "photosphere",
@@ -250,7 +232,6 @@ export const places: PlacesType[] = [
   },
   {
     country: "norway",
-    nativeName: "norge",
     script: "latin",
     flag: "🇳🇴",
     kind: "streetview",

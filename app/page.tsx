@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import Home from "./home";
 import { Track } from "./types/types";
 
-export const metadata = {
+export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
