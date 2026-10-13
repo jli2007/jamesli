@@ -1,0 +1,444 @@
+import Image from "next/image"
+
+<section className="bg-black p-1 rounded-2xl shadow-lg max-w-7xl mx-auto space-y-6">
+  <header className="space-y-2">
+    <h4>you found a hidden page</h4>
+    <h4>
+      improving tool selection reliability for ai agents in a financial planning platform
+    </h4>
+    <h4 className="text-darkBeige1">
+      july 12 2026
+    </h4>
+  </header>
+
+  <article className="prose prose-invert prose-sm max-w-none text-lighterBeige font-inter font-light">
+    <h5 className="text-xl font-playfair text-lightBeige/95">
+      executive summary
+    </h5>
+
+    <h5>
+      this report addresses a problem in the design of ai agent systems at an ai-native financial planning and analysis platform.
+      as agents gain access to more tools, functions, apis, and mcp server endpoints, the underlying language models become less reliable at picking the right tool for a given query.
+      this is a documented pattern.
+      in recent research on scaling agentic systems, and it has direct consequences for a platform whose value proposition rests on producing correct financial outputs.
+
+      the report reviews four approaches to the problem: keeping the status quo, a tool retrieval layer that surfaces only the most relevant tools per query, introducing a standardization layer that exposes all tools through a uniform interface, and adopting an active tool discovery mechanism in which the agent requests tools at runtime.
+      each approach is evaluated on how much it improves selection reliability and what it costs to build and run.
+
+      tool retrieval offers the most direct reliability gains.
+      with reported improvements of nearly ten percentage points on relevant benchmarks and a 13.1% reduction in token consumption (chen & zhao, 2026).
+      a standardization layer, while not a selection mechanism on its own, reduces per-tool variability and complements retrieval.
+      active discovery introduces meaningful complexity for comparatively limited near-term benefit.
+
+      the recommendation is that the platform should adopt a hybrid of tool retrieval and standardization.
+      retrieval should be the primary mechanism for narrowing the tool catalog at query time, and a standardized interface pattern should govern how new mcp tools are added.
+      active discovery can wait.
+    </h5>
+
+    <h5 className="text-xl font-playfair text-lightBeige/95 mt-10">
+      1\. introduction
+    </h5>
+
+    <h5>
+      aleph is an ai-native financial planning and analysis platform that helps finance teams automate budgeting, forecasting, and reporting by syncing spreadsheet models with data from their existing systems.
+      the company's positioning is built on ai that finance teams can trust.
+      aleph's ai team is responsible for the agentic capabilities at the product core.
+      for example, the <a href="https://www.getaleph.com/platform/ai/agent" target="_blank" className="a">aleph agent</a>, which lets users ask questions, get answers grounded in their data, and take actions on their financial models.
+
+      this report addresses the reliability of tool selection by ai agents as the number of available tools grows.
+      agents work by being given a list of tools they can call, each described with a name, purpose, and input schema.
+      when the toolset is small, agents pick the right tool reliably.
+      as it grows, agents begin to pick the wrong tool among similar ones or call the right tool with malformed arguments.
+      tool definitions also start consuming meaningful portions of their context window.
+      the pattern is not specific to any one platform.
+      lumer et al. (2026) identify tool selection as a fundamental challenge in production llm systems, noting that models struggle when given a large number of tools and that major model providers cap tool access per session precisely because of this degradation.
+      <span className="text-lightBeige/95 font-normal">for a financial planning platform, the consequences are direct: a wrong tool call produces a wrong number, which undermines the trust such a product is built on.</span>
+      every new tool added to a catalog also risks regressing existing agent behaviour.
+
+      the objective of this report is to determine how an ai team should design and organize their mcp tools so agent behaviour stays reliable as the toolkit scales.
+      as well as recommending a concrete direction the team can pursue.
+    </h5>
+
+    <h5 className="text-xl font-playfair text-lightBeige/95 mt-10">
+      2\. background information
+    </h5>
+
+    <h5>
+      the problem of tool selection in llm-based agent systems sits at the intersection of three active research areas: empirical studies of mcp adoption, retrieval-based approaches to large tool catalogs, and runtime reliability frameworks for multi-agent systems.
+      each area contributes to a different piece of the final puzzle.
+    </h5>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      the tool selection problem in practice
+    </h5>
+
+    <h5>
+      oyelayo et al. (2026) provide one of the first researched studies of issues reported by developers in the official mcp reference servers.
+      analyzing 136 issues, they find that tool invocation, visibility, and behavior issues account for 13.24% of reported challenges, and documentation and tool description gaps account for an additional 11.76% (oyelayo et al., 2026).
+      one example from their dataset shows ai assistants confusing a <span className="text-lightBeige/95 font-normal">search_files</span> tool with a <span className="text-lightBeige/95 font-normal">search_file_contents</span> tool because the descriptions overlapped (oyelayo et al., 2026).
+      the implication is that tool naming and description are not stylistic concerns but functional ones that directly affect whether the agent picks the right one.
+
+      this pattern holds at scale.
+      lumer et al. (2026) survey tool selection across production llm deployments and find that models struggle as the number of available tools grows, to the point where major providers including openai, anthropic, and google cap tool access to between 128 and 512 tools per session (lumer et al., 2026).
+      for any platform expanding its mcp tool surface, this ceiling is not a distant concern.
+
+      katharki and galhotra (2026) argue that reliability in multi-agent systems degrades sharply as task complexity, tool diversity, and the distribution of user goals shift over time.
+      they identify two failure modes.
+      these failures are particularly relevant to the fp&a setting: <span className="text-lightBeige/95 font-normal">goal drift</span>, where the system's capability drifts away from the evolving distribution of user requests without raising an alarm, and <span className="text-lightBeige/95 font-normal">architectural rigidity</span>, where the fixed pipeline cannot restructure itself in response (katharki & galhotra, 2026).
+      both failure modes are made worse by an expanding tool catalog.
+
+      the limits of static, monolithic agent designs are illustrated visually in figure 1, taken from tan et al. (2025).
+      the figure contrasts a typical llm-based agent, which performs planning and tool selection through emergent capability alone, with a workflow-based alternative that introduces explicit structure.
+      the llm based approach is flagged with three limitations: capability constraints, planning efficiency, and task complexity limitations.
+      these limitations align closely to the failure modes that emerge as an agent surface grows.
+    </h5>
+
+    <div className="not-prose my-8">
+      <div className="bg-lightBeige rounded-lg p-3">
+        <Image
+          src="/notes/tools/llm-vs-workflow.png"
+          alt="comparison between llm-based agent and workflow-based agent"
+          width={1394}
+          height={686}
+          className="w-full h-auto object-contain"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+          quality={85}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <span className="block mt-2 text-xs text-darkBeige1 font-inter leading-relaxed">
+        figure 1. comparison between llm-based agent and workflow-based agent. the llm based agent (top) plans and selects tools through emergent capability alone, while the workflow-based agent (bottom) retrieves predefined workflows, trading flexibility for structure. adapted from tan et al. (2025).
+      </span>
+    </div>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      retrieval-based approaches
+    </h5>
+
+    <h5>
+      a direct line of work proposes that tool selection should be treated as a retrieval problem rather than a reasoning problem.
+      this applies retrieval augmented generation (rag) to tool definitions rather than documents.
+      chen and zhao (2026) introduce a two-stage framework in which a specialized retrieval model first narrows the candidate tools, and the language model only operates over this reduced set.
+      their retriever, trrcb, combines a bert encoder with a residual cnn module and reports a hit rate@2 of 96.88% on a customer service benchmark, a 12.5 percentage point improvement over prior baselines (chen & zhao, 2026).
+      when the retriever feeds into a downstream llm, average token consumption drops by 13.1% while task success rates are preserved (chen & zhao, 2026).
+
+      a complementary approach by tan et al. (2025) treats tool use through workflow construction and retrieval rather than tool retrieval alone.
+      their meta-agent-workflow framework retrieves workflows from a library based on user query embeddings and updates them dynamically when execution fails (tan et al., 2025).
+      the unit of retrieval is a workflow rather than a single tool.
+      however, the underlying argument is the same: specialized retriever beats leaving selection entirely to the model.
+
+      li et al. (2026) extend this line of work with deepagent, a framework that retrieves tools dynamically during the reasoning process rather than in a single upfront step.
+      tested across toolsets ranging from tens to over 10,000 distinct tools, deepagent consistently outperforms workflow-based baselines in open-set scenarios where the correct tool is not known in advance (li et al., 2026).
+      this is relevant because the benchmarks used by chen and zhao (2026) are drawn from customer service and airline domains.
+      this differs from financial planning.
+      deepagent's results across more varied domains provide additional support for the retrieval argument beyond any single domain.
+    </h5>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      standardization and dynamic integration
+    </h5>
+
+    <h5>
+      a separate line of work addresses tool integration at the architectural level rather than the selection level.
+      gao et al. (2025) propose mcpo, a proxy architecture that wraps mcp tools as openapi compliant rest apis.
+      the goal is to give agents a single uniform interface to call, regardless of how the underlying tool is implemented (gao et al., 2025).
+      in their prototype, the same interface was used to invoke a range of tools spanning time queries, file system access, and web automation.
+
+      saxena et al. (2026) extend this direction further.
+      they argue that the broader problem with current tool integration practices is what they call the m×n integration problem: m agents and n tools require m×n tightly coupled integrations, which does not scale (saxena et al., 2026).
+      they proposed their dynamic capability orchestration framework.
+      the framework treats tools as discoverable microservices registered in a runtime capability registry, which agents query dynamically rather than receiving as a fixed prompt list.
+      the approach trades implementation complexity for runtime flexibility.
+
+      together, these four directions, status quo, retrieval, standardization, and dynamic discovery, define the solutions discussed in the next section.
+    </h5>
+
+    <h5 className="text-xl font-playfair text-lightBeige/95 mt-10">
+      3\. results and analysis
+    </h5>
+
+    <h5>
+      this section evaluates the four approaches identified in the literature review against the fp&a context.
+      each approach is assessed on four criteria: tool selection reliability, implementation complexity, runtime cost, and overall fit for the product context.
+      table 1 summarizes the comparison, and the subsections that follow walk through each row in detail.
+    </h5>
+
+    <div className="not-prose my-6 overflow-x-auto">
+      <table className="w-full text-left text-[0.95rem] font-inter font-extralight border-collapse">
+        <thead>
+          <tr className="text-lightBeige/95 border-b border-white/20">
+            <th className="py-2 pr-4 font-normal">approach</th>
+            <th className="py-2 pr-4 font-normal">tool selection reliability</th>
+            <th className="py-2 pr-4 font-normal">implementation complexity</th>
+            <th className="py-2 pr-4 font-normal">runtime cost</th>
+            <th className="py-2 font-normal">fit</th>
+          </tr>
+        </thead>
+        <tbody className="text-lighterBeige">
+          <tr className="border-b border-white/10">
+            <td className="py-2 pr-4">status quo (full catalog in prompt)</td>
+            <td className="py-2 pr-4">low</td>
+            <td className="py-2 pr-4">trivial</td>
+            <td className="py-2 pr-4">high</td>
+            <td className="py-2">poor</td>
+          </tr>
+          <tr className="border-b border-white/10">
+            <td className="py-2 pr-4">tool retrieval (rag)</td>
+            <td className="py-2 pr-4">high</td>
+            <td className="py-2 pr-4">moderate</td>
+            <td className="py-2 pr-4">low</td>
+            <td className="py-2 text-lightBeige/95">strong</td>
+          </tr>
+          <tr className="border-b border-white/10">
+            <td className="py-2 pr-4">standardization layer</td>
+            <td className="py-2 pr-4">moderate</td>
+            <td className="py-2 pr-4">high</td>
+            <td className="py-2 pr-4">low</td>
+            <td className="py-2 text-lightBeige/95">strong</td>
+          </tr>
+          <tr>
+            <td className="py-2 pr-4">active tool discovery</td>
+            <td className="py-2 pr-4">moderate-high</td>
+            <td className="py-2 pr-4">high</td>
+            <td className="py-2 pr-4">moderate</td>
+            <td className="py-2">moderate</td>
+          </tr>
+        </tbody>
+      </table>
+      <span className="block mt-2 text-xs text-darkBeige1 font-inter leading-relaxed">
+        table 1. comparison of tool selection approaches across four criteria. compiled by the author based on sources cited in this section.
+      </span>
+    </div>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      approach 1: status quo (full catalog in prompt)
+    </h5>
+
+    <h5>
+      the current default in most production mcp deployments is to expose all available tools to the agent at every step.
+      each tool definition is included in the agent's prompt.
+      this is super standard, and the language model then selects from the full list based on its training (lumer et al., 2026).
+      this approach is trivial to implement, since it requires no additional infrastructure beyond the mcp server itself.
+
+      the reliability of this approach degrades as the tool catalog grows.
+      oyelayo et al. (2026) document that tool invocation and description issues are a leading category of developer reported mcp problems in production.
+      there are concrete examples of agents confusing tools with overlapping descriptions.
+      lumer et al. (2026) note that the degradation is severe enough that major model providers cap the number of tools exposed per session, and every tool definition burns context window space whether or not it is used (chen & zhao, 2026).
+
+      for an fp&a platform, the fit is poor.
+      the surface area of such a product tends to include a growing number of overlapping tools, such as multiple ways to query a model or write to a cell.
+      this is intentional as the product needs these intersecting capabilities.
+      but because of this, the model has limited ability to disambiguate among them (lumer et al., 2026).
+      <span className="text-lightBeige/95 font-normal">the status quo is a convenient starting point, not a viable long term option.</span>
+    </h5>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      approach 2: tool retrieval (rag over tools)
+    </h5>
+
+    <h5>
+      the tool retrieval approach treats tool selection as a search problem.
+      a retriever model embeds both the user query and each available tool description into a shared vector space, and at query time the agent receives only the top-k most relevant tools.
+      the language model then reasons over this reduced set.
+
+      chen and zhao (2026) provide the most direct empirical support for this approach.
+      their two-stage framework achieves a hit rate@2 of 96.88% on the airline-tr benchmark, compared to 84.38% for the previous state-of-the-art baseline (chen & zhao, 2026).
+      the mrr@2 metric, which measures how highly the correct tool is ranked, shows a similar gain from 79.69% to 90.62% (chen & zhao, 2026).
+      average token consumption per task drops by 13.1% relative to a direct tool calling baseline.
+      this is due to the prompt, which no longer needs to enumerate the full tool catalog.
+      task success rates are preserved.
+
+      the reliability gain is the most important result in this context.
+      a higher hit rate@2 means the correct tool is more likely to appear in the small set presented to the llm, which in turn means fewer wrong tool calls and fewer wrong financial outputs.
+      with the caveat that these numbers come from the airline and customer service benchmarks rather than financial planning workloads.
+
+      tan et al. (2025) reinforce this direction at a different level of granularity.
+      their meta-agent-workflow framework retrieves entire workflows rather than individual tools.
+      it reports superior performance across four real-world task categories when compared to a baseline llm-based agent (tan et al., 2025).
+      the shared principle across both papers is the same, specialized retrieval outperforms reliance on the language model's emergent selection ability.
+
+      implementation complexity for this approach is moderate.
+      the team would need to train or finetune an embedding model on their tool descriptions, maintain a vector index of tools, and integrate the retrieval call into the existing agent pipeline.
+      none of these steps are trivial.
+      but none require fundamental changes to the underlying mcp architecture.
+      runtime cost is low, since the retrieval call is cheap relative to the llm call it replaces or supplements.
+
+      the overall fit is strong.
+      the approach directly addresses the central failure mode.
+      it preserves auditability since the retrieved set can be logged and inspected and integrates with an existing mcp stack without requiring a complete rebuild.
+    </h5>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      approach 3: standardization layer
+    </h5>
+
+    <h5>
+      the third approach takes a different angle.
+      rather than improving selection, it reduces the variability that makes selection hard in the first place.
+      gao et al. (2025) propose mcpo, a proxy layer that wraps mcp tools as openapi compliant rest apis.
+      from the agent's perspective, every tool is called the same way, regardless of how the underlying tool is implemented or what protocol it speaks natively (gao et al., 2025).
+
+      this is not a tool selection mechanism on its own.
+      the agent still has to pick which tool to call.
+      however, by standardizing the interface, the approach removes a class of failure modes related to malformed arguments and schema violations.
+      in the oyelayo et al. (2026) dataset, data validation and type issues accounted for 13.97% of reported mcp problems, second only to file system issues.
+      a standardized interface reduces this surface area.
+
+      implementation complexity is high.
+      building a proxy layer that correctly handles every existing mcp tool is a significant engineering challenge and investment.
+      the team would also need to maintain backward compatibility with tools already in production.
+      runtime cost, once the layer is in place, is low.
+      the overhead is a single additional network hop per tool call.
+      <span className="text-lightBeige/95 font-normal">the fit is strong, but in a supporting rather than primary role.</span>
+      a standardization layer reduces per-tool variability, which makes other improvements such as retrieval more reliable.
+      it does not on its own solve the problem of an agent choosing the wrong tool among several similar ones in its toolkit.
+    </h5>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      approach 4: active tool discovery
+    </h5>
+
+    <h5>
+      active discovery is the only approach of the four that could eventually make catalog size irrelevant, and the only one that should not be built yet.
+      rather than exposing tools to the agent, whether all of them or a retrieved subset, the agent requests tools at runtime from a registry.
+      saxena et al. (2026) propose this architecture as their dynamic capability orchestration framework.
+      tools are registered in a dynamic capability registry along with important metadata.
+      the agent queries the registry, receives candidate tools, and invokes them through a secure execution sandbox (saxena et al., 2026).
+
+      the reliability claims are the hardest of the four to assess: saxena et al. (2026) frame their work as an architectural proposal rather than an empirical benchmark, and present a case study rather than measured performance numbers.
+
+      katharki and galhotra (2026) provide a complementary angle.
+      their runtime reliability framework monitors agent execution against goal level predicates, detects regressions when task distributions shift, and automatically proposes policy updates (katharki & galhotra, 2026).
+      this is not specifically a tool selection mechanism.
+      however, it is the kind of runtime adaptation layer that an active discovery system would need to be trustworthy in production.
+
+      implementation complexity is high.
+      the approach requires building a distributed registry, a secure sandbox, and an orchestration engine.
+      runtime cost is moderate, since network discovery and binding introduce latency that does not exist in the status quo.
+
+      the fit is moderate at best.
+      the approach is technically attractive, but it is a substantial investment that does not touch the most immediate failure mode.
+      <span className="text-lightBeige/95 font-normal">the cheaper retrieval gains should come first.</span>
+    </h5>
+
+    <h5 className="text-lg font-playfair text-lightBeige/95 mt-8">
+      synthesis
+    </h5>
+
+    <h5>
+      across the four approaches, tool retrieval offers the strongest combination of reliability improvement, implementation feasibility, and direct relevance to the central problem.
+      standardization is a strong complementary investment that reduces a different class of failures, while active discovery is a long term direction that is worth tracking but not worth committing to in the near term.
+      the status quo is a convenient option rather than a viable one going forward.
+    </h5>
+
+    <h5 className="text-xl font-playfair text-lightBeige/95 mt-10">
+      4\. discussion
+    </h5>
+
+    <h5>
+      the analysis points toward a hybrid recommendation rather than a single approach.
+      tool retrieval addresses the most immediate failure mode, the language model selecting the wrong tool from a large catalog, with the strongest empirical support.
+      standardization addresses a different but related failure mode.
+      including malformed arguments and schema mismatches, and makes retrieval-based gains more durable as the catalog grows.
+      the two approaches are not mutually exclusive, and the literature suggests they integrate naturally.
+
+      figure 2 illustrates how a hybrid architecture would route a user query through both layers.
+      a query first passes through a retrieval layer, which surfaces the top-k most relevant tools from the full catalog.
+      those tools are then exposed to the llm through a uniform standardization layer, which guarantees that the agent calls them through a consistent interface regardless of how the underlying mcp server is implemented.
+      the agent then invokes the selected tool, and the standardization layer routes the call to the appropriate mcp server.
+    </h5>
+
+    <div className="not-prose my-8">
+      <Image
+        src="/notes/tools/architecture.png"
+        alt="proposed hybrid architecture for tool selection"
+        width={1664}
+        height={1332}
+        className="w-full h-auto object-contain opacity-90"
+        style={{ filter: "invert(1)" }}
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1600px"
+        quality={85}
+        loading="lazy"
+        decoding="async"
+      />
+      <span className="block mt-2 text-xs text-darkBeige1 font-inter leading-relaxed">
+        figure 2. proposed hybrid architecture for tool selection. the retrieval layer narrows the candidate set, the standardization layer normalizes the interface. created by the author based on the analysis in this report.
+      </span>
+    </div>
+
+    <h5>
+      tool retrieval introduces a real dependency risk.
+      the system depends on a separate retriever model that has to be trained, maintained, and evaluated.
+      if that retriever is poorly tuned for the domain, the system can perform worse than the status quo, because the correct tool may not appear in the retrieved set at all.
+      chen and zhao (2026) acknowledge this directly, noting that their evaluation was conducted primarily on one domain and that generalization to other domains needs further validation.
+      an fp&a platform's tool descriptions, which cover financial planning operations like variance analysis and model writes, are meaningfully different from the airline and retail tasks in that benchmark.
+      a retriever trained on generic embeddings may not transfer without domain-specific tuning.
+      this risk needs a defined fallback, if the correct tool does not appear in the retrieved set, the agent should expand the retrieved set or fall back to the full catalog for that query.
+      the miss should be logged either way because the tuning can use the evaluation data.
+
+      standardization carries a different kind of cost.
+      committing to a uniform interface contract means the team has to migrate existing tools to conform, which is engineering work that pays off over a longer horizon (gao et al., 2025).
+      there is little visible benefit in the short term, and the team would need to weigh this against more immediate priorities.
+
+      one broader point the analysis surfaces is that tool selection reliability and runtime monitoring are related problems.
+      katharki and galhotra (2026) argue that production agents need runtime monitoring to detect degradation as task distributions shift, separate from whatever selection mechanism is in place.
+      whatever architecture a team adopts, it should be instrumented to surface tool selection errors before customers do.
+      <span className="text-lightBeige/95 font-normal">without that, a mistuned retriever looks identical to a healthy one until a customer catches a wrong number.</span>
+    </h5>
+
+    <h5 className="text-xl font-playfair text-lightBeige/95 mt-10">
+      5\. conclusions and recommendations
+    </h5>
+
+    <h5>
+      this report set out to investigate how an ai team should design and organize mcp tools to keep agent behavior reliable as the toolset scales.
+      based on the analysis of four approaches drawn from recent academic literature, tool retrieval offers the most direct and well-supported path to improved reliability, and a standardization layer is a strong complementary investment.
+
+      this analysis surfaced four recommendations:
+
+      <span className="text-lightBeige/95 font-normal">first, prototype a tool retrieval layer for the existing mcp stack.</span>
+      the prototype should use a domain-tuned embedding model trained on the platform's tool descriptions, and should be evaluated against the current full catalog baseline on a representative set of customer queries.
+      chen and zhao (2026) provide a strong reference architecture for this work, with reported gains of nearly ten percentage points on hit rate@2 and a 13.1% reduction in token consumption (chen & zhao, 2026).
+      the prototype should be judged on measurable outcomes.
+      some examples include: the wrong-tool-call rate on that query set, task completion, and how often the correct tool appears in the retrieved set.
+      without a baseline measured on the current stack first, the team cannot tell whether retrieval helped.
+
+      <span className="text-lightBeige/95 font-normal">second, adopt a standardized interface pattern for all new mcp tools going forward.</span>
+      this does not require migrating existing tools immediately, but it does require committing to a uniform calling convention, schema format, and error-handling protocol for new additions.
+      the proxy-based approach proposed by gao et al. (2025) is one possible model, though any specific implementation may differ depending on existing infrastructure.
+
+      <span className="text-lightBeige/95 font-normal">third, active tool discovery should stay a future investigation, not a near term commitment.</span>
+      the benefits are real but the cost is high and none of the immediate failure modes need it (saxena et al., 2026).
+
+      <span className="text-lightBeige/95 font-normal">fourth, regardless of which architecture is adopted, runtime reliability monitoring should be built in from the start.</span>
+      katharki and galhotra (2026) propose one model for this, though a simpler implementation focused on logging tool selection events and flagging anomalies would be a reasonable starting point.
+
+      these recommendations are not exhaustive, and product priorities will determine the order in which they can be proposed and implemented.
+      the central point is that the literature offers concrete directions for improving tool selection reliability.
+      the team is well positioned to apply them.
+    </h5>
+
+    <h5 className="text-xl font-playfair text-lightBeige/95 mt-10">
+      6\. references
+    </h5>
+
+    <h5 className="text-sm leading-relaxed">
+      chen, z., & zhao, h. (2026). two-stage tool retrieval and invocation for customer service interactions. in <span className="italic">proceedings of the 2025 international conference on embodied intelligence and large models</span> (pp. 51–59). association for computing machinery. <a href="https://doi.org/10.1145/3788731.3788739" target="_blank" className="a">doi</a>
+
+      gao, m., li, l., ming, x., & shen, g. (2025). research on standardized encapsulation of model context protocol tools and ai agent integration. in <span className="italic">2025 international conference on aerospace information perception and intelligent processing (aipip)</span> (pp. 328–331). ieee. <a href="https://doi.org/10.1109/AIPIP66876.2025.11299220" target="_blank" className="a">doi</a>
+
+      katharki, v., & galhotra, s. (2026). goal-oriented reliability and self-improvement for multi-agent systems. in <span className="italic">proceedings of the acm conference on ai and agentic systems</span> (pp. 1367–1371). association for computing machinery. <a href="https://doi.org/10.1145/3786335.3813230" target="_blank" className="a">doi</a>
+
+      li, x., jiao, w., jin, j., dong, g., jin, j., wang, y., wang, h., zhu, y., wen, j.-r., lu, y., & dou, z. (2026). deepagent: a general reasoning agent with scalable toolsets. in <span className="italic">proceedings of the acm web conference 2026</span> (pp. 2219–2230). association for computing machinery. <a href="https://doi.org/10.1145/3774904.3792460" target="_blank" className="a">doi</a>
+
+      lumer, e., gulati, a., nizar, f., hedroits, d., mehta, a., hwangbo, h., subbiah, v. k., basavaraju, p. h., & burke, j. a. (2026). tool and agent selection for large language model agents in production: a survey. in <span className="italic">2026 ieee conference on artificial intelligence</span> (pp. 701–708). ieee. <a href="https://doi.org/10.1109/CAI68641.2026.11536377" target="_blank" className="a">doi</a>
+
+      oyelayo, o., abedu, s., khatoonabadi, s., & shihab, e. (2026). developer challenges in the adoption of model context protocol in ai agent development. in <span className="italic">proceedings of the 2026 7th international workshop on bots and agents in software engineering</span> (pp. 53–59). association for computing machinery. <a href="https://doi.org/10.1145/3786161.3788462" target="_blank" className="a">doi</a>
+
+      saxena, v., bisth, s., sharma, h., phulwani, n., & gyanani, m. (2026). extending ai agent capabilities with custom mcp servers: a novel architecture for dynamic tool integration and orchestration. in <span className="italic">proceedings of the 7th international conference on information management & machine intelligence</span> (article 36). association for computing machinery. <a href="https://doi.org/10.1145/3793449.3793498" target="_blank" className="a">doi</a>
+
+      tan, x., li, b., qiu, x., qu, c., chu, w., xu, y., & qi, y. (2025). meta-agent-workflow: streamlining tool usage in llms through workflow construction, retrieval, and refinement. in <span className="italic">companion proceedings of the acm on web conference 2025</span> (pp. 458–467). association for computing machinery. <a href="https://doi.org/10.1145/3701716.3715247" target="_blank" className="a">doi</a>
+    </h5>
+  </article>
+</section>

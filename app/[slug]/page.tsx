@@ -24,6 +24,7 @@ import Works from "./mdx/works.mdx";
 import Places from "./mdx/places.mdx";
 import Sf from "./mdx/sf.mdx";
 import UWReflection from "./mdx/uw-reflection.mdx";
+import Tools from "./mdx/tools.mdx";
 
 const MDX_MAP: Record<string, React.ComponentType> = {
   creative: Creative,
@@ -37,6 +38,7 @@ const MDX_MAP: Record<string, React.ComponentType> = {
   places: Places,
   sf: Sf,
   uwreflection: UWReflection,
+  tools: Tools,
   arcki: Arcki,
   flowboard: Flowboard,
   guideline: Guideline,

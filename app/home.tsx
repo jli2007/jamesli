@@ -142,7 +142,7 @@ export default function Home({ recent }: { recent?: Track }) {
                               mercor
                             </p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">
-                              software engineer, rl environments
+                              software engineer, agents
                             </p>
                           </div>
                         </div>

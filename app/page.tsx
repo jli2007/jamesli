@@ -1,6 +1,12 @@
 import Home from "./home";
 import { Track } from "./types/types";
 
+export const metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
+
 async function getAccessToken(): Promise<string | undefined> {
   const clientId = process.env.SPOTIFY_CLIENT_ID;
   const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
