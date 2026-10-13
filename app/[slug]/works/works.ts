@@ -13,6 +13,7 @@ export interface Entry {
 export const ENTRIES: Entry[] = [
   { title: "collapse, jared diamond", description: "the rise/fall of great societies" },
   { title: '"perceive that which cannot be seen with the eye", musashi' },
+  { title: '"knowledge isn\'t free. you have to pay attention", feynman' },
   { title: "[china's last little train](https://www.youtube.com/watch?v=dTwcnY0GJlY)" },
   { title: "terrasse du café le soir, 1888, vincent van gogh", image: "/notes/works/terrasse.png" },
   { title: "plain of jars, laos", image: "/notes/works/jars.png" },
@@ -70,7 +71,7 @@ export const TRACK_DATA: TrackMetadata[] = [
   // home
   {
     id: "6Ncr1lCYnE3JHwtVK4nLAx",
-    quotes: ["The victim, whose name currently cannot be disclosed\nIs now among over 51 young people who have\nBeen fatally stabbed in London this year alone\nLast month more than 250"],
+    quotes: [],
   },
   // chapters
   {

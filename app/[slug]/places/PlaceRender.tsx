@@ -1,14 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import type { CountryScript, PlacesType } from "./places";
-
-const scriptFontFamily: Record<CountryScript, string> = {
-  latin: "var(--font-playfair)",
-  jp: "var(--font-noto-jp)",
-  sc: "var(--font-noto-sc)",
-  arabic: "var(--font-noto-ar)",
-  thai: "var(--font-noto-th)",
-  cyrillic: "var(--font-noto-cy)",
-};
+import type { PlacesType } from "./places";
 
 function flagEmojiToTwemoji(emoji: string): string {
   return [...emoji]
