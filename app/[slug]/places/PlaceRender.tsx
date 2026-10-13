@@ -1,14 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import type { CountryScript, PlacesType } from "./places";
-
-const scriptFontFamily: Record<CountryScript, string> = {
-  latin: "var(--font-playfair)",
-  jp: "var(--font-noto-jp)",
-  sc: "var(--font-noto-sc)",
-  arabic: "var(--font-noto-ar)",
-  thai: "var(--font-noto-th)",
-  cyrillic: "var(--font-noto-cy)",
-};
+import type { PlacesType } from "./places";
 
 function flagEmojiToTwemoji(emoji: string): string {
   return [...emoji]
@@ -89,13 +80,6 @@ export default function RenderPlace({ place, isLast = false }: { place: PlacesTy
               img.replaceWith(fallback);
             }}
           />
-          <span
-            dir={place.script === "arabic" ? "rtl" : "ltr"}
-            className="md:text-lg text-xs leading-none font-thin"
-            style={{ fontFamily: scriptFontFamily[place.script] ?? "var(--font-playfair)" }}
-          >
-            {place.nativeName}
-          </span>
         </div>
       </div>
 

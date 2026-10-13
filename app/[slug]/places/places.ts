@@ -1,11 +1,7 @@
-export type CountryScript = "latin" | "jp" | "sc" | "arabic" | "thai" | "cyrillic";
-
 export interface PlacesType {
   country: string;
-  nativeName: string;
-  script: CountryScript;
   flag: string;
-  kind: 'streetview' | 'photosphere' | 'misc';
+  kind: "streetview" | "photosphere" | "misc";
   description: string;
   iframeSrc: string;
 }
@@ -13,12 +9,9 @@ export interface PlacesType {
 export const places: PlacesType[] = [
   {
     country: "bolivia",
-    nativeName: "república de bolivia",
-    script: "latin",
     flag: "🇧🇴",
     kind: "photosphere",
-    description:
-      `salar de uyuni; the most disorienting place on earth. area of 10b tons of pure salt larger than jamaica 🇯🇲 that's perfectly flat. \n
+    description: `salar de uyuni; the most disorienting place on earth. area of 10b tons of pure salt larger than jamaica 🇯🇲 that's perfectly flat. \n
       biggest salt flat in the world. can be seen from space. always found it eye-catching, mesmerizing. \n
       the planet crait from star wars was shot on the salar. \n
       the [train graveyard](https://www.theguardian.com/world/gallery/2016/jul/01/bolivia-train-graveyard-in-pictures) is super cool. in the 19th century bolivia was building a huge railway network to ship minerals to the coast. then they lost their coastal territory to chile in the war of the pacific (1879). the trains have been rusting in the desert ever since.
@@ -28,12 +21,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "japan",
-    nativeName: "日本",
-    script: "jp",
     flag: "🇯🇵",
     kind: "streetview",
-    description:
-      `aomori prefecture; a quiet fishing village on the edge of the world. the coverage makes me feel reminiscent of something. unsure of what it is. \n
+    description: `aomori prefecture; a quiet fishing village on the edge of the world. the coverage makes me feel reminiscent of something. unsure of what it is. \n
       natsukashii (懐かしい) — a bittersweet feeling triggered by something that reminds you of a place you've never actually been. \n
       [yoshie shiratori](https://medium.com/breakingasia/yoshie-shiratori-the-incredible-story-of-a-man-no-prison-could-hold-6d79a67345f5), infamous prison break artist, was born in aomori prefecture. \n
       [lake towada](https://medium.com/globetrotters/lake-towada-hidden-treasure-of-unrivaled-beauty-338e0b47e589) is super neat. on my bucket list.
@@ -43,12 +33,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "portugal",
-    nativeName: "república portuguesa",
-    script: "latin",
     flag: "🇵🇹",
     kind: "streetview",
-    description: 
-    `villages deeply nestled in the mountainside in rural portugal. zoom in, it's surreal. \n
+    description: `villages deeply nestled in the mountainside in rural portugal. zoom in, it's surreal. \n
     these are the schist villages of northern portugal, pulled straight from the ground beneath them. similar to the italian ghost towns, most of these portugese towns were abandoned as people left for cities. \n
     the kind of place that almost disappeared but survived.
     `,
@@ -57,12 +44,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "mongolia",
-    nativeName: "монгол улс",
-    script: "cyrillic",
     flag: "🇲🇳",
     kind: "streetview",
-    description:
-    `dornod, the easternmost province of mongolia. \n
+    description: `dornod, the easternmost province of mongolia. \n
     mongolia is the least densely populated country on earth (dornod is one of the emptiest corners of it). the eastern steppe is also one of the last great unbroken grasslands left on the planet. nothing to interrupt the horizon. \n
     `,
     iframeSrc:
@@ -70,12 +54,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "chile",
-    nativeName: "república de chile",
-    script: "latin",
     flag: "🇨🇱",
     kind: "misc",
-    description:
-      `a sudden shift between the chilean desert to the towering andes peaks. \n
+    description: `a sudden shift between the chilean desert to the towering andes peaks. \n
       san carlos de apoquindo, national park, sits on the edge of santiago, somehow untouched, despite being next to a capital city. \n
       `,
     iframeSrc:
@@ -83,12 +64,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "turkey",
-    nativeName: "türkiye",
-    script: "latin",
     flag: "🇹🇷",
     kind: "streetview",
-    description: 
-    `narrow road on lake close to isparta, a leading global producer of rose oil. in the actual city, [fields of damask roses](https://thursd.com/articles/isparta-flowers-heritage-perfume-industry) can be seen covering the hillsides during spring. \n
+    description: `narrow road on lake close to isparta, a leading global producer of rose oil. in the actual city, [fields of damask roses](https://thursd.com/articles/isparta-flowers-heritage-perfume-industry) can be seen covering the hillsides during spring. \n
     the city has been conquered and renamed so many times, byzantine, seljuk, ottoman, now isparta. been passed between civilizations for 3,000 years and still just quietly grows roses. \n
     there's something about the streetview here that feels so authentic, makes me want to embark on a road trip.
     `,
@@ -97,12 +75,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "indonesia",
-    nativeName: "republik indonesia",
-    script: "latin",
     flag: "🇮🇩",
     kind: "streetview",
-    description:
-      `misty villages built on the slopes of mount merbabu, "mountain of ash" in central java, indonesia. \n
+    description: `misty villages built on the slopes of mount merbabu, "mountain of ash" in central java, indonesia. \n
       crazy how mount merapi is a walkable distance away and still erupts every few years. the long history and traditions keep locals here, and the culture shows even in ~1 hr of life captured in streetview. \n
       i encourage you to move around and notice the intricate details; this place should honestly be frozen in time and preserved in some living museum. every structure is different, in architecture and coloring, can genuinely explore for hours. timeless and should be kept that way.
       `,
@@ -111,12 +86,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "canada",
-    nativeName: "canada",
-    script: "latin",
     flag: "🇨🇦",
     kind: "streetview",
-    description: 
-    `atlantic canada; quaint village in newfoundland, a world apart from industrial cities. \n
+    description: `atlantic canada; quaint village in newfoundland, a world apart from industrial cities. \n
     atlantic canada in general has such a distinctive character, life looks so slow. been around once, the environment seems to restore you in a sense. you know how when you reminisce positive memories from your childhood, and how there's a distinctive sunshine? maybe it's just me.
     `,
     iframeSrc:
@@ -124,12 +96,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "japan",
-    nativeName: "日本",
-    script: "jp",
     flag: "🇯🇵",
     kind: "misc",
-    description:
-    `hamamatsuchō station at dusk, so eerie yet peaceful. \n
+    description: `hamamatsuchō station at dusk, so eerie yet peaceful. \n
     this coverage was likely captured by a regular resident just commuting home. mundane to them, ethereal to us. so many tiny details can be noticed when zooming in.
     `,
     iframeSrc:
@@ -137,12 +106,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "argentina",
-    nativeName: "república argentina",
-    script: "latin",
     flag: "🇦🇷",
     kind: "streetview",
-    description:
-      `villages on the andes' foothills, the province of mendoza produces ~70% of argentina's wine. \n
+    description: `villages on the andes' foothills, the province of mendoza produces ~70% of argentina's wine. \n
       there's a melancholy here, people are leaving for the cities. feels like we're in its last chapter, reminds you of the forgotten villages you'd find deep in rural russia or central asia. disappearing. \n
       the andes loom in the background. a wall at the edge of the world. maybe there's hope somewhere behind those clouds.
       `,
@@ -151,12 +117,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "egypt",
-    nativeName: "مصر",
-    script: "arabic",
     flag: "🇪🇬",
     kind: "photosphere",
-    description:
-      `the nile delta has been a cradle of civilization for over 5,000 years. \n
+    description: `the nile delta has been a cradle of civilization for over 5,000 years. \n
       nearby in alexandria brought many historical figures in mathematics/physics like euclid, eratosthenes, and hypatia. [the library of alexandria](https://www.britannica.com/topic/Library-of-Alexandria) held an estimated 400,000 scrolls, an attempt to collect all human knowledge in one place before it was burned down. \n
       mo salah grew up in this region.
       `,
@@ -165,12 +128,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "china",
-    nativeName: "中国",
-    script: "sc",
     flag: "🇨🇳",
     kind: "photosphere",
-    description:
-      `longmen grottoes in henan province, over 100,000 buddha statues carved into limestone cliffs. \n
+    description: `longmen grottoes in henan province, over 100,000 buddha statues carved into limestone cliffs. \n
       construction started in 493 AD and continued for 400 years across multiple dynasties. many statues are headless now, looted during the 20th century. the heads are now scattered across western museums. \n
       the scale is incomprehensible. imagine generations of artisans spending their entire lives carving a single cliff face, devotion on a civilizational level. this kind of commitment was common in history: polynesians spent lifetimes raising the moai on easter island; elsewhere, builders gave decades to cathedrals and temples they would never see finished. \n
       in modern days, works like this are rarely possible. the sheer cost to keep that many highly skilled people (literally the best of the best) on a single project for centuries would be too much. makes you wonder: what were the incentives for workers who gave up their lives to it? 
@@ -180,12 +140,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "northern ireland",
-    nativeName: "tuaisceart éireann",
-    script: "latin",
     flag: "🇯🇪",
     kind: "streetview",
-    description:
-      `northern edge of northern ireland, overlooking the north atlantic. \n
+    description: `northern edge of northern ireland, overlooking the north atlantic. \n
       the troubles feel distant here. just wind, sheep, and endless gray sky meeting gray sea. i just love how rural coastlines villages look in the uk, especially in scotland / northern ireland overlooking the north atlantic, there could've been a kingdom here once upon a time.
       `,
     iframeSrc:
@@ -193,12 +150,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "china",
-    nativeName: "中国",
-    script: "sc",
     flag: "🇨🇳",
     kind: "photosphere",
-    description:
-      `inner mongolia; rolling grasslands beneath vast blue skies define the hulunbuir prairie. \n
+    description: `inner mongolia; rolling grasslands beneath vast blue skies define the hulunbuir prairie. \n
       genghis khan was born in this region. 800 years ago, the mongol empire stretched from korea to hungary. the largest land empire in world history all started from horsemen on these grasslands. \n
       in this sparse land, there are no trees, no buildings, just horizon in every direction. \n
       watched a [chinese film](https://www.diggitmagazine.com/column/my-people-my-country) in 2019 about seven stories depicting influential moments in chinese history (if you’re chinese, go watch it). one of the stories showed the landing of the shenzhou 11 spacecraft in inner mongolia. \n
@@ -209,12 +163,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "brazil",
-    nativeName: "república do brasil",
-    script: "latin",
     flag: "🇧🇷",
     kind: "misc",
-    description:
-      `lençóis maranhenses: this place shouldn't exist. desert dunes exist here for some reason, in one of the wettest regions on earth, right next to the world's largest rainforest. \n
+    description: `lençóis maranhenses: this place shouldn't exist. desert dunes exist here for some reason, in one of the wettest regions on earth, right next to the world's largest rainforest. \n
       ocean meets desert meets jungle.
       `,
     iframeSrc:
@@ -222,12 +173,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "thailand",
-    nativeName: "ประเทศไทย",
-    script: "thai",
     flag: "🇹🇭",
     kind: "streetview",
-    description:
-      `historic old city of chiang mai, northern thailand. the old city is still surrounded by a moat and remnants of ancient walls. \n
+    description: `historic old city of chiang mai, northern thailand. the old city is still surrounded by a moat and remnants of ancient walls. \n
       chiang mai has become a digital nomad hub in recent years. cheap rent, good wifi, temples everywhere. strange mix of ancient and modern. \n
       attention to detail; the more you move and look around, the more you absorb. \n
       the power lines are crazy, go a bit west down the street and take a look.
@@ -237,12 +185,9 @@ export const places: PlacesType[] = [
   },
   {
     country: "tanzania",
-    nativeName: "jamhuri ya tanzania",
-    script: "latin",
     flag: "🇹🇿",
     kind: "photosphere",
-    description:
-      `zanzibar is a historic island off the coast of tanzania. layers of arab, persian, indian, and african history are fused into one culture. \n
+    description: `zanzibar is a historic island off the coast of tanzania. layers of arab, persian, indian, and african history are fused into one culture. \n
       the doors of stone town are globally famous: intricately carved, each one unique, some centuries old. people literally come here just to photograph doors.
       `,
     iframeSrc:
@@ -250,15 +195,31 @@ export const places: PlacesType[] = [
   },
   {
     country: "norway",
-    nativeName: "norge",
-    script: "latin",
     flag: "🇳🇴",
     kind: "streetview",
-    description:
-      `nordland; a lonely house by the shore in the lofoten archipelago, above the arctic circle. \n
+    description: `nordland; a lonely house by the shore in the lofoten archipelago, above the arctic circle. \n
       imagine living here. so detached from the big cities. imagine how much history this shack holds.
       `,
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1745600583146!6m8!1m7!1sb2mJc18CZleiDQfUv191kQ!2m2!1d68.09929960799552!2d13.32172761220568!3f165.4204374853023!4f-3.513416305264144!5f0.7820865974627469",
+  },
+  {
+    country: "greece",
+    flag: "🇬🇷",
+    kind: "streetview",
+    description: `lonely settlement in the mountains of lemnos. rich mythology defines the history here.`,
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1791919839676!6m8!1m7!1sCnes5Crrk4_kbtK6-W260A!2m2!1d39.90247048337115!2d25.16615986702643!3f52.32!4f2.9000000000000057!5f1.2334803691294127",
+  },
+  {
+    country: "colombia",
+    flag: "🇨🇴",
+    kind: "misc",
+    description: `corners of the world like this are so intriguing to me. \n
+      shores of the north pacific, it just feels so isolated here. so authentic. \n
+      it's a life so far and away from the tech/ai we experience in the modern world now. an escape.
+      `,
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1791920690831!6m8!1m7!1sCAoSLEFGMVFpcE9ueUFHVE9jV0lFRXVxZ3ZqWE04Y1Z3LXJKWlZBNXhaNExCM1c5!2m2!1d5.624397184748579!2d-77.41948353522731!3f104.34475836724505!4f-17.456385777321046!5f0.4000000000000002",
   },
 ];

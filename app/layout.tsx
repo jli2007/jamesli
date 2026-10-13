@@ -15,8 +15,6 @@ import "prismjs/components/prism-yaml";
 import "prismjs/components/prism-bash";
 import "./globals.css";
 
-export const metadataBase = new URL("https://jame.li");
-
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -25,25 +23,27 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "james li",
+  metadataBase: new URL("https://jame.li"),
+  title: {
+    default: "james li",
+    template: "%s · james li",
+  },
   description:
-    "james li — computer science at the university of waterloo. ai engineer.",
+    "james li studies computer science at the university of waterloo, specializing in backend, infra, and applied ai.",
   keywords: [
     "james li",
-    "james li uw",
     "james li uw cs",
     "james li university of waterloo",
     "james li portfolio",
     "uw cs portfolio",
     "uwaterloo computer science",
+    "waterloo cs",
+    "james waterloo cs",
   ],
-  alternates: {
-    canonical: "https://jame.li",
-  },
   openGraph: {
     title: "james li",
     description:
-      "james li — computer science at the university of waterloo.",
+      "james li studies computer science at the university of waterloo, specializing in backend, infra, and applied ai.",
     url: "https://jame.li",
     siteName: "jame.li",
     images: [{ url: "https://jame.li/banner.png", width: 1200, height: 630 }],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "james li",
     description:
-      "james li — computer science at the university of waterloo.",
+      "james li studies computer science at the university of waterloo, specializing in backend, infra, and applied ai.",
     images: ["https://jame.li/banner.png"],
   },
   icons: {
@@ -71,9 +71,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="canonical" href="https://jame.li" />
-      </head>
       <body className="font-playfair bg-black text-darkBeige2">
         <div className="flex w-full lg:flex-row flex-col min-h-screen">
           <div className="lg:w-2/3 w-full transition-all duration-300">

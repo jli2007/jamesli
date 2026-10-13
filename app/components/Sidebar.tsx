@@ -184,7 +184,7 @@ export default function Sidebar() {
       ))}
 
       <footer className="pt-4 md:pb-0 pb-2 border-t border-white/20 lg:text-xs md:text-sm text-xs text-white/70 flex flex-row items-center justify-end">
-        last updated 09/2026
+        last updated 10/2026
       </footer>
     </div>
   );

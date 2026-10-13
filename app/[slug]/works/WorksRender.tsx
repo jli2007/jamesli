@@ -17,7 +17,7 @@ function parseLinks(text: string) {
           href={match[2]}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:opacity-70 transition"
+          className="underline underline-offset-2 hover:opacity-80 transition delay-200 ease-in-out"
         >
           {match[1]}
         </a>
