@@ -36,7 +36,7 @@ export default function PlacesTabs() {
       </div>
 
       <div>
-        {shown.map((place, index) => (
+        {shown.toReversed().map((place, index) => (
           <InteractivePlace
             key={place.iframeSrc}
             place={place}

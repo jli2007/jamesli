@@ -115,7 +115,7 @@ export default function Home({ recent }: { recent?: Track }) {
                               aleph
                             </p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">
-                              software engineer intern, mcp
+                              software engineer, mcp
                             </p>
                           </div>
                         </div>
@@ -169,7 +169,7 @@ export default function Home({ recent }: { recent?: Track }) {
                               lakes software
                             </p>
                             <p className="text-darkBeige1 lg:text-sm md:text-base text-sm">
-                              software engineer intern
+                              software engineer, tooling
                             </p>
                           </div>
                         </div>
@@ -268,7 +268,7 @@ export default function Home({ recent }: { recent?: Track }) {
                         <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            shipped and scaled the mcp tool suite at
+                            first engineering intern at
                             <Image
                               src={aleph}
                               width={20}

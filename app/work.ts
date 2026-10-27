@@ -29,7 +29,7 @@ export const showcaseWork: WorkType[] = [
     name: "flowboard",
     href: "/flowboard",
     banner: "/work/banners/flowboard.mp4",
-    desc: "cursor for video animation, inbound vc interest, 150+ stars",
+    desc: "cursor for video animation, 150+ github stars",
     glowColors:
       "drop-shadow(0 0 14px rgba(96, 165, 250, 0.15)) drop-shadow(0 0 28px rgba(59, 130, 246, 0.10))",
   },
@@ -37,7 +37,7 @@ export const showcaseWork: WorkType[] = [
     name: "phuture",
     href: "/phuture",
     banner: "/work/banners/phuture.mp4",
-    desc: "pokémon-go for wildlife 🌿",
+    desc: "pokémon-go for wildlife",
     glowColors:
       "drop-shadow(0 0 16px rgba(132, 204, 22, 0.09)) drop-shadow(0 0 24px rgba(101, 163, 13, 0.09)) drop-shadow(0 0 32px rgba(163, 230, 53, 0.09))",
   },
@@ -53,7 +53,7 @@ export const showcaseWork: WorkType[] = [
     name: "neo developer league",
     href: "/neodev",
     banner: "/work/banners/neodev.mp4",
-    desc: "raised $12k, backed by convictional (yc w19)",
+    desc: "raised $12k for non-profit in high school",
     glowColors:
       "drop-shadow(0 8px 16px rgba(146, 104, 47, 0.08)) drop-shadow(0 12px 24px rgba(146, 104, 47, 0.06)) drop-shadow(0 16px 32px rgba(146, 104, 47, 0.09))",
   },
