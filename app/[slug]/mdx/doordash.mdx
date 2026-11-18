@@ -1,0 +1,93 @@
+<section className="bg-black p-1 rounded-2xl shadow-lg max-w-7xl mx-auto space-y-6">
+  <header className="space-y-2">
+    <h4 className='text-lightBeige'>
+    ~3 min read
+
+    tldr; i went through ordering a subway sub in the app and read the open source agent skills to see how an agent would handle the same order. the skills handle required options well. interested to know what happens when the menu can't do what you asked.
+    </h4>
+  </header>
+
+  <article className="prose prose-invert prose-sm max-w-none text-lighterBeige font-inter font-light">
+    <h5 className="mt-10">
+      note: i'm on the dd-cli waitlist (can't run cli). most knowledge is from open source skills (doordash-oss/doordash-cli) and the subway flow in the app. made assumptions when unsure & left open questions at the end.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">subway flow in app</span>
+
+      no build your own. each sub is a fixed item, ingredients in the description. size is the only required choice. special requests are off: "the store has chosen not to accept special requests", so there's no way to pass a customization. the combo adds a required side (nested, chips then which chips) and a required drink. if an item sells out, it defaults to go with merchant recommendation.
+
+      <div className="my-10! not-prose grid grid-cols-2 md:grid-cols-4 gap-2">
+        <img src="/notes/doordash/size.jpeg" alt="size is the only required choice" className="w-full rounded" />
+        <img src="/notes/doordash/side.jpeg" alt="combo side, required" className="w-full rounded" />
+        <img src="/notes/doordash/drink.jpeg" alt="combo drink, required" className="w-full rounded" />
+        <img src="/notes/doordash/sold-out.jpeg" alt="if sold out, defaults to merchant recommendation" className="w-full rounded" />
+      </div>
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">what the agent has to do</span>
+
+      i say "chicken teriyaki sub, lettuce, tomato, chipotle". no item takes that list. the agent should:
+
+      <ul>
+        <li>match it to the closest sub, and tell me what's different before checkout, since nothing can be removed</li>
+        <li>ask only for what's required and missing. here that's size</li>
+        <li>bring up the combo only if i mention a side or drink, or it makes sense for the order</li>
+        <li>if there's a deal that fits the order, tell me, since saving me money is good ux. ask before changing anything, don't swap my order to chase a deal</li>
+        <li>check what i ask for against the real options. no coke at this subway, so say that and list what's there</li>
+      </ul>
+
+      a bad agent quietly orders the closest match and says "ordered your chicken teriyaki sub". every call succeeds, the order is just wrong.
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">skills coverage</span>
+
+      <span className="text-lightBeige/95 font-normal">dd-quick-order</span> handles required options. check for required groups before adding, put customizations in <span className="text-lightBeige/95 font-normal">nested_options</span> (free text isn't passed to the kitchen), never make up an option id, and get an explicit yes on the preview before submit. <span className="text-lightBeige/95 font-normal">menu</span> and <span className="text-lightBeige/95 font-normal">item-details</span> already return every option group, so checking "coke" against the drink list is possible.
+
+      the gap is when nothing on the menu matches what i asked for. a good agent shouldn't force it. it should tell me there's no exact match and suggest the closest sub. but it can only be as specific as the menu data. the sweet onion chicken teriyaki description says "teriyaki-glazed canadian farm-raised chicken strips and fresh veggies". it doesn't say which veggies. so if i asked for lettuce and tomato, the agent can't confirm they're on it, or whether there are onions. the best it can say is "this is probably close", and i can't really decide from that. this is my biggest open question, how clean the menu spec actually is, because that decides how specific the agent can be.
+
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">proposed design</span>
+
+      here's how i'd design around this so the agent can reason accurately, under these assumptions:
+
+      <ul>
+        <li><span className="text-lightBeige/95 font-normal">item-details</span> returns the description and option groups, not a structured ingredient list (again, this is my big open question, could very well be wrong lol). the app only shows the description, and the skills never mention ingredients</li>
+        <li><span className="text-lightBeige/95 font-normal">add-items</span> already returns <span className="text-lightBeige/95 font-normal">item_errors</span> (the skills mention spending limits and unavailable items)</li>
+        <li>nothing in the cli flags "this doesn't match what the user asked", so matching is on the agent</li>
+      </ul>
+
+      <span className="text-lightBeige/95 font-normal">return what's actually on the item.</span> if ingredients exist as structured data, <span className="text-lightBeige/95 font-normal">item-details</span> and preview should return them, so the agent can show what i asked for next to what i'm getting. i think a good response is: "sweet onion chicken teriyaki, 6 inch. it comes with sweet onion teriyaki sauce, not chipotle, and here's exactly what's on it. place it?"
+
+      shape matters here. an array like ["teriyaki chicken", "lettuce", "tomato", "sweet onion teriyaki sauce"] lets the agent match what i said against each ingredient, even with a fuzzy match, so "chipotle" lines up with "chipotle mayo" or something.
+
+      if that data doesn't exist, the agent should surface: "this is the closest sub, but i can't confirm which veggies are on it". an honest "i can't tell" is fair here imo from a ux perspective.
+
+      special requests is something underrated we should handle. if the agent says "got it, no onions" and the store doesn't take special requests, the request just disappears. that's worse than a surfaced mismatch (false promise). so <span className="text-lightBeige/95 font-normal">item-details</span> should say whether the store takes special requests, and <span className="text-lightBeige/95 font-normal">add-items</span> should warn in <span className="text-lightBeige/95 font-normal">item_errors</span> if the agent sends one anyway. then the agent tells me "this store doesn't take special requests, the onions stay on" before i confirm.
+
+      <ul>
+        <li><span className="text-lightBeige/95 font-normal">pros.</span> the mismatch shows up at the step i already approve, and the agent stops guessing confidently.</li>
+        <li><span className="text-lightBeige/95 font-normal">cons.</span> only as good as the merchant's menu data, which is the open question.</li>
+      </ul>
+
+      at aleph my worst bug was a 40 minute agent retry loop. the fix was better tool errors and not a smarter agent (like we talked about in call, don't need crazy reasoning models for things to work properly).
+    </h5>
+
+    <h5 className="mt-10">
+      <span className="text-xl font-playfair">open questions</span>
+
+      <ul>
+        <li>how clean is the menu spec? are ingredients structured somewhere, or only in the description? this decides how specific the agent can be</li>
+        <li>can the sold out preference be set through <span className="text-lightBeige/95 font-normal">dd-cli</span>? if not, every agent order gets the merchant recommendation default</li>
+        <li>are there account level preferences (allergies, "never onions") an agent could read every order? i couldn't find any, and allergens are too high stakes to guess</li>
+        <li>how do promotions show up to the agent? does preview say when a deal applies to something close to my order?</li>
+      </ul>
+    </h5>
+
+    enjoyed going through these skills and the subway flow, would love to work on this :)
+  </article>
+</section>

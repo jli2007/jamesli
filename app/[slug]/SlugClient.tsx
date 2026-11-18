@@ -17,6 +17,7 @@ import Trivialguessr from "./mdx/trivialguessr.mdx";
 import Creative from "./mdx/creative.mdx";
 import Linear from "./mdx/linear.mdx";
 import Vercel from "./mdx/vercel.mdx";
+import Doordash from "./mdx/doordash.mdx";
 import Aifs from "./mdx/aifs.mdx";
 import Footy from "./mdx/footy.mdx";
 import Freedom from "./mdx/freedom.mdx";
@@ -32,6 +33,7 @@ const MDX_MAP: Record<Slug, React.ComponentType> = {
   creative: Creative,
   linear: Linear,
   vercel: Vercel,
+  doordash: Doordash,
   aifs: Aifs,
   footy: Footy,
   freedom: Freedom,

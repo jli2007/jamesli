@@ -51,12 +51,16 @@ export const PAGE_META = {
     description: "design prototypes",
   },
   linear: {
-    title: "linear's mcp patch mode",
-    description: "linear mcp",
+    title: "linear",
+    description: "linear mcp writeup",
   },
   vercel: {
-    title: "what counts as a failed tool call",
-    description: "vercel ai sdk",
+    title: "vercel",
+    description: "vercel ai sdk writeup",
+  },
+  doordash: {
+    title: "doordash",
+    description: "doordash cli writeup",
   },
 
   // hidden, reacheable but kept out of the sitemap

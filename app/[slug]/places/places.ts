@@ -216,10 +216,20 @@ export const places: PlacesType[] = [
     flag: "🇨🇴",
     kind: "misc",
     description: `corners of the world like this are so intriguing to me. \n
-      shores of the north pacific, it just feels so isolated here. so authentic. \n
-      it's a life so far and away from the tech/ai we experience in the modern world now. an escape.
+      shores of the north pacific, it just feels so isolated here. an escape. \n
+      it's a life so far and away from the tech/ai we experience in the modern world now.
       `,
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!4v1791920690831!6m8!1m7!1sCAoSLEFGMVFpcE9ueUFHVE9jV0lFRXVxZ3ZqWE04Y1Z3LXJKWlZBNXhaNExCM1c5!2m2!1d5.624397184748579!2d-77.41948353522731!3f104.34475836724505!4f-17.456385777321046!5f0.4000000000000002",
+  },
+  {
+    country: "russia",
+    flag: "🇷🇺",
+    kind: "streetview",
+    description: `looks like something out of a dystopian novel. soviet blocks, rusted garages in northeastern russia. \n
+      magadan was the gateway to the [kolyma gulags](https://www.themoscowtimes.com/2025/12/10/in-a-city-built-by-prisoners-authorities-try-to-silence-memories-of-the-gulag-a91305). from 1930-1950s, ~ 1 million prisoners were sent by train to vladivostok (another place in the middle of nowhere), then packed into ships across the sea of okhotsk to here. from there they were sent inland to mine gold in the frozen camps, and over 100,000 didn't make it.
+      `,
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!4v1794982603641!6m8!1m7!1sOPPBnW_8plfb5XytV3COFA!2m2!1d59.57335781886415!2d150.8017178403412!3f13.970443684653274!4f4.177129536564024!5f1.6049566810007803",
   },
 ];

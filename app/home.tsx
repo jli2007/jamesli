@@ -261,7 +261,7 @@ export default function Home({ recent }: { recent?: Track }) {
                         <li className="flex items-baseline gap-x-1">
                           <span className="shrink-0">-</span>
                           <span className="flex items-center gap-x-1 gap-y-2 flex-wrap">
-                            mlh top 50, hack the north finalist
+                            mlh top 50, hack the north winner
                           </span>
                         </li>
 
